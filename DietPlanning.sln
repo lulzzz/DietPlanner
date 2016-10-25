@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleInterface", "ConsoleInterface\ConsoleInterface.csproj", "{64F02B3C-B3F8-40F6-9281-0C7484832C0E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietPlanning.Core", "DietPlanning.Core\DietPlanning.Core.csproj", "{05DFE2C4-EB22-4E58-80C0-155897AD986D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietPlanning.Genetic", "DietPlanning.Genetic\DietPlanning.Genetic.csproj", "{E1D11A04-6BE2-47CC-B009-1BFFB0AAD614}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{D1D5421F-6375-4779-9126-333B891F5FC6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietPlanning.Genetic.Tests", "DietPlanning.Genetic.Tests\DietPlanning.Genetic.Tests.csproj", "{3D7FE966-AA9D-4A52-92BC-80350E8ED02B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietPlanning.Core.Tests", "DietPlanning.Core.Tests\DietPlanning.Core.Tests.csproj", "{4E5628F3-E6D7-40E8-B1EB-A0E8884C3615}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64F02B3C-B3F8-40F6-9281-0C7484832C0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64F02B3C-B3F8-40F6-9281-0C7484832C0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64F02B3C-B3F8-40F6-9281-0C7484832C0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64F02B3C-B3F8-40F6-9281-0C7484832C0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{05DFE2C4-EB22-4E58-80C0-155897AD986D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05DFE2C4-EB22-4E58-80C0-155897AD986D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05DFE2C4-EB22-4E58-80C0-155897AD986D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05DFE2C4-EB22-4E58-80C0-155897AD986D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1D11A04-6BE2-47CC-B009-1BFFB0AAD614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1D11A04-6BE2-47CC-B009-1BFFB0AAD614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1D11A04-6BE2-47CC-B009-1BFFB0AAD614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1D11A04-6BE2-47CC-B009-1BFFB0AAD614}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D7FE966-AA9D-4A52-92BC-80350E8ED02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D7FE966-AA9D-4A52-92BC-80350E8ED02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D7FE966-AA9D-4A52-92BC-80350E8ED02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D7FE966-AA9D-4A52-92BC-80350E8ED02B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E5628F3-E6D7-40E8-B1EB-A0E8884C3615}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E5628F3-E6D7-40E8-B1EB-A0E8884C3615}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E5628F3-E6D7-40E8-B1EB-A0E8884C3615}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E5628F3-E6D7-40E8-B1EB-A0E8884C3615}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3D7FE966-AA9D-4A52-92BC-80350E8ED02B} = {D1D5421F-6375-4779-9126-333B891F5FC6}
+		{4E5628F3-E6D7-40E8-B1EB-A0E8884C3615} = {D1D5421F-6375-4779-9126-333B891F5FC6}
+	EndGlobalSection
+EndGlobal
