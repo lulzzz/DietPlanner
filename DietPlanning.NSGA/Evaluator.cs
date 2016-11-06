@@ -19,32 +19,50 @@ namespace DietPlanning.NSGA
     {
       var recipes = individual.Diet.GetRecipes();
 
-      individual.Evaluation.Macro = EvaluateMacro(individual.Diet, targetDailyDiet);
-      individual.Evaluation.Cost = EvaluateCost(recipes);
-      individual.Evaluation.PreparationTime = EvaluatePreparationTime(recipes);
-      individual.Evaluation.Variety = EvaluateVariety(recipes);
+      individual.Evaluations.Clear();
+
+      individual.Evaluations.Add(EvaluateMacro(individual.Diet, targetDailyDiet));
+      individual.Evaluations.Add(EvaluateCost(recipes));
+      individual.Evaluations.Add(EvaluatePreparationTime(recipes));
+      individual.Evaluations.Add(EvaluateVariety(recipes));
       //todo preferences
     }
 
-    private double EvaluateVariety(List<Recipe> recipes)
+    private Evaluation EvaluateVariety(List<Recipe> recipes)
     {
-      return recipes.GroupBy(recipe => recipe.Group).Count() + 
-        recipes.SelectMany(recipe => recipe.Ingredients).GroupBy(ingredient => ingredient.Food.Group).Count();
+      return new Evaluation
+      {
+        Type = ObjectiveType.Variety,
+        Score = recipes.GroupBy(recipe => recipe.Group).Count() +
+                recipes.SelectMany(recipe => recipe.Ingredients).GroupBy(ingredient => ingredient.Food.Group).Count()
+      };
     }
 
-    private double EvaluatePreparationTime(List<Recipe> recipes)
+    private Evaluation EvaluatePreparationTime(List<Recipe> recipes)
     {
-      return -1.0 * recipes.Select(recipe => recipe.PreparationTimeInMinutes).Sum();
+      return new Evaluation
+      {
+        Type = ObjectiveType.PreparationTime,
+        Score = -1.0 * recipes.Select(recipe => recipe.PreparationTimeInMinutes).Sum()
+      };
     }
 
-    private double EvaluateCost(List<Recipe> recipes)
+    private Evaluation EvaluateCost(List<Recipe> recipes)
     {
-      return -1.0 * recipes.Select(recipe => recipe.Cost).Sum();
+      return new Evaluation
+      {
+        Type = ObjectiveType.Cost,
+        Score = -1.0 * recipes.Select(recipe => recipe.Cost).Sum()
+      };
     }
 
-    private double EvaluateMacro(Diet diet, DietSummary targetDailyDiet)
+    private Evaluation EvaluateMacro(Diet diet, DietSummary targetDailyDiet)
     {
-      return diet.DailyDiets.Select(dailyDiet => EvaluateDailyMacro(dailyDiet, targetDailyDiet)).Sum() / diet.DailyDiets.Count;
+      return new Evaluation
+      {
+        Type = ObjectiveType.Macro,
+        Score = diet.DailyDiets.Select(dailyDiet => EvaluateDailyMacro(dailyDiet, targetDailyDiet)).Sum() / diet.DailyDiets.Count
+      }; 
     }
 
     private double EvaluateDailyMacro(DailyDiet dailyDiet, DietSummary targetDailyDiet)

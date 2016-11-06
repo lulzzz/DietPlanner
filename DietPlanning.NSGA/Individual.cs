@@ -9,11 +9,12 @@ namespace DietPlanning.NSGA
     public List<Individual> Dominated; //Sp
     public int DominatedByCount; // np
     public Diet Diet;
-    public Evaluation Evaluation;
+    public List<Evaluation> Evaluations;
+    public int Rank;
 
     public Individual(Diet diet)
     {
-      Evaluation = new Evaluation();
+      Evaluations = new List<Evaluation>();
       Dominated = new List<Individual>();
       Diet = diet;
     }

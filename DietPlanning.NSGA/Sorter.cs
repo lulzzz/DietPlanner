@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DietPlanning.Core;
 
 namespace DietPlanning.NSGA
 {
@@ -21,12 +17,14 @@ namespace DietPlanning.NSGA
     private static void CreateSubsequentFronts(List<List<Individual>> fronts, List<Individual> individuals)
     {
       var currentFront = fronts.Last();
+      var rank = 0;
+
       do
       {
         //TODO: Sort by numbers od dominating solutions (no need to loop)
         //TODO: Instead of decreasing each count store number of front and compare
         var nextFront = new List<Individual>();
-
+        
         foreach (var p in currentFront)
         {
           foreach (var q in p.Dominated)
@@ -34,12 +32,17 @@ namespace DietPlanning.NSGA
             q.DominatedByCount--;
             if (q.DominatedByCount == 0)
             {
+              q.Rank = rank;
               nextFront.Add(q);
               break;
             }
           }
         }
-        if (nextFront.Count > 0) fronts.Add(nextFront);
+        if (nextFront.Count > 0)
+        {
+          fronts.Add(nextFront);
+          rank++;
+        }
       } while (individuals.Count > fronts.Select(f => f.Count).Sum());
     }
 
@@ -65,13 +68,10 @@ namespace DietPlanning.NSGA
 
     public bool Dominates(Individual individual1, Individual individual2)
     {
-      //TODO confirm domination
-      //TODO reconsider evaluations as list after PoC
-      return individual1.Evaluation.Macro > individual2.Evaluation.Macro;
-      //&& individual1.Evaluation.Cost > individual2.Evaluation.Cost
-      //&& individual1.Evaluation.Variety > individual2.Evaluation.Variety
-      //&& individual1.Evaluation.Preferences > individual2.Evaluation.Preferences
-      //&& individual1.Evaluation.PreparationTime > individual2.Evaluation.PreparationTime;
+      return !individual1
+         .Evaluations
+        .Where((evaluation, i) => evaluation.Score < individual2.Evaluations[i].Score)
+        .Any();
     }
   }
 }
