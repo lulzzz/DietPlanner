@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
@@ -20,16 +21,19 @@ namespace DietPlanning.NSGA
 
     public List<List<Diet>> Solve(DietSummary targetDietSummary)
     {
-      var diets = _populationInitialiser.InitializePopulation(100, 7, 5);
-      var individuals = diets.Select(i => new Individual(i)).ToList();
-
+      var individuals = InitializeIndividuals();
       _evaluator.Evaluate(individuals, targetDietSummary);
-
-      var fronts = _sorter.Sort(individuals);
+      var fronts = _sorter.Sort(individuals).ToList();
       AssignCrowdingDistance(fronts);
 
-
       return fronts.Select(front => front.Select(individual => individual.Diet).ToList()).ToList();
+    }
+
+    private List<Individual> InitializeIndividuals()
+    {
+      var diets = _populationInitialiser.InitializePopulation(100, 7, 5);
+      var individuals = diets.Select(i => new Individual(i)).ToList();
+      return individuals;
     }
 
     private void AssignCrowdingDistance(List<List<Individual>> fronts)
@@ -42,7 +46,7 @@ namespace DietPlanning.NSGA
 
         for (var evaluationIndex = 0; evaluationIndex < numberOfObjectives; evaluationIndex++)
         {
-          var individualsByObjective = front.OrderBy(individual => individual.Evaluations[evaluationIndex]).ToList();
+          var individualsByObjective = front.OrderBy(individual => individual.Evaluations[evaluationIndex].Score).ToList();
 
           individualsByObjective.First().CrowdingDistance = double.PositiveInfinity;
           individualsByObjective.Last().CrowdingDistance = double.PositiveInfinity;
@@ -54,9 +58,10 @@ namespace DietPlanning.NSGA
           for (var individualIndex = 1; individualIndex < front.Count - 1; individualIndex++)
           {
             individualsByObjective[individualIndex].CrowdingDistance +=
-              (individualsByObjective[individualIndex + 1].Evaluations[evaluationIndex].Score -
-               individualsByObjective[individualIndex - 1].Evaluations[evaluationIndex].Score)/
-              evaluationRange;
+              Math.Abs(
+                (individualsByObjective[individualIndex + 1].Evaluations[evaluationIndex].Score -
+                 individualsByObjective[individualIndex - 1].Evaluations[evaluationIndex].Score) /
+                evaluationRange);
           }
         }
       }

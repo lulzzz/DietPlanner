@@ -1,0 +1,4 @@
+
+- Quote a lot of "infinity" crowding distances due to small fronts
+- Next thing to do is selection + mutation
+- Consider graphical confirmation of pareto fronts
