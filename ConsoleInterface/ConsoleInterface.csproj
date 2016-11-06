@@ -77,6 +77,10 @@
       <Project>{e1d11a04-6be2-47cc-b009-1bffb0aad614}</Project>
       <Name>DietPlanning.Genetic</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
+      <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
+      <Name>DietPlanning.NSGA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

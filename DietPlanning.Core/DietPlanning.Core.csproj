@@ -60,6 +60,7 @@
     <Compile Include="DataProviders\Databse\FoodMapper.cs" />
     <Compile Include="DataProviders\Databse\FoodNutrientsDto.cs" />
     <Compile Include="DataProviders\Databse\NutrientsReferences.cs" />
+    <Compile Include="DataProviders\Databse\RandomRecipeProvider.cs" />
     <Compile Include="DietAnalyzer.cs" />
     <Compile Include="DietCopier.cs" />
     <Compile Include="DietHelper.cs" />

@@ -44,7 +44,6 @@
     <Compile Include="Individual.cs" />
     <Compile Include="NsgaSolver.cs" />
     <Compile Include="Evaluation.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorter.cs" />
   </ItemGroup>
