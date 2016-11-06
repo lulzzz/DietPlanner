@@ -66,7 +66,7 @@ namespace DietPlanning.NSGA
       return front;
     }
 
-    public bool Dominates(Individual individual1, Individual individual2)
+    private bool Dominates(Individual individual1, Individual individual2)
     {
       return !individual1
          .Evaluations

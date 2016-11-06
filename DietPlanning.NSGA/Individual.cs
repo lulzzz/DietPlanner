@@ -6,11 +6,12 @@ namespace DietPlanning.NSGA
 {
   public class Individual
   {
-    public List<Individual> Dominated; //Sp
-    public int DominatedByCount; // np
+    public List<Individual> Dominated;
+    public int DominatedByCount;
     public Diet Diet;
     public List<Evaluation> Evaluations;
     public int Rank;
+    public double CrowdingDistance;
 
     public Individual(Diet diet)
     {
