@@ -15,7 +15,8 @@ namespace DietPlanning.Core
     {
       var dietSummary = new DietSummary();
 
-      var portions =  diet.Meals.SelectMany(meal => meal.FoodPortions).ToList();
+      var recipes =  diet.Meals.SelectMany(meal => meal.Receipes).ToList();
+      var portions = recipes.SelectMany(portion => portion.Ingredients).ToList();
 
       portions.ForEach(portion => AddNutrientsFromPortion(dietSummary, portion));
 
