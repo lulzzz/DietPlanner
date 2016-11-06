@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DietPlanning.Core
+namespace DietPlanning.Core.DomainObjects
 {
   public class DailyDiet
   {

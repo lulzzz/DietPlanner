@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.Core.DataProviders.Databse
 {

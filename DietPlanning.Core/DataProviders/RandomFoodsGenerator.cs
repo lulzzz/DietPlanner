@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DietPlanning.Core.DataProviders;
+using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.Core
 {

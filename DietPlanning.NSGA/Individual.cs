@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using DietPlanning.Core;
+using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.NSGA
 {
@@ -8,11 +9,11 @@ namespace DietPlanning.NSGA
     public List<Individual> Dominated; //Sp
     public int DominatedByCount; // np
     public Diet Diet;
-    public List<Objective> Objectives;
+    public Evaluation Evaluation;
 
     public Individual(Diet diet)
     {
-      Objectives = new List<Objective>();
+      Evaluation = new Evaluation();
       Dominated = new List<Individual>();
       Diet = diet;
     }

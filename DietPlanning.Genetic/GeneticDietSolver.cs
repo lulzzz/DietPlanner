@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using DietPlanning.Core;
+using DietPlanning.Core.DomainObjects;
 using DietPlanning.Genetic.AHP;
 using DietPlanning.Genetic.CrossingOver;
 using DietPlanning.Genetic.Selectors;

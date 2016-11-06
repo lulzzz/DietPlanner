@@ -1,4 +1,4 @@
-﻿namespace DietPlanning.Core
+﻿namespace DietPlanning.Core.DomainObjects
 {
   public class Food
   {

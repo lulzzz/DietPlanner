@@ -1,4 +1,6 @@
-﻿namespace DietPlanning.Core
+﻿using DietPlanning.Core.DomainObjects;
+
+namespace DietPlanning.Core
 {
   public static class DietCopier
   {

@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using DietPlanning.Core.DomainObjects;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace DietPlanning.Core.Tests

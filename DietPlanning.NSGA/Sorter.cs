@@ -66,7 +66,12 @@ namespace DietPlanning.NSGA
     public bool Dominates(Individual individual1, Individual individual2)
     {
       //TODO confirm domination
-      return !individual1.Objectives.Where((t, i) => t.Scrore < individual2.Objectives[i].Scrore).Any();
+      //TODO reconsider evaluations as list after PoC
+      return individual1.Evaluation.Macro > individual2.Evaluation.Macro;
+      //&& individual1.Evaluation.Cost > individual2.Evaluation.Cost
+      //&& individual1.Evaluation.Variety > individual2.Evaluation.Variety
+      //&& individual1.Evaluation.Preferences > individual2.Evaluation.Preferences
+      //&& individual1.Evaluation.PreparationTime > individual2.Evaluation.PreparationTime;
     }
   }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.Core;
+using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.Genetic.AHP
 {
