@@ -15,6 +15,11 @@ namespace DietPlanning.NSGA
       _dietAnalyzer = dietAnalyzer;
     }
 
+    public void Evaluate(List<Individual> individuals, DietSummary targetDailyDiet)
+    {
+      individuals.ForEach(individual => Evaluate(individual, targetDailyDiet));
+    }
+
     public void Evaluate(Individual individual, DietSummary targetDailyDiet)
     {
       var recipes = individual.Diet.GetRecipes();

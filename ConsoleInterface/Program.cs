@@ -3,7 +3,7 @@ using System.Linq;
 
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
-using DietPlanning.Genetic;
+using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.NSGA;
 using Random = System.Random;
 
@@ -13,11 +13,14 @@ namespace ConsoleInterface
   {
     public static void Main(string[] args)
     {
-      var solver = new NsgaSolver(new Sorter());
+      var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
+      var recipes = recipeGenerator.GetRecipes();
+      var nsgaSolver = new NsgaSolver(
+        new Sorter(), 
+        new PopulationInitializer(new Random(), recipes),
+        new Evaluator(new DietAnalyzer()));
 
-      var recipeGenerator = new RandomRecipeProvider(new Random());
-
-      var recipes = recipeGenerator.GetRecipes(100, new FoodDatabaseProvider().GetFoods());
+      nsgaSolver.Solve(GetTargetDiet());
 
       Console.WriteLine(recipes.Count);
 

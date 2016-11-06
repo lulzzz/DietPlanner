@@ -45,6 +45,7 @@
     <Compile Include="NsgaSolver.cs" />
     <Compile Include="Evaluation.cs" />
     <Compile Include="ObjectiveType.cs" />
+    <Compile Include="PopulationInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sorter.cs" />
   </ItemGroup>

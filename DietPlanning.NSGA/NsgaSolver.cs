@@ -8,15 +8,23 @@ namespace DietPlanning.NSGA
   public class NsgaSolver
   {
     private readonly Sorter _sorter;
+    private readonly PopulationInitializer _populationInitialiser;
+    private readonly Evaluator _evaluator;
 
-    public NsgaSolver(Sorter sorter)
+    public NsgaSolver(Sorter sorter, PopulationInitializer populationInitialiser, Evaluator evaluator)
     {
       _sorter = sorter;
+      _populationInitialiser = populationInitialiser;
+      _evaluator = evaluator;
     }
 
-    public List<List<Diet>> Solve(List<Diet> diets)
+    public List<List<Diet>> Solve(DietSummary targetDietSummary)
     {
+      var diets = _populationInitialiser.InitializePopulation(100, 7, 5);
       var individuals = diets.Select(i => new Individual(i)).ToList();
+
+      _evaluator.Evaluate(individuals, targetDietSummary);
+
       var fronts = _sorter.Sort(individuals);
       AssignCrowdingDistance(fronts);
 

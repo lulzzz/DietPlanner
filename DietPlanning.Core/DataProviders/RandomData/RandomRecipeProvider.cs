@@ -3,24 +3,28 @@ using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.Core.DomainObjects;
 
-namespace DietPlanning.Core.DataProviders.Databse
+namespace DietPlanning.Core.DataProviders.RandomData
 {
-  public class RandomRecipeProvider
+  public class RandomRecipeProvider : IRecipeProvider
   {
     private readonly Random _random;
+    private readonly int _size;
+    private readonly List<Food> _foods;
 
-    public RandomRecipeProvider(Random random)
+    public RandomRecipeProvider(Random random, int size, List<Food> foods)
     {
       _random = random;
+      _size = size;
+      _foods = foods;
     }
 
-    public List<Recipe> GetRecipes(int size, List<Food> foods)
+    public List<Recipe> GetRecipes()
     {
       var recipes = new List<Recipe>();
 
-      for (var i = 0; i < size; i++)
+      for (var i = 0; i < _size; i++)
       {
-        recipes.Add(GetRandomRecipe(foods));
+        recipes.Add(GetRandomRecipe(_foods));
       }
 
       return recipes;

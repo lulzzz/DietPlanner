@@ -60,7 +60,8 @@
     <Compile Include="DataProviders\Databse\FoodMapper.cs" />
     <Compile Include="DataProviders\Databse\FoodNutrientsDto.cs" />
     <Compile Include="DataProviders\Databse\NutrientsReferences.cs" />
-    <Compile Include="DataProviders\Databse\RandomRecipeProvider.cs" />
+    <Compile Include="DataProviders\IRecipeProvider.cs" />
+    <Compile Include="DataProviders\RandomData\RandomRecipeProvider.cs" />
     <Compile Include="DietAnalyzer.cs" />
     <Compile Include="DietCopier.cs" />
     <Compile Include="DietHelper.cs" />
@@ -74,7 +75,7 @@
     <Compile Include="DataProviders\IFoodsProvider.cs" />
     <Compile Include="DomainObjects\RecipeGroup.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="DataProviders\RandomFoodsGenerator.cs" />
+    <Compile Include="DataProviders\RandomData\RandomFoodsGenerator.cs" />
     <Compile Include="DietSummary.cs" />
   </ItemGroup>
   <ItemGroup>
