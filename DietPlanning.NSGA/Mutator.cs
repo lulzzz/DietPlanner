@@ -1,39 +1,55 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using DietPlanning.Core.DomainObjects;
+using Tools;
 
 namespace DietPlanning.NSGA
 {
   public class Mutator
   {
     private readonly Random _random;
+    private readonly List<Recipe> _recipes;
 
-    public Mutator(Random random)
+    public Mutator(Random random, List<Recipe> recipes)
     {
       _random = random;
+      _recipes = recipes;
     }
 
     public void Mutate(Individual individual, double mutationProbability)
     {
-      throw new ArgumentOutOfRangeException();
-      foreach (var dailyDiet in individual.Diet.DailyDiets)
+      //todo may affect performance - consider foreach diet, foreach meal etc
+      var meals = individual.Diet.DailyDiets.SelectMany(dailyDiet => dailyDiet.Meals);
+
+      foreach (var meal in meals)
       {
-        foreach (var meal in dailyDiet.Meals)
+        foreach (var recipe in meal.Receipes)
         {
-          if (_random.NextDouble() < mutationProbability)
-          {
-            switch (RandomMutationType())
-            {
-              case MutationType.Remove:
-                break;
-              case MutationType.Add:
-                break;
-              case MutationType.Replace:
-                break;
-              default:
-                throw new ArgumentOutOfRangeException();
-            }
-          }
+          if (_random.NextDouble() > mutationProbability) continue;
+
+          PerformMutation(meal, recipe);
         }
+      }
+    }
+
+    private void PerformMutation(Meal meal, Recipe recipe)
+    {
+      switch (RandomMutationType())
+      {
+        case MutationType.Remove:
+          meal.Receipes.Remove(recipe);
+          break;
+        case MutationType.Add:
+          //todo remove duplicates (or should they stay as 2x recipe)
+          meal.Receipes.Add(_recipes.GetRandomItem());
+          break;
+        case MutationType.Replace:
+          meal.Receipes.Remove(recipe);
+          meal.Receipes.Add(_recipes.GetRandomItem());
+          break;
+        default:
+          throw new ArgumentOutOfRangeException();
       }
     }
 
