@@ -8,23 +8,40 @@ namespace DietPlanning.NSGA
 {
   public class NsgaSolver
   {
+    //config
+    private const double OffspringRatio = 0.5;
+
     private readonly Sorter _sorter;
     private readonly PopulationInitializer _populationInitialiser;
     private readonly Evaluator _evaluator;
+    private readonly TournamentSelector _selector;
+    private readonly DayCrossOver _crossOver;
 
-    public NsgaSolver(Sorter sorter, PopulationInitializer populationInitialiser, Evaluator evaluator)
+    public NsgaSolver(Sorter sorter, PopulationInitializer populationInitialiser, Evaluator evaluator, TournamentSelector selector, DayCrossOver crossOver)
     {
       _sorter = sorter;
       _populationInitialiser = populationInitialiser;
       _evaluator = evaluator;
+      _selector = selector;
+      _crossOver = crossOver;
     }
 
     public List<List<Diet>> Solve(DietSummary targetDietSummary)
     {
       var individuals = InitializeIndividuals();
+      var offspringSize = individuals.Count*OffspringRatio;
+
       _evaluator.Evaluate(individuals, targetDietSummary);
       var fronts = _sorter.Sort(individuals).ToList();
       AssignCrowdingDistance(fronts);
+
+      //Create Offspring
+      for (var i = 0; i < offspringSize; i++)
+      {
+        var children = _crossOver.CreateChildren(_selector.Select(individuals), _selector.Select(individuals));
+        individuals.Add(children.Item1);
+        individuals.Add(children.Item2);
+      }
 
       return fronts.Select(front => front.Select(individual => individual.Diet).ToList()).ToList();
     }

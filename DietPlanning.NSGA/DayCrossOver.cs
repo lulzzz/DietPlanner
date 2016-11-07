@@ -15,9 +15,9 @@ namespace DietPlanning.NSGA
       _random = random;
     }
 
-    public Tuple<Individual, Individual> CreateChildren(Tuple<Individual, Individual> parents)
+    public Tuple<Individual, Individual> CreateChildren(Individual parent1, Individual parent2)
     {
-      var childrenDiets = GetChild(parents.Item1.Diet, parents.Item2.Diet);
+      var childrenDiets = GetChild(parent1.Diet, parent2.Diet);
       
       return new Tuple<Individual, Individual>(new Individual(childrenDiets.Item1), new Individual(childrenDiets.Item2));
     }
