@@ -108,7 +108,7 @@ namespace DietPlanning.Genetic.AHP
 
   public class Criterion
   {
-    private List<KeyValuePair<Diet, double>> _evaluations;
+    private readonly List<KeyValuePair<Diet, double>> _evaluations;
 
     public Criterion(List<Diet> alternatives, DietSummary targetDailyDiet)
     {

@@ -25,7 +25,7 @@ namespace DietPlanning.Core.DataProviders.RandomData
         var f = GetRandomNumber(0d, 50d, _random);
         var c = GetRandomNumber(0d, 50d, _random);
 
-        meals.Add(new Food(string.Format("FoodNo_{0}", i), p, f, c));
+        meals.Add(new Food($"FoodNo_{i}", p, f, c));
       }
 
       return meals;

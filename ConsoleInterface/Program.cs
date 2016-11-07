@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;

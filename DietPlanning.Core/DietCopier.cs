@@ -27,6 +27,7 @@ namespace DietPlanning.Core
       var copy = new Meal();
 
       meal.FoodPortions.ForEach(portion => copy.FoodPortions.Add(new FoodPortion(portion.Food, portion.Amount)));
+      copy.Receipes = meal.Receipes;
 
       return copy;
     }

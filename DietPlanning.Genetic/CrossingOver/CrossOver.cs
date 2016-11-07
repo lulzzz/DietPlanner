@@ -13,7 +13,7 @@ namespace DietPlanning.Genetic.CrossingOver
 
     public DaysCrossOver(Random random)
     {
-      _random = random;
+      _random = random; 
     }
 
     public List<Diet> CreateChildren(List<Diet> parentDiets, int numberOfChildren)
