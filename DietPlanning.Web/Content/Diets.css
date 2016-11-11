@@ -1,0 +1,32 @@
+﻿.diet {
+  padding-top: 1em;
+}
+
+.day {
+  display: inline;
+  float: left;
+  margin: 0.1em;
+  padding: 1.5em;
+  background-color: #b1c1ff;
+  border-radius: 1em;
+}
+
+.day-title {
+  font-weight: bold;
+}
+
+.meal {
+  padding-left: .5em;
+}
+
+.recipe {
+  padding-left: .5em;
+}
+
+.container {
+  max-width: none;
+}
+
+.clear {
+  clear: both;
+}

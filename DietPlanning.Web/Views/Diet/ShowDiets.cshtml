@@ -1,8 +1,34 @@
-﻿@model List<DietPlanning.Core.DomainObjects.Diet>
+﻿@using DietPlanning.Core.DomainObjects
+@model List<DietPlanning.Core.DomainObjects.Diet>
 @{
   ViewBag.Title = "Diet";
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+<link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
 <h2>View</h2>
 
+@foreach (var diet in Model)
+{
+  <div class="diet">
+    <span>Alternative diet @(Model.IndexOf(diet) + 1)</span>
+    @foreach (var day in diet.DailyDiets)
+    {
+      <div class="day">
+        <span class="day-title">Day @(diet.DailyDiets.IndexOf(day) + 1)</span>
+        @foreach (var meal in day.Meals)
+        {
+          <div class="meal">
+            <span>Meal @(day.Meals.IndexOf(meal) + 1)</span>
+            @foreach (var recipe in meal.Receipes)
+            {
+              <div class="recipe">
+                <span>@recipe.Name</span>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    }
+  </div>
+  <div class="clear"></div>
+}

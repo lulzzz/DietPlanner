@@ -26,7 +26,7 @@ namespace DietPlanning.NSGA
       _crossOver = crossOver;
     }
 
-    public List<List<Diet>> Solve(DietSummary targetDietSummary)
+    public List<List<Individual>> Solve(DietSummary targetDietSummary)
     {
       var individuals = InitializeIndividuals();
       var offspringSize = individuals.Count*OffspringRatio;
@@ -45,7 +45,8 @@ namespace DietPlanning.NSGA
       //  //todo MUTATION
       //}
 
-      return fronts.Select(front => front.Select(individual => individual.Diet).ToList()).ToList();
+      //return fronts.Select(front => front.Select(individual => individual.Diet).ToList()).ToList();
+      return fronts;
     }
 
     private List<Individual> InitializeIndividuals()

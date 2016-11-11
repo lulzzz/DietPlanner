@@ -10,6 +10,7 @@ namespace DietPlanning.Core.DomainObjects
     public int PreparationTimeInMinutes;
     public int Cost;
     public RecipeGroup Group;
+    public string Name;
 
     public Recipe()
     {

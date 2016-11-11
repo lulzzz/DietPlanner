@@ -24,7 +24,9 @@ namespace DietPlanning.Core.DataProviders.RandomData
 
       for (var i = 0; i < _size; i++)
       {
-        recipes.Add(GetRandomRecipe(_foods));
+        var recipe = GetRandomRecipe(_foods);
+        recipe.Name = "recipe " + i;
+        recipes.Add(recipe);
       }
 
       return recipes;
