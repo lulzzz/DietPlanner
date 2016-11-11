@@ -1,24 +1,36 @@
-﻿@using DietPlanning.Core.DomainObjects
-@model List<DietPlanning.Core.DomainObjects.Diet>
+﻿@using Microsoft.Ajax.Utilities
+@model DietPlanning.Web.Models.DietsViewModel
 @{
   ViewBag.Title = "Diet";
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
-<h2>View</h2>
+<h2>Diets</h2>
+<div><span>Goal:</span></div>
+<div><span>@Model.TargetDiet.Calories Calories</span></div>
+<div><span>@Model.TargetDiet.Carbohydrates g Carbohydrates</span></div>
+<div><span>@Model.TargetDiet.Fat g Fats</span></div>
+<div><span>@Model.TargetDiet.Proteins g Proteins</span></div>
 
-@foreach (var diet in Model)
+@foreach (var diet in Model.Diets)
 {
   <div class="diet">
-    <span>Alternative diet @(Model.IndexOf(diet) + 1)</span>
+    <span>Alternative diet @(Model.Diets.IndexOf(diet) + 1)</span>
     @foreach (var day in diet.DailyDiets)
     {
       <div class="day">
+        <div>
+          <div><span>@day.DietSummary.Calories.ToString().SubstringUpToFirst(',') Calories</span></div>
+          <div><span>@day.DietSummary.Carbohydrates.ToString().SubstringUpToFirst(',') g Carbohydrates</span></div>
+          <div><span>@day.DietSummary.Fat.ToString().SubstringUpToFirst(',') g Fats</span></div>
+          <div><span>@day.DietSummary.Proteins.ToString().SubstringUpToFirst(',') g Proteins</span></div>
+        </div>
+        <br/>
         <span class="day-title">Day @(diet.DailyDiets.IndexOf(day) + 1)</span>
-        @foreach (var meal in day.Meals)
+        @foreach (var meal in day.DailyDiet.Meals)
         {
           <div class="meal">
-            <span>Meal @(day.Meals.IndexOf(meal) + 1)</span>
+            <span>Meal @(day.DailyDiet.Meals.IndexOf(meal) + 1)</span>
             @foreach (var recipe in meal.Receipes)
             {
               <div class="recipe">
@@ -29,6 +41,18 @@
         }
       </div>
     }
+    <div>
+      <div><span>@diet.AverageDietSummary.Calories.ToString().SubstringUpToFirst(',') Calories</span></div>
+      <div><span>@diet.AverageDietSummary.Carbohydrates.ToString().SubstringUpToFirst(',') g Carbohydrates</span></div>
+      <div><span>@diet.AverageDietSummary.Fat.ToString().SubstringUpToFirst(',') g Fats</span></div>
+      <div><span>@diet.AverageDietSummary.Proteins.ToString().SubstringUpToFirst(',') g Proteins</span></div>
+      <br />
+      @foreach (var evaluation in diet.Evaluations)
+      {
+        <div><span>@evaluation.Type: @evaluation.Score</span></div>
+      }
+
+    </div>
   </div>
   <div class="clear"></div>
 }

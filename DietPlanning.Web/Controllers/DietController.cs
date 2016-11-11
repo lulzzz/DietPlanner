@@ -51,10 +51,10 @@ namespace DietPlanning.Web.Controllers
     {
       return new DietSummary
       {
-        Calories = dailyDiets.Select(diet => diet.DietSummary.Calories).Sum(),
-        Carbohydrates = dailyDiets.Select(diet => diet.DietSummary.Carbohydrates).Sum(),
-        Fat = dailyDiets.Select(diet => diet.DietSummary.Fat).Sum(),
-        Proteins = dailyDiets.Select(diet => diet.DietSummary.Proteins).Sum()
+        Calories = dailyDiets.Select(diet => diet.DietSummary.Calories).Sum() / dailyDiets.Count,
+        Carbohydrates = dailyDiets.Select(diet => diet.DietSummary.Carbohydrates).Sum() / dailyDiets.Count,
+        Fat = dailyDiets.Select(diet => diet.DietSummary.Fat).Sum() / dailyDiets.Count,
+        Proteins = dailyDiets.Select(diet => diet.DietSummary.Proteins).Sum() / dailyDiets.Count
       };
     }
 
