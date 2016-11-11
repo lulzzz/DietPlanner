@@ -36,12 +36,14 @@ namespace DietPlanning.NSGA
       AssignCrowdingDistance(fronts);
 
       //Create Offspring
-      for (var i = 0; i < offspringSize; i++)
-      {
-        var children = _crossOver.CreateChildren(_selector.Select(individuals), _selector.Select(individuals));
-        individuals.Add(children.Item1);
-        individuals.Add(children.Item2);
-      }
+      //for (var i = 0; i < offspringSize; i++)
+      //{
+      //  var children = _crossOver.CreateChildren(_selector.Select(individuals), _selector.Select(individuals));
+      //  individuals.Add(children.Item1);
+      //  individuals.Add(children.Item2);
+
+      //  //todo MUTATION
+      //}
 
       return fronts.Select(front => front.Select(individual => individual.Diet).ToList()).ToList();
     }
