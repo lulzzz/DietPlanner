@@ -21,14 +21,15 @@ namespace ConsoleInterface
         new PopulationInitializer(new Random(), recipes),
         new Evaluator(new DietAnalyzer()),
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
-        new DayCrossOver(new Random()));
+        new DayCrossOver(new Random()),
+        new Mutator(new Random(), recipes));
 
       nsgaSolver.Solve(GetTargetDiet());
 
       Console.WriteLine(recipes.Count);
 
       Console.ReadKey();
-    }
+     }
 
     private static DietSummary GetTargetDiet()
     {

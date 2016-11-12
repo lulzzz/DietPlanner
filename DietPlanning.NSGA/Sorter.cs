@@ -7,6 +7,13 @@ namespace DietPlanning.NSGA
   {
     public List<List<Individual>> Sort(List<Individual> individuals)
     {
+      foreach (var individual in individuals)
+      {
+        individual.Dominated.Clear();
+        individual.DominatedByCount = 0;
+        individual.Rank = 0;
+      }
+
       var fronts = new List<List<Individual>> { SetDomintaionRelations(individuals) };
 
       CreateSubsequentFronts(fronts, individuals);
@@ -17,7 +24,7 @@ namespace DietPlanning.NSGA
     private static void CreateSubsequentFronts(List<List<Individual>> fronts, List<Individual> individuals)
     {
       var currentFront = fronts.Last();
-      var rank = 0;
+      var rank = 2;
 
       do
       {
@@ -25,16 +32,15 @@ namespace DietPlanning.NSGA
         //TODO: Instead of decreasing each count store number of front and compare
         var nextFront = new List<Individual>();
         
-        foreach (var p in currentFront)
+        foreach (var individual in currentFront)
         {
-          foreach (var q in p.Dominated)
+          foreach (var dominated in individual.Dominated)
           {
-            q.DominatedByCount--;
-            if (q.DominatedByCount == 0)
+            dominated.DominatedByCount--;
+            if (dominated.DominatedByCount == 0)
             {
-              q.Rank = rank;
-              nextFront.Add(q);
-              break;
+              dominated.Rank = rank;
+              nextFront.Add(dominated);
             }
           }
         }
@@ -60,7 +66,10 @@ namespace DietPlanning.NSGA
             p1.DominatedByCount++;
         }
         if (p1.DominatedByCount == 0)
+        {
+          p1.Rank = 1;
           front.Add(p1);
+        }
       }
 
       return front;

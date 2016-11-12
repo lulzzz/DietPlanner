@@ -28,6 +28,7 @@ namespace DietPlanning.NSGA
         {
           competetor = individuals[_random.Next(individuals.Count)];
         } while (competetors.Contains(competetor));
+        competetors.Add(competetor);
       }
 
       competetors.Sort(_comparer.Compare);

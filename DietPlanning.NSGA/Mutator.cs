@@ -24,11 +24,11 @@ namespace DietPlanning.NSGA
 
       foreach (var meal in meals)
       {
-        foreach (var recipe in meal.Receipes)
+        for (var i = meal.Receipes.Count - 1; i >= 0 ; i--)
         {
           if (_random.NextDouble() > mutationProbability) continue;
 
-          PerformMutation(meal, recipe);
+          PerformMutation(meal, meal.Receipes[i]);
         }
       }
     }
