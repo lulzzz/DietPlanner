@@ -9,7 +9,7 @@
         PopulationSize = 200,
         OffspringRatio = 0.5,
         MutationProbability = 0.05,
-        MaxIterations = 75
+        MaxIterations = 150
       };
     }
   }

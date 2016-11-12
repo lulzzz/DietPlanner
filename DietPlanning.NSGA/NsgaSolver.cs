@@ -67,7 +67,7 @@ namespace DietPlanning.NSGA
       var averageMacro = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Macro);
       var averageCost = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Cost);
 
-      CsvLogger.AddRow(new dynamic[]{ iteration, averageMacro, averageCost});
+      CsvLogger.AddRow("iterationEvaluations", new dynamic[]{ iteration, averageMacro, averageCost});
     }
 
     private static double GetFrontAverageEvaluation(List<Individual> front, ObjectiveType objectiveType)

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
@@ -13,7 +14,8 @@ namespace ConsoleInterface
   {
     public static void Main(string[] args)
     {
-      CsvLogger.Init();
+      CsvLogger.RegisterLogger("iterationEvaluations");
+      CsvLogger.RegisterLogger("frontResult");
 
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
       var nsgaSolverFactory = new NsgaSolverFactory(new ConfigurationProvider(), new Random());
@@ -21,8 +23,14 @@ namespace ConsoleInterface
       var mathNsgaSolver = nsgaSolverFactory.GetMathSolver();
 
       var result = mathNsgaSolver.Solve();
+
+      foreach (var individual in result.First())
+      {
+        CsvLogger.AddRow("frontResult", new dynamic[] {individual.Evaluations[0], individual.Evaluations[1]});
+      }
       
-      CsvLogger.Write("d:\\output.csv");
+      CsvLogger.Write("d:\\output.csv", "iterationEvaluations");
+      CsvLogger.Write("d:\\FrontResult.csv", "frontResult");
 
       Console.WriteLine("done");
       Console.ReadKey();
