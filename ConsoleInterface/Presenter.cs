@@ -16,13 +16,15 @@ namespace ConsoleInterface
         diet.DailyDiets.ForEach(dailyDiet => Output(dailyDiet, file));
         file.WriteLine();
       }
+
+      file.Close();
     }
 
     private static void Output(DailyDiet dailyDiet, StreamWriter file)
     {
-      var portions = dailyDiet.Meals.SelectMany(meal => meal.FoodPortions);
+      var recipes = dailyDiet.Meals.SelectMany(meal => meal.Receipes);
 
-      portions.ToList().ForEach(portion => file.Write(portion.Food.Id + " "));
+      recipes.ToList().ForEach(recipe => file.Write(recipe.Name.Substring(5)));
     }
   }
 }

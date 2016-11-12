@@ -54,7 +54,7 @@ namespace DietPlanning.NSGA
     private Meal CreateRandomMeal()
     {
       var meal = new Meal();
-      var numberOfRecipes = _random.Next(1, 4);
+      var numberOfRecipes = _random.Next(1, 1);
 
       for (var k = 0; k < numberOfRecipes; k++)
       {

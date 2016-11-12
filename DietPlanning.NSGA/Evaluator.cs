@@ -28,8 +28,8 @@ namespace DietPlanning.NSGA
 
       individual.Evaluations.Add(EvaluateMacro(individual.Diet, targetDailyDiet));
       individual.Evaluations.Add(EvaluateCost(recipes));
-      individual.Evaluations.Add(EvaluatePreparationTime(recipes));
-      individual.Evaluations.Add(EvaluateVariety(recipes));
+     // individual.Evaluations.Add(EvaluatePreparationTime(recipes));
+     // individual.Evaluations.Add(EvaluateVariety(recipes));
       //todo preferences
     }
 
@@ -66,7 +66,7 @@ namespace DietPlanning.NSGA
       return new Evaluation
       {
         Type = ObjectiveType.Macro,
-        Score = diet.DailyDiets.Select(dailyDiet => EvaluateDailyMacro(dailyDiet, targetDailyDiet)).Sum() / diet.DailyDiets.Count
+        Score = diet.DailyDiets.Select(dailyDiet => EvaluateDailyMacro(dailyDiet, targetDailyDiet)).Sum()
       }; 
     }
 

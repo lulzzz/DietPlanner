@@ -35,14 +35,21 @@ namespace DietPlanning.NSGA
 
     private void PerformMutation(Meal meal, Recipe recipe)
     {
+      const int maxRecipes = 4;
+      const int minRecipes = 1;
+
       switch (RandomMutationType())
       {
         case MutationType.Remove:
           meal.Receipes.Remove(recipe);
+          if (meal.Receipes.Count < minRecipes)
+            meal.Receipes.Add(_recipes.GetRandomItem());
           break;
         case MutationType.Add:
           //todo remove duplicates (or should they stay as 2x recipe)
           meal.Receipes.Add(_recipes.GetRandomItem());
+          if (meal.Receipes.Count > maxRecipes)
+            meal.Receipes.Remove(recipe);
           break;
         case MutationType.Replace:
           meal.Receipes.Remove(recipe);
@@ -56,8 +63,8 @@ namespace DietPlanning.NSGA
     private MutationType RandomMutationType()
     {
       var randomNumber = _random.NextDouble();
-      if (randomNumber < 0.2) return MutationType.Remove;
-      if (randomNumber < 0.4) return MutationType.Add;
+      if (randomNumber < 0.3) return MutationType.Remove;
+      if (randomNumber < 0.6) return MutationType.Add;
       return MutationType.Replace;
     }
   }

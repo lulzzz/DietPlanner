@@ -80,6 +80,11 @@ namespace DietPlanning.NSGA
       return !individual1
          .Evaluations
         .Where((evaluation, i) => evaluation.Score < individual2.Evaluations[i].Score)
+        .Any()
+        
+        && individual1
+         .Evaluations
+        .Where((evaluation, i) => evaluation.Score > individual2.Evaluations[i].Score)
         .Any();
     }
   }

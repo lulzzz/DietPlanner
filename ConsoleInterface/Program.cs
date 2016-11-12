@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.NSGA;
+using Tools;
 using Random = System.Random;
 
 namespace ConsoleInterface
@@ -26,7 +28,11 @@ namespace ConsoleInterface
         new Mutator(new Random(), recipes),
         configProvider.GetConfiguration());
 
-      nsgaSolver.Solve(GetTargetDiet());
+      CsvLogger.Init();
+
+      var result = nsgaSolver.Solve(GetTargetDiet());
+      
+      CsvLogger.Write("d:\\output.csv");
 
       Console.WriteLine(recipes.Count);
 

@@ -81,6 +81,10 @@
       <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
       <Name>DietPlanning.NSGA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Tools\Tools.csproj">
+      <Project>{EC2C47F2-5314-4360-9603-3009DA328FCC}</Project>
+      <Name>Tools</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

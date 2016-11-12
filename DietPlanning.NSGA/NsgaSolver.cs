@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using DietPlanning.Core;
+using Tools;
 
 namespace DietPlanning.NSGA
 {
@@ -52,6 +53,7 @@ namespace DietPlanning.NSGA
         fronts = SelectNextGeneration(fronts);
         individuals = fronts.SelectMany(f => f).ToList();
 
+        LogData(fronts, iteration);
         Debug.WriteLine($"iteration {iteration}");
 
         if (individuals.Count != _config.PopulationSize)
@@ -59,6 +61,36 @@ namespace DietPlanning.NSGA
       }
 
       return fronts;
+    }
+
+    private void LogData(List<List<Individual>> fronts, int iteration)
+    {
+      var avgMacroEv = fronts.First()
+        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Macro).Score)
+        .Sum()/fronts.First().Count;
+      var avgCostEv = fronts.First()
+        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Cost).Score)
+        .Sum() / fronts.First().Count;
+      //var avgVarEv = fronts.First()
+      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Variety).Score)
+      //  .Sum() / fronts.First().Count;
+      //var avgPrepEv = fronts.First()
+      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.PreparationTime).Score)
+      //  .Sum() / fronts.First().Count;
+      var avgMacroEv2 = fronts[1]
+        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Macro).Score)
+        .Sum() / fronts[1].Count;
+      var avgCostEv2 = fronts[1]
+        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Cost).Score)
+        .Sum() / fronts[1].Count;
+      //var avgVarEv2 = fronts[1]
+      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Variety).Score)
+      //  .Sum() / fronts[1].Count;
+      //var avgPrepEv2 = fronts[1]
+      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.PreparationTime).Score)
+      //  .Sum() / fronts[1].Count;
+
+      CsvLogger.AddRow(new dynamic[]{ iteration, avgMacroEv, avgCostEv, avgMacroEv2, avgCostEv2 });
     }
 
     private List<Individual> CreateOffspring(DietSummary targetDietSummary, List<Individual> individuals)
