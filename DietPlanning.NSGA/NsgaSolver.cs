@@ -16,7 +16,14 @@ namespace DietPlanning.NSGA
     private readonly DayCrossOver _crossOver;
     private readonly Mutator _mutator;
 
-    public NsgaSolver(Sorter sorter, PopulationInitializer populationInitialiser, Evaluator evaluator, TournamentSelector selector, DayCrossOver crossOver, Mutator mutator, Configuration config)
+    public NsgaSolver(
+      Sorter sorter, 
+      PopulationInitializer populationInitialiser,
+      Evaluator evaluator, 
+      TournamentSelector selector, 
+      DayCrossOver crossOver, 
+      Mutator mutator, 
+      Configuration configuration)
     {
       _sorter = sorter;
       _populationInitialiser = populationInitialiser;
@@ -24,7 +31,7 @@ namespace DietPlanning.NSGA
       _selector = selector;
       _crossOver = crossOver;
       _mutator = mutator;
-      _config = config;
+      _config = configuration;
     }
 
     public List<List<Individual>> Solve(DietSummary targetDietSummary)

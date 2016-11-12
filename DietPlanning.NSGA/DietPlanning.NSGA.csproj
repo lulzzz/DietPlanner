@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration.cs" />
+    <Compile Include="ConfigurationProvider.cs" />
     <Compile Include="CrowdedDistanceComparer.cs" />
     <Compile Include="DayCrossOver.cs" />
     <Compile Include="Evaluator.cs" />

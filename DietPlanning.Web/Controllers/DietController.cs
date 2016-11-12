@@ -77,6 +77,8 @@ namespace DietPlanning.Web.Controllers
     
     private NsgaSolver CreateNsgaSolver(List<Recipe> recipes, int tournamentSize)
     {
+      var configProvider = new ConfigurationProvider();
+
       return new NsgaSolver(
         new Sorter(),
         new PopulationInitializer(new Random(), recipes),
@@ -84,7 +86,7 @@ namespace DietPlanning.Web.Controllers
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
         new DayCrossOver(new Random()),
         new Mutator(new Random(), recipes),
-        new Configuration(0.01, 0.03, 7, 5, 200, 100));
+        configProvider.GetConfiguration());
     }
 
     private DietSummary GetTargetDiet()

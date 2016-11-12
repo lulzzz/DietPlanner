@@ -13,6 +13,7 @@ namespace ConsoleInterface
     {
       const int tournamentSize = 2;
 
+      var configProvider = new ConfigurationProvider();
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
       var recipes = recipeGenerator.GetRecipes();
 
@@ -23,7 +24,7 @@ namespace ConsoleInterface
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
         new DayCrossOver(new Random()),
         new Mutator(new Random(), recipes),
-        new Configuration(0.01, 0.3, 7, 5, 200, 100));
+        configProvider.GetConfiguration());
 
       nsgaSolver.Solve(GetTargetDiet());
 
