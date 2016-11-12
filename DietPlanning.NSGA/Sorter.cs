@@ -77,15 +77,20 @@ namespace DietPlanning.NSGA
 
     private bool Dominates(Individual individual1, Individual individual2)
     {
-      return !individual1
+      if (individual1.IsFeasible == individual2.IsFeasible)
+      {
+        return !individual1
          .Evaluations
         .Where((evaluation, i) => evaluation < individual2.Evaluations[i])
         .Any()
-        
+
         && individual1
          .Evaluations
         .Where((evaluation, i) => evaluation > individual2.Evaluations[i])
         .Any();
+      }
+
+      return individual1.IsFeasible;
     }
   }
 }

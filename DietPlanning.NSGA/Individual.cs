@@ -13,6 +13,7 @@ namespace DietPlanning.NSGA
     public List<Evaluation> Evaluations;
     public int Rank;
     public double CrowdingDistance;
+    public bool IsFeasible;
 
     public Individual()
     {
