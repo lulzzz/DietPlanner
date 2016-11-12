@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
 
-namespace DietPlanning.NSGA
+namespace DietPlanning.NSGA.DietImplementation
 {
-  public class DayCrossOver
+  public class DayCrossOver : ICrossOver
   {
     private readonly Random _random;
 
@@ -17,9 +16,9 @@ namespace DietPlanning.NSGA
 
     public Tuple<Individual, Individual> CreateChildren(Individual parent1, Individual parent2)
     {
-      var childrenDiets = GetChild(parent1.Diet, parent2.Diet);
+      var childrenDiets = GetChild(((DietIndividual)parent1).Diet, ((DietIndividual)parent2).Diet);
       
-      return new Tuple<Individual, Individual>(new Individual(childrenDiets.Item1), new Individual(childrenDiets.Item2));
+      return new Tuple<Individual, Individual>(new DietIndividual(childrenDiets.Item1), new DietIndividual(childrenDiets.Item2));
     }
 
     private Tuple<Diet, Diet> GetChild(Diet parent1, Diet parent2)

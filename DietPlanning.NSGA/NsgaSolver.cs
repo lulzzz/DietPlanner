@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using DietPlanning.Core;
 using Tools;
 
 namespace DietPlanning.NSGA
@@ -11,19 +10,19 @@ namespace DietPlanning.NSGA
   {
     private readonly Configuration _config;
     private readonly Sorter _sorter;
-    private readonly PopulationInitializer _populationInitialiser;
-    private readonly Evaluator _evaluator;
+    private readonly IPopulationInitializer _populationInitialiser;
+    private readonly IEvaluator _evaluator;
     private readonly TournamentSelector _selector;
-    private readonly DayCrossOver _crossOver;
-    private readonly Mutator _mutator;
+    private readonly ICrossOver _crossOver;
+    private readonly IMutator _mutator;
 
     public NsgaSolver(
-      Sorter sorter, 
-      PopulationInitializer populationInitialiser,
-      Evaluator evaluator, 
-      TournamentSelector selector, 
-      DayCrossOver crossOver, 
-      Mutator mutator, 
+      Sorter sorter,
+      IPopulationInitializer populationInitialiser,
+      IEvaluator evaluator, 
+      TournamentSelector selector,
+      ICrossOver crossOver,
+      IMutator mutator, 
       Configuration configuration)
     {
       _sorter = sorter;
@@ -35,17 +34,17 @@ namespace DietPlanning.NSGA
       _config = configuration;
     }
 
-    public List<List<Individual>> Solve(DietSummary targetDietSummary)
+    public List<List<Individual>> Solve()
     {
       var individuals = InitializeIndividuals();
-      _evaluator.Evaluate(individuals, targetDietSummary);
+      _evaluator.Evaluate(individuals);
       var fronts = _sorter.Sort(individuals).ToList();
 
       for (var iteration = 0; iteration < _config.MaxIterations; iteration++)
       {
         AssignCrowdingDistance(fronts);
         //Create Offspring
-        individuals.AddRange(CreateOffspring(targetDietSummary, individuals));
+        individuals.AddRange(CreateOffspring(individuals));
         //sort
         fronts = _sorter.Sort(individuals);
         AssignCrowdingDistance(fronts);
@@ -93,7 +92,7 @@ namespace DietPlanning.NSGA
       CsvLogger.AddRow(new dynamic[]{ iteration, avgMacroEv, avgCostEv, avgMacroEv2, avgCostEv2 });
     }
 
-    private List<Individual> CreateOffspring(DietSummary targetDietSummary, List<Individual> individuals)
+    private List<Individual> CreateOffspring(List<Individual> individuals)
     {
       var offspring = new List<Individual>();
       var offspringSize = _config.PopulationSize * _config.OffspringRatio;
@@ -104,8 +103,8 @@ namespace DietPlanning.NSGA
 
         _mutator.Mutate(children.Item1, _config.MutationProbability);
         _mutator.Mutate(children.Item2, _config.MutationProbability);
-        _evaluator.Evaluate(children.Item1, targetDietSummary);
-        _evaluator.Evaluate(children.Item2, targetDietSummary);
+        _evaluator.Evaluate(children.Item1);
+        _evaluator.Evaluate(children.Item2);
         offspring.Add(children.Item1);
         offspring.Add(children.Item2);
       }
@@ -138,8 +137,8 @@ namespace DietPlanning.NSGA
 
     private List<Individual> InitializeIndividuals()
     {
-      var diets = _populationInitialiser.InitializePopulation(_config.PopulationSize, _config.NumberOfDays, _config.NumberOfMealsPerDay);
-      var individuals = diets.Select(i => new Individual(i)).ToList();
+      var individuals = _populationInitialiser.InitializePopulation(_config.PopulationSize);
+
       return individuals;
     }
 

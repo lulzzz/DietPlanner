@@ -9,16 +9,15 @@ namespace DietPlanning.NSGA
   {
     public List<Individual> Dominated;
     public int DominatedByCount;
-    public Diet Diet;
+    //public Diet Diet;
     public List<Evaluation> Evaluations;
     public int Rank;
     public double CrowdingDistance;
 
-    public Individual(Diet diet)
+    public Individual()
     {
       Evaluations = new List<Evaluation>();
       Dominated = new List<Individual>();
-      Diet = diet;
     }
   }
 }

@@ -1,9 +1,9 @@
 ﻿using System;
-using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.NSGA;
+using DietPlanning.NSGA.DietImplementation;
 using Tools;
 using Random = System.Random;
 
@@ -21,16 +21,16 @@ namespace ConsoleInterface
 
       var nsgaSolver = new NsgaSolver(
         new Sorter(), 
-        new PopulationInitializer(new Random(), recipes),
-        new Evaluator(new DietAnalyzer()),
+        new DietPopulationInitializer(new Random(), recipes, 7, 5),
+        new DietEvaluator(new DietAnalyzer(), GetTargetDiet()),
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
         new DayCrossOver(new Random()),
-        new Mutator(new Random(), recipes),
+        new DietMutator(new Random(), recipes),
         configProvider.GetConfiguration());
 
       CsvLogger.Init();
 
-      var result = nsgaSolver.Solve(GetTargetDiet());
+      var result = nsgaSolver.Solve();
       
       CsvLogger.Write("d:\\output.csv");
 

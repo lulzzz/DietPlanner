@@ -7,6 +7,7 @@ using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.NSGA;
+using DietPlanning.NSGA.DietImplementation;
 using DietPlanning.Web.Models;
 
 namespace DietPlanning.Web.Controllers
@@ -21,7 +22,7 @@ namespace DietPlanning.Web.Controllers
       var nsgaSolver = CreateNsgaSolver(recipeGenerator.GetRecipes(), tournamentSize);
 
       var targetDiet = GetTargetDiet();
-      var nsgaResult = nsgaSolver.Solve(targetDiet);
+      var nsgaResult = nsgaSolver.Solve();
 
       var dietsViewModel = CreateDietsViewModel(nsgaResult, targetDiet);
 
@@ -38,7 +39,7 @@ namespace DietPlanning.Web.Controllers
         var dietViewModel = new DietViewModel();
 
         dietViewModel.Evaluations.AddRange(individual.Evaluations);
-        dietViewModel.DailyDiets = GetDailyDietsViewModels(individual.Diet, dietAnalyzer);
+        dietViewModel.DailyDiets = GetDailyDietsViewModels(((DietIndividual)individual).Diet, dietAnalyzer);
         dietViewModel.AverageDietSummary = GetAverageDietSummary(dietViewModel.DailyDiets, dietAnalyzer);
 
         dietsViewModel.Diets.Add(dietViewModel);
@@ -81,11 +82,11 @@ namespace DietPlanning.Web.Controllers
 
       return new NsgaSolver(
         new Sorter(),
-        new PopulationInitializer(new Random(), recipes),
-        new Evaluator(new DietAnalyzer()),
+        new DietPopulationInitializer(new Random(), recipes, 7, 5),
+        new DietEvaluator(new DietAnalyzer(), GetTargetDiet()),
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
         new DayCrossOver(new Random()),
-        new Mutator(new Random(), recipes),
+        new DietMutator(new Random(), recipes),
         configProvider.GetConfiguration());
     }
 

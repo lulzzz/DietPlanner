@@ -4,14 +4,14 @@ using System.Linq;
 using DietPlanning.Core.DomainObjects;
 using Tools;
 
-namespace DietPlanning.NSGA
+namespace DietPlanning.NSGA.DietImplementation
 {
-  public class Mutator
+  public class DietMutator : IMutator
   {
     private readonly Random _random;
     private readonly List<Recipe> _recipes;
 
-    public Mutator(Random random, List<Recipe> recipes)
+    public DietMutator(Random random, List<Recipe> recipes)
     {
       _random = random;
       _recipes = recipes;
@@ -20,7 +20,7 @@ namespace DietPlanning.NSGA
     public void Mutate(Individual individual, double mutationProbability)
     {
       //todo may affect performance - consider foreach diet, foreach meal etc
-      var meals = individual.Diet.DailyDiets.SelectMany(dailyDiet => dailyDiet.Meals);
+      var meals = ((DietIndividual)individual).Diet.DailyDiets.SelectMany(dailyDiet => dailyDiet.Meals);
 
       foreach (var meal in meals)
       {

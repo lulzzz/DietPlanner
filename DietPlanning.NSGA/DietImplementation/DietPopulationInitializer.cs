@@ -2,48 +2,52 @@
 using System.Collections.Generic;
 using DietPlanning.Core.DomainObjects;
 
-namespace DietPlanning.NSGA
+namespace DietPlanning.NSGA.DietImplementation
 {
-  public class PopulationInitializer
+  public class DietPopulationInitializer : IPopulationInitializer
   {
     private readonly Random _random;
     private readonly List<Recipe> _recipes;
+    private readonly int _numberOfDays;
+    private readonly int _numberOfMealsPerDay;
 
-    public PopulationInitializer(Random random, List<Recipe> recipes)
+    public DietPopulationInitializer(Random random, List<Recipe> recipes, int numberOfDays, int numberOfMealsPerDay)
     {
       _random = random;
       _recipes = recipes;
+      _numberOfMealsPerDay = numberOfMealsPerDay;
+      _numberOfDays = numberOfDays;
     }
 
-    public List<Diet> InitializePopulation(int populationSize, int numberOfDays, int numberOfMealsPerDay)
+    public List<Individual> InitializePopulation(int populationSize)
     {
-      var population = new List<Diet>();
+      var population = new List<Individual>();
 
       for (var i = 0; i < populationSize; i++)
       {
-        population.Add(CreateRandomDiet(numberOfDays, numberOfMealsPerDay));
+        population.Add(new DietIndividual(CreateRandomDiet()));
       }
 
       return population;
     }
 
-    private Diet CreateRandomDiet(int numberOfDays, int numberOfMealsPerDay)
+    private Diet CreateRandomDiet()
     {
       var diet = new Diet();
 
-      for (var i = 0; i < numberOfDays; i++)
+      for (var i = 0; i < _numberOfDays; i++)
       {
-        diet.DailyDiets.Add(CreateRandomDailyDiet(numberOfMealsPerDay));
+        diet.DailyDiets.Add(CreateRandomDailyDiet());
       }
 
       return diet;
     }
 
-    private DailyDiet CreateRandomDailyDiet(int numberOfMeals)
+    private DailyDiet CreateRandomDailyDiet()
     {
       var dailyDiet = new DailyDiet();
 
-      for (var j = 0; j < numberOfMeals; j++)
+      for (var j = 0; j < _numberOfMealsPerDay; j++)
       {
         dailyDiet.Meals.Add(CreateRandomMeal());
       }

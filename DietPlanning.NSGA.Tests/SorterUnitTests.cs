@@ -27,8 +27,8 @@ namespace DietPlanning.NSGA.Tests
     public void ShouldPutDominatedSolutionsInDifferentFronts()
     {
      
-      var individual1 = new Individual(new Diet());
-      var individual2 = new Individual(new Diet());
+      var individual1 = new Individual();
+      var individual2 = new Individual();
       var individuals = new List<Individual> {individual1, individual2};
       individual1.Evaluations.Add(new Evaluation {Score = 1.0, Type = ObjectiveType.Cost});
       individual1.Evaluations.Add(new Evaluation {Score = 1.0, Type = ObjectiveType.Macro});
@@ -42,8 +42,8 @@ namespace DietPlanning.NSGA.Tests
     public void ShouldPutNonDominatedSolutionsInSameFront()
     {
 
-      var individual1 = new Individual(new Diet());
-      var individual2 = new Individual(new Diet());
+      var individual1 = new Individual();
+      var individual2 = new Individual();
       var individuals = new List<Individual> { individual1, individual2 };
       individual1.Evaluations.Add(new Evaluation { Score = 1.0, Type = ObjectiveType.Cost });
       individual2.Evaluations.Add(new Evaluation { Score = 1.0, Type = ObjectiveType.Cost });

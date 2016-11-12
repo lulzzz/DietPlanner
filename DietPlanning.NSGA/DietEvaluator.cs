@@ -6,27 +6,29 @@ using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.NSGA
 {
-  public class Evaluator
+  public class DietEvaluator : IEvaluator<Diet>
   {
     private readonly DietAnalyzer _dietAnalyzer;
+    private readonly DietSummary _targetDailyDiet;
 
-    public Evaluator(DietAnalyzer dietAnalyzer)
+    public DietEvaluator(DietAnalyzer dietAnalyzer, DietSummary targetDailyDiet)
     {
       _dietAnalyzer = dietAnalyzer;
+      _targetDailyDiet = targetDailyDiet;
     }
 
-    public void Evaluate(List<Individual> individuals, DietSummary targetDailyDiet)
+    public void Evaluate(List<Individual<Diet>> individuals)
     {
-      individuals.ForEach(individual => Evaluate(individual, targetDailyDiet));
+      individuals.ForEach(individual => Evaluate(individual));
     }
 
-    public void Evaluate(Individual individual, DietSummary targetDailyDiet)
+    public void Evaluate(Individual<Diet> individual)
     {
-      var recipes = individual.Diet.GetRecipes();
+      var recipes = individual.Solution.GetRecipes();
 
       individual.Evaluations.Clear();
 
-      individual.Evaluations.Add(EvaluateMacro(individual.Diet, targetDailyDiet));
+      individual.Evaluations.Add(EvaluateMacro(individual.Solution, _targetDailyDiet));
       individual.Evaluations.Add(EvaluateCost(recipes));
      // individual.Evaluations.Add(EvaluatePreparationTime(recipes));
      // individual.Evaluations.Add(EvaluateVariety(recipes));

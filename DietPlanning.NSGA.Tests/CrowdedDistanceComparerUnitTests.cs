@@ -17,8 +17,8 @@ namespace DietPlanning.NSGA.Tests
     public void SetUp()
     {
       _subject = new CrowdedDistanceComparer();
-      _i1 = new Individual(new Diet());
-      _i2 = new Individual(new Diet());
+      _i1 = new Individual();
+      _i2 = new Individual();
     }
 
     [Test]
