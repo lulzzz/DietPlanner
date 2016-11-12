@@ -64,32 +64,17 @@ namespace DietPlanning.NSGA
 
     private void LogData(List<List<Individual>> fronts, int iteration)
     {
-      var avgMacroEv = fronts.First()
-        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Macro).Score)
-        .Sum()/fronts.First().Count;
-      var avgCostEv = fronts.First()
-        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Cost).Score)
-        .Sum() / fronts.First().Count;
-      //var avgVarEv = fronts.First()
-      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Variety).Score)
-      //  .Sum() / fronts.First().Count;
-      //var avgPrepEv = fronts.First()
-      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.PreparationTime).Score)
-      //  .Sum() / fronts.First().Count;
-      var avgMacroEv2 = fronts[1]
-        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Macro).Score)
-        .Sum() / fronts[1].Count;
-      var avgCostEv2 = fronts[1]
-        .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Cost).Score)
-        .Sum() / fronts[1].Count;
-      //var avgVarEv2 = fronts[1]
-      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.Variety).Score)
-      //  .Sum() / fronts[1].Count;
-      //var avgPrepEv2 = fronts[1]
-      //  .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == ObjectiveType.PreparationTime).Score)
-      //  .Sum() / fronts[1].Count;
+      var averageMacro = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Macro);
+      var averageCost = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Cost);
 
-      CsvLogger.AddRow(new dynamic[]{ iteration, avgMacroEv, avgCostEv, avgMacroEv2, avgCostEv2 });
+      CsvLogger.AddRow(new dynamic[]{ iteration, averageMacro, averageCost});
+    }
+
+    private static double GetFrontAverageEvaluation(List<Individual> front, ObjectiveType objectiveType)
+    {
+      return front
+               .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == objectiveType).Score)
+               .Sum()/ front.Count;
     }
 
     private List<Individual> CreateOffspring(List<Individual> individuals)

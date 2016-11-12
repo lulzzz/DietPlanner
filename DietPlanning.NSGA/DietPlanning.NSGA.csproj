@@ -52,8 +52,14 @@
     <Compile Include="Individual.cs" />
     <Compile Include="DietImplementation\DietMutator.cs" />
     <Compile Include="IPopulationInitializer.cs" />
+    <Compile Include="MathImplementation\MathCrossOver.cs" />
+    <Compile Include="MathImplementation\MathEvaluator.cs" />
+    <Compile Include="MathImplementation\MathIndividual.cs" />
+    <Compile Include="MathImplementation\MathInitializer.cs" />
+    <Compile Include="MathImplementation\MathMutator.cs" />
     <Compile Include="NsgaSolver.cs" />
     <Compile Include="Evaluation.cs" />
+    <Compile Include="NsgaSolverFactory.cs" />
     <Compile Include="ObjectiveType.cs" />
     <Compile Include="DietImplementation\DietPopulationInitializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
