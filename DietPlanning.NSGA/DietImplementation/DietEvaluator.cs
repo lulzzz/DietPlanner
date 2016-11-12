@@ -40,6 +40,7 @@ namespace DietPlanning.NSGA.DietImplementation
       return new Evaluation
       {
         Type = ObjectiveType.Variety,
+        Direction = Direction.Maximize,
         Score = recipes.GroupBy(recipe => recipe.Group).Count() +
                 recipes.SelectMany(recipe => recipe.Ingredients).GroupBy(ingredient => ingredient.Food.Group).Count()
       };
@@ -50,7 +51,8 @@ namespace DietPlanning.NSGA.DietImplementation
       return new Evaluation
       {
         Type = ObjectiveType.PreparationTime,
-        Score = -1.0 * recipes.Select(recipe => recipe.PreparationTimeInMinutes).Sum()
+        Direction = Direction.Minimize,
+        Score = recipes.Select(recipe => recipe.PreparationTimeInMinutes).Sum()
       };
     }
 
@@ -59,7 +61,8 @@ namespace DietPlanning.NSGA.DietImplementation
       return new Evaluation
       {
         Type = ObjectiveType.Cost,
-        Score = -1.0 * recipes.Select(recipe => recipe.Cost).Sum()
+        Direction = Direction.Minimize,
+        Score = recipes.Select(recipe => recipe.Cost).Sum()
       };
     }
 
@@ -68,6 +71,7 @@ namespace DietPlanning.NSGA.DietImplementation
       return new Evaluation
       {
         Type = ObjectiveType.Macro,
+        Direction = Direction.Minimize,
         Score = diet.DailyDiets.Select(dailyDiet => EvaluateDailyMacro(dailyDiet)).Sum()
       }; 
     }
@@ -82,7 +86,7 @@ namespace DietPlanning.NSGA.DietImplementation
         Math.Abs(_targetDailyDiet.Calories - dailySummary.Calories) +
         Math.Abs(_targetDailyDiet.Carbohydrates - dailySummary.Carbohydrates);
 
-      return distance * -1;
+      return distance;
       //distance > 0 
       //? 1 / (distance) 
       //: 1;

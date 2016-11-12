@@ -46,6 +46,7 @@
     <Compile Include="DietImplementation\DayCrossOver.cs" />
     <Compile Include="DietImplementation\DietEvaluator.cs" />
     <Compile Include="DietImplementation\DietIndividual.cs" />
+    <Compile Include="Direction.cs" />
     <Compile Include="ICrossOver.cs" />
     <Compile Include="IEvaluator.cs" />
     <Compile Include="IMutator.cs" />

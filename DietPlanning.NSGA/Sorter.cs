@@ -79,12 +79,12 @@ namespace DietPlanning.NSGA
     {
       return !individual1
          .Evaluations
-        .Where((evaluation, i) => evaluation.Score < individual2.Evaluations[i].Score)
+        .Where((evaluation, i) => evaluation < individual2.Evaluations[i])
         .Any()
         
         && individual1
          .Evaluations
-        .Where((evaluation, i) => evaluation.Score > individual2.Evaluations[i].Score)
+        .Where((evaluation, i) => evaluation > individual2.Evaluations[i])
         .Any();
     }
   }
