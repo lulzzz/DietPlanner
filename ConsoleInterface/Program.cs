@@ -22,7 +22,8 @@ namespace ConsoleInterface
         new Evaluator(new DietAnalyzer()),
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
         new DayCrossOver(new Random()),
-        new Mutator(new Random(), recipes));
+        new Mutator(new Random(), recipes),
+        new Configuration(0.01, 0.3, 7, 5, 200, 100));
 
       nsgaSolver.Solve(GetTargetDiet());
 

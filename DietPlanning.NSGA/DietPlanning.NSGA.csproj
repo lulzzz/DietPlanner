@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
     <Compile Include="CrowdedDistanceComparer.cs" />
     <Compile Include="DayCrossOver.cs" />
     <Compile Include="Evaluator.cs" />

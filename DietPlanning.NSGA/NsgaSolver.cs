@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using DietPlanning.Core;
-using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.NSGA
 {
   public class NsgaSolver
   {
-    //config
-    private const double OffspringRatio = 0.3;
-    private const double MutationProbability = 0.01;
-    private const int PopulationSize = 200;
-
+    private readonly Configuration _config;
     private readonly Sorter _sorter;
     private readonly PopulationInitializer _populationInitialiser;
     private readonly Evaluator _evaluator;
@@ -20,7 +16,7 @@ namespace DietPlanning.NSGA
     private readonly DayCrossOver _crossOver;
     private readonly Mutator _mutator;
 
-    public NsgaSolver(Sorter sorter, PopulationInitializer populationInitialiser, Evaluator evaluator, TournamentSelector selector, DayCrossOver crossOver, Mutator mutator)
+    public NsgaSolver(Sorter sorter, PopulationInitializer populationInitialiser, Evaluator evaluator, TournamentSelector selector, DayCrossOver crossOver, Mutator mutator, Configuration config)
     {
       _sorter = sorter;
       _populationInitialiser = populationInitialiser;
@@ -28,47 +24,60 @@ namespace DietPlanning.NSGA
       _selector = selector;
       _crossOver = crossOver;
       _mutator = mutator;
+      _config = config;
     }
 
     public List<List<Individual>> Solve(DietSummary targetDietSummary)
     {
       var individuals = InitializeIndividuals();
-      var offspringSize = individuals.Count*OffspringRatio;
-
       _evaluator.Evaluate(individuals, targetDietSummary);
       var fronts = _sorter.Sort(individuals).ToList();
-      AssignCrowdingDistance(fronts);
 
-      //Create Offspring
-      while(individuals.Count < PopulationSize + offspringSize)
+      for (var iteration = 0; iteration < _config.MaxIterations; iteration++)
+      {
+        AssignCrowdingDistance(fronts);
+        //Create Offspring
+        individuals.AddRange(CreateOffspring(targetDietSummary, individuals));
+        //sort
+        fronts = _sorter.Sort(individuals);
+        AssignCrowdingDistance(fronts);
+        //select next Gen
+        fronts = SelectNextGeneration(fronts);
+        individuals = fronts.SelectMany(f => f).ToList();
+
+        Debug.WriteLine($"iteration {iteration}");
+
+        if (individuals.Count != _config.PopulationSize)
+          throw new ApplicationException($"Population size is {individuals.Count} instead of {_config.PopulationSize}");
+      }
+
+      return fronts;
+    }
+
+    private List<Individual> CreateOffspring(DietSummary targetDietSummary, List<Individual> individuals)
+    {
+      var offspring = new List<Individual>();
+      var offspringSize = _config.PopulationSize * _config.OffspringRatio;
+
+      while (offspring.Count < offspringSize)
       {
         var children = _crossOver.CreateChildren(_selector.Select(individuals), _selector.Select(individuals));
-        
-        _mutator.Mutate(children.Item1, MutationProbability);
-        _mutator.Mutate(children.Item2, MutationProbability);
+
+        _mutator.Mutate(children.Item1, _config.MutationProbability);
+        _mutator.Mutate(children.Item2, _config.MutationProbability);
         _evaluator.Evaluate(children.Item1, targetDietSummary);
         _evaluator.Evaluate(children.Item2, targetDietSummary);
-        individuals.Add(children.Item1);
-        individuals.Add(children.Item2);
+        offspring.Add(children.Item1);
+        offspring.Add(children.Item2);
       }
-      //sort
-      fronts = _sorter.Sort(individuals);
-      AssignCrowdingDistance(fronts);
-      //select next Gen
-      fronts = SelectNextGeneration(fronts);
-      individuals = fronts.SelectMany(f => f).ToList();
 
-      if(individuals.Count != PopulationSize)
-        throw new ApplicationException($"Population size is {individuals.Count} instead of {PopulationSize}");
-
-      //return fronts.Select(front => front.Select(individual => individual.Diet).ToList()).ToList();
-      return fronts;
+      return offspring;
     }
 
     private List<List<Individual>> SelectNextGeneration(List<List<Individual>> fronts)
     {
       var nextGeneration = new List<List<Individual>>();
-      var places = PopulationSize;
+      var places = _config.PopulationSize;
 
       foreach (var front in fronts)
       {
@@ -90,7 +99,7 @@ namespace DietPlanning.NSGA
 
     private List<Individual> InitializeIndividuals()
     {
-      var diets = _populationInitialiser.InitializePopulation(PopulationSize, 7, 5);
+      var diets = _populationInitialiser.InitializePopulation(_config.PopulationSize, _config.NumberOfDays, _config.NumberOfMealsPerDay);
       var individuals = diets.Select(i => new Individual(i)).ToList();
       return individuals;
     }
