@@ -43,7 +43,12 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigurationProvider.cs" />
     <Compile Include="CrowdedDistanceComparer.cs" />
-    <Compile Include="DietImplementation\DayCrossOver.cs" />
+    <Compile Include="DayImplementation\DayCrossOver.cs" />
+    <Compile Include="DayImplementation\DayEvaluator.cs" />
+    <Compile Include="DayImplementation\DayIndividual.cs" />
+    <Compile Include="DayImplementation\DayMutator.cs" />
+    <Compile Include="DayImplementation\DayPopulationInitializer.cs" />
+    <Compile Include="DietImplementation\DietCrossOver.cs" />
     <Compile Include="DietImplementation\DietEvaluator.cs" />
     <Compile Include="DietImplementation\DietIndividual.cs" />
     <Compile Include="Direction.cs" />

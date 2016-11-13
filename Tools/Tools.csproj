@@ -42,7 +42,14 @@
   <ItemGroup>
     <Compile Include="CollectionHelper.cs" />
     <Compile Include="CsvLogger.cs" />
+    <Compile Include="DietExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DietPlanning.Core\DietPlanning.Core.csproj">
+      <Project>{05DFE2C4-EB22-4E58-80C0-155897AD986D}</Project>
+      <Name>DietPlanning.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

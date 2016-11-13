@@ -85,7 +85,7 @@ namespace DietPlanning.Web.Controllers
         new DietPopulationInitializer(new Random(), recipes, 7, 5),
         new DietEvaluator(new DietAnalyzer(), GetTargetDiet()),
         new TournamentSelector(new CrowdedDistanceComparer(), tournamentSize, new Random()),
-        new DayCrossOver(new Random()),
+        new DietCrossOver(new Random()),
         new DietMutator(new Random(), recipes),
         configProvider.GetConfiguration());
     }

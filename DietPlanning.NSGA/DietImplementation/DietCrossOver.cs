@@ -5,11 +5,11 @@ using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.NSGA.DietImplementation
 {
-  public class DayCrossOver : ICrossOver
+  public class DietCrossOver : ICrossOver
   {
     private readonly Random _random;
 
-    public DayCrossOver(Random random)
+    public DietCrossOver(Random random)
     {
       _random = random;
     }

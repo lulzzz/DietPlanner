@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.NSGA.DietImplementation;
 using DietPlanning.NSGA.MathImplementation;
 
@@ -27,7 +28,7 @@ namespace DietPlanning.NSGA
         new DietPopulationInitializer(_random, recipes, 7, 5),
         new DietEvaluator(new DietAnalyzer(), targetDiet),
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
-        new DayCrossOver(_random),
+        new DietCrossOver(_random),
         new DietMutator(_random, recipes),
         _configurationProvider.GetConfiguration());
     }
@@ -41,6 +42,18 @@ namespace DietPlanning.NSGA
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
         new MathCrossOver(_random), 
         new MathMutator(_random), 
+        _configurationProvider.GetConfiguration());
+    }
+
+    public NsgaSolver GetDailyDietsSolver(List<Recipe> recipes, DietSummary targetDiet)
+    {
+      return new NsgaSolver(
+        new Sorter(),
+        new DayPopulationInitializer(_random, recipes, 5),
+        new DayEvaluator(new DietAnalyzer(), targetDiet),
+        new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
+        new DayCrossOver(_random),
+        new DayMutator(_random, recipes),
         _configurationProvider.GetConfiguration());
     }
   }

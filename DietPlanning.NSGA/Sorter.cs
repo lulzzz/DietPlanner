@@ -60,6 +60,7 @@ namespace DietPlanning.NSGA
       {
         foreach (var p2 in individuals)
         {
+          if(p1==p2) continue;
           if (Dominates(p1, p2))
             p1.Dominated.Add(p2);
           else if (Dominates(p2, p1))
