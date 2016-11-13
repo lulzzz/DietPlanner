@@ -30,13 +30,20 @@ namespace DietPlanning.NSGA.DayImplementation
       var child1 = new DailyDiet();
       var child2 = new DailyDiet();
 
-      child1.Meals.AddRange(parent1.Meals.Take(mealsCrossOverPoint).Select(DietCopier.CopyMeal));
-      child1.Meals.Add(crossedOverMeals.Item1);
-      child1.Meals.AddRange(parent2.Meals.Skip(mealsCrossOverPoint + 1).Select(DietCopier.CopyMeal));
+      for (var i = 0; i < parent1.Meals.Count; i++)
+      {
+        var crossOverMeals = CrossOverMeal(parent1.Meals[i], parent2.Meals[i]);
+        child1.Meals.Add(crossOverMeals.Item1);
+        child2.Meals.Add(crossOverMeals.Item2);
+      }
 
-      child2.Meals.AddRange(parent2.Meals.Take(mealsCrossOverPoint).Select(DietCopier.CopyMeal));
-      child2.Meals.Add(crossedOverMeals.Item2);
-      child2.Meals.AddRange(parent1.Meals.Skip(mealsCrossOverPoint + 1).Select(DietCopier.CopyMeal));
+      //child1.Meals.AddRange(parent1.Meals.Take(mealsCrossOverPoint).Select(DietCopier.CopyMeal));
+      //child1.Meals.Add(crossedOverMeals.Item1);
+      //child1.Meals.AddRange(parent2.Meals.Skip(mealsCrossOverPoint + 1).Select(DietCopier.CopyMeal));
+
+      //child2.Meals.AddRange(parent2.Meals.Take(mealsCrossOverPoint).Select(DietCopier.CopyMeal));
+      //child2.Meals.Add(crossedOverMeals.Item2);
+      //child2.Meals.AddRange(parent1.Meals.Skip(mealsCrossOverPoint + 1).Select(DietCopier.CopyMeal));
 
       return new Tuple<DailyDiet, DailyDiet>(child1, child2);
     }

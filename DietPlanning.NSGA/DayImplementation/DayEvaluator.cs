@@ -33,6 +33,7 @@ namespace DietPlanning.NSGA.DayImplementation
       var macroEv = EvaluateMacro(dailyDiet);
       individual.Evaluations.Add(macroEv);
       individual.Evaluations.Add(EvaluateCost(recipes));
+      individual.Evaluations.Add(EvaluatePreparationTime(recipes));
 
       if (macroEv.Score > 150)
       {
@@ -59,6 +60,16 @@ namespace DietPlanning.NSGA.DayImplementation
         Type = ObjectiveType.Macro,
         Direction = Direction.Minimize,
         Score = EvaluateDailyMacro(dailyDiet)
+      };
+    }
+
+    private Evaluation EvaluatePreparationTime(List<Recipe> recipes)
+    {
+      return new Evaluation
+      {
+        Type = ObjectiveType.PreparationTime,
+        Direction = Direction.Minimize,
+        Score = recipes.Select(recipe => recipe.PreparationTimeInMinutes).Sum()
       };
     }
 

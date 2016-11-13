@@ -31,7 +31,7 @@ namespace DietPlanning.NSGA
         //TODO: Sort by numbers od dominating solutions (no need to loop)
         //TODO: Instead of decreasing each count store number of front and compare
         var nextFront = new List<Individual>();
-        
+
         foreach (var individual in currentFront)
         {
           foreach (var dominated in individual.Dominated)
@@ -60,7 +60,7 @@ namespace DietPlanning.NSGA
       {
         foreach (var p2 in individuals)
         {
-          if(p1==p2) continue;
+          if (p1 == p2) continue;
           if (Dominates(p1, p2))
             p1.Dominated.Add(p2);
           else if (Dominates(p2, p1))
@@ -80,13 +80,13 @@ namespace DietPlanning.NSGA
     {
       if (individual1.IsFeasible == individual2.IsFeasible)
       {
-        return !individual1
+        return (!individual1
          .Evaluations
         .Where((evaluation, i) => evaluation < individual2.Evaluations[i])
-        .Any()
-
-        && individual1
-         .Evaluations
+        .Any())
+        &&
+        individual1
+        .Evaluations
         .Where((evaluation, i) => evaluation > individual2.Evaluations[i])
         .Any();
       }

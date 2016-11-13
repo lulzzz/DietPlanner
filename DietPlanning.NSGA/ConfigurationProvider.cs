@@ -8,8 +8,8 @@
       {
         PopulationSize = 200,
         OffspringRatio = 1,
-        MutationProbability = 0.5,
-        MaxIterations = 300
+        MutationProbability = 0.4,
+        MaxIterations = 70
       };
     }
   }

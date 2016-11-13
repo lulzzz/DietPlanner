@@ -60,7 +60,7 @@ namespace ConsoleInterface
         foreach (var individual in result[i])
         {
           CsvLogger.AddRow("frontResult",
-            new dynamic[] {i, individual.Evaluations[0].Score, individual.Evaluations[1].Score });
+            new dynamic[] {i, individual.Evaluations[0].Score, individual.Evaluations[1].Score, individual.Evaluations[2].Score });
         }
       }
       

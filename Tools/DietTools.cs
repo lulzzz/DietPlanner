@@ -1,9 +1,10 @@
-﻿using System.Text;
+﻿using System.Collections.Generic;
+using System.Text;
 using DietPlanning.Core.DomainObjects;
 
 namespace Tools
 {
-  public static class DietExtensions
+  public static class DietTools
   {
     public static string Code(this Meal meal)
     {

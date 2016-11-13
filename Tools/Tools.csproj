@@ -42,7 +42,7 @@
   <ItemGroup>
     <Compile Include="CollectionHelper.cs" />
     <Compile Include="CsvLogger.cs" />
-    <Compile Include="DietExtensions.cs" />
+    <Compile Include="DietTools.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
