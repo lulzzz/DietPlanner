@@ -5,6 +5,7 @@ using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.DietImplementation;
+using DietPlanning.NSGA.MathImplementation;
 using Tools;
 using Random = System.Random;
 
@@ -26,11 +27,11 @@ namespace ConsoleInterface
 
       foreach (var individual in result.First())
       {
-        CsvLogger.AddRow("frontResult", new dynamic[] {individual.Evaluations[0], individual.Evaluations[1]});
+        CsvLogger.AddRow("frontResult", new dynamic[] { ((MathIndividual)individual).X1, individual.Evaluations[0].Score, individual.Evaluations[1].Score});
       }
       
-      CsvLogger.Write("d:\\output.csv", "iterationEvaluations");
-      CsvLogger.Write("d:\\FrontResult.csv", "frontResult");
+      CsvLogger.Write("iterationEvaluations", "d:\\output.csv");
+      CsvLogger.Write("frontResult", "d:\\FrontResult.csv");
 
       Console.WriteLine("done");
       Console.ReadKey();

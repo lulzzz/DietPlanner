@@ -15,26 +15,26 @@ namespace DietPlanning.NSGA.MathImplementation
       individual.IsFeasible = CheckIfFeasible(mathIndividual);
 
       mathIndividual.Evaluations.Add(new Evaluation {Type = ObjectiveType.Cost, Direction = Direction.Minimize, Score = f1(mathIndividual.X1)});
-      mathIndividual.Evaluations.Add(new Evaluation {Type = ObjectiveType.Macro, Direction = Direction.Minimize, Score = f2(mathIndividual.X1, mathIndividual.X2)});
+      mathIndividual.Evaluations.Add(new Evaluation {Type = ObjectiveType.Macro, Direction = Direction.Minimize, Score = f2(mathIndividual.X1)});
     }
 
     private bool CheckIfFeasible(MathIndividual individual)
     {
-      return 
-        individual.X1 < 0.1 || 
-        individual.X1 > 1 || 
-        individual.X2 < 0 || 
-        individual.X2 > 5;
+      return true;
+      //!(
+      //individual.X1 < 0.1 ||
+      //individual.X1 > 1;
+
     }
 
     private double f1(double x)
     {
-      return x;
+      return x*x;
     }
 
-    private double f2(double x1, double x2)
+    private double f2(double x)
     {
-      return (1 + x1)/x2;
+      return (x-2)*(x-2);
     }
   }
 }

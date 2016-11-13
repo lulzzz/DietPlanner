@@ -3,6 +3,6 @@
   public class MathIndividual : Individual
   {
     public double X1;
-    public double X2;
+    //public double X2;
   }
 }

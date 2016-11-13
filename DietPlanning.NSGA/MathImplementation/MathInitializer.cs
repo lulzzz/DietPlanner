@@ -20,8 +20,7 @@ namespace DietPlanning.NSGA.MathImplementation
       {
         population.Add(new MathIndividual
         {
-          X1 = (_random.NextDouble() - 0.5)*0.5,
-          X2 = (_random.NextDouble() - 0.5)*2.5
+          X1 = (_random.NextDouble() + 0.5)*2.0,
         });
       }
 

@@ -39,7 +39,7 @@ namespace DietPlanning.NSGA
         new MathInitializer(_random),
         new MathEvaluator(), 
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
-        new MathCrossOver(), 
+        new MathCrossOver(_random), 
         new MathMutator(_random), 
         _configurationProvider.GetConfiguration());
     }

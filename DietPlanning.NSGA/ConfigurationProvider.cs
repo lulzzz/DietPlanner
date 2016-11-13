@@ -6,10 +6,10 @@
     {
       return new Configuration
       {
-        PopulationSize = 200,
-        OffspringRatio = 0.5,
-        MutationProbability = 0.05,
-        MaxIterations = 150
+        PopulationSize = 300,
+        OffspringRatio = 1,
+        MutationProbability = 0.02,
+        MaxIterations = 300
       };
     }
   }

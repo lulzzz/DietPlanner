@@ -20,12 +20,6 @@ namespace DietPlanning.NSGA.MathImplementation
 
         mathIndividual.X1 += _random.NextDouble()*0.1*mathIndividual.X1*mutationSign;
       }
-      if (_random.NextDouble() > mutationProbability)
-      {
-        var mutationSign = _random.NextDouble() > 0.5 ? 1 : -1;
-
-        mathIndividual.X2 += _random.NextDouble() * 0.1 * mathIndividual.X2 * mutationSign;
-      }
     }
   }
 }
