@@ -4,7 +4,6 @@ using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA.DayImplementation;
-using DietPlanning.NSGA.DietImplementation;
 using DietPlanning.NSGA.MathImplementation;
 
 namespace DietPlanning.NSGA
@@ -21,19 +20,7 @@ namespace DietPlanning.NSGA
       _configurationProvider = configurationProvider;
       _random = random;
     }
-
-    public NsgaSolver GetDietSolver(List<Recipe> recipes, DietRequirements dietRequirements)
-    {
-      return new NsgaSolver(
-        new Sorter(),
-        new DietPopulationInitializer(_random, recipes, 7, 5),
-        new DietEvaluator(new DietAnalyzer(), dietRequirements),
-        new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
-        new DietCrossOver(_random),
-        new DietMutator(_random, recipes),
-        _configurationProvider.GetConfiguration());
-    }
-
+    
     public NsgaSolver GetMathSolver()
     {
       return new NsgaSolver(

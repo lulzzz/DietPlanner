@@ -28,8 +28,13 @@
       <br />
       @foreach (var meal in day.DailyDiet.Meals)
       {
-        <div class="meal">
-          <span>Meal @(day.DailyDiet.Meals.IndexOf(meal) + 1)</span>
+        var mealIndex = day.DailyDiet.Meals.IndexOf(meal);
+        var caloriesRange = Model.DietRequirements.MealCaloriesSplit[mealIndex];
+
+      <div class="meal">
+          <span>Meal @(mealIndex + 1)</span>
+          <span>@caloriesRange.IsInRange(@day.DietSummary.CaloriesPerMeal[mealIndex]) @day.DietSummary.CaloriesPerMeal[mealIndex] Calories (@caloriesRange.Lower -- @caloriesRange.Upper)</span>
+          
           @foreach (var recipe in meal.Receipes)
           {
             <div class="recipe">
@@ -44,7 +49,6 @@
       }
     </div>
   }
-  @*<div class="clear"></div>*@
 </div>
 <script>
   var container = document.querySelector('#masonry');

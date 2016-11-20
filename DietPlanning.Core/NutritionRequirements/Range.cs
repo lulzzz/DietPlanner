@@ -8,7 +8,7 @@
 
     public bool IsInRange(double value)
     {
-      return value < Lower || value > Upper;
+      return value > Lower && value < Upper;
     }
 
     public double GetDistanceToRange(double value)

@@ -31,15 +31,10 @@ namespace DietPlanning.NSGA.DayImplementation
       individual.Evaluations.Clear();
       individual.IsFeasible = true;
 
-      var macroEv = EvaluateMacro(dailyDiet);
+      var macroEv = EvaluateMacro(dailyDiet, out individual.IsFeasible);
       individual.Evaluations.Add(macroEv);
       individual.Evaluations.Add(EvaluateCost(recipes));
       individual.Evaluations.Add(EvaluatePreparationTime(recipes));
-
-      if (macroEv.Score > 150)
-      {
-        individual.IsFeasible = false;
-      }
       
       //todo preferences
     }
@@ -54,13 +49,13 @@ namespace DietPlanning.NSGA.DayImplementation
       };
     }
 
-    private Evaluation EvaluateMacro(DailyDiet dailyDiet)
+    private Evaluation EvaluateMacro(DailyDiet dailyDiet, out bool feasible)
     {
       return new Evaluation
       {
         Type = ObjectiveType.Macro,
         Direction = Direction.Minimize,
-        Score = EvaluateDailyMacro(dailyDiet)
+        Score = EvaluateDailyMacro(dailyDiet, out feasible)
       };
     }
 
@@ -74,14 +69,23 @@ namespace DietPlanning.NSGA.DayImplementation
       };
     }
 
-    private double EvaluateDailyMacro(DailyDiet dailyDiet)
+    private double EvaluateDailyMacro(DailyDiet dailyDiet, out bool feasible)
     {
+      feasible = true;
       var dailySummary = _dietAnalyzer.SummarizeDaily(dailyDiet);
       //todo fpr grpup of ppl
       var distance = 0.0 +
                      Math.Abs(_dietRequirements.ProteinRange.GetDistanceToRange(dailySummary.Proteins)) +
                      Math.Abs(_dietRequirements.FatRange.GetDistanceToRange(dailySummary.Fat)) +
                      Math.Abs(_dietRequirements.CarbohydratesRange.GetDistanceToRange(dailySummary.Carbohydrates));
+                     Math.Abs(_dietRequirements.Calories - dailySummary.Calories);
+
+      if (_dietRequirements.ProteinRange.IsInRange(dailySummary.Proteins) ||
+          _dietRequirements.FatRange.IsInRange(dailySummary.Fat) ||
+          _dietRequirements.CarbohydratesRange.IsInRange(dailySummary.Carbohydrates))
+      {
+        feasible = false;
+      }
 
       for (var mealIndex = 0; mealIndex < dailySummary.CaloriesPerMeal.Count; mealIndex++)
       {

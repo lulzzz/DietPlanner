@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
-using DietPlanning.NSGA.DayImplementation;
-using DietPlanning.NSGA.DietImplementation;
 using DietPlanning.NSGA.MathImplementation;
 using Tools;
 using Random = System.Random;
@@ -25,8 +22,6 @@ namespace ConsoleInterface
       var nsgaSolverFactory = new NsgaSolverFactory(new ConfigurationProvider(), new Random());
       var recipes = recipeGenerator.GetRecipes();
       var requirementsProvider = new RequirementsProvider();
-      // var nsgaSolver = nsgaSolverFactory.GetDietSolver(recipes, GetTargetDiet());
-      // var mathNsgaSolver = nsgaSolverFactory.GetMathSolver();
       var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
 
       var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipes, dietRequirements);

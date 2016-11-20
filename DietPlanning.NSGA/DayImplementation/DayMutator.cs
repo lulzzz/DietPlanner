@@ -40,18 +40,18 @@ namespace DietPlanning.NSGA.DayImplementation
 
       switch (RandomMutationType())
       {
-        case DietImplementation.MutationType.Remove:
+        case MutationType.Remove:
           meal.Receipes.Remove(recipe);
           if (meal.Receipes.Count < minRecipes)
             meal.Receipes.Add(_recipes.GetRandomItem());
           break;
-        case DietImplementation.MutationType.Add:
+        case MutationType.Add:
           //todo remove duplicates (or should they stay as 2x recipe)
           meal.Receipes.Add(_recipes.GetRandomItem());
           if (meal.Receipes.Count > maxRecipes)
             meal.Receipes.Remove(recipe);
           break;
-        case DietImplementation.MutationType.Replace:
+        case MutationType.Replace:
           meal.Receipes.Remove(recipe);
           meal.Receipes.Add(_recipes.GetRandomItem());
           break;
@@ -60,12 +60,12 @@ namespace DietPlanning.NSGA.DayImplementation
       }
     }
 
-    private DietImplementation.MutationType RandomMutationType()
+    private MutationType RandomMutationType()
     {
       var randomNumber = _random.NextDouble();
-      if (randomNumber < 0.3) return DietImplementation.MutationType.Remove;
-      if (randomNumber < 0.6) return DietImplementation.MutationType.Add;
-      return DietImplementation.MutationType.Replace;
+      if (randomNumber < 0.3) return MutationType.Remove;
+      if (randomNumber < 0.6) return MutationType.Add;
+      return MutationType.Replace;
     }
   }
 

@@ -22,8 +22,8 @@ namespace DietPlanning.Core.NutritionRequirements
       requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.25, 0.3));
       requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.05, 0.1));
       requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.3, 0.35));
-      requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.5, 0.1));
-      requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.15, 0.12));
+      requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.05, 0.1));
+      requirements.MealCaloriesSplit.Add(GetRangeOf(requirements.Calories, 0.15, 0.2));
     }
 
     private void SetNutrientsRanges(DietRequirements requirements)
