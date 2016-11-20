@@ -1,4 +1,5 @@
-
-- Quote a lot of "infinity" crowding distances due to small fronts
-- Next thing to do is selection + mutation
-- Consider graphical confirmation of pareto fronts
+- Repeating receipes during the day
+- Still no preferences
+- Fixing feasibility during crossover and mutation
+- Variety 
+- Group
