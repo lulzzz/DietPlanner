@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.NutritionRequirements;
+using Tools;
 
 namespace DietPlanning.NSGA.DayImplementation
 {
@@ -9,12 +12,16 @@ namespace DietPlanning.NSGA.DayImplementation
     private readonly Random _random;
     private readonly List<Recipe> _recipes;
     private readonly int _numberOfMealsPerDay;
+    private readonly DietAnalyzer _dietAnalyzer;
+    private readonly DietRequirements _requirements;
 
-    public DayPopulationInitializer(Random random, List<Recipe> recipes, int numberOfMealsPerDay)
+    public DayPopulationInitializer(Random random, List<Recipe> recipes, int numberOfMealsPerDay, DietAnalyzer dietAnalyzer, DietRequirements requirements)
     {
       _random = random;
       _recipes = recipes;
       _numberOfMealsPerDay = numberOfMealsPerDay;
+      _dietAnalyzer = dietAnalyzer;
+      _requirements = requirements;
     }
 
     public List<Individual> InitializePopulation(int populationSize)
@@ -38,6 +45,11 @@ namespace DietPlanning.NSGA.DayImplementation
         dailyDiet.Meals.Add(CreateRandomMeal());
       }
 
+      while (_requirements.CaloriesAllowedRange.IsInRange(_dietAnalyzer.SummarizeDaily(dailyDiet).Calories))
+      {
+        AddRandomReceipe(dailyDiet.Meals.GetRandomItem());
+      }
+
       return dailyDiet;
     }
 
@@ -48,17 +60,22 @@ namespace DietPlanning.NSGA.DayImplementation
 
       for (var k = 0; k < numberOfRecipes; k++)
       {
-        Recipe recipe;
-
-        do
-        {
-          recipe = _recipes[_random.Next(_recipes.Count)];
-        } while (meal.Receipes.Contains(recipe));
-
-        meal.Receipes.Add(recipe);
+        AddRandomReceipe(meal);
       }
 
       return meal;
+    }
+
+    private void AddRandomReceipe(Meal meal)
+    {
+      Recipe recipe;
+
+      do
+      {
+        recipe = _recipes.GetRandomItem();
+      } while (meal.Receipes.Contains(recipe));
+
+      meal.Receipes.Add(recipe);
     }
   }
 }

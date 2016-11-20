@@ -9,6 +9,8 @@ namespace DietPlanning.Core.NutritionRequirements
     public Range ProteinRange;
     public Range FatRange;
     public Range CarbohydratesRange;
+    public Range CaloriesAllowedRange;
+    public double CaloriesTolerance;
 
     public DietRequirements()
     {

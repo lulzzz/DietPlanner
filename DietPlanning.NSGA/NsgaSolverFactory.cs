@@ -37,7 +37,7 @@ namespace DietPlanning.NSGA
     {
       return new NsgaSolver(
         new Sorter(),
-        new DayPopulationInitializer(_random, recipes, 5),
+        new DayPopulationInitializer(_random, recipes, 5, new DietAnalyzer(), dietRequirements),
         new DayEvaluator(new DietAnalyzer(), dietRequirements),
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
         new DayCrossOver(_random),
