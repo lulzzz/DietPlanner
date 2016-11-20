@@ -7,10 +7,10 @@
 <link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
 <h2>Diets</h2>
 <div><span>Goal:</span></div>
-<div><span>@Model.TargetDiet.Calories Calories</span></div>
-<div><span>@Model.TargetDiet.Carbohydrates g Carbohydrates</span></div>
-<div><span>@Model.TargetDiet.Fat g Fats</span></div>
-<div><span>@Model.TargetDiet.Proteins g Proteins</span></div>
+<div><span>@Model.DietRequirements.Calories Calories</span></div>
+<div><span>@Model.DietRequirements.CarbohydratesRange.Lower to @Model.DietRequirements.CarbohydratesRange.Lower g Carbohydrates</span></div>
+<div><span>@Model.DietRequirements.FatRange.Lower to @Model.DietRequirements.FatRange.Upper  g Fats</span></div>
+<div><span>@Model.DietRequirements.ProteinRange.Lower to @Model.DietRequirements.ProteinRange.Upper g Proteins</span></div>
 
 @foreach (var diet in Model.Diets)
 {

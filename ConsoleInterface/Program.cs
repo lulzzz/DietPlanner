@@ -4,6 +4,7 @@ using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
+using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.NSGA.DietImplementation;
@@ -23,9 +24,12 @@ namespace ConsoleInterface
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
       var nsgaSolverFactory = new NsgaSolverFactory(new ConfigurationProvider(), new Random());
       var recipes = recipeGenerator.GetRecipes();
-     // var nsgaSolver = nsgaSolverFactory.GetDietSolver(recipes, GetTargetDiet());
-     // var mathNsgaSolver = nsgaSolverFactory.GetMathSolver();
-      var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipes, GetTargetDiet());
+      var requirementsProvider = new RequirementsProvider();
+      // var nsgaSolver = nsgaSolverFactory.GetDietSolver(recipes, GetTargetDiet());
+      // var mathNsgaSolver = nsgaSolverFactory.GetMathSolver();
+      var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
+
+      var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipes, dietRequirements);
 
       var result = dailyDietsNsgaSolver.Solve();
 
@@ -67,14 +71,15 @@ namespace ConsoleInterface
       CsvLogger.Write("frontResult", "d:\\FrontResult.csv");
     }
 
-    private static DietSummary GetTargetDiet()
+    private static PersonalData GetPersonalData()
     {
-      return new DietSummary
+      return new PersonalData
       {
-        Calories = 3002,
-        Fat = 101,
-        Carbohydrates = 338,
-        Proteins = 188
+        Age = 25,
+        Gender = Gender.Male,
+        Height = 185,
+        Weight = 85,
+        Pal = 1.5
       };
     }
   }

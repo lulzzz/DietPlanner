@@ -6,6 +6,7 @@ using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.NSGA.DietImplementation;
@@ -20,13 +21,14 @@ namespace DietPlanning.Web.Controllers
       var configProvider = new ConfigurationProvider();
       var nsgaSolverFactory = new NsgaSolverFactory(configProvider, new Random());
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
+      var requirementsProvider = new RequirementsProvider();
 
-      var nsgaSolver = nsgaSolverFactory.GetDietSolver(recipeGenerator.GetRecipes(), GetTargetDiet());
+      var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
+      var nsgaSolver = nsgaSolverFactory.GetDietSolver(recipeGenerator.GetRecipes(), dietRequirements);
 
-      var targetDiet = GetTargetDiet();
       var nsgaResult = nsgaSolver.Solve();
 
-      var dietsViewModel = CreateDietsViewModel(nsgaResult, targetDiet);
+      var dietsViewModel = CreateDietsViewModel(nsgaResult, dietRequirements);
 
       return View(dietsViewModel);
     }
@@ -36,21 +38,22 @@ namespace DietPlanning.Web.Controllers
       var configProvider = new ConfigurationProvider();
       var nsgaSolverFactory = new NsgaSolverFactory(configProvider, new Random());
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
+      var requirementsProvider = new RequirementsProvider();
 
-      var nsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipeGenerator.GetRecipes(), GetTargetDiet());
+      var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
+      var nsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipeGenerator.GetRecipes(), dietRequirements);
 
-      var targetDiet = GetTargetDiet();
       var nsgaResult = nsgaSolver.Solve();
 
-      var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult, targetDiet);
+      var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult, dietRequirements);
 
       return View(dietsViewModel);
     }
 
-    private DailyDietsResultViewModel CreateDailyDietsResultViewModel(List<List<Individual>> nsgaResult, DietSummary targetDiet)
+    private DailyDietsResultViewModel CreateDailyDietsResultViewModel(List<List<Individual>> nsgaResult, DietRequirements dietRequirements)
     {
       var dietAnalyzer = new DietAnalyzer();
-      var viewModel = new DailyDietsResultViewModel {TargetDiet = targetDiet};
+      var viewModel = new DailyDietsResultViewModel {DietRequirements = dietRequirements };
 
       foreach (var individual in nsgaResult.SelectMany(r => r))
       {
@@ -68,9 +71,9 @@ namespace DietPlanning.Web.Controllers
       return viewModel;
     }
 
-    private DietsViewModel CreateDietsViewModel(List<List<Individual>> nsgaResult, DietSummary targetDiet)
+    private DietsViewModel CreateDietsViewModel(List<List<Individual>> nsgaResult, DietRequirements dietRequirements)
     {
-      var dietsViewModel = new DietsViewModel {TargetDiet = targetDiet};
+      var dietsViewModel = new DietsViewModel {DietRequirements = dietRequirements };
       var dietAnalyzer = new DietAnalyzer();
 
       foreach (var individual in nsgaResult.First())
@@ -115,14 +118,15 @@ namespace DietPlanning.Web.Controllers
       return dailyDietsViewModels;
     }
    
-    private DietSummary GetTargetDiet()
+    private PersonalData GetPersonalData()
     {
-      return new DietSummary
+      return new PersonalData
       {
-        Calories = 3002,
-        Fat = 101,
-        Carbohydrates = 338,
-        Proteins = 188
+        Age = 25,
+        Gender = Gender.Male,
+        Height = 185,
+        Weight = 85,
+        Pal = 1.5
       };
     }
   }

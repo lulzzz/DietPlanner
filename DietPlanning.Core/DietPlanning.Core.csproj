@@ -74,9 +74,14 @@
     <Compile Include="DomainObjects\Recipe.cs" />
     <Compile Include="DataProviders\IFoodsProvider.cs" />
     <Compile Include="DomainObjects\RecipeGroup.cs" />
+    <Compile Include="NutritionRequirements\DietRequirements.cs" />
+    <Compile Include="NutritionRequirements\Gender.cs" />
+    <Compile Include="NutritionRequirements\PersonalData.cs" />
+    <Compile Include="NutritionRequirements\Range.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataProviders\RandomData\RandomFoodsGenerator.cs" />
     <Compile Include="DietSummary.cs" />
+    <Compile Include="NutritionRequirements\RequirementsProvider.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MacroSolvers\" />

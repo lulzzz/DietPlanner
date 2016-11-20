@@ -3,18 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.NutritionRequirements;
 
 namespace DietPlanning.NSGA.DayImplementation
 {
   public class DayEvaluator : IEvaluator
   {
     private readonly DietAnalyzer _dietAnalyzer;
-    private readonly DietSummary _targetDailyDiet;
+    private readonly DietRequirements _dietRequirements;
 
-    public DayEvaluator(DietAnalyzer dietAnalyzer, DietSummary targetDailyDiet)
+    public DayEvaluator(DietAnalyzer dietAnalyzer, DietRequirements dietRequirements)
     {
       _dietAnalyzer = dietAnalyzer;
-      _targetDailyDiet = targetDailyDiet;
+      _dietRequirements = dietRequirements;
     }
 
     public void Evaluate(List<Individual> individuals)
@@ -77,11 +78,19 @@ namespace DietPlanning.NSGA.DayImplementation
     {
       var dailySummary = _dietAnalyzer.SummarizeDaily(dailyDiet);
       //todo fpr grpup of ppl
-      var distance =
-        Math.Abs(_targetDailyDiet.Proteins - dailySummary.Proteins) +
-        Math.Abs(_targetDailyDiet.Fat - dailySummary.Fat) +
-        Math.Abs(_targetDailyDiet.Calories - dailySummary.Calories) +
-        Math.Abs(_targetDailyDiet.Carbohydrates - dailySummary.Carbohydrates);
+      var distance = 0.0 +
+                     Math.Abs(_dietRequirements.ProteinRange.GetDistanceToRange(dailySummary.Proteins)) +
+                     Math.Abs(_dietRequirements.FatRange.GetDistanceToRange(dailySummary.Fat)) +
+                     Math.Abs(_dietRequirements.CarbohydratesRange.GetDistanceToRange(dailySummary.Carbohydrates));
+
+      for (var mealIndex = 0; mealIndex < dailySummary.CaloriesPerMeal.Count; mealIndex++)
+      {
+        distance +=
+          Math.Abs(
+            _dietRequirements
+            .MealCaloriesSplit[mealIndex]
+            .GetDistanceToRange(dailySummary.CaloriesPerMeal[mealIndex]));
+      }
 
       return distance;
     }
