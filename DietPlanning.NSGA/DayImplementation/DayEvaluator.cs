@@ -79,9 +79,7 @@ namespace DietPlanning.NSGA.DayImplementation
                      Math.Abs(_dietRequirements.FatRange.GetDistanceToRange(dailySummary.Fat)) +
                      Math.Abs(_dietRequirements.CarbohydratesRange.GetDistanceToRange(dailySummary.Carbohydrates));
 
-      if (_dietRequirements.ProteinRange.IsInRange(dailySummary.Proteins) ||
-          _dietRequirements.FatRange.IsInRange(dailySummary.Fat) ||
-          _dietRequirements.CarbohydratesRange.IsInRange(dailySummary.Carbohydrates))
+      if (! _dietRequirements.CaloriesAllowedRange.IsInRange(dailySummary.Calories))
       {
         feasible = false;
       }
