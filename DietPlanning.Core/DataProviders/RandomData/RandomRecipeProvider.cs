@@ -29,6 +29,9 @@ namespace DietPlanning.Core.DataProviders.RandomData
         recipes.Add(recipe);
       }
 
+      var calories = recipes.Select(CalculateCalories).ToList();
+      calories.Sort();
+
       return recipes;
     }
 
@@ -49,7 +52,7 @@ namespace DietPlanning.Core.DataProviders.RandomData
 
     private List<FoodPortion> GetRandomFoods(List<Food> foods)
     {
-      var numberOfIngredients = _random.Next(2, 6);
+      var numberOfIngredients = _random.Next(2, 5);
       var foodPortions = new List<FoodPortion>();
 
       for (var i = 0; i < numberOfIngredients; i++)
@@ -60,10 +63,17 @@ namespace DietPlanning.Core.DataProviders.RandomData
           food = foods[_random.Next(foods.Count)];
         } while (foodPortions.Any(portion => portion.Food == food));
 
-        foodPortions.Add(new FoodPortion(food, _random.Next(10, 150)));
+        foodPortions.Add(new FoodPortion(food, _random.Next(20, 150)/numberOfIngredients));
       }
 
       return foodPortions;
+    }
+
+    private double CalculateCalories(Recipe recipe)
+    {
+      return recipe.Ingredients.Select(i => i.Food.Carbohydrates * i.Amount/100).Sum() * AtwaterFactors.Carbohydrates +
+       recipe.Ingredients.Select(i => i.Food.Fat * i.Amount / 100).Sum() * AtwaterFactors.Fat +
+       recipe.Ingredients.Select(i => i.Food.Proteins * i.Amount / 100).Sum()*AtwaterFactors.Proteins;
     }
   }
 }
