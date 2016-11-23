@@ -28,6 +28,8 @@ namespace DietPlanning.Web.Controllers
 
       var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult, dietRequirements);
 
+      dietsViewModel.DailyDietViewModels = dietsViewModel.DailyDietViewModels.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
+
       return View(dietsViewModel);
     }
 

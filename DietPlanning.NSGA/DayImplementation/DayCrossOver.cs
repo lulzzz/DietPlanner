@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.NSGA.DayImplementation
@@ -23,10 +22,6 @@ namespace DietPlanning.NSGA.DayImplementation
 
     private Tuple<DailyDiet, DailyDiet> GetChild(DailyDiet parent1, DailyDiet parent2)
     {
-      var mealsCrossOverPoint = _random.Next(parent1.Meals.Count);
-      var parent1CrossOverMeal = parent1.Meals[mealsCrossOverPoint];
-      var parent2CrossOverMeal = parent2.Meals[mealsCrossOverPoint];
-      var crossedOverMeals = CrossOverMeal(parent1CrossOverMeal, parent2CrossOverMeal);
       var child1 = new DailyDiet();
       var child2 = new DailyDiet();
 
@@ -36,14 +31,6 @@ namespace DietPlanning.NSGA.DayImplementation
         child1.Meals.Add(crossOverMeals.Item1);
         child2.Meals.Add(crossOverMeals.Item2);
       }
-
-      //child1.Meals.AddRange(parent1.Meals.Take(mealsCrossOverPoint).Select(DietCopier.CopyMeal));
-      //child1.Meals.Add(crossedOverMeals.Item1);
-      //child1.Meals.AddRange(parent2.Meals.Skip(mealsCrossOverPoint + 1).Select(DietCopier.CopyMeal));
-
-      //child2.Meals.AddRange(parent2.Meals.Take(mealsCrossOverPoint).Select(DietCopier.CopyMeal));
-      //child2.Meals.Add(crossedOverMeals.Item2);
-      //child2.Meals.AddRange(parent1.Meals.Skip(mealsCrossOverPoint + 1).Select(DietCopier.CopyMeal));
 
       return new Tuple<DailyDiet, DailyDiet>(child1, child2);
     }
@@ -60,7 +47,24 @@ namespace DietPlanning.NSGA.DayImplementation
       child2.Receipes.AddRange(parent2.Receipes.Take(crossOverPoint));
       child2.Receipes.AddRange(parent1.Receipes.Skip(crossOverPoint));
 
+      RemoveRepeatingReceipes(child1);
+      RemoveRepeatingReceipes(child2);
+
       return new Tuple<Meal, Meal>(child1, child2);
+    }
+
+    private void RemoveRepeatingReceipes(Meal meal)
+    {
+      for (var i = 0; i < meal.Receipes.Count; i++)
+      {
+        for (var j = meal.Receipes.Count - 1; j > i; j--)
+        {
+          if (meal.Receipes[i] == meal.Receipes[j])
+          {
+            meal.Receipes.RemoveAt(j);
+          }
+        }
+      }
     }
   }
 }

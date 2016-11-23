@@ -1,4 +1,4 @@
-﻿namespace DietPlanning.NSGA
+﻿ namespace DietPlanning.NSGA
 {
   public class ConfigurationProvider
   {
@@ -6,7 +6,7 @@
     {
       return new Configuration
       {
-        PopulationSize = 300,
+        PopulationSize = 200,
         OffspringRatio = 1,
         MutationProbability = 0.4,
         MaxIterations = 150

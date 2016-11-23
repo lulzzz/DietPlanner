@@ -10,20 +10,20 @@
 <link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
 <h2>Diets</h2>
 <div><span>Goal:</span></div>
-<div><span>@Model.DietRequirements.Calories Calories</span></div>
-<div><span>@Model.DietRequirements.CarbohydratesRange.Lower to @Model.DietRequirements.CarbohydratesRange.Lower g Carbohydrates</span></div>
-<div><span>@Model.DietRequirements.FatRange.Lower to @Model.DietRequirements.FatRange.Upper  g Fats</span></div>
-<div><span>@Model.DietRequirements.ProteinRange.Lower to @Model.DietRequirements.ProteinRange.Upper g Proteins</span></div>
+<div><span>@((int)Model.DietRequirements.Calories) Calories</span></div>
+<div><span>@((int)Model.DietRequirements.CarbohydratesRange.Lower) to @((int)Model.DietRequirements.CarbohydratesRange.Upper) g Carbohydrates</span></div>
+<div><span>@((int)Model.DietRequirements.FatRange.Lower) to @((int)Model.DietRequirements.FatRange.Upper) g Fats</span></div>
+<div><span>@((int)Model.DietRequirements.ProteinRange.Lower) to @((int)Model.DietRequirements.ProteinRange.Upper) g Proteins</span></div>
 
 <div id="masonry">
   @foreach (var day in Model.DailyDietViewModels)
   {
     <div class="day">
       <div>
-        <div><span>@day.DietSummary.Calories.ToString().SubstringUpToFirst(',') Calories</span></div>
-        <div><span>@day.DietSummary.Carbohydrates.ToString().SubstringUpToFirst(',') g Carbohydrates</span></div>
-        <div><span>@day.DietSummary.Fat.ToString().SubstringUpToFirst(',') g Fats</span></div>
-        <div><span>@day.DietSummary.Proteins.ToString().SubstringUpToFirst(',') g Proteins</span></div>
+        <div><span>@((int)day.DietSummary.Calories) Calories</span></div>
+        <div><span>@((int)day.DietSummary.Carbohydrates) g Carbohydrates</span></div>
+        <div><span>@((int)day.DietSummary.Fat) g Fats</span></div>
+        <div><span>@((int)day.DietSummary.Proteins) g Proteins</span></div>
       </div>
       <br />
       @foreach (var meal in day.DailyDiet.Meals)
@@ -33,7 +33,7 @@
 
       <div class="meal">
           <span>Meal @(mealIndex + 1)</span>
-          <span>@caloriesRange.IsInRange(@day.DietSummary.CaloriesPerMeal[mealIndex]) @day.DietSummary.CaloriesPerMeal[mealIndex] Calories (@caloriesRange.Lower -- @caloriesRange.Upper)</span>
+          <span>@caloriesRange.IsInRange(@day.DietSummary.CaloriesPerMeal[mealIndex]) @((int)day.DietSummary.CaloriesPerMeal[mealIndex]) Calories(@((int)caloriesRange.Lower)-- @((int)caloriesRange.Upper))</span>
           
           @foreach (var recipe in meal.Receipes)
           {
@@ -45,7 +45,7 @@
       }
       @foreach (var evaluation in day.Evaluations)
       {
-        <div><span>@evaluation.Type: @evaluation.Score</span></div>
+        <div><span>@evaluation.Type: @((int)evaluation.Score)</span></div>
       }
     </div>
   }

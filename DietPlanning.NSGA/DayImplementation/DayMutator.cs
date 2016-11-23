@@ -28,32 +28,35 @@ namespace DietPlanning.NSGA.DayImplementation
         {
           if (_random.NextDouble() > mutationProbability) continue;
 
-          PerformMutation(meal, meal.Receipes[i]);
+          PerformMutation(meal, meal.Receipes[i], (DayIndividual)individual);
         }
       }
     }
 
-    private void PerformMutation(Meal meal, Recipe recipe)
+    private void PerformMutation(Meal meal, Recipe recipe, DayIndividual individual)
     {
       const int maxRecipes = 4;
       const int minRecipes = 1;
 
+      var includedRecipes = individual.DailyDiet.Meals.SelectMany(m => m.Receipes).ToList();
+
       switch (RandomMutationType())
       {
+          
+
         case MutationType.Remove:
           meal.Receipes.Remove(recipe);
           if (meal.Receipes.Count < minRecipes)
-            meal.Receipes.Add(_recipes.GetRandomItem());
+            meal.Receipes.Add(GetRanodmNotInvlolvedRecipe(includedRecipes));
           break;
         case MutationType.Add:
-          //todo remove duplicates (or should they stay as 2x recipe)
-          meal.Receipes.Add(_recipes.GetRandomItem());
+          meal.Receipes.Add(GetRanodmNotInvlolvedRecipe(includedRecipes));
           if (meal.Receipes.Count > maxRecipes)
             meal.Receipes.Remove(recipe);
           break;
         case MutationType.Replace:
           meal.Receipes.Remove(recipe);
-          meal.Receipes.Add(_recipes.GetRandomItem());
+          meal.Receipes.Add(GetRanodmNotInvlolvedRecipe(includedRecipes));
           break;
         default:
           throw new ArgumentOutOfRangeException();
@@ -66,6 +69,18 @@ namespace DietPlanning.NSGA.DayImplementation
       if (randomNumber < 0.3) return MutationType.Remove;
       if (randomNumber < 0.6) return MutationType.Add;
       return MutationType.Replace;
+    }
+
+    private Recipe GetRanodmNotInvlolvedRecipe(List<Recipe> includedRecipes)
+    {
+      Recipe recipe;
+
+      do
+      {
+        recipe = _recipes.GetRandomItem();
+      } while (includedRecipes.Contains(recipe));
+
+      return recipe;
     }
   }
 
