@@ -1,0 +1,28 @@
+﻿@model DietPlanning.Web.Models.SettingsViewModel
+@{
+  ViewBag.Title = "Settings";
+}
+
+<h2>Settings</h2>
+
+ @using (Html.BeginForm("Edit", "Settings", FormMethod.Post))
+ {
+   <fieldset>
+     <div class="editor-label">@Html.LabelFor(model => model.NsgaConfiguration.PopulationSize)</div>
+     <div class="editor-field">@Html.EditorFor(model => model.NsgaConfiguration.PopulationSize)</div>
+
+     <div class="editor-label">@Html.LabelFor(model => model.NsgaConfiguration.MaxIterations)</div>
+     <div class="editor-field">@Html.EditorFor(model => model.NsgaConfiguration.MaxIterations)</div>
+     <br />
+     <div class="editor-label">@Html.LabelFor(model => model.NsgaConfiguration.MutationProbability)</div>
+     <div class="editor-field">@Html.EditorFor(model => model.NsgaConfiguration.MutationProbability)</div>
+
+     <div class="editor-label">@Html.LabelFor(model => model.NsgaConfiguration.OffspringRatio)</div>
+     <div class="editor-field">@Html.EditorFor(model => model.NsgaConfiguration.OffspringRatio)</div>
+
+     <br/>
+     <p>
+       <input type="submit" value="Save"/>
+     </p>
+   </fieldset>
+ }

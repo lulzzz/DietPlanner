@@ -2,9 +2,9 @@
 {
   public class Configuration
   {
-    public double MutationProbability;
-    public int PopulationSize;
-    public double OffspringRatio;
-    public int MaxIterations;
+    public double MutationProbability { get; set; }
+    public int PopulationSize { get; set; }
+    public double OffspringRatio { get; set; }
+    public int MaxIterations { get; set; }
   }
 }

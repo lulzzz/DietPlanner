@@ -12,12 +12,12 @@ namespace DietPlanning.NSGA
   {
     private const int TournamentSize = 2;
 
-    private readonly ConfigurationProvider _configurationProvider;
+    private readonly Configuration _configuration;
     private readonly Random _random;
 
-    public NsgaSolverFactory(ConfigurationProvider configurationProvider, Random random)
+    public NsgaSolverFactory(Configuration configuration, Random random)
     {
-      _configurationProvider = configurationProvider;
+      _configuration = configuration;
       _random = random;
     }
     
@@ -29,8 +29,8 @@ namespace DietPlanning.NSGA
         new MathEvaluator(), 
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
         new MathCrossOver(_random), 
-        new MathMutator(_random), 
-        _configurationProvider.GetConfiguration());
+        new MathMutator(_random),
+        _configuration);
     }
 
     public NsgaSolver GetDailyDietsSolver(List<Recipe> recipes, DietRequirements dietRequirements)
@@ -42,7 +42,7 @@ namespace DietPlanning.NSGA
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
         new DayCrossOver(_random),
         new DayMutator(_random, recipes),
-        _configurationProvider.GetConfiguration());
+        _configuration);
     }
   }
 }

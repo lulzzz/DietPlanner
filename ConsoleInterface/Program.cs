@@ -17,9 +17,9 @@ namespace ConsoleInterface
     {
       CsvLogger.RegisterLogger("iterationEvaluations");
       
-
+      var configurationProvider = new ConfigurationProvider();
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
-      var nsgaSolverFactory = new NsgaSolverFactory(new ConfigurationProvider(), new Random());
+      var nsgaSolverFactory = new NsgaSolverFactory(configurationProvider.GetConfiguration(), new Random());
       var recipes = recipeGenerator.GetRecipes();
       var requirementsProvider = new RequirementsProvider();
       var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);

@@ -10,6 +10,7 @@ namespace DietPlanning.Core.DataProviders.RandomData
     private readonly Random _random;
     private readonly int _size;
     private readonly List<Food> _foods;
+    private static List<Recipe> _recipes;
 
     public RandomRecipeProvider(Random random, int size, List<Food> foods)
     {
@@ -20,19 +21,24 @@ namespace DietPlanning.Core.DataProviders.RandomData
 
     public List<Recipe> GetRecipes()
     {
-      var recipes = new List<Recipe>();
+      if (_recipes != null)
+        return _recipes;
+
+      RegenerateRecipes();
+
+      return _recipes;
+    }
+
+    private void RegenerateRecipes()
+    {
+      _recipes = new List<Recipe>();
 
       for (var i = 0; i < _size; i++)
       {
         var recipe = GetRandomRecipe(_foods);
         recipe.Name = "r" + i;
-        recipes.Add(recipe);
+        _recipes.Add(recipe);
       }
-
-      var calories = recipes.Select(CalculateCalories).ToList();
-      calories.Sort();
-
-      return recipes;
     }
 
     private Recipe GetRandomRecipe(List<Food> foods)

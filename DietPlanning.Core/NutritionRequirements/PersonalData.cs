@@ -2,10 +2,10 @@
 {
   public class PersonalData
   {
-    public int Age;
-    public int Weight;
-    public int Height;
-    public double Pal;
-    public Gender Gender;
+    public int Age { get; set; }
+    public int Weight { get; set; }
+    public int Height { get; set; }
+    public double Pal { get; set; }
+    public Gender Gender { get; set; }
   }
 }

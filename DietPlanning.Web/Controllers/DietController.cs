@@ -14,10 +14,17 @@ namespace DietPlanning.Web.Controllers
 {
   public class DietController : Controller
   {
+    const string SettingsKey = "Settings";
+    const string PersonalDataKey = "PersonalData";
+
     public ActionResult ShowDays()
     {
-      var configProvider = new ConfigurationProvider();
-      var nsgaSolverFactory = new NsgaSolverFactory(configProvider, new Random());
+      if (!TempData.ContainsKey(SettingsKey))
+        return RedirectToAction("Edit", "Settings");
+
+      var config = ((SettingsViewModel) TempData.Peek(SettingsKey)).NsgaConfiguration;
+
+      var nsgaSolverFactory = new NsgaSolverFactory(config, new Random());
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
       var requirementsProvider = new RequirementsProvider();
 
@@ -31,6 +38,22 @@ namespace DietPlanning.Web.Controllers
       dietsViewModel.DailyDietViewModels = dietsViewModel.DailyDietViewModels.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
 
       return View(dietsViewModel);
+    }
+
+    [HttpGet]
+    public ActionResult PersonalData()
+    {
+      var personalData = GetPersonalData();
+
+      return View(personalData);
+    }
+
+    [HttpPost]
+    public ActionResult PersonalData(PersonalData personalData)
+    {
+      TempData[PersonalDataKey] = personalData;
+
+      return View(personalData);
     }
 
     private DailyDietsResultViewModel CreateDailyDietsResultViewModel(List<List<Individual>> nsgaResult, DietRequirements dietRequirements)
@@ -56,14 +79,19 @@ namespace DietPlanning.Web.Controllers
 
     private PersonalData GetPersonalData()
     {
-      return new PersonalData
+      if (!TempData.ContainsKey(PersonalDataKey))
       {
-        Age = 25,
-        Gender = Gender.Male,
-        Height = 185,
-        Weight = 85,
-        Pal = 1.5
-      };
+        TempData[PersonalDataKey] = new PersonalData
+        {
+          Age = 25,
+          Gender = Gender.Male,
+          Height = 185,
+          Weight = 85,
+          Pal = 1.5
+        };
+      }
+
+      return TempData.Peek(PersonalDataKey) as PersonalData;
     }
   }
 }
