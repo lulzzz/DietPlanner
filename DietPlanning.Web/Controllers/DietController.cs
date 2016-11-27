@@ -35,7 +35,7 @@ namespace DietPlanning.Web.Controllers
 
       var nsgaResult = nsgaSolver.Solve();
 
-      var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult, dietRequirements);
+      var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult.Fronts, dietRequirements);
 
       dietsViewModel.DailyDietViewModels = dietsViewModel.DailyDietViewModels.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
 

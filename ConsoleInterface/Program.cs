@@ -29,7 +29,7 @@ namespace ConsoleInterface
       var result = dailyDietsNsgaSolver.Solve();
 
       //LogMathFrontResult(result);
-      LogDailyDietsFrontResult(result);
+      LogDailyDietsFrontResult(result.Fronts);
 
       CsvLogger.Write("iterationEvaluations", "d:\\output.csv");
       

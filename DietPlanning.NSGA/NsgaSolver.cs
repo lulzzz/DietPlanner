@@ -34,8 +34,10 @@ namespace DietPlanning.NSGA
       _config = configuration;
     }
 
-    public List<List<Individual>> Solve()
+    public NsgaResult Solve()
     {
+      var log = new NsgaLog();
+
       var individuals = InitializeIndividuals();
       _evaluator.Evaluate(individuals);
       var fronts = _sorter.Sort(individuals).ToList();
@@ -52,22 +54,33 @@ namespace DietPlanning.NSGA
         fronts = SelectNextGeneration(fronts);
         individuals = fronts.SelectMany(f => f).ToList();
 
-        LogData(fronts, iteration);
+        LogData(log, fronts, iteration);
         Debug.WriteLine($"iteration {iteration}");
 
         if (individuals.Count != _config.PopulationSize)
           throw new ApplicationException($"Population size is {individuals.Count} instead of {_config.PopulationSize}");
       }
 
-      return fronts;
+      return new NsgaResult
+      {
+        Log = log,
+        Fronts = fronts
+      };
     }
 
-    private void LogData(List<List<Individual>> fronts, int iteration)
+    private void LogData(NsgaLog log, List<List<Individual>> fronts, int iteration)
     {
+      log.FrontsNumberLog.Add(fronts.Count);
+
       var averageMacro = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Macro);
       var averageCost = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Cost);
+      var averagePrepTime = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.PreparationTime);
 
-      CsvLogger.AddRow("iterationEvaluations", new dynamic[]{ iteration, averageMacro, averageCost, fronts.Count});
+      log.ObjectiveLogs.Add( new ObjectiveLog {ObjectiveType = ObjectiveType.Macro, Iteration = iteration, ObjectiveValue = averageMacro });
+      log.ObjectiveLogs.Add( new ObjectiveLog {ObjectiveType = ObjectiveType.Cost, Iteration = iteration, ObjectiveValue = averageCost });
+      log.ObjectiveLogs.Add( new ObjectiveLog {ObjectiveType = ObjectiveType.PreparationTime, Iteration = iteration, ObjectiveValue = averagePrepTime});
+
+      //CsvLogger.AddRow("iterationEvaluations", new dynamic[]{ iteration, averageMacro, averageCost, fronts.Count});
     }
 
     private static double GetFrontAverageEvaluation(List<Individual> front, ObjectiveType objectiveType)
