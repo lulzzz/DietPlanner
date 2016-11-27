@@ -14,11 +14,15 @@
 <canvas id="costChart" width="400" height="200"></canvas>
 <canvas id="frontsChart" width="400" height="200"></canvas>
 <canvas id="frontSizeChart" width="400" height="200"></canvas>
+<canvas id="crowdingDistanceVarChart" width="400" height="200"></canvas>
+<canvas id="crowdingDistanceAvgChart" width="400" height="200"></canvas>
 
 <script>
   var labels = [];
   var fronts = [];
   var frontSize = [];
+  var crowdingDistanceVariance = [];
+  var crowdingDistanceAverage = [];
   var macroAvg = [];
   var macroMin = [];
   var macroMax = [];
@@ -32,37 +36,44 @@
   @for (int i = 0; i < Model.FrontsNumberLog.Count; i++)
   {
     @:labels.push("@i");
-              }
-
+  }
 
   @foreach (var frontNumLog in Model.FrontsNumberLog)
-{
-   @:fronts.push(@frontNumLog);
-            }
+  {
+    @:fronts.push(@frontNumLog);
+  }
   @foreach (var frontSize in Model.FirstFrontSizeLog)
   {
     @:frontSize.push(@frontSize);
-    }
+  }
+  @foreach (var crowdingDistanceVariation in Model.CrowdingDistanceVar)
+  {
+    @:crowdingDistanceVariance.push(@crowdingDistanceVariation.ToString().Replace(',','.'));
+  }
+  @foreach (var crowdingDistanceAverage in Model.CrowdingDistanceAvg)
+  {
+    @:crowdingDistanceAverage.push(@crowdingDistanceAverage.ToString().Replace(',','.'));
+  }
 
   @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.Macro))
   {
     @:macroAvg.push(@objLog.Avg.ToString().Replace(',','.'));
-      @:macroMin.push(@objLog.Min.ToString().Replace(',','.'));
-      @:macroMax.push(@objLog.Max.ToString().Replace(',','.'));
-            }
+    @:macroMin.push(@objLog.Min.ToString().Replace(',','.'));
+    @:macroMax.push(@objLog.Max.ToString().Replace(',','.'));
+  }
 
   @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.Cost))
   {
     @:costAvg.push(@objLog.Avg.ToString().Replace(',','.'));
-      @:costMin.push(@objLog.Min.ToString().Replace(',','.'));
-      @:costMax.push(@objLog.Max.ToString().Replace(',','.'));
-        }
+    @:costMin.push(@objLog.Min.ToString().Replace(',','.'));
+    @:costMax.push(@objLog.Max.ToString().Replace(',','.'));
+  }
   @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.PreparationTime))
   {
     @:prepTimeAvg.push(@(objLog.Avg.ToString().Replace(',','.')));
-      @:prepTimeMin.push(@(objLog.Min.ToString().Replace(',','.')));
-      @:prepTimeMax.push(@(objLog.Max.ToString().Replace(',','.')));
-    }
+    @:prepTimeMin.push(@(objLog.Min.ToString().Replace(',','.')));
+    @:prepTimeMax.push(@(objLog.Max.ToString().Replace(',','.')));
+  }
   function CreateDataset(color, label, data) {
     return {
       label: label,
@@ -106,7 +117,7 @@
     };
   }
 
-  
+
 
   var macroChart = new Chart($("#macroChart"), {
     type: 'line',
@@ -115,7 +126,7 @@
 
   var macroChart = new Chart($("#prepTimeChart"), {
     type: 'line',
-    data: CreateMinMaxAvgData(prepTimeAvg, prepTimeMin, prepTimeMax, "Perparation Time")
+    data: CreateMinMaxAvgData(prepTimeAvg, prepTimeMin, prepTimeMax, "Preparation Time")
   });
 
   var macroChart = new Chart($("#costChart"), {
@@ -131,6 +142,16 @@
   var macroChart = new Chart($("#frontSizeChart"), {
     type: 'line',
     data: CreateSingleData(frontSize, "First front size")
+  });
+
+  var macroChart = new Chart($("#crowdingDistanceVarChart"), {
+    type: 'line',
+    data: CreateSingleData(crowdingDistanceVariance, "Crowding distance variation")
+  });
+
+  var macroChart = new Chart($("#crowdingDistanceAvgChart"), {
+    type: 'line',
+    data: CreateSingleData(crowdingDistanceAverage, "Crowding distance average")
   });
 
 </script>

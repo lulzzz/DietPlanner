@@ -7,6 +7,9 @@
 @Scripts.Render("~/bundles/masonry")
 
 <link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
+<br/>
+<a href="@Url.Action("GenerateDiets")" class="btn btn-info" role="button">Generate Diet</a>
+
 <h2>Diets</h2>
 <div><span>Goal:</span></div>
 <div><span>@((int)Model.DietRequirements.Calories) Calories</span></div>
@@ -29,11 +32,14 @@
       {
         var mealIndex = day.DailyDiet.Meals.IndexOf(meal);
         var caloriesRange = Model.DietRequirements.MealCaloriesSplit[mealIndex];
+        var isInCaloriesRange = caloriesRange.IsInRange(day.DietSummary.CaloriesPerMeal[mealIndex]);
+        var rangeClass = isInCaloriesRange ? "in_range" : "out_of_range";
+        var mealCalories = (int) day.DietSummary.CaloriesPerMeal[mealIndex];
+        var distanceToRange = isInCaloriesRange ? "" : "("+(int)caloriesRange.GetDistanceToRange(mealCalories)+")";
 
       <div class="meal">
-          <span>Meal @(mealIndex + 1)</span>
-          <span>@caloriesRange.IsInRange(@day.DietSummary.CaloriesPerMeal[mealIndex]) @((int)day.DietSummary.CaloriesPerMeal[mealIndex]) Calories(@((int)caloriesRange.Lower)-- @((int)caloriesRange.Upper))</span>
-          
+        <span>Meal @(mealIndex + 1):</span>
+        <span class="@rangeClass">@mealCalories Cal @distanceToRange</span>
           @foreach (var recipe in meal.Receipes)
           {
             <div class="recipe">
@@ -52,8 +58,8 @@
 <script>
   var container = document.querySelector('#masonry');
   var masonry = new Masonry(container, {
-    columnWidth: 60,
+    columnWidth: 40,
     itemSelector: '.day'
   });
 </script>
-}
+

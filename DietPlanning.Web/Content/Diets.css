@@ -3,13 +3,12 @@
 }
 
 .day {
-  /*display: inline;*/
-  /*float: left;*/
   margin: 0.5em;
   padding: 1em;
   background-color: #b1c1ff;
   border-radius: 1em;
   height: auto;
+  font-size: 11px;
 }
 
 .day-title {
@@ -30,4 +29,8 @@
 
 .clear {
   clear: both;
+}
+
+.out_of_range {
+  color: red;
 }

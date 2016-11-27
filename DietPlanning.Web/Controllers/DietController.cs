@@ -19,10 +19,22 @@ namespace DietPlanning.Web.Controllers
 
     public ActionResult ShowDays()
     {
+      var dietsViewModel = TempData.GetDailyDietsResultViewModel();
+
+      if (dietsViewModel == null)
+      {
+        return RedirectToAction("GenerateDiets");
+      }
+
+      return View(dietsViewModel);
+    }
+
+    public ActionResult GenerateDiets()
+    {
       if (!TempData.ContainsKey(SettingsKey))
         return RedirectToAction("Edit", "Settings");
 
-      var config = ((SettingsViewModel) TempData.Peek(SettingsKey)).NsgaConfiguration;
+      var config = ((SettingsViewModel)TempData.Peek(SettingsKey)).NsgaConfiguration;
 
       var nsgaSolverFactory = new NsgaSolverFactory(config, new Random());
       var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
@@ -35,10 +47,9 @@ namespace DietPlanning.Web.Controllers
       TempData.SaveLog(nsgaResult.Log);
 
       var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult.Fronts, dietRequirements);
+      TempData.SaveDailyDietsResultViewModel(dietsViewModel);
 
-      dietsViewModel.DailyDietViewModels = dietsViewModel.DailyDietViewModels.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
-
-      return View(dietsViewModel);
+      return RedirectToAction("ShowDays");
     }
 
     [HttpGet]
@@ -95,6 +106,8 @@ namespace DietPlanning.Web.Controllers
 
         viewModel.DailyDietViewModels.Add(dailyDietViewModel);
       }
+
+      viewModel.DailyDietViewModels = viewModel.DailyDietViewModels.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
 
       return viewModel;
     }

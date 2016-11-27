@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using Tools;
 
 namespace DietPlanning.NSGA
 {
@@ -71,6 +72,18 @@ namespace DietPlanning.NSGA
     {
       log.FrontsNumberLog.Add(fronts.Count);
       log.FirstFrontSizeLog.Add(fronts.First().Count);
+
+      var crowdingDistances = fronts.First().Select(ind => ind.CrowdingDistance).Where(dist => !double.IsInfinity(dist)).ToList();
+      if (crowdingDistances.Any())
+      {
+        log.CrowdingDistanceVar.Add(crowdingDistances.Variance());
+        log.CrowdingDistanceAvg.Add(crowdingDistances.Average());
+      }
+      else
+      {
+        log.CrowdingDistanceVar.Add(0);
+        log.CrowdingDistanceAvg.Add(0);
+      }
 
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.Cost, iteration));
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.Macro, iteration));

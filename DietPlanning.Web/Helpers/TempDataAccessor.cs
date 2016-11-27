@@ -12,6 +12,38 @@ namespace DietPlanning.Web.Helpers
     const string PersonalDataKey = "PersonalData";
     const string PreferencesKey = "Preferences";
     const string LogKey = "Log";
+    const string NsgaResultKey = "NsgaResult";
+    const string DailyDietsResultViewModeltKey = "DailyDietsResultViewModel";
+
+    public static DailyDietsResultViewModel GetDailyDietsResultViewModel(this TempDataDictionary tempData)
+    {
+      if (!tempData.ContainsKey(DailyDietsResultViewModeltKey))
+      {
+        return null;
+      }
+
+      return tempData.Peek(DailyDietsResultViewModeltKey) as DailyDietsResultViewModel;
+    }
+
+    public static void SaveDailyDietsResultViewModel(this TempDataDictionary tempData, DailyDietsResultViewModel nsgaResult)
+    {
+      tempData[DailyDietsResultViewModeltKey] = nsgaResult;
+    }
+
+    public static NsgaResult GetNsgaResult(this TempDataDictionary tempData)
+    {
+      if (!tempData.ContainsKey(NsgaResultKey))
+      {
+        return null;
+      }
+
+      return tempData.Peek(NsgaResultKey) as NsgaResult;
+    }
+
+    public static void SaveNsgaResult(this TempDataDictionary tempData, NsgaResult nsgaResult)
+    {
+      tempData[NsgaResultKey] = nsgaResult;
+    }
 
     public static NsgaLog GetLog(this TempDataDictionary tempData)
     {
