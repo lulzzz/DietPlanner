@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "FoodSelect";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>FoodSelect</h2>
+
+@*<div class="ui-widget">
+    <label for="food_name_input">Disliked Foods: </label>
+    <input id="food_name_input" size="50">
+  </div>
+
+  @Scripts.Render("~/bundles/jquery-ui")
+  @Styles.Render("~/bundles/jquery-ui.css")
+
+  <script>
+    $(document)
+      .ready(function() {
+        $("#food_name_input")
+          .autocomplete({
+            source: findFoods,
+            minLength: 1
+          });
+      });
+
+    function findFoods (request, response) {
+      var url = '@Url.Action("GetFoods")';
+      $.ajax({
+        url: url,
+        type: "GET",
+        dataType: "json",
+        data: { term: request.term },
+        success: function(data) {
+          response($.map(data,
+            function(item) {
+              return { id: item.Id, label: item.Name, value: item.Name };
+            }));
+        }
+      });
+    }
+  </script>*@

@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
+using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.DayImplementation;
@@ -16,6 +17,7 @@ namespace DietPlanning.Web.Controllers
   {
     const string SettingsKey = "Settings";
     const string PersonalDataKey = "PersonalData";
+    const string PreferencesKey = "Preferences";
 
     public ActionResult ShowDays()
     {
@@ -56,6 +58,28 @@ namespace DietPlanning.Web.Controllers
       return View(personalData);
     }
 
+    [HttpGet]
+    public ActionResult Preferences()
+    {
+      return View(GetPreferences());
+    }
+
+    [HttpPost]
+    public ActionResult Preferences(PreferencesViewModel preferences)
+    {
+      return View(SavePreferences(preferences));
+    }
+
+    public JsonResult GetFoods(string term)
+    {
+      var foods = new FoodDatabaseProvider().GetFoods().ToList();
+      var result =  foods.Where(food => food.Name.ToLower().Contains(term.ToLower())).Take(20).ToList();
+     
+      var json = Json(result, JsonRequestBehavior.AllowGet);
+
+      return json;
+    }
+
     private DailyDietsResultViewModel CreateDailyDietsResultViewModel(List<List<Individual>> nsgaResult, DietRequirements dietRequirements)
     {
       var dietAnalyzer = new DietAnalyzer();
@@ -77,6 +101,25 @@ namespace DietPlanning.Web.Controllers
       return viewModel;
     }
 
+    private PreferencesViewModel GetPreferences()
+    {
+      if (!TempData.ContainsKey(PreferencesKey))
+      {
+        var preferences = new PreferencesViewModel();
+        InitializePrferences(preferences);
+        TempData[PreferencesKey] = preferences;
+      }
+
+      return TempData.Peek(PreferencesKey) as PreferencesViewModel;
+    }
+
+    private PreferencesViewModel SavePreferences(PreferencesViewModel preferences)
+    {
+      TempData[PreferencesKey] = preferences;
+
+      return GetPreferences();
+    }
+
     private PersonalData GetPersonalData()
     {
       if (!TempData.ContainsKey(PersonalDataKey))
@@ -92,6 +135,19 @@ namespace DietPlanning.Web.Controllers
       }
 
       return TempData.Peek(PersonalDataKey) as PersonalData;
+    }
+
+    public void InitializePrferences(PreferencesViewModel preferences)
+    {
+      foreach (FoodGroup group in Enum.GetValues(typeof(FoodGroup)))
+      {
+        preferences.FoodGroupPreferences.Add(new FoodGroupPreference { Group = group, Preference = 0});
+      }
+
+      foreach (RecipeGroup group in Enum.GetValues(typeof(RecipeGroup)))
+      {
+        preferences.RecipeGroupPreferences.Add(new RecipeGroupPreference { Group = group, Preference = 0 });
+      }
     }
   }
 }

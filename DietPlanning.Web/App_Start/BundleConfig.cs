@@ -29,6 +29,11 @@ namespace DietPlanning.Web
       bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
                 "~/Content/site.css"));
+
+      bundles.Add(new ScriptBundle("~/bundles/jquery-ui").Include(
+        "~/Scripts/jquery-ui.min.js"));
+      bundles.Add(new StyleBundle("~/bundles/jquery-ui.css").Include(
+         "~/Content/jquery-ui.min.css"));
     }
   }
 }

@@ -1,0 +1,141 @@
+﻿@model DietPlanning.Web.Models.PreferencesViewModel
+
+@{
+  ViewBag.Title = "Preferences";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Preferences</h2>
+
+<h3>Food Groups</h3>
+
+<div id="FoodGroupSliders">
+  <div class="row">
+    @foreach (var preference in Model.FoodGroupPreferences)
+    {
+      <div class="col-sm-3">
+        <label for="@preference.Group"> @preference.Group</label>
+      </div>
+      <div class="col-sm-3">
+        <input id="@preference.Group" type="range" name=@preference.Group value="@preference.Preference" min="-1" max="1">
+        <br />
+      </div>
+    }
+  </div>
+</div>
+
+<br />
+
+<h3>Recipe Groups</h3>
+
+<div id="RecipeGroupSliders">
+  <div class="row">
+    @foreach (var preference in Model.RecipeGroupPreferences)
+      {
+      <div class="col-sm-3">
+        <label for="@preference.Group"> @preference.Group</label>
+      </div>
+      <div class="col-sm-3">
+        <input id="@preference.Group" type="range" name=@preference.Group value="@preference.Preference" min="-1" max="1">
+        <br />
+      </div>
+    }
+  </div>
+</div>
+<br />
+
+<h3> Foods to avoid</h3>
+
+<div class="ui-widget">
+  <label for="food_name_input">Search </label>
+  <input id="food_name_input" size="50">
+</div>
+
+@Scripts.Render("~/bundles/jquery-ui")
+@Styles.Render("~/bundles/jquery-ui.css")
+
+<script>
+  $(document)
+    .ready(function() {
+      $("#food_name_input")
+        .autocomplete({
+          source: findFoods,
+          minLength: 1,
+          select: function (event, ui) {
+            addToDisliked(ui.item.id, ui.item.value);
+          }
+        });
+    });
+
+  function addToDisliked(foodId, foodName) {
+    var ul = document.getElementById("disliked");
+    ul.insertAdjacentHTML( "beforeend", "<li id=\"" + foodId + "\" class=\"list-group-item\" foodId=\"" + foodId + "\" foodName=\"" + foodName + "\">" + foodName + "<a onclick=\"javascript:removeItem(" + foodId + ");\">Remove</a></li>");
+  }
+
+  function findFoods (request, response) {
+    var url = '@Url.Action("GetFoods")';
+    $.ajax({
+      url: url,
+      type: "GET",
+      dataType: "json",
+      data: { term: request.term },
+      success: function(data) {
+        response($.map(data,
+          function(item) {
+            return { id: item.Id, label: item.Name, value: item.Name };
+          }));
+      }
+    });
+  }
+
+  function removeItem(id) {
+    var ul = document.getElementById("disliked");
+    ul.removeChild(document.getElementById(id));
+  }
+</script>
+
+<ul id="disliked" class="list-group">
+  @foreach (var food in Model.DislikedFoods)
+  {
+    <li id="@food.Id" class="list-group-item" foodId="@food.Name" foodName="@food.Name">@food.Name <a onclick="javascript:removeItem(@food.Id);">Remove</a></li>
+  }
+</ul>
+
+<button onclick="submit();">Save</button>
+
+<script>
+  function submit() {
+    var foodGroupPreferences = [];
+    var recipeGroupPreferences = [];
+    var dislikedFoods = [];
+
+    $('#FoodGroupSliders input[type=range]')
+      .each(function (i, obj) {
+        var userWeighting = { Group: $(obj).attr('name'), Preference: $(obj).val() };
+        foodGroupPreferences.push(userWeighting);
+      });
+
+    $('#RecipeGroupSliders input[type=range]')
+      .each(function (i, obj) {
+        var userWeighting = { Group: $(obj).attr('name'), Preference: $(obj).val() };
+        recipeGroupPreferences.push(userWeighting);
+      });
+
+    $('#disliked li')
+      .each(function (i, obj) {
+        var food = { Name: $(obj).attr('foodName'), Id: $(obj).attr('foodId') };
+        dislikedFoods.push(food);
+      });
+
+    $.ajax({
+      dataType: "json",
+      url: '@Url.Action("Preferences")',
+      type: 'POST',
+      data: { preferences: {
+        FoodGroupPreferences: foodGroupPreferences,
+        RecipeGroupPreferences: recipeGroupPreferences,
+        DislikedFoods: dislikedFoods
+      } }
+    });
+  }
+
+</script>
