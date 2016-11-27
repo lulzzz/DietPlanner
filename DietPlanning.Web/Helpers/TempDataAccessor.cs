@@ -21,7 +21,7 @@ namespace DietPlanning.Web.Helpers
         tempData[LogKey] = log;
       }
 
-      return tempData[LogKey] as NsgaLog;
+      return tempData.Peek(LogKey) as NsgaLog;
     }
 
     public static void SaveLog(this TempDataDictionary tempData, NsgaLog log)

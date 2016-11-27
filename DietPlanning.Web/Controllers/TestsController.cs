@@ -1,4 +1,5 @@
 ﻿using System.Web.Mvc;
+using DietPlanning.Web.Helpers;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -7,7 +8,7 @@ namespace DietPlanning.Web.Controllers
         // GET: Tests
         public ActionResult NsgaLog()
         {
-            return View();
+            return View(TempData.GetLog());
         }
     }
 }

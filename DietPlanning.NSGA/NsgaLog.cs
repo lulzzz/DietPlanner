@@ -10,6 +10,7 @@ namespace DietPlanning.NSGA
     public NsgaLog()
     {
       ObjectiveLogs = new List<ObjectiveLog>();
+      FrontsNumberLog = new List<int>();
     }
   }
 
