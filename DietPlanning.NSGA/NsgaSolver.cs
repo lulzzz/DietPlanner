@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using Tools;
 
 namespace DietPlanning.NSGA
 {
@@ -71,23 +70,25 @@ namespace DietPlanning.NSGA
     private void LogData(NsgaLog log, List<List<Individual>> fronts, int iteration)
     {
       log.FrontsNumberLog.Add(fronts.Count);
+      log.FirstFrontSizeLog.Add(fronts.First().Count);
 
-      var averageMacro = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Macro);
-      var averageCost = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.Cost);
-      var averagePrepTime = GetFrontAverageEvaluation(fronts.First(), ObjectiveType.PreparationTime);
-
-      log.ObjectiveLogs.Add( new ObjectiveLog {ObjectiveType = ObjectiveType.Macro, Iteration = iteration, ObjectiveValue = averageMacro });
-      log.ObjectiveLogs.Add( new ObjectiveLog {ObjectiveType = ObjectiveType.Cost, Iteration = iteration, ObjectiveValue = averageCost });
-      log.ObjectiveLogs.Add( new ObjectiveLog {ObjectiveType = ObjectiveType.PreparationTime, Iteration = iteration, ObjectiveValue = averagePrepTime});
-
-      //CsvLogger.AddRow("iterationEvaluations", new dynamic[]{ iteration, averageMacro, averageCost, fronts.Count});
+      log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.Cost, iteration));
+      log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.Macro, iteration));
+      log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.PreparationTime, iteration));
     }
 
-    private static double GetFrontAverageEvaluation(List<Individual> front, ObjectiveType objectiveType)
+    private static ObjectiveLog GetFrontObjectiveLog(List<Individual> front, ObjectiveType objectiveType, int iteration)
     {
-      return front
-               .Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == objectiveType).Score)
-               .Sum()/ front.Count;
+      var scores = front.Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == objectiveType).Score).ToList();
+
+      return new ObjectiveLog
+      {
+        Avg = scores.Average(),
+        Min = scores.Min(),
+        Max = scores.Max(),
+        Iteration = iteration,
+        ObjectiveType = objectiveType
+      };
     }
 
     private List<Individual> CreateOffspring(List<Individual> individuals)

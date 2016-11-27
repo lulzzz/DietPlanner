@@ -13,87 +13,124 @@
 <canvas id="prepTimeChart" width="400" height="200"></canvas>
 <canvas id="costChart" width="400" height="200"></canvas>
 <canvas id="frontsChart" width="400" height="200"></canvas>
+<canvas id="frontSizeChart" width="400" height="200"></canvas>
 
 <script>
- var labels = [];
+  var labels = [];
   var fronts = [];
-  var macro = [];
-  var cost = [];
-  var prepTime = [];
+  var frontSize = [];
+  var macroAvg = [];
+  var macroMin = [];
+  var macroMax = [];
+  var costAvg = [];
+  var costMin = [];
+  var costMax = [];
+  var prepTimeAvg = [];
+  var prepTimeMin = [];
+  var prepTimeMax = [];
 
   @for (int i = 0; i < Model.FrontsNumberLog.Count; i++)
   {
     @:labels.push("@i");
-            }
+              }
 
 
   @foreach (var frontNumLog in Model.FrontsNumberLog)
 {
    @:fronts.push(@frontNumLog);
-        }
+            }
+  @foreach (var frontSize in Model.FirstFrontSizeLog)
+  {
+    @:frontSize.push(@frontSize);
+    }
 
   @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.Macro))
   {
-    @:macro.push(@objLog.ObjectiveValue.ToString().Replace(',','.'));
-          }
+    @:macroAvg.push(@objLog.Avg.ToString().Replace(',','.'));
+      @:macroMin.push(@objLog.Min.ToString().Replace(',','.'));
+      @:macroMax.push(@objLog.Max.ToString().Replace(',','.'));
+            }
 
   @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.Cost))
   {
-    @:cost.push(@objLog.ObjectiveValue.ToString().Replace(',','.'));
-      }
+    @:costAvg.push(@objLog.Avg.ToString().Replace(',','.'));
+      @:costMin.push(@objLog.Min.ToString().Replace(',','.'));
+      @:costMax.push(@objLog.Max.ToString().Replace(',','.'));
+        }
   @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.PreparationTime))
   {
-    @:prepTime.push(@(objLog.ObjectiveValue.ToString().Replace(',','.')));
+    @:prepTimeAvg.push(@(objLog.Avg.ToString().Replace(',','.')));
+      @:prepTimeMin.push(@(objLog.Min.ToString().Replace(',','.')));
+      @:prepTimeMax.push(@(objLog.Max.ToString().Replace(',','.')));
+    }
+  function CreateDataset(color, label, data) {
+    return {
+      label: label,
+      fill: false,
+      lineTension: 0.0,
+      backgroundColor: color,
+      borderColor: color,
+      borderCapStyle: 'butt',
+      borderDash: [],
+      borderDashOffset: 0.0,
+      borderJoinStyle: 'miter',
+      pointBorderColor: color,
+      pointBackgroundColor: "#fff",
+      pointBorderWidth: 1,
+      pointHoverRadius: 5,
+      pointHoverBackgroundColor: color,
+      pointHoverBorderWidth: 2,
+      pointRadius: 1,
+      pointHitRadius: 10,
+      data: data,
+      spanGaps: false
+    }
   }
 
-  function CreateData(data, label) {
+  function CreateMinMaxAvgData(avg, min, max, label) {
     return {
       labels: labels,
       datasets: [
-        {
-          label: label,
-          fill: false,
-          lineTension: 0.0,
-          backgroundColor: "rgba(75,192,192,0.4)",
-          borderColor: "rgba(75,192,192,1)",
-          borderCapStyle: 'butt',
-          borderDash: [],
-          borderDashOffset: 0.0,
-          borderJoinStyle: 'miter',
-          pointBorderColor: "rgba(75,192,192,1)",
-          pointBackgroundColor: "#fff",
-          pointBorderWidth: 1,
-          pointHoverRadius: 5,
-          pointHoverBackgroundColor: "rgba(75,192,192,1)",
-          pointHoverBorderColor: "rgba(220,220,220,1)",
-          pointHoverBorderWidth: 2,
-          pointRadius: 1,
-          pointHitRadius: 10,
-          data: data,
-          spanGaps: false
-        }
+        CreateDataset("rgba(75,192,192,1)", label + " min", min),
+        CreateDataset("rgba(174,21,235,1)", label + " max", max),
+        CreateDataset("rgba(235,96,21,1)", label + " avg ", avg)
       ]
     };
-}
+  }
+
+  function CreateSingleData(data, label) {
+    return {
+      labels: labels,
+      datasets: [
+        CreateDataset("rgba(75,192,192,1)", label, data)]
+    };
+  }
+
+  
 
   var macroChart = new Chart($("#macroChart"), {
     type: 'line',
-    data: CreateData(macro, "Macro")
+    data: CreateMinMaxAvgData(macroAvg, macroMin, macroMax, "Macro")
   });
 
   var macroChart = new Chart($("#prepTimeChart"), {
     type: 'line',
-    data: CreateData(prepTime, "Perparation Time")
+    data: CreateMinMaxAvgData(prepTimeAvg, prepTimeMin, prepTimeMax, "Perparation Time")
   });
-  
+
   var macroChart = new Chart($("#costChart"), {
     type: 'line',
-    data: CreateData(cost, "Cost")
+    data: CreateMinMaxAvgData(costAvg, costMin, costMax, "Cost")
   });
 
   var macroChart = new Chart($("#frontsChart"), {
     type: 'line',
-    data: CreateData(fronts, "Fronts")
+    data: CreateSingleData(fronts, "Number of all fronts")
+  });
+
+  var macroChart = new Chart($("#frontSizeChart"), {
+    type: 'line',
+    data: CreateSingleData(frontSize, "First front size")
   });
 
 </script>
