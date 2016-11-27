@@ -155,9 +155,11 @@
     <Compile Include="Controllers\DietController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
+    <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\TempDataAccessor.cs" />
     <Compile Include="Models\DailyDietsResultViewModel.cs" />
     <Compile Include="Models\DailyDietViewModel.cs" />
     <Compile Include="Models\FoodGroupPreference.cs" />
@@ -213,6 +215,7 @@
     <Content Include="Views\Diet\PersonalData.cshtml" />
     <Content Include="Views\Diet\Preferences.cshtml" />
     <Content Include="Views\Diet\FoodSelect.cshtml" />
+    <Content Include="Views\Tests\Log.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

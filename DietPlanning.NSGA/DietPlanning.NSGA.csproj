@@ -53,6 +53,7 @@
     <Compile Include="MathImplementation\MathIndividual.cs" />
     <Compile Include="MathImplementation\MathInitializer.cs" />
     <Compile Include="MathImplementation\MathMutator.cs" />
+    <Compile Include="NsgaLog.cs" />
     <Compile Include="NsgaResult.cs" />
     <Compile Include="NsgaSolver.cs" />
     <Compile Include="Evaluation.cs" />
