@@ -32,10 +32,11 @@ namespace DietPlanning.Core.DataProviders.RandomData
     private void RegenerateRecipes()
     {
       _recipes = new List<Recipe>();
+      var foodList = _foodsProvider.GetFoods();
 
       for (var i = 0; i < _size; i++)
       {
-        var recipe = GetRandomRecipe(_foodsProvider.GetFoods());
+        var recipe = GetRandomRecipe(foodList);
         recipe.Name = "r" + i;
         _recipes.Add(recipe);
       }

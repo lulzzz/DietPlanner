@@ -18,8 +18,6 @@ namespace DietPlanning.Web.Controllers
     private readonly NsgaSolverFactory _nsgaSolverFactory;
     private readonly IRecipeProvider _recipeProvider;
 
-    const string SettingsKey = "Settings";
-
     public DietController(RequirementsProvider requirementsProvider, NsgaSolverFactory nsgaSolverFactory, IRecipeProvider recipeProvider)
     {
       _requirementsProvider = requirementsProvider;
@@ -41,13 +39,8 @@ namespace DietPlanning.Web.Controllers
 
     public ActionResult GenerateDiets()
     {
-      if (!TempData.ContainsKey(SettingsKey))
-        return RedirectToAction("Edit", "Settings");
-
-      var config = ((SettingsViewModel)TempData.Peek(SettingsKey)).NsgaConfiguration;
-
       var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
-      var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(config, _recipeProvider.GetRecipes(), dietRequirements);
+      var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, _recipeProvider.GetRecipes(), dietRequirements);
 
       var nsgaResult = nsgaSolver.Solve();
       TempData.SaveLog(nsgaResult.Log);

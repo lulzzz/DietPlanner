@@ -9,11 +9,28 @@ namespace DietPlanning.Web.Helpers
 {
   public static class TempDataAccessor
   {
-    const string PersonalDataKey = "PersonalData";
-    const string PreferencesKey = "Preferences";
-    const string LogKey = "Log";
-    const string NsgaResultKey = "NsgaResult";
-    const string DailyDietsResultViewModeltKey = "DailyDietsResultViewModel";
+    private const string PersonalDataKey = "PersonalData";
+    private const string PreferencesKey = "Preferences";
+    private const string LogKey = "Log";
+    private const string NsgaResultKey = "NsgaResult";
+    private const string DailyDietsResultViewModeltKey = "DailyDietsResultViewModel";
+    private const string SettingsKey = "Settings";
+
+    public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
+    {
+      if (!tempData.ContainsKey(DailyDietsResultViewModeltKey))
+      {
+        var configurationProvider = new ConfigurationProvider();
+        var settingsViewModel = new SettingsViewModel { NsgaConfiguration = configurationProvider.GetConfiguration() };
+        tempData.SaveSettings(settingsViewModel);
+      }
+      return tempData.Peek(SettingsKey) as SettingsViewModel;
+    }
+
+    public static void SaveSettings(this TempDataDictionary tempData, SettingsViewModel settings)
+    {
+      tempData[SettingsKey] = settings;
+    }
 
     public static DailyDietsResultViewModel GetDailyDietsResultViewModel(this TempDataDictionary tempData)
     {
