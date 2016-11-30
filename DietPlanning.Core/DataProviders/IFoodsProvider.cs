@@ -3,7 +3,7 @@ using DietPlanning.Core.DomainObjects;
 
 namespace DietPlanning.Core.DataProviders
 {
-  interface IFoodsProvider
+  public interface IFoodsProvider
   {
     List<Food> GetFoods();
   }

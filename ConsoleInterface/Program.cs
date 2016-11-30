@@ -18,13 +18,13 @@ namespace ConsoleInterface
       CsvLogger.RegisterLogger("iterationEvaluations");
       
       var configurationProvider = new ConfigurationProvider();
-      var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
-      var nsgaSolverFactory = new NsgaSolverFactory(configurationProvider.GetConfiguration(), new Random());
+      var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider());
+      var nsgaSolverFactory = new NsgaSolverFactory(new Random());
       var recipes = recipeGenerator.GetRecipes();
       var requirementsProvider = new RequirementsProvider();
       var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
 
-      var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipes, dietRequirements);
+      var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(configurationProvider.GetConfiguration(), recipes, dietRequirements);
 
       var result = dailyDietsNsgaSolver.Solve();
 

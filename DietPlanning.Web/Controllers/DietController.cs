@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using DietPlanning.Core;
+using DietPlanning.Core.DataProviders;
 using DietPlanning.Core.DataProviders.Databse;
-using DietPlanning.Core.DataProviders.RandomData;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.DayImplementation;
@@ -15,7 +14,18 @@ namespace DietPlanning.Web.Controllers
 {
   public class DietController : Controller
   {
+    private readonly RequirementsProvider _requirementsProvider;
+    private readonly NsgaSolverFactory _nsgaSolverFactory;
+    private readonly IRecipeProvider _recipeProvider;
+
     const string SettingsKey = "Settings";
+
+    public DietController(RequirementsProvider requirementsProvider, NsgaSolverFactory nsgaSolverFactory, IRecipeProvider recipeProvider)
+    {
+      _requirementsProvider = requirementsProvider;
+      _nsgaSolverFactory = nsgaSolverFactory;
+      _recipeProvider = recipeProvider;
+    }
 
     public ActionResult ShowDays()
     {
@@ -36,12 +46,8 @@ namespace DietPlanning.Web.Controllers
 
       var config = ((SettingsViewModel)TempData.Peek(SettingsKey)).NsgaConfiguration;
 
-      var nsgaSolverFactory = new NsgaSolverFactory(config, new Random());
-      var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider().GetFoods());
-      var requirementsProvider = new RequirementsProvider();
-
-      var dietRequirements = requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
-      var nsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(recipeGenerator.GetRecipes(), dietRequirements);
+      var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
+      var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(config, _recipeProvider.GetRecipes(), dietRequirements);
 
       var nsgaResult = nsgaSolver.Solve();
       TempData.SaveLog(nsgaResult.Log);
