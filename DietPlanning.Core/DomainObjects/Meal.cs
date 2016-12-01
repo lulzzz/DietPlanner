@@ -9,7 +9,6 @@ namespace DietPlanning.Core.DomainObjects
 
     public Meal()
     {
-      FoodPortions = new List<FoodPortion>(); //todo: remove
       Receipes = new List<Recipe>();
     }
   }

@@ -1,4 +1,6 @@
+using System.Web.Hosting;
 using DietPlanning.Core.DataProviders;
+using DietPlanning.Core.DataProviders.Csv;
 using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DataProviders.RandomData;
 
@@ -66,7 +68,9 @@ namespace DietPlanning.Web.App_Start
     private static void RegisterServices(IKernel kernel)
     {
       kernel.Bind<IFoodsProvider>().To<FoodDatabaseProvider>();
-      kernel.Bind<IRecipeProvider>().ToConstructor<IRecipeProvider>( x => new RandomRecipeProvider(new Random(), 500, kernel.Get<IFoodsProvider>()));
+      // kernel.Bind<IRecipeProvider>().ToConstructor<IRecipeProvider>( x => new RandomRecipeProvider(new Random(), 500, kernel.Get<IFoodsProvider>()));
+      kernel.Bind<IRecipeProvider>().ToConstructor<IRecipeProvider>(x => new CsvRecipeProvider(new Random(), HostingEnvironment.MapPath(@"~/Content/Ing.csv")));
+     // kernel.Bind<IRecipeProvider>().To<CsvRecipeProvider>();
     }
   }
 }

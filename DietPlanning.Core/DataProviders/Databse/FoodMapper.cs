@@ -36,13 +36,8 @@ namespace DietPlanning.Core.DataProviders.Databse
 
     public static Food MapToFood(FoodDto foodDto)
     {
-      return new Food
-      {
-        Name = foodDto.ShortDescription,
-        Proteins = foodDto.Nutrients.Proteins,
-        Fat = foodDto.Nutrients.Fat,
-        Carbohydrates = foodDto.Nutrients.Carbohydrates,
-        Group = GetGroup(foodDto),
+      return new Food(foodDto.ShortDescription, foodDto.Nutrients.Proteins, foodDto.Nutrients.Fat, foodDto.Nutrients.Carbohydrates)
+      { 
         Id = foodDto.Id
       };
     }

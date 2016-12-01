@@ -4,12 +4,13 @@ namespace DietPlanning.Core.DomainObjects
 {
   public class Recipe
   {
-    //todo immutable
-
     public List<FoodPortion> Ingredients;
+    public NutritionValues NutritionValues;
     public int PreparationTimeInMinutes;
     public int Cost;
-    public RecipeGroup Group;
+    public string MainCategory;
+    public string SubCategory;
+
     public string Name;
 
     public Recipe()

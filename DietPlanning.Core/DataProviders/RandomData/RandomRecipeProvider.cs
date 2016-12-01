@@ -50,7 +50,7 @@ namespace DietPlanning.Core.DataProviders.RandomData
       {
         Cost = _random.Next(5, 35),
         PreparationTimeInMinutes = _random.Next(1, 10)*10,
-        Group = (RecipeGroup) receipeGroups.GetValue(_random.Next(receipeGroups.Length)),
+        //Group = (RecipeGroup) receipeGroups.GetValue(_random.Next(receipeGroups.Length)),
         Ingredients = GetRandomFoods(foods)
       };
 
@@ -74,13 +74,6 @@ namespace DietPlanning.Core.DataProviders.RandomData
       }
 
       return foodPortions;
-    }
-
-    private double CalculateCalories(Recipe recipe)
-    {
-      return recipe.Ingredients.Select(i => i.Food.Carbohydrates * i.Amount/100).Sum() * AtwaterFactors.Carbohydrates +
-       recipe.Ingredients.Select(i => i.Food.Fat * i.Amount / 100).Sum() * AtwaterFactors.Fat +
-       recipe.Ingredients.Select(i => i.Food.Proteins * i.Amount / 100).Sum()*AtwaterFactors.Proteins;
     }
   }
 }

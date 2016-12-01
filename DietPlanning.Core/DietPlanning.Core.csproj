@@ -54,6 +54,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AtwaterFactors.cs" />
+    <Compile Include="DataProviders\Csv\CsvRecipeProvider.cs" />
     <Compile Include="DataProviders\Databse\FoodDatabaseProvider.cs" />
     <Compile Include="DataProviders\Databse\FoodDatabseContext.cs" />
     <Compile Include="DataProviders\Databse\FoodDto.cs" />
@@ -71,6 +72,7 @@
     <Compile Include="DomainObjects\FoodGroup.cs" />
     <Compile Include="DomainObjects\FoodPortion.cs" />
     <Compile Include="DomainObjects\Meal.cs" />
+    <Compile Include="DomainObjects\NutritionValues.cs" />
     <Compile Include="DomainObjects\Recipe.cs" />
     <Compile Include="DataProviders\IFoodsProvider.cs" />
     <Compile Include="DomainObjects\RecipeGroup.cs" />
@@ -87,6 +89,9 @@
     <Folder Include="MacroSolvers\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="DataProviders\Csv\Ing.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

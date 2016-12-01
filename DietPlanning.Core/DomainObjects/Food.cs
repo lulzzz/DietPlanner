@@ -3,20 +3,19 @@
   public class Food
   {
     public string Name;
-    public double Proteins { get; set; }
-    public double Fat { get; set; }
-    public double Carbohydrates { get; set; }
-    public FoodGroup Group { get; set; }
+    public string Category { get; set; }
     public int Id { get; set; }
+    public NutritionValues NutritionValues;
 
     public Food(){}
 
     public Food(string name, double proteins, double fat, double carbohydrates)
     {
+      NutritionValues = new NutritionValues();
       Name = name;
-      Proteins = proteins;
-      Fat = fat;
-      Carbohydrates = carbohydrates;
+      NutritionValues.Proteins = proteins;
+      NutritionValues.Fat = fat;
+      NutritionValues.Carbohydrates = carbohydrates;
     }
   }
 }

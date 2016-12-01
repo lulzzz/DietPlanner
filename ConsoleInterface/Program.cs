@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DietPlanning.Core.DataProviders.Databse;
-using DietPlanning.Core.DataProviders.RandomData;
+using DietPlanning.Core.DataProviders.Csv;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.MathImplementation;
@@ -15,23 +14,28 @@ namespace ConsoleInterface
   {
     public static void Main(string[] args)
     {
-      CsvLogger.RegisterLogger("iterationEvaluations");
+      //CsvLogger.RegisterLogger("iterationEvaluations");
       
-      var configurationProvider = new ConfigurationProvider();
-      var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider());
-      var nsgaSolverFactory = new NsgaSolverFactory(new Random());
-      var recipes = recipeGenerator.GetRecipes();
-      var requirementsProvider = new RequirementsProvider();
-      var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
+      //var configurationProvider = new ConfigurationProvider();
+      //var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider());
+      //var nsgaSolverFactory = new NsgaSolverFactory(new Random());
+      //var recipes = recipeGenerator.GetRecipes();
+      //var requirementsProvider = new RequirementsProvider();
+      //var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
 
-      var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(configurationProvider.GetConfiguration(), recipes, dietRequirements);
+      //var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(configurationProvider.GetConfiguration(), recipes, dietRequirements);
 
-      var result = dailyDietsNsgaSolver.Solve();
+      //var result = dailyDietsNsgaSolver.Solve();
 
-      //LogMathFrontResult(result);
-      LogDailyDietsFrontResult(result.Fronts);
+      ////LogMathFrontResult(result);
+      //LogDailyDietsFrontResult(result.Fronts);
 
-      CsvLogger.Write("iterationEvaluations", "d:\\output.csv");
+      //CsvLogger.Write("iterationEvaluations", "d:\\output.csv");
+
+      var csvProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/Ing.csv");
+
+      var recipes = csvProvider.GetRecipes();
+      recipes = csvProvider.GetRecipes();
       
       Console.WriteLine("done");
       Console.ReadKey();

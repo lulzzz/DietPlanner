@@ -21,6 +21,7 @@
       {
         return Upper - value;
       }
+
       return 0.0;
     }
   }
