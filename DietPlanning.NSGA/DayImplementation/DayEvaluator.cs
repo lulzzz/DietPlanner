@@ -74,12 +74,11 @@ namespace DietPlanning.NSGA.DayImplementation
       feasible = true;
       var dailySummary = _dietAnalyzer.SummarizeDaily(dailyDiet);
       //todo fpr grpup of ppl
-      var distance = 0.0 +
-                     Math.Abs(_dietRequirements.ProteinRange.GetDistanceToRange(dailySummary.Proteins)) +
-                     Math.Abs(_dietRequirements.FatRange.GetDistanceToRange(dailySummary.Fat)) +
-                     Math.Abs(_dietRequirements.CarbohydratesRange.GetDistanceToRange(dailySummary.Carbohydrates));
+      var distance = Math.Abs(_dietRequirements.ProteinRange.GetDistanceToRange(dailySummary.NutritionValues.Proteins)) +
+                     Math.Abs(_dietRequirements.FatRange.GetDistanceToRange(dailySummary.NutritionValues.Fat)) +
+                     Math.Abs(_dietRequirements.CarbohydratesRange.GetDistanceToRange(dailySummary.NutritionValues.Carbohydrates));
 
-      if (! _dietRequirements.CaloriesAllowedRange.IsInRange(dailySummary.Calories) || distance > 0)
+      if (! _dietRequirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories) || distance > 0)
       {
         feasible = false;
       }

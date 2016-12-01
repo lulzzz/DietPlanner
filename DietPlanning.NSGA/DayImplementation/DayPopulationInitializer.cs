@@ -45,7 +45,7 @@ namespace DietPlanning.NSGA.DayImplementation
         dailyDiet.Meals.Add(CreateRandomMeal());
       }
 
-      while (_requirements.CaloriesAllowedRange.IsInRange(_dietAnalyzer.SummarizeDaily(dailyDiet).Calories))
+      while (_requirements.CaloriesAllowedRange.IsInRange(_dietAnalyzer.SummarizeDaily(dailyDiet).NutritionValues.Calories))
       {
         AddRandomReceipe(dailyDiet.Meals.GetRandomItem());
       }

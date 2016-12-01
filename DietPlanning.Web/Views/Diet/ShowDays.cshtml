@@ -22,10 +22,10 @@
   {
     <div class="day">
       <div>
-        <div><span>@((int)day.DietSummary.Calories) Calories</span></div>
-        <div><span>@((int)day.DietSummary.Carbohydrates) g Carbohydrates</span></div>
-        <div><span>@((int)day.DietSummary.Fat) g Fats</span></div>
-        <div><span>@((int)day.DietSummary.Proteins) g Proteins</span></div>
+        <div><span>@((int)day.DietSummary.NutritionValues.Calories) Calories</span></div>
+        <div><span>@((int)day.DietSummary.NutritionValues.Carbohydrates) g Carbohydrates</span></div>
+        <div><span>@((int)day.DietSummary.NutritionValues.Fat) g Fats</span></div>
+        <div><span>@((int)day.DietSummary.NutritionValues.Proteins) g Proteins</span></div>
       </div>
       <br />
       @foreach (var meal in day.DailyDiet.Meals)

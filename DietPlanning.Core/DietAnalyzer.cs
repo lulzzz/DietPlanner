@@ -27,48 +27,20 @@ namespace DietPlanning.Core
     {
       var mealSumamry = CreateMealSummary(meal);
 
-      dietSummary.Carbohydrates += mealSumamry.Carbohydrates;
-      dietSummary.Fat += mealSumamry.Fat;
-      dietSummary.Proteins += mealSumamry.Proteins;
-      dietSummary.Calories += mealSumamry.Calories;
+      dietSummary.NutritionValues += mealSumamry;
 
       dietSummary.CaloriesPerMeal.Add(mealSumamry.Calories);
     }
 
-    private DietSummary CreateMealSummary(Meal meal)
+    private NutritionValues CreateMealSummary(Meal meal)
     {
-      var mealSummary = new DietSummary();
-      //var portions = meal.Receipes.SelectMany(portion => portion.Ingredients).ToList();
-      //portions.ForEach(portion => AddNutrientsFromPortion(mealSummary, portion));
-      //mealSummary.Calories = CalculateCalories(mealSummary);
-
+      var mealSummary = new NutritionValues();
+      
       var nutritionValues = meal.Receipes.Select(r => r.NutritionValues).ToList();
-      nutritionValues.ForEach(v => AddNutritionValues(mealSummary, v));
+
+      nutritionValues.ForEach(v => mealSummary += v);
 
       return mealSummary;
-    }
-
-    private void AddNutritionValues(DietSummary mealSummary, NutritionValues nutritionValues)
-    {
-      mealSummary.Carbohydrates += nutritionValues.Carbohydrates;
-      mealSummary.Fat += nutritionValues.Fat;
-      mealSummary.Proteins += nutritionValues.Proteins;
-      mealSummary.Calories += nutritionValues.Calories;
-    }
-
-
-    //private void AddNutrientsFromPortion(DietSummary mealSummary, FoodPortion portion)
-    //{
-    //  mealSummary.Carbohydrates += portion.Food.Carbohydrates * portion.Amount / 100.0;
-    //  mealSummary.Fat += portion.Food.Fat * portion.Amount / 100.0;
-    //  mealSummary.Proteins += portion.Food.Proteins * portion.Amount / 100.0;
-    //}
-
-    private double CalculateCalories(DietSummary dietSummary)
-    {
-      return dietSummary.Carbohydrates * AtwaterFactors.Carbohydrates +
-             dietSummary.Fat * AtwaterFactors.Fat +
-             dietSummary.Proteins * AtwaterFactors.Proteins;
     }
   }
 }
