@@ -35,8 +35,8 @@ namespace DietPlanning.Core
     private NutritionValues CreateMealSummary(Meal meal)
     {
       var mealSummary = new NutritionValues();
-      
-      var nutritionValues = meal.Receipes.Select(r => r.NutritionValues).ToList();
+
+      var nutritionValues = meal.Receipes.Select(r => r.NutritionValues*(r.NominalWeight/100.0)).ToList();
 
       nutritionValues.ForEach(v => mealSummary += v);
 

@@ -72,6 +72,7 @@
     <Compile Include="DomainObjects\FoodGroup.cs" />
     <Compile Include="DomainObjects\FoodPortion.cs" />
     <Compile Include="DomainObjects\Meal.cs" />
+    <Compile Include="DomainObjects\MealType.cs" />
     <Compile Include="DomainObjects\NutritionValues.cs" />
     <Compile Include="DomainObjects\Recipe.cs" />
     <Compile Include="DataProviders\IFoodsProvider.cs" />
@@ -92,6 +93,9 @@
     <None Include="DataProviders\Csv\Ing.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <Content Include="DataProviders\Csv\ingredientsv3.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

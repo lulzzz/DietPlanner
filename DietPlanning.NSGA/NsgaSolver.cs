@@ -68,7 +68,7 @@ namespace DietPlanning.NSGA
       };
     }
 
-    private void LogData(NsgaLog log, List<List<Individual>> fronts, int iteration)
+    private void LogData(NsgaLog log, List<List<Individual>> fronts, int iteration)  
     {
       log.FrontsNumberLog.Add(fronts.Count);
       log.FirstFrontSizeLog.Add(fronts.First().Count);

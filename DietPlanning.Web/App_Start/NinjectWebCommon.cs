@@ -2,7 +2,6 @@ using System.Web.Hosting;
 using DietPlanning.Core.DataProviders;
 using DietPlanning.Core.DataProviders.Csv;
 using DietPlanning.Core.DataProviders.Databse;
-using DietPlanning.Core.DataProviders.RandomData;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(DietPlanning.Web.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(DietPlanning.Web.App_Start.NinjectWebCommon), "Stop")]
@@ -69,7 +68,7 @@ namespace DietPlanning.Web.App_Start
     {
       kernel.Bind<IFoodsProvider>().To<FoodDatabaseProvider>();
       // kernel.Bind<IRecipeProvider>().ToConstructor<IRecipeProvider>( x => new RandomRecipeProvider(new Random(), 500, kernel.Get<IFoodsProvider>()));
-      kernel.Bind<IRecipeProvider>().ToConstructor<IRecipeProvider>(x => new CsvRecipeProvider(new Random(), HostingEnvironment.MapPath(@"~/Content/Ing.csv")));
+      kernel.Bind<IRecipeProvider>().ToConstructor<IRecipeProvider>(x => new CsvRecipeProvider(new Random(), HostingEnvironment.MapPath(@"~/Content/ingredientsv3.csv")));
      // kernel.Bind<IRecipeProvider>().To<CsvRecipeProvider>();
     }
   }

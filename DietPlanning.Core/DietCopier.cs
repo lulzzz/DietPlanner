@@ -24,9 +24,10 @@ namespace DietPlanning.Core
 
     public static Meal CopyMeal(Meal meal)
     {
-      var copy = new Meal();
+      var copy = new Meal {MealType = meal.MealType};
 
       meal.FoodPortions.ForEach(portion => copy.FoodPortions.Add(new FoodPortion(portion.Food, portion.Amount)));
+
       copy.Receipes.AddRange(meal.Receipes);
 
       return copy;

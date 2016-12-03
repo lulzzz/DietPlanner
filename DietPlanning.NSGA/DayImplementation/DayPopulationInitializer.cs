@@ -42,7 +42,9 @@ namespace DietPlanning.NSGA.DayImplementation
 
       for (var j = 0; j < _numberOfMealsPerDay; j++)
       {
-        dailyDiet.Meals.Add(CreateRandomMeal());
+        var meal = CreateRandomMeal();
+        meal.MealType = (MealType)j;
+        dailyDiet.Meals.Add(meal);
       }
 
       while (_requirements.CaloriesAllowedRange.IsInRange(_dietAnalyzer.SummarizeDaily(dailyDiet).NutritionValues.Calories))

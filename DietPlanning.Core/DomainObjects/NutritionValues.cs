@@ -17,5 +17,16 @@
         Calories = left.Calories + right.Calories
       };
     }
+
+    public static NutritionValues operator *(NutritionValues values, double multiplier)
+    {
+      return new NutritionValues
+      {
+        Proteins = values.Proteins*multiplier,
+        Fat = values.Fat*multiplier,
+        Carbohydrates = values.Carbohydrates*multiplier,
+        Calories = values.Calories*multiplier,
+      };
+    }
   }
 }

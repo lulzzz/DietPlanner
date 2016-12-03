@@ -32,7 +32,7 @@ namespace ConsoleInterface
 
       //CsvLogger.Write("iterationEvaluations", "d:\\output.csv");
 
-      var csvProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/Ing.csv");
+      var csvProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
 
       var recipes = csvProvider.GetRecipes();
       recipes = csvProvider.GetRecipes();
