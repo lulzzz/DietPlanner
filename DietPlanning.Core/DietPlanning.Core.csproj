@@ -77,6 +77,8 @@
     <Compile Include="DomainObjects\Recipe.cs" />
     <Compile Include="DataProviders\IFoodsProvider.cs" />
     <Compile Include="DomainObjects\RecipeGroup.cs" />
+    <Compile Include="FoodPreferences\CategoryPreference.cs" />
+    <Compile Include="FoodPreferences\DietPreferences.cs" />
     <Compile Include="NutritionRequirements\DietRequirements.cs" />
     <Compile Include="NutritionRequirements\Gender.cs" />
     <Compile Include="NutritionRequirements\PersonalData.cs" />

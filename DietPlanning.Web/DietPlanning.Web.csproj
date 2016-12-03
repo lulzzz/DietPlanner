@@ -180,11 +180,11 @@
     <Compile Include="Helpers\TempDataAccessor.cs" />
     <Compile Include="Models\DailyDietsResultViewModel.cs" />
     <Compile Include="Models\DailyDietViewModel.cs" />
-    <Compile Include="Models\FoodGroupPreference.cs" />
     <Compile Include="Models\FoodNameViewModel.cs" />
+    <Compile Include="Models\MainCategoryPreferenceViewModel.cs" />
     <Compile Include="Models\PreferencesViewModel.cs" />
-    <Compile Include="Models\RecipeGroupPreference.cs" />
     <Compile Include="Models\SettingsViewModel.cs" />
+    <Compile Include="Models\SubCategoryPreferenceViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>

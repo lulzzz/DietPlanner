@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.NSGA.MathImplementation;
@@ -31,12 +32,12 @@ namespace DietPlanning.NSGA
         configuration);
     }
 
-    public NsgaSolver GetDailyDietsSolver(Configuration configuration, List<Recipe> recipes, DietRequirements dietRequirements)
+    public NsgaSolver GetDailyDietsSolver(Configuration configuration, List<Recipe> recipes, DietRequirements dietRequirements, DietPreferences dietPreferences)
     {
       return new NsgaSolver(
         new Sorter(),
         new DayPopulationInitializer(_random, recipes, 5, new DietAnalyzer(), dietRequirements),
-        new DayEvaluator(new DietAnalyzer(), dietRequirements),
+        new DayEvaluator(new DietAnalyzer(), dietRequirements, dietPreferences),
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
         new DayCrossOver(_random),
         new DayMutator(_random, recipes),

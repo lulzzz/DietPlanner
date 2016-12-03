@@ -5,7 +5,8 @@
     Cost,
     Macro,
     Variety,
-    PreparationTime
+    PreparationTime,
+    Preferences
   }
 }
 //todo: Preferences;

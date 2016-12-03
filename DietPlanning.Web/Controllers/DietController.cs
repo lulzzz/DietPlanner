@@ -4,6 +4,7 @@ using System.Web.Mvc;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders;
 using DietPlanning.Core.DataProviders.Databse;
+using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.DayImplementation;
@@ -40,7 +41,9 @@ namespace DietPlanning.Web.Controllers
     public ActionResult GenerateDiets()
     {
       var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
-      var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, _recipeProvider.GetRecipes(), dietRequirements);
+      var recipes = _recipeProvider.GetRecipes();
+      var dietPreferences = TempData.GetDietPreferences();
+      var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, recipes, dietRequirements, dietPreferences);
 
       var nsgaResult = nsgaSolver.Solve();
       TempData.SaveLog(nsgaResult.Log);
@@ -68,13 +71,19 @@ namespace DietPlanning.Web.Controllers
     [HttpGet]
     public ActionResult Preferences()
     {
-      return View(TempData.GetPreferences());
+      var preferences = TempData.GetPreferencesViewModel() ?? InitializePreferencesViewModel();
+
+      TempData.SavePreferencesViewModel(preferences);
+
+      return View(preferences);
     }
 
     [HttpPost]
     public ActionResult Preferences(PreferencesViewModel preferences)
     {
-      return View(TempData.SavePreferences(preferences));
+      UpdatePreferences(preferences);
+
+      return View(TempData.GetPreferencesViewModel());
     }
 
     [HttpGet]
@@ -86,6 +95,49 @@ namespace DietPlanning.Web.Controllers
       var json = Json(result, JsonRequestBehavior.AllowGet);
 
       return json;
+    }
+
+    private void UpdatePreferences(PreferencesViewModel preferencesViewModel)
+    {
+      var preferences = TempData.GetDietPreferences();
+      preferences.CategoryPreferences.Clear();
+
+      var oldPreferencesViewModel = TempData.GetPreferencesViewModel();
+
+      var oldMains = oldPreferencesViewModel.MainCategoryPreferences.ToList();
+      var oldSubs = oldPreferencesViewModel.MainCategoryPreferences.SelectMany(m => m.SubCategoryPreferences).ToList();
+      var mewMains = preferencesViewModel.MainCategoryPreferences.ToList();
+      var newSubs = preferencesViewModel.MainCategoryPreferences.SelectMany(m => m.SubCategoryPreferences).ToList();
+
+      foreach (var oldMain in oldMains)
+      {
+        oldMain.Value = mewMains.Single(m => m.Id == oldMain.Id).Value;
+        if (oldMain.Value != 0.0)
+        {
+          preferences.CategoryPreferences.Add(new CategoryPreference
+          {
+            CategoryLevel = CategoryLevel.MainCategory,
+            Name = oldMain.Name,
+            Preference = oldMain.Value
+          });
+        }
+      }
+
+      foreach (var oldSub in oldSubs)
+      {
+        oldSub.Value = newSubs.Single(m => m.Id == oldSub.Id).Value;
+        if (oldSub.Value != 0.0)
+        {
+          preferences.CategoryPreferences.Add(new CategoryPreference
+          {
+            CategoryLevel = CategoryLevel.SubCategory,
+            Name = oldSub.Name,
+            Preference = oldSub.Value
+          });
+        }
+      }
+
+      TempData.SaveDietPreferences(preferences);
     }
 
     private DailyDietsResultViewModel CreateDailyDietsResultViewModel(List<List<Individual>> nsgaResult, DietRequirements dietRequirements)
@@ -110,7 +162,41 @@ namespace DietPlanning.Web.Controllers
 
       return viewModel;
     }
-    
-    
+
+    private PreferencesViewModel InitializePreferencesViewModel()
+    {
+      var recipes = _recipeProvider.GetRecipes();
+      var mainCategories = recipes.Select(recipe => recipe.MainCategory).Distinct();
+      var preferencesViewModel = new PreferencesViewModel();
+      var preferenceIndex = 0;
+
+      foreach (var mainCategory in mainCategories)
+      {
+        var mainCategoryPreferenceViewModel = new MainCategoryPreferenceViewModel
+        {
+          Name = mainCategory,
+          Value = 0.0,
+          Id = $"preference_{++preferenceIndex}"
+        };
+        var subCategories =
+          recipes.Where(r => r.MainCategory == mainCategory && r.MainCategory != r.SubCategory)
+          .Select(r => r.SubCategory).Distinct().Where(subCategory => subCategory != mainCategory);
+
+        foreach (var subCategory in subCategories)
+        {
+          var subCategoryPreferenceViewModel = new SubCategoryPreferenceViewModel
+          {
+            Name = subCategory,
+            Value = 0,
+            Id = $"preference_{++preferenceIndex}"
+          };
+          mainCategoryPreferenceViewModel.SubCategoryPreferences.Add(subCategoryPreferenceViewModel);
+        }
+
+        preferencesViewModel.MainCategoryPreferences.Add(mainCategoryPreferenceViewModel);
+      }
+
+      return preferencesViewModel;
+    }
   }
 }

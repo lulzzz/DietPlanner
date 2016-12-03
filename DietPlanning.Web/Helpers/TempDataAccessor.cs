@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Web.Mvc;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.Web.Models;
@@ -15,16 +16,26 @@ namespace DietPlanning.Web.Helpers
     private const string NsgaResultKey = "NsgaResult";
     private const string DailyDietsResultViewModeltKey = "DailyDietsResultViewModel";
     private const string SettingsKey = "Settings";
+    private const string DietPreferencesKey = "DietPreferencesKey";
 
     public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
     {
-      if (!tempData.ContainsKey(DailyDietsResultViewModeltKey))
-      {
-        var configurationProvider = new ConfigurationProvider();
-        var settingsViewModel = new SettingsViewModel { NsgaConfiguration = configurationProvider.GetConfiguration() };
-        tempData.SaveSettings(settingsViewModel);
-      }
+      if (tempData.ContainsKey(DailyDietsResultViewModeltKey)) return tempData.Peek(SettingsKey) as SettingsViewModel;
+
+      var configurationProvider = new ConfigurationProvider();
+      var settingsViewModel = new SettingsViewModel { NsgaConfiguration = configurationProvider.GetConfiguration() };
+      tempData.SaveSettings(settingsViewModel);
       return tempData.Peek(SettingsKey) as SettingsViewModel;
+    }
+
+    public static DietPreferences GetDietPreferences(this TempDataDictionary tempData)
+    {
+      return tempData.ContainsKey(DietPreferencesKey) ? tempData.Peek(DietPreferencesKey) as DietPreferences : new DietPreferences();
+    }
+
+    public static void SaveDietPreferences(this TempDataDictionary tempData, DietPreferences dietPreferences)
+    {
+      tempData[DietPreferencesKey] = dietPreferences;
     }
 
     public static void SaveSettings(this TempDataDictionary tempData, SettingsViewModel settings)
@@ -34,12 +45,7 @@ namespace DietPlanning.Web.Helpers
 
     public static DailyDietsResultViewModel GetDailyDietsResultViewModel(this TempDataDictionary tempData)
     {
-      if (!tempData.ContainsKey(DailyDietsResultViewModeltKey))
-      {
-        return null;
-      }
-
-      return tempData.Peek(DailyDietsResultViewModeltKey) as DailyDietsResultViewModel;
+      return tempData.ContainsKey(DailyDietsResultViewModeltKey) ? tempData.Peek(DailyDietsResultViewModeltKey) as DailyDietsResultViewModel : null;
     }
 
     public static void SaveDailyDietsResultViewModel(this TempDataDictionary tempData, DailyDietsResultViewModel nsgaResult)
@@ -49,12 +55,7 @@ namespace DietPlanning.Web.Helpers
 
     public static NsgaResult GetNsgaResult(this TempDataDictionary tempData)
     {
-      if (!tempData.ContainsKey(NsgaResultKey))
-      {
-        return null;
-      }
-
-      return tempData.Peek(NsgaResultKey) as NsgaResult;
+      return tempData.ContainsKey(NsgaResultKey) ? tempData.Peek(NsgaResultKey) as NsgaResult : null;
     }
 
     public static void SaveNsgaResult(this TempDataDictionary tempData, NsgaResult nsgaResult)
@@ -64,11 +65,10 @@ namespace DietPlanning.Web.Helpers
 
     public static NsgaLog GetLog(this TempDataDictionary tempData)
     {
-      if (!tempData.ContainsKey(LogKey))
-      {
-        var log = new NsgaLog();
-        tempData[LogKey] = log;
-      }
+      if (tempData.ContainsKey(LogKey)) return tempData.Peek(LogKey) as NsgaLog;
+
+      var log = new NsgaLog();
+      tempData[LogKey] = log;
 
       return tempData.Peek(LogKey) as NsgaLog;
     }
@@ -78,19 +78,12 @@ namespace DietPlanning.Web.Helpers
       tempData[LogKey] = log;
     }
 
-    public static PreferencesViewModel GetPreferences(this TempDataDictionary tempData)
+    public static PreferencesViewModel GetPreferencesViewModel(this TempDataDictionary tempData)
     {
-      if (!tempData.ContainsKey(PreferencesKey))
-      {
-        var preferences = new PreferencesViewModel();
-        InitializePrferences(preferences);
-        tempData[PreferencesKey] = preferences;
-      }
-
-      return tempData.Peek(PreferencesKey) as PreferencesViewModel;
+      return tempData.ContainsKey(PreferencesKey) ? tempData.Peek(PreferencesKey) as PreferencesViewModel : null;
     }
 
-    public static PreferencesViewModel SavePreferences(this TempDataDictionary tempData, PreferencesViewModel preferences)
+    public static PreferencesViewModel SavePreferencesViewModel(this TempDataDictionary tempData, PreferencesViewModel preferences)
     {
       tempData[PreferencesKey] = preferences;
 
@@ -117,19 +110,6 @@ namespace DietPlanning.Web.Helpers
     public static void SavePersonalData(this TempDataDictionary tempData, PersonalData personalData)
     {
       tempData[PersonalDataKey] = personalData;
-    }
-
-    private static void InitializePrferences(PreferencesViewModel preferences)
-    {
-      foreach (FoodGroup group in Enum.GetValues(typeof(FoodGroup)))
-      {
-        preferences.FoodGroupPreferences.Add(new FoodGroupPreference { Group = group, Preference = 0 });
-      }
-
-      foreach (RecipeGroup group in Enum.GetValues(typeof(RecipeGroup)))
-      {
-        preferences.RecipeGroupPreferences.Add(new RecipeGroupPreference { Group = group, Preference = 0 });
-      }
     }
   }
 }

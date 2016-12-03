@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 
 namespace DietPlanning.NSGA.DayImplementation
@@ -11,11 +12,13 @@ namespace DietPlanning.NSGA.DayImplementation
   {
     private readonly DietAnalyzer _dietAnalyzer;
     private readonly DietRequirements _dietRequirements;
+    private readonly DietPreferences _dietPreferences;
 
-    public DayEvaluator(DietAnalyzer dietAnalyzer, DietRequirements dietRequirements)
+    public DayEvaluator(DietAnalyzer dietAnalyzer, DietRequirements dietRequirements, DietPreferences dietPreferences)
     {
       _dietAnalyzer = dietAnalyzer;
       _dietRequirements = dietRequirements;
+      _dietPreferences = dietPreferences;
     }
 
     public void Evaluate(List<Individual> individuals)
@@ -35,6 +38,7 @@ namespace DietPlanning.NSGA.DayImplementation
       individual.Evaluations.Add(macroEv);
       individual.Evaluations.Add(EvaluateCost(recipes));
       individual.Evaluations.Add(EvaluatePreparationTime(recipes));
+      individual.Evaluations.Add(EvaluatePreferences(recipes));
       
       //todo preferences
     }
@@ -67,6 +71,38 @@ namespace DietPlanning.NSGA.DayImplementation
         Direction = Direction.Minimize,
         Score = recipes.Select(recipe => recipe.PreparationTimeInMinutes).Sum()
       };
+    }
+
+    private Evaluation EvaluatePreferences(List<Recipe> recipes)
+    {
+      return new Evaluation
+      {
+        Type = ObjectiveType.Preferences,
+        Direction = Direction.Maximize,
+        Score = GetPreferencesScore(recipes)
+      };
+    }
+
+    private double GetPreferencesScore(List<Recipe> recipes)
+    {
+      var mainCategories = recipes.Select(r => r.MainCategory).ToList();
+      var subCategories = recipes.Select(r => r.SubCategory).ToList();
+
+      var score = 0.0;
+
+      foreach (var categoryPreference in _dietPreferences.CategoryPreferences)
+      {
+        if(Math.Abs(categoryPreference.Preference) < 0.1)
+          continue;
+
+        var categorySet = categoryPreference.CategoryLevel == CategoryLevel.MainCategory
+          ? mainCategories
+          : subCategories;
+
+        score += categorySet.Count(mainCat => mainCat == categoryPreference.Name) * categoryPreference.Preference;
+      }
+
+      return score;
     }
 
     private double EvaluateDailyMacro(DailyDiet dailyDiet, out bool feasible)
