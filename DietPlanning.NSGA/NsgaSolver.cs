@@ -61,6 +61,9 @@ namespace DietPlanning.NSGA
           throw new ApplicationException($"Population size is {individuals.Count} instead of {_config.PopulationSize}");
       }
 
+      _evaluator.Evaluate(individuals);
+      fronts = _sorter.Sort(individuals).ToList();
+
       return new NsgaResult
       {
         Log = log,
@@ -73,7 +76,9 @@ namespace DietPlanning.NSGA
       log.FrontsNumberLog.Add(fronts.Count);
       log.FirstFrontSizeLog.Add(fronts.First().Count);
 
-      var crowdingDistances = fronts.First().Select(ind => ind.CrowdingDistance).Where(dist => !double.IsInfinity(dist)).ToList();
+      var individuals = fronts.SelectMany(f => f).ToList();
+
+      var crowdingDistances = individuals.Select(ind => ind.CrowdingDistance).Where(dist => !double.IsInfinity(dist)).ToList();
       if (crowdingDistances.Any())
       {
         log.CrowdingDistanceVar.Add(crowdingDistances.Variance());
@@ -85,14 +90,14 @@ namespace DietPlanning.NSGA
         log.CrowdingDistanceAvg.Add(0);
       }
 
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.Cost, iteration));
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.Macro, iteration));
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(fronts.First(), ObjectiveType.PreparationTime, iteration));
+      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Cost, iteration));
+      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Macro, iteration));
+     // log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.PreparationTime, iteration));
     }
 
-    private static ObjectiveLog GetFrontObjectiveLog(List<Individual> front, ObjectiveType objectiveType, int iteration)
+    private static ObjectiveLog GetFrontObjectiveLog(List<Individual> individuals, ObjectiveType objectiveType, int iteration)
     {
-      var scores = front.Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == objectiveType).Score).ToList();
+      var scores = individuals.Select(diet => diet.Evaluations.Single(evaluation => evaluation.Type == objectiveType).Score).ToList();
 
       return new ObjectiveLog
       {

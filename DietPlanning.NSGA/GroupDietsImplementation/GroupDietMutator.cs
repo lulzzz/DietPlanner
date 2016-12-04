@@ -23,7 +23,6 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
 
     public void Mutate(Individual individual, double mutationProbability)
     {
-      //todo may affect performance - consider foreach diet, foreach meal etc
       var meals = ((GroupDietIndividual)individual).GroupDiet.Meals.Select(m => m);
 
       foreach (var meal in meals)
@@ -83,7 +82,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
 
     private void PerformMealLevelMutation(GroupMeal meal, RecipeGroupSplit recipe, GroupDietIndividual individual)
     {
-      const int maxRecipes = 4;
+      const int maxRecipes = 5;
       const int minRecipes = 1;
 
       var includedRecipes = individual.GroupDiet.Meals.SelectMany(m => m.Recipes).Select(r => r.Recipe).ToList();

@@ -23,7 +23,7 @@ namespace DietPlanning.Web.Helpers
 
     public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
     {
-      if (tempData.ContainsKey(DailyDietsResultViewModeltKey)) return tempData.Peek(SettingsKey) as SettingsViewModel;
+      if (tempData.ContainsKey(SettingsKey)) return tempData.Peek(SettingsKey) as SettingsViewModel;
 
       var configurationProvider = new ConfigurationProvider();
       var settingsViewModel = new SettingsViewModel { NsgaConfiguration = configurationProvider.GetConfiguration() };

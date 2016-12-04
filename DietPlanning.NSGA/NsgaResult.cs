@@ -6,5 +6,10 @@ namespace DietPlanning.NSGA
   {
     public List<List<Individual>> Fronts;
     public NsgaLog Log;
+
+    public NsgaResult()
+    {
+      Fronts = new List<List<Individual>>();
+    }
   }
 }

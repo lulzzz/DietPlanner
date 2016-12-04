@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="CrowdedDistanceComparerUnitTests.cs" />
     <Compile Include="EvaluationUnitTests.cs" />
+    <Compile Include="GroupEvaluatorUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SorterUnitTests.cs" />
   </ItemGroup>
@@ -80,6 +81,10 @@
     <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
       <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
       <Name>DietPlanning.NSGA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DietPlanning.Web\DietPlanning.Web.csproj">
+      <Project>{8D84D55A-36A8-477A-891D-22360A9B9370}</Project>
+      <Name>DietPlanning.Web</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
