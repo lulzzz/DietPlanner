@@ -15,7 +15,9 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
 
     public Tuple<Individual, Individual> CreateChildren(Individual parent1, Individual parent2)
     {
-      var childrenDiets = GetChild(((GroupDietIndividual)parent1).GroupDiet, ((GroupDietIndividual)parent2).GroupDiet);
+      var childrenDiets = GetChild(
+        GroupDietCopier.Copy(((GroupDietIndividual)parent1).GroupDiet), 
+        GroupDietCopier.Copy(((GroupDietIndividual)parent2).GroupDiet));
 
       return new Tuple<Individual, Individual>(new GroupDietIndividual(childrenDiets.Item1), new GroupDietIndividual(childrenDiets.Item2));
     }

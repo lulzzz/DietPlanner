@@ -8,6 +8,11 @@ namespace DietPlanning.Core.GroupDiets
     public Recipe Recipe { get; set; }
     public List<RecipeAdjustment> Adjustments { get; set; }
 
+    public RecipeGroupSplit()
+    {
+      Adjustments = new List<RecipeAdjustment>();
+    }
+
     public RecipeGroupSplit(int groupSize)
     {
       Adjustments = new List<RecipeAdjustment>();

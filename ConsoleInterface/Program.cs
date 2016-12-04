@@ -70,7 +70,8 @@ namespace ConsoleInterface
           Gender = Gender.Male,
           Height = 185,
           Weight = 85,
-          Pal = 1.5
+          Pal = 1.5,
+          Id = 0
         },
         new PersonalData
         {
@@ -78,7 +79,8 @@ namespace ConsoleInterface
           Gender = Gender.Female,
           Height = 160,
           Weight = 55,
-          Pal = 1.7
+          Pal = 1.7,
+          Id = 1
         }
       };
 

@@ -144,6 +144,25 @@ namespace DietPlanning.Web.Helpers
             Weight = 50,
             Pal = 1.8,
             Id = 1
+          },
+          new PersonalData
+          {
+            Age = 35,
+            Gender = Gender.Male,
+            Height = 220,
+            Weight = 110,
+            Pal = 1.9,
+            Id = 2,
+
+          },
+          new PersonalData
+          {
+            Age = 44,
+            Gender = Gender.Female,
+            Height = 170,
+            Weight = 65,
+            Pal = 1.3,
+            Id = 3
           }
         };
       }

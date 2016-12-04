@@ -7,7 +7,7 @@ namespace DietPlanning.Core.NutritionRequirements
     public DietRequirements GetRequirements(PersonalData personalData, int numberOfMeals)
     {
       var requirements = new DietRequirements {Calories = GetPpm(personalData)*personalData.Pal};
-      var tolerance = 0.08;
+      var tolerance = 0.1;
 
       SetNutrientsRanges(requirements);
       SetMealsSplit(requirements, numberOfMeals);

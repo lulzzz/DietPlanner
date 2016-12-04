@@ -33,10 +33,10 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
 
       var macroEv = EvaluateMacro(groupDiet, out individual.IsFeasible);
       individual.Evaluations.Add(macroEv);
-    //  individual.Evaluations.Add(EvaluateCost(recipes));
-    //  individual.Evaluations.Add(EvaluatePreparationTime(recipes));
+      individual.Evaluations.Add(EvaluateCost(recipes));
+      //  individual.Evaluations.Add(EvaluatePreparationTime(recipes));
       //individual.Evaluations.Add(EvaluatePreferences(recipes));
-      
+
       //todo preferences
     }
     

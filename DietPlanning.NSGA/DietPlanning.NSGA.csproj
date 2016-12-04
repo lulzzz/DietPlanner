@@ -41,6 +41,8 @@
     <Compile Include="DayImplementation\DayEvaluator.cs" />
     <Compile Include="DayImplementation\DayIndividual.cs" />
     <Compile Include="DayImplementation\DayMutator.cs" />
+    <Compile Include="GroupDietsImplementation\GroupDietCorrector.cs" />
+    <Compile Include="GroupDietsImplementation\GroupDietCopier.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietPopulationInitializer.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="DayImplementation\DayPopulationInitializer.cs" />

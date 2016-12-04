@@ -12,18 +12,21 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
     private readonly Random _random;
     private readonly List<Recipe> _recipes;
     private readonly int _groupSize;
+    private readonly GroupDietCorrector _corrector;
     private static readonly List<double> Multipliers = new List<double> { 0.75, 0.85, 1 , 1.25, 1.5};
 
-    public GroupDietMutator(Random random, List<Recipe> recipes, int groupSize)
+    public GroupDietMutator(Random random, List<Recipe> recipes, int groupSize, GroupDietCorrector corrector)
     {
       _random = random;
       _recipes = recipes;
       _groupSize = groupSize;
+      _corrector = corrector;
     }
 
     public void Mutate(Individual individual, double mutationProbability)
     {
-      var meals = ((GroupDietIndividual)individual).GroupDiet.Meals.Select(m => m);
+      var dietIndividual = individual as GroupDietIndividual;
+      var meals = dietIndividual.GroupDiet.Meals.Select(m => m);
 
       foreach (var meal in meals)
       {
@@ -39,6 +42,8 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           }
         }
       }
+
+      _corrector.ApplyCorrection(dietIndividual.GroupDiet);
     }
 
     private void PerformRecipesLevelMutation(GroupMeal meal, double mutationProbability)

@@ -48,17 +48,24 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         diet.Meals.Add(meal);
       }
 
-      var ranges = _personalData.Select(pd => pd.Requirements.CaloriesAllowedRange).ToList();
+      var topCaloriesRange = _personalData.Select(p => p.Requirements.CaloriesAllowedRange.Upper).Max();
 
-      var oldDistance = GetTotalCaloriesDistance(diet, ranges);
-      var newDistance = oldDistance;
+      //var ranges = _personalData.Select(pd => pd.Requirements.CaloriesAllowedRange).ToList();
 
-      while (Math.Abs(newDistance) <= Math.Abs(oldDistance))
+      //var oldDistance = GetTotalCaloriesDistance(diet, ranges);
+      //var newDistance = oldDistance;
+
+      //while (Math.Abs(newDistance) <= Math.Abs(oldDistance))
+      //{
+      //  AddRandomReceipeSplit(diet.Meals.GetRandomItem());
+
+      //  oldDistance = newDistance;
+      //  newDistance = GetTotalCaloriesDistance(diet, ranges);
+      //}
+
+      while (_dietAnalyzer.SummarizeForPerson(diet, _personalData.First().Id).NutritionValues.Calories < topCaloriesRange)
       {
         AddRandomReceipeSplit(diet.Meals.GetRandomItem());
-
-        oldDistance = newDistance;
-        newDistance = GetTotalCaloriesDistance(diet, ranges);
       }
 
       return diet;
