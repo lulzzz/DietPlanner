@@ -4,10 +4,9 @@ using System.Linq;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.GroupDiets;
 using DietPlanning.Core.NutritionRequirements;
-using DietPlanning.NSGA.GroupDietsImplementation;
 using Tools;
 
-namespace DietPlanning.NSGA.DayImplementation
+namespace DietPlanning.NSGA.GroupDietsImplementation
 {
   class GroupDietPopulationInitializer : IPopulationInitializer
   {
@@ -54,7 +53,7 @@ namespace DietPlanning.NSGA.DayImplementation
       var oldDistance = GetTotalCaloriesDistance(diet, ranges);
       var newDistance = oldDistance;
 
-      while (newDistance <= oldDistance)
+      while (Math.Abs(newDistance) <= Math.Abs(oldDistance))
       {
         AddRandomReceipeSplit(diet.Meals.GetRandomItem());
 

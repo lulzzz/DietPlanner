@@ -14,32 +14,19 @@ namespace ConsoleInterface
   {
     public static void Main(string[] args)
     {
-      //CsvLogger.RegisterLogger("iterationEvaluations");
-      
-      //var configurationProvider = new ConfigurationProvider();
-      //var recipeGenerator = new RandomRecipeProvider(new Random(), 500, new FoodDatabaseProvider());
-      //var nsgaSolverFactory = new NsgaSolverFactory(new Random());
-      //var recipes = recipeGenerator.GetRecipes();
-      //var requirementsProvider = new RequirementsProvider();
-      //var dietRequirements = requirementsProvider.GetRequirements(GetPersonalData(), 5);
+      var nsgaFactory = new NsgaSolverFactory(new Random());
+      var recipesProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
+      var recipes = recipesProvider.GetRecipes();
+      var configuration = new ConfigurationProvider().GetConfiguration();
+      var personalData = GetPersonalData();
 
-      //var dailyDietsNsgaSolver = nsgaSolverFactory.GetDailyDietsSolver(configurationProvider.GetConfiguration(), recipes, dietRequirements);
+      var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
 
-      //var result = dailyDietsNsgaSolver.Solve();
+      var result = solver.Solve();
 
-      ////LogMathFrontResult(result);
-      //LogDailyDietsFrontResult(result.Fronts);
-
-      //CsvLogger.Write("iterationEvaluations", "d:\\output.csv");
-
-      var csvProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
-
-      var recipes = csvProvider.GetRecipes();
-      recipes = csvProvider.GetRecipes();
-      
       Console.WriteLine("done");
       Console.ReadKey();
-     }
+    }
 
     private static void LogMathFrontResult(List<List<Individual>> result)
     {
@@ -48,9 +35,10 @@ namespace ConsoleInterface
       foreach (var individual in result.First())
       {
         CsvLogger.AddRow("frontResult",
-          new dynamic[] {((MathIndividual) individual).X1, individual.Evaluations[0].Score, individual.Evaluations[1].Score});
+          new dynamic[]
+            {((MathIndividual) individual).X1, individual.Evaluations[0].Score, individual.Evaluations[1].Score});
       }
-      
+
       CsvLogger.Write("frontResult", "d:\\FrontResult.csv");
     }
 
@@ -63,23 +51,40 @@ namespace ConsoleInterface
         foreach (var individual in result[i])
         {
           CsvLogger.AddRow("frontResult",
-            new dynamic[] {i, individual.Evaluations[0].Score, individual.Evaluations[1].Score, individual.Evaluations[2].Score });
+            new dynamic[]
+              {i, individual.Evaluations[0].Score, individual.Evaluations[1].Score, individual.Evaluations[2].Score});
         }
       }
-      
+
       CsvLogger.Write("frontResult", "d:\\FrontResult.csv");
     }
 
-    private static PersonalData GetPersonalData()
+    private static List<PersonalData> GetPersonalData()
     {
-      return new PersonalData
+      var rp = new RequirementsProvider();
+      var pd = new List<PersonalData>
       {
-        Age = 25,
-        Gender = Gender.Male,
-        Height = 185,
-        Weight = 85,
-        Pal = 1.5
+        new PersonalData
+        {
+          Age = 25,
+          Gender = Gender.Male,
+          Height = 185,
+          Weight = 85,
+          Pal = 1.5
+        },
+        new PersonalData
+        {
+          Age = 24,
+          Gender = Gender.Female,
+          Height = 160,
+          Weight = 55,
+          Pal = 1.7
+        }
       };
+
+      pd.ForEach(d => d.Requirements = rp.GetRequirements(d, 5));
+
+      return pd;
     }
   }
 }

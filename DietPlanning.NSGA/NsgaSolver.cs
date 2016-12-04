@@ -173,6 +173,11 @@ namespace DietPlanning.NSGA
           var maxEvaluation = individualsByObjective.First().Evaluations[evaluationIndex].Score;
           var evaluationRange = maxEvaluation - minEvaluation;
 
+          if (evaluationRange == 0)
+          {
+            continue;
+          }
+
           for (var individualIndex = 1; individualIndex < front.Count - 1; individualIndex++)
           {
             individualsByObjective[individualIndex].CrowdingDistance +=

@@ -12,5 +12,10 @@ namespace DietPlanning.Core.NutritionRequirements
     public Gender Gender { get; set; }
     public DietRequirements Requirements { get; set; }
     public DietPreferences Preferences { get; set; }
+
+    public PersonalData()
+    {
+      Preferences = new DietPreferences();
+    }
   }
 }
