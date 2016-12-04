@@ -41,8 +41,13 @@
     <Compile Include="DayImplementation\DayEvaluator.cs" />
     <Compile Include="DayImplementation\DayIndividual.cs" />
     <Compile Include="DayImplementation\DayMutator.cs" />
-    <Compile Include="DayImplementation\DayPopulationInitializer.cs" />
+    <Compile Include="DayImplementation\GroupDietPopulationInitializer.cs" />
     <Compile Include="Direction.cs" />
+    <Compile Include="GroupDietsImplementation\DayPopulationInitializer.cs" />
+    <Compile Include="GroupDietsImplementation\GroupDietMutator.cs" />
+    <Compile Include="GroupDietsImplementation\GroupDietEvaluator.cs" />
+    <Compile Include="GroupDietsImplementation\GroupDietCrossOver.cs" />
+    <Compile Include="GroupDietsImplementation\GroupDietIndividual.cs" />
     <Compile Include="ICrossOver.cs" />
     <Compile Include="IEvaluator.cs" />
     <Compile Include="IMutator.cs" />
@@ -73,6 +78,7 @@
       <Name>Tools</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using DietPlanning.Core;
-using DietPlanning.Core.DomainObjects;
+﻿using System.Collections.Generic;
 
 namespace DietPlanning.NSGA
 {
@@ -9,7 +6,6 @@ namespace DietPlanning.NSGA
   {
     public List<Individual> Dominated;
     public int DominatedByCount;
-    //public Diet Diet;
     public List<Evaluation> Evaluations;
     public int Rank;
     public double CrowdingDistance;

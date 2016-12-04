@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using DietPlanning.Core;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
+using DietPlanning.Core.GroupDiets;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA.DayImplementation;
+using DietPlanning.NSGA.GroupDietsImplementation;
 using DietPlanning.NSGA.MathImplementation;
 
 namespace DietPlanning.NSGA
@@ -41,6 +43,20 @@ namespace DietPlanning.NSGA
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
         new DayCrossOver(_random),
         new DayMutator(_random, recipes),
+        configuration);
+    }
+
+    public NsgaSolver GetGroupDietSolver(List<Recipe> recipes, List<PersonalData> personalData, Configuration configuration)
+    {
+      var groupDietAnalyzer = new GroupDietAnalyzer();
+
+      return new NsgaSolver(
+        new Sorter(),
+        new GroupDietPopulationInitializer(_random, recipes, 5, personalData, groupDietAnalyzer), 
+        new GroupDietEvaluator(personalData, groupDietAnalyzer), 
+        new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
+        new GroupDietCrossOver(_random), 
+        new GroupDietMutator(_random, recipes, personalData.Count), 
         configuration);
     }
   }

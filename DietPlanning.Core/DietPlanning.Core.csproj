@@ -79,6 +79,12 @@
     <Compile Include="DomainObjects\RecipeGroup.cs" />
     <Compile Include="FoodPreferences\CategoryPreference.cs" />
     <Compile Include="FoodPreferences\DietPreferences.cs" />
+    <Compile Include="GroupDiets\GroupDietAnalyzer.cs" />
+    <Compile Include="GroupDiets\GroupDiet.cs" />
+    <Compile Include="GroupDiets\GroupDietHelpers.cs" />
+    <Compile Include="GroupDiets\GroupMeal.cs" />
+    <Compile Include="GroupDiets\RecipeGroupSplit.cs" />
+    <Compile Include="GroupDiets\RecipeAdjustment.cs" />
     <Compile Include="NutritionRequirements\DietRequirements.cs" />
     <Compile Include="NutritionRequirements\Gender.cs" />
     <Compile Include="NutritionRequirements\PersonalData.cs" />
