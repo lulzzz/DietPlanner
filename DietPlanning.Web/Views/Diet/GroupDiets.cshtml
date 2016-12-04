@@ -1,0 +1,78 @@
+﻿@model DietPlanning.Web.Models.GroupDietsResultViewModel
+@{
+  ViewBag.Title = "Diet";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/masonry")
+
+<link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
+<br />
+<a href="@Url.Action("GerateGroupDiets")" class="btn btn-info" role="button">Generate Diet</a>
+
+<h2>Diets</h2>
+<div><span>Goals:</span></div>
+
+@foreach (var personaldata in Model.PersonalDatas)
+{
+  <span>Person @personaldata.Id</span>
+  <div><span>@((int)personaldata.Requirements.Calories) Calories</span></div>
+  <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) to @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Carbohydrates</span></div>
+  <div><span>@((int)personaldata.Requirements.FatRange.Lower) to @((int)personaldata.Requirements.FatRange.Upper) g Fats</span></div>
+  <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) to @((int)personaldata.Requirements.ProteinRange.Upper) g Proteins</span></div>
+}
+
+<div id="masonry">
+  @foreach (var diet in Model.GroupDiets)
+  {
+    <div class="day">
+      @foreach (var evaluation in diet.Evaluations)
+      {
+      <div><span>@evaluation.Type: @((int)evaluation.Score)</span></div>
+      }
+      <br/>
+      <table>
+        <tr>
+          @foreach (var personDiet in diet.PersonDietViewModels)
+          {
+            <td>
+              <div>
+                <div><span>@((int) personDiet.DietSummary.NutritionValues.Calories) Calories</span></div>
+                <div><span>@((int) personDiet.DietSummary.NutritionValues.Carbohydrates) g Carbohydrates</span></div>
+                <div><span>@((int) personDiet.DietSummary.NutritionValues.Fat) g Fats</span></div>
+                <div><span>@((int) personDiet.DietSummary.NutritionValues.Proteins) g Proteins</span></div>
+              </div>
+              <br/>
+              @foreach (var meal in personDiet.Meals)
+              {
+                var mealIndex = personDiet.Meals.IndexOf(meal);
+                var rangeClass = meal.IsInRange ? "in_range" : "out_of_range";
+                var mealCalories = meal.Calories;
+                var distanceToRange = meal.IsInRange ? "" : "(" + meal.DistanceToRange + ")";
+
+                <div class="meal">
+                  <span>Meal @(mealIndex + 1):</span>
+                  <span class="@rangeClass">@mealCalories Cal @distanceToRange</span>
+                  @foreach (var recipe in meal.Recipes)
+                  {
+                    <div class="recipe">
+                      <span>@recipe.Name</span>
+                    </div>
+                  }
+                </div>
+              }
+            </td>
+          }
+        </tr>
+      </table>
+    </div>
+  }
+</div>
+<script>
+  var container = document.querySelector('#masonry');
+  var masonry = new Masonry(container, {
+    columnWidth: 40,
+    itemSelector: '.day'
+  });
+</script>
+

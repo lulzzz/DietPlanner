@@ -10,6 +10,7 @@ using DietPlanning.NSGA;
 using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.Web.Helpers;
 using DietPlanning.Web.Models;
+using DietPlanning.Web.Models.Builders;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -38,9 +39,22 @@ namespace DietPlanning.Web.Controllers
       return View(dietsViewModel);
     }
 
+    public ActionResult GroupDiets()
+    {
+      var dietsViewModel = TempData.GetGroupDietsResultViewModel();
+
+      if (dietsViewModel == null)
+      {
+        return RedirectToAction("GerateGroupDiets");
+      }
+
+      return View(dietsViewModel);
+    }
+
     public ActionResult GenerateDiets()
     {
       var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
+      
       var recipes = _recipeProvider.GetRecipes();
       var dietPreferences = TempData.GetDietPreferences();
       var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, recipes, dietRequirements, dietPreferences);
@@ -53,6 +67,30 @@ namespace DietPlanning.Web.Controllers
 
       return RedirectToAction("ShowDays");
     }
+
+    public ActionResult GerateGroupDiets()
+    {
+      var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
+      var personalData = TempData.GetPersonalDataList();
+      personalData.ForEach(pd => pd.Requirements = _requirementsProvider.GetRequirements(pd, 5));
+
+
+      var recipes = _recipeProvider.GetRecipes();
+      var dietPreferences = TempData.GetDietPreferences();
+      //  var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, recipes, dietRequirements, dietPreferences);
+      var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
+
+      var nsgaResult = nsgaSolver.Solve();
+      TempData.SaveLog(nsgaResult.Log);
+
+      var viewModelBuilder = new GroupDietViewModelBuilder();
+
+      var dietsViewModel = viewModelBuilder.Build(nsgaResult, personalData);
+      TempData.SaveGroupDietsResultViewModel(dietsViewModel);
+
+      return RedirectToAction("GroupDiets");
+    }
+
 
     [HttpGet]
     public ActionResult PersonalData()

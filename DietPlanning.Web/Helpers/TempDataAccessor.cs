@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Web.Mvc;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
@@ -17,6 +18,8 @@ namespace DietPlanning.Web.Helpers
     private const string DailyDietsResultViewModeltKey = "DailyDietsResultViewModel";
     private const string SettingsKey = "Settings";
     private const string DietPreferencesKey = "DietPreferencesKey";
+    private const string PersonalDataListKey = "PersonalDataListKey";
+    private const string GroupDietsResultViewModeltKey = "GroupDietsResultViewModeltKey";
 
     public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
     {
@@ -51,6 +54,16 @@ namespace DietPlanning.Web.Helpers
     public static void SaveDailyDietsResultViewModel(this TempDataDictionary tempData, DailyDietsResultViewModel nsgaResult)
     {
       tempData[DailyDietsResultViewModeltKey] = nsgaResult;
+    }
+
+    public static GroupDietsResultViewModel GetGroupDietsResultViewModel(this TempDataDictionary tempData)
+    {
+      return tempData.ContainsKey(GroupDietsResultViewModeltKey) ? tempData.Peek(GroupDietsResultViewModeltKey) as GroupDietsResultViewModel : null;
+    }
+
+    public static void SaveGroupDietsResultViewModel(this TempDataDictionary tempData, GroupDietsResultViewModel nsgaResult)
+    {
+      tempData[GroupDietsResultViewModeltKey] = nsgaResult;
     }
 
     public static NsgaResult GetNsgaResult(this TempDataDictionary tempData)
@@ -105,6 +118,37 @@ namespace DietPlanning.Web.Helpers
       }
 
       return tempData.Peek(PersonalDataKey) as PersonalData;
+    }
+
+    public static List<PersonalData> GetPersonalDataList(this TempDataDictionary tempData)
+    {
+      if (!tempData.ContainsKey(PersonalDataListKey))
+      {
+        tempData[PersonalDataListKey] = new List<PersonalData>
+        {
+          new PersonalData
+          {
+            Age = 25,
+            Gender = Gender.Male,
+            Height = 185,
+            Weight = 85,
+            Pal = 1.5,
+            Id = 0,
+
+          },
+          new PersonalData
+          {
+            Age = 22,
+            Gender = Gender.Female,
+            Height = 160,
+            Weight = 50,
+            Pal = 1.8,
+            Id = 1
+          }
+        };
+      }
+
+      return tempData.Peek(PersonalDataListKey) as List<PersonalData>;
     }
 
     public static void SavePersonalData(this TempDataDictionary tempData, PersonalData personalData)

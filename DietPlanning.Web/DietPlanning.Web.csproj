@@ -178,10 +178,14 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TempDataAccessor.cs" />
+    <Compile Include="Models\Builders\GroupDietViewModelBuilder.cs" />
     <Compile Include="Models\DailyDietsResultViewModel.cs" />
     <Compile Include="Models\DailyDietViewModel.cs" />
     <Compile Include="Models\FoodNameViewModel.cs" />
+    <Compile Include="Models\GroupDietsResultViewModel.cs" />
+    <Compile Include="Models\GroupDietViewModel.cs" />
     <Compile Include="Models\MainCategoryPreferenceViewModel.cs" />
+    <Compile Include="Models\PersonDietViewModel.cs" />
     <Compile Include="Models\PreferencesViewModel.cs" />
     <Compile Include="Models\SettingsViewModel.cs" />
     <Compile Include="Models\SubCategoryPreferenceViewModel.cs" />
@@ -241,6 +245,7 @@
     <Content Include="Views\Diet\Preferences.cshtml" />
     <Content Include="Views\Diet\FoodSelect.cshtml" />
     <Content Include="Views\Tests\NsgaLog.cshtml" />
+    <Content Include="Views\Diet\GroupDiets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

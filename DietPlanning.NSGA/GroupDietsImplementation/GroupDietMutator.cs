@@ -51,8 +51,9 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           switch (RandomMutationType())
           {
             case MutationType.Remove:
-              if (recipeGroupSplit.Adjustments.Count > 1)
-                recipeGroupSplit.Adjustments.Remove(recipeGroupSplit.Adjustments.GetRandomItem());
+              var adjustment = recipeGroupSplit.Adjustments.GetRandomItem();
+              if(meal.Recipes.RecipesForPerson(adjustment.PersonId).Count > 1 && recipeGroupSplit.Adjustments.Count > 1)
+                recipeGroupSplit.Adjustments.Remove(adjustment);
               break;
             case MutationType.Add:
               if (recipeGroupSplit.Adjustments.Count < _groupSize)
