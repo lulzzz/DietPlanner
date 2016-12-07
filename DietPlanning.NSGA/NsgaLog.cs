@@ -9,6 +9,7 @@ namespace DietPlanning.NSGA
     public List<ObjectiveLog> ObjectiveLogs;
     public List<double> CrowdingDistanceVar;
     public List<double> CrowdingDistanceAvg;
+    public List<double> FeasibleSolutions;
 
     public NsgaLog()
     {
@@ -17,6 +18,7 @@ namespace DietPlanning.NSGA
       FirstFrontSizeLog = new List<int>();
       CrowdingDistanceVar = new List<double>();
       CrowdingDistanceAvg = new List<double>();
+      FeasibleSolutions = new List<double>();
     }
   }
 

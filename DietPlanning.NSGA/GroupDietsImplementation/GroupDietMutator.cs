@@ -13,7 +13,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
     private readonly List<Recipe> _recipes;
     private readonly int _groupSize;
     private readonly GroupDietCorrector _corrector;
-    private static readonly List<double> Multipliers = new List<double> { 0.75, 0.85, 1 , 1.25, 1.5};
+    
 
     public GroupDietMutator(Random random, List<Recipe> recipes, int groupSize, GroupDietCorrector corrector)
     {
@@ -43,7 +43,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         }
       }
 
-      _corrector.ApplyCorrection(dietIndividual.GroupDiet);
+    //  _corrector.ApplyCorrection(dietIndividual.GroupDiet);
     }
 
     private void PerformRecipesLevelMutation(GroupMeal meal, double mutationProbability)
@@ -64,7 +64,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
                 recipeGroupSplit.Adjustments.Add(GetRandomMissingAdjustment(recipeGroupSplit.Adjustments));
               break;
             case MutationType.Replace:
-              recipeGroupSplit.Adjustments.GetRandomItem().AmountMultiplier = Multipliers.GetRandomItem();
+              recipeGroupSplit.Adjustments.GetRandomItem().AmountMultiplier = RecipeGroupSplit.Multipliers.GetRandomItem();
               break;
             default:
               throw new ArgumentOutOfRangeException();
@@ -82,7 +82,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         id = _random.Next(_groupSize);
       } while (adjustments.Any(ad => ad.PersonId == id));
 
-      return new RecipeAdjustment {PersonId = id, AmountMultiplier = Multipliers.GetRandomItem()};
+      return new RecipeAdjustment {PersonId = id, AmountMultiplier = RecipeGroupSplit.Multipliers.GetRandomItem()};
     }
 
     private void PerformMealLevelMutation(GroupMeal meal, RecipeGroupSplit recipe, GroupDietIndividual individual)

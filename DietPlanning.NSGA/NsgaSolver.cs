@@ -90,6 +90,9 @@ namespace DietPlanning.NSGA
         log.CrowdingDistanceAvg.Add(0);
       }
 
+      var feasibleRatio = (double)individuals.Where(i => i.IsFeasible).ToList().Count / individuals.Count;
+      log.FeasibleSolutions.Add(feasibleRatio);
+
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Cost, iteration));
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Macro, iteration));
      // log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.PreparationTime, iteration));

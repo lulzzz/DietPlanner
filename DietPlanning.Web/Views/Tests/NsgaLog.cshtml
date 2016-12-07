@@ -16,6 +16,7 @@
 <canvas id="frontSizeChart" width="400" height="200"></canvas>
 <canvas id="crowdingDistanceVarChart" width="400" height="200"></canvas>
 <canvas id="crowdingDistanceAvgChart" width="400" height="200"></canvas>
+<canvas id="feasibleChart" width="400" height="200"></canvas>
 
 <script>
   var labels = [];
@@ -32,6 +33,12 @@
   var prepTimeAvg = [];
   var prepTimeMin = [];
   var prepTimeMax = [];
+  var feasibleSolutions = [];
+
+   @foreach (var feasibleRatio in Model.FeasibleSolutions)
+  {
+    @:feasibleSolutions.push(@feasibleRatio.ToString().Replace(',', '.'));
+  }
 
   @for (int i = 0; i < Model.FrontsNumberLog.Count; i++)
   {
@@ -152,6 +159,11 @@
   var macroChart = new Chart($("#crowdingDistanceAvgChart"), {
     type: 'line',
     data: CreateSingleData(crowdingDistanceAverage, "Crowding distance average")
+  });
+
+  var macroChart = new Chart($("#feasibleChart"), {
+    type: 'line',
+    data: CreateSingleData(feasibleSolutions, "% feasible solutions")
   });
 
 </script>

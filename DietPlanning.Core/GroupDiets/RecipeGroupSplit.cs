@@ -5,6 +5,8 @@ namespace DietPlanning.Core.GroupDiets
 {
   public class RecipeGroupSplit
   {
+    public static readonly List<double> Multipliers = new List<double> { 0.75, 0.85, 1, 1.25, 1.5, 2 };
+
     public Recipe Recipe { get; set; }
     public List<RecipeAdjustment> Adjustments { get; set; }
 

@@ -16,5 +16,13 @@ namespace DietPlanning.Core.Tests
       subject.IsInRange(1.8).Should().BeFalse();
       subject.IsInRange(0.49).Should().BeFalse();
     }
+
+    [Test]
+    public void Distance()
+    {
+      var subject = new Range { Lower = 1, Upper = 2 };
+
+      subject.GetDistanceToRange(0.7).Should().BeGreaterOrEqualTo(0.3);
+    }
   }
 }
