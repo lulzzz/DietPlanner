@@ -62,7 +62,7 @@ namespace DietPlanning.Web.Models.Builders
         var mealVm = new MealViewModel();
         var recipes = meal.GetRecipesForPerson(personalData.Id);
         var mealindex = individual.GroupDiet.Meals.IndexOf(meal);
-        recipes.ForEach(r => mealVm.Recipes.Add(new RecipeViewModel {Amount = r.Item1, Name = r.Item2.Name}));
+        recipes.ForEach(r => mealVm.Recipes.Add(new RecipeViewModel {Amount = r.Item1 * r.Item2.NominalWeight, Name = r.Item2.Name}));
         mealVm.Calories = (int)dietSummary.CaloriesPerMeal[mealindex];
         mealVm.IsInRange = personalData.Requirements.MealCaloriesSplit[mealindex].IsInRange(mealVm.Calories);
         mealVm.DistanceToRange = (int)personalData.Requirements.MealCaloriesSplit[mealindex].GetDistanceToRange(mealVm.Calories);

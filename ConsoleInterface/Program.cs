@@ -25,6 +25,7 @@ namespace ConsoleInterface
       var result = solver.Solve();
 
       result.Fronts.SelectMany(f => f).Select(i => i.Evaluations[0].Score).ToList().OrderBy(s => s).Take(20).ToList().ForEach(Console.WriteLine);
+      result.Log.FeasibleSolutions.ForEach(e => Console.Write($"{e}, "));
 
       Console.WriteLine("done");
       Console.ReadKey();

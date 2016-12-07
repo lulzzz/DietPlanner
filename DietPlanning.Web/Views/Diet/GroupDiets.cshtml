@@ -56,7 +56,7 @@
                   @foreach (var recipe in meal.Recipes)
                   {
                     <div class="recipe">
-                      <span>@recipe.Name</span>
+                      <span>@recipe.Name (@(recipe.Amount)g)</span>
                     </div>
                   }
                 </div>

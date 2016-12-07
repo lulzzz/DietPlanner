@@ -46,7 +46,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       {
         Type = ObjectiveType.Cost,
         Direction = Direction.Minimize,
-        Score = recipes.Select(recipe => recipe.Recipe.Cost).Sum()
+        Score = (double)recipes.Select(r => r.Recipe.Cost * r.Adjustments.Count).Sum() / recipes.SelectMany(r => r.Adjustments).Count()
       };
     }
 
@@ -119,11 +119,17 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           Math.Abs(personalData.Requirements.FatRange.GetDistanceToRange(dailySummary.NutritionValues.Fat)) +
           Math.Abs(personalData.Requirements.CarbohydratesRange.GetDistanceToRange(dailySummary.NutritionValues.Carbohydrates));
         
-        //todo make sure about last part
-        if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories) || distanceForPerson > 0)
+        ////todo make sure about last part
+        //if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories) || distanceForPerson > 0)
+        //{
+        //  feasible = false;
+        //}
+
+        if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories))
         {
           feasible = false;
         }
+
 
         for (var mealIndex = 0; mealIndex < dailySummary.CaloriesPerMeal.Count; mealIndex++)
         {

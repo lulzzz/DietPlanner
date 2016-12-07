@@ -63,9 +63,23 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       //  newDistance = GetTotalCaloriesDistance(diet, ranges);
       //}
 
-      while (_dietAnalyzer.SummarizeForPerson(diet, _personalData.First().Id).NutritionValues.Calories < topCaloriesRange)
+      //while (_dietAnalyzer.SummarizeForPerson(diet, _personalData.First().Id).NutritionValues.Calories < topCaloriesRange)
+      //{
+      //  AddRandomReceipeSplit(diet.Meals.GetRandomItem());
+      //}
+
+      var ranges = _personalData.Select(pd => pd.Requirements.CaloriesAllowedRange).ToList();
+
+      List<int> idsWithDeficiency;
+      var idsWithToMuchCalories = _personalData.Where(p => p.Requirements.CaloriesAllowedRange.Upper < _dietAnalyzer.SummarizeForPerson(diet, p.Id).NutritionValues.Calories).Select(pd => pd.Id).ToList();
+      while (
+      (idsWithDeficiency =
+        _personalData.Where(p => p.Requirements.CaloriesAllowedRange.Lower > _dietAnalyzer.SummarizeForPerson(diet, p.Id).NutritionValues.Calories).Select(pd => pd.Id).ToList()).Any())
       {
-        AddRandomReceipeSplit(diet.Meals.GetRandomItem());
+        var includedRecipes = diet.Meals.SelectMany(m => m.Recipes).Select(r => r.Recipe).Distinct().ToList();
+        var split = GetRanodmNotInvlolvedRecipe(includedRecipes);
+        split.Adjustments.RemoveAll(a => !idsWithDeficiency.Contains(a.PersonId));
+        diet.Meals.GetRandomItem().Recipes.Add(split);
       }
 
       return diet;
@@ -105,5 +119,18 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
 
       meal.Recipes.Add(recipeSlpit);
     }
+
+    private RecipeGroupSplit GetRanodmNotInvlolvedRecipe(List<Recipe> includedRecipes)
+    {
+      var recipeGroupSplit = new RecipeGroupSplit(_personalData.Count);
+
+      do
+      {
+        recipeGroupSplit.Recipe = _recipes.GetRandomItem();
+      } while (includedRecipes.Contains(recipeGroupSplit.Recipe));
+
+      return recipeGroupSplit;
+    }
+
   }
 }

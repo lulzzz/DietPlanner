@@ -43,7 +43,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         }
       }
 
-    //  _corrector.ApplyCorrection(dietIndividual.GroupDiet);
+      _corrector.ApplyCorrection(dietIndividual.GroupDiet);
     }
 
     private void PerformRecipesLevelMutation(GroupMeal meal, double mutationProbability)
