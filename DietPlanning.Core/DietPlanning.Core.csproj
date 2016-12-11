@@ -55,6 +55,10 @@
   <ItemGroup>
     <Compile Include="AtwaterFactors.cs" />
     <Compile Include="DataProviders\Csv\CsvRecipeProvider.cs" />
+    <Compile Include="DataProviders\Csv\FoodGroupsMapper.cs" />
+    <Compile Include="DomainObjects\GroupsMapping.cs" />
+    <Compile Include="DomainObjects\MainCategory.cs" />
+    <Compile Include="DomainObjects\SubCategory.cs" />
     <Compile Include="DataProviders\Databse\FoodDatabaseProvider.cs" />
     <Compile Include="DataProviders\Databse\FoodDatabseContext.cs" />
     <Compile Include="DataProviders\Databse\FoodDto.cs" />

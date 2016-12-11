@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using DietPlanning.Core.DataProviders.Csv;
 using DietPlanning.Core.NutritionRequirements;
@@ -17,20 +18,40 @@ namespace ConsoleInterface
       var nsgaFactory = new NsgaSolverFactory(new Random());
       var recipesProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
       var recipes = recipesProvider.GetRecipes();
-      var configuration = new ConfigurationProvider().GetConfiguration();
-      var personalData = GetPersonalData();
+      //var configuration = new ConfigurationProvider().GetConfiguration();
+      //var personalData = GetPersonalData();
 
-      var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
+      //var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
 
-      var result = solver.Solve();
+      //var result = solver.Solve();
 
-      result.Fronts.SelectMany(f => f).Select(i => i.Evaluations[0].Score).ToList().OrderBy(s => s).Take(20).ToList().ForEach(Console.WriteLine);
-      result.Log.FeasibleSolutions.ForEach(e => Console.Write($"{e}, "));
+      //result.Fronts.SelectMany(f => f).Select(i => i.Evaluations[0].Score).ToList().OrderBy(s => s).Take(20).ToList().ForEach(Console.WriteLine);
+      //result.Log.FeasibleSolutions.ForEach(e => Console.Write($"{e}, "));
+
+
+      //recipes.Select(r => r.SubCategory).Distinct().ToList().ForEach(s =>  Console.WriteLine( "{" + $"\"{s}\"" + ", SubCategory." + ToCamel(s) + "},"));
+     // recipes.Select(r => r.MainCategory).Distinct().ToList().ForEach(s => Console.WriteLine(ToCamel(s) + ","));
+
+      //var subcats = recipes.Select(r => r.SubCategory).Distinct();
+
+      //foreach (var subCategory in subcats)
+      //{
+      //  var recipe = recipes.First(r => r.SubCategory == subCategory);
+      //  Console.WriteLine("{" + $"SubCategory.{ToCamel(recipe.SubCategory)}" + ", MainCategory." + ToCamel(recipe.MainCategory) + "},");
+      //}
 
       Console.WriteLine("done");
       Console.ReadKey();
     }
 
+    private static string ToCamel(string input)
+    {
+
+      TextInfo textInfo = new CultureInfo("en-US", false).TextInfo;
+
+      return textInfo.ToTitleCase(input).Replace(" ", string.Empty).Replace(",", string.Empty);
+    }
+      
     private static void LogMathFrontResult(List<List<Individual>> result)
     {
       CsvLogger.RegisterLogger("frontResult");

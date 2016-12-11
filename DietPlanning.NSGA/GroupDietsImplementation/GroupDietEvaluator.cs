@@ -18,7 +18,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       _personalData = personalData;
     }
 
-    public void Evaluate(List<Individual> individuals)
+    public void Evaluate(List<Individual> individuals) 
     {
       individuals.ForEach(individual => Evaluate((GroupDietIndividual)individual));
     }
@@ -94,11 +94,11 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           if (Math.Abs(categoryPreference.Preference) < 0.1)
             continue;
 
-          var categorySet = categoryPreference.CategoryLevel == CategoryLevel.MainCategory
-            ? mainCategories
-            : subCategories;
+          //var categorySet = categoryPreference.CategoryLevel == CategoryLevel.MainCategory
+          //  ? mainCategories
+          //  : subCategories;
 
-          score += categorySet.Count(mainCat => mainCat == categoryPreference.Name)*categoryPreference.Preference;
+          //score += categorySet.Count(mainCat => mainCat == categoryPreference.Name)*categoryPreference.Preference;
         }
       }
 

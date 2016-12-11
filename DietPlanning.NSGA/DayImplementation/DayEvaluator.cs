@@ -90,17 +90,17 @@ namespace DietPlanning.NSGA.DayImplementation
 
       var score = 0.0;
 
-      foreach (var categoryPreference in _dietPreferences.CategoryPreferences)
-      {
-        if(Math.Abs(categoryPreference.Preference) < 0.1)
-          continue;
+      //foreach (var categoryPreference in _dietPreferences.CategoryPreferences)
+      //{
+      //  if(Math.Abs(categoryPreference.Preference) < 0.1)
+      //    continue;
 
-        var categorySet = categoryPreference.CategoryLevel == CategoryLevel.MainCategory
-          ? mainCategories
-          : subCategories;
+      //  var categorySet = categoryPreference.CategoryLevel == CategoryLevel.MainCategory
+      //    ? mainCategories
+      //    : subCategories;
 
-        score += categorySet.Count(mainCat => mainCat == categoryPreference.Name) * categoryPreference.Preference;
-      }
+      //  score += categorySet.Count(mainCat => mainCat == categoryPreference.Name) * categoryPreference.Preference;
+      //}
 
       return score;
     }

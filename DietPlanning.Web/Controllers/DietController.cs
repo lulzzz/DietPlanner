@@ -212,19 +212,19 @@ namespace DietPlanning.Web.Controllers
       {
         var mainCategoryPreferenceViewModel = new MainCategoryPreferenceViewModel
         {
-          Name = mainCategory,
+          Name = mainCategory.ToString(),
           Value = 0.0,
           Id = $"preference_{++preferenceIndex}"
         };
         var subCategories =
-          recipes.Where(r => r.MainCategory == mainCategory && r.MainCategory != r.SubCategory)
-          .Select(r => r.SubCategory).Distinct().Where(subCategory => subCategory != mainCategory);
+          recipes.Where(r => r.MainCategory == mainCategory && r.MainCategory.ToString() != r.SubCategory.ToString())
+          .Select(r => r.SubCategory).Distinct().Where(subCategory => subCategory.ToString() != mainCategory.ToString());
 
         foreach (var subCategory in subCategories)
         {
           var subCategoryPreferenceViewModel = new SubCategoryPreferenceViewModel
           {
-            Name = subCategory,
+            Name = subCategory.ToString(),
             Value = 0,
             Id = $"preference_{++preferenceIndex}"
           };

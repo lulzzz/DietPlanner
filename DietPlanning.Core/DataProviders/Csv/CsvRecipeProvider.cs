@@ -50,8 +50,8 @@ namespace DietPlanning.Core.DataProviders.Csv
             Fat = ParseValue(values[(int)CsvField.Fats]),
           },
           NominalWeight = ParseValue(values[(int)CsvField.NominalWeight]),
-          MainCategory = values[(int)CsvField.MainCategory],
-          SubCategory = values[(int)CsvField.SubCategory],
+          MainCategory = FoodGroupsMapper.MainCategoryCsvMapper[values[(int)CsvField.MainCategory]],
+          SubCategory = FoodGroupsMapper.SubCategoryCsvMapper[values[(int)CsvField.SubCategory]],
           Cost = _random.Next(5, 35),
 
           PreparationTimeInMinutes = _random.Next(1, 10) * 10

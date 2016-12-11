@@ -8,10 +8,10 @@ namespace DietPlanning.Core.DomainObjects
     public NutritionValues NutritionValues;
     public int PreparationTimeInMinutes;
     public int Cost;
-    public string MainCategory;
-    public string SubCategory;
     public List<MealType> ApplicableMeals;
     public double NominalWeight;
+    public MainCategory MainCategory;
+    public SubCategory SubCategory;
 
     public string Name;
 
