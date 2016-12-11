@@ -27,6 +27,9 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       var child1 = new GroupDiet();
       var child2 = new GroupDiet();
 
+      AreThereDuplicates(parent1);
+      AreThereDuplicates(parent1);
+
       for (var i = 0; i < parent1.Meals.Count; i++)
       {
         var crossOverMeals = CrossOverMeal(parent1.Meals[i], parent2.Meals[i]);
@@ -34,7 +37,26 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         child2.Meals.Add(crossOverMeals.Item2);
       }
 
+      if (!AreThereDuplicates(parent1) && AreThereDuplicates(child1))
+      {
+        throw new ApplicationException();
+      }
+
       return new Tuple<GroupDiet, GroupDiet>(child1, child2);
+    }
+
+    private bool AreThereDuplicates(GroupDiet individual)
+    {
+      var meals = individual.Meals.Select(m => m);
+      foreach (var meal in meals)
+      {
+        var recipes = meal.Recipes.Select(r => r.Recipe.Name);
+        if (recipes.GroupBy(x => x).Any(g => g.Count() > 1))
+        {
+          return true;
+        }
+      }
+      return false;
     }
 
     private Tuple<GroupMeal, GroupMeal> CrossOverMeal(GroupMeal parent1, GroupMeal parent2)
@@ -61,7 +83,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       {
         for (var j = meal.Recipes.Count - 1; j > i; j--)
         {
-          if (meal.Recipes[i] == meal.Recipes[j])
+          if (meal.Recipes[i].Recipe == meal.Recipes[j].Recipe)
           {
             meal.Recipes.RemoveAt(j);
           }

@@ -34,7 +34,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       var macroEv = EvaluateMacro(groupDiet, out individual.IsFeasible);
       individual.Evaluations.Add(macroEv);
       individual.Evaluations.Add(EvaluateCost(recipes));
-      //  individual.Evaluations.Add(EvaluatePreparationTime(recipes));
+      individual.Evaluations.Add(EvaluatePreparationTime(recipes));
       //individual.Evaluations.Add(EvaluatePreferences(recipes));
 
       //todo preferences
@@ -119,18 +119,11 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           Math.Abs(personalData.Requirements.FatRange.GetDistanceToRange(dailySummary.NutritionValues.Fat)) +
           Math.Abs(personalData.Requirements.CarbohydratesRange.GetDistanceToRange(dailySummary.NutritionValues.Carbohydrates));
         
-        ////todo make sure about last part
-        //if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories) || distanceForPerson > 0)
-        //{
-        //  feasible = false;
-        //}
-
         if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories))
         {
           feasible = false;
         }
-
-
+        
         for (var mealIndex = 0; mealIndex < dailySummary.CaloriesPerMeal.Count; mealIndex++)
         {
           distanceForPerson +=

@@ -28,20 +28,6 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       var dietIndividual = individual as GroupDietIndividual;
       var meals = dietIndividual.GroupDiet.Meals.Select(m => m);
 
-      //foreach (var meal in meals)
-      //{
-      //  for (var i = meal.Recipes.Count - 1; i >= 0; i--)
-      //  {
-      //    if (_random.NextDouble() < mutationProbability)
-      //    {
-      //      PerformMealLevelMutation(meal, meal.Recipes[i], (GroupDietIndividual)individual);
-      //    }
-      //    else
-      //    {
-      //      PerformRecipesLevelMutation(meal, mutationProbability);
-      //    }
-      //  }
-      //}
       foreach (var meal in meals)
       {
         for (var i = meal.Recipes.Count - 1; i >= 0; i--)
@@ -49,9 +35,10 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           PerformRecipesLevelMutation(meal, mutationProbability);
         }
       }
-
-     // _corrector.ApplyCorrection(dietIndividual.GroupDiet);
+      // _corrector.ApplyCorrection(dietIndividual.GroupDiet);
     }
+
+   
 
     private void PerformRecipesLevelMutation(GroupMeal meal, double mutationProbability)
     {
@@ -75,7 +62,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           duplicate.Adjustments.Add(adjustment);
         }
       }
-      
+
       foreach (var recipeGroupSplit in meal.Recipes)
       {
         if (_random.NextDouble() < mutationProbability)
@@ -112,62 +99,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         id = _random.Next(_groupSize);
       } while (adjustments.Any(ad => ad.PersonId == id));
 
-      return new RecipeAdjustment { PersonId = id, AmountMultiplier = RecipeGroupSplit.Multipliers.GetRandomItem() };
+      return new RecipeAdjustment {PersonId = id, AmountMultiplier = RecipeGroupSplit.Multipliers.GetRandomItem()};
     }
-
-    private void PerformMealLevelMutation(GroupMeal meal, RecipeGroupSplit recipe, GroupDietIndividual individual)
-    {
-      const int maxRecipes = 5;
-      const int minRecipes = 1;
-
-      var includedRecipes = individual.GroupDiet.Meals.SelectMany(m => m.Recipes).Select(r => r.Recipe).ToList();
-
-      switch (RandomMutationType())
-      {
-        case MutationType.Remove:
-          meal.Recipes.Remove(recipe);
-          if (meal.Recipes.Count < minRecipes)
-            meal.Recipes.Add(GetRanodmNotInvlolvedRecipe(includedRecipes));
-          break;
-        case MutationType.Add:
-          meal.Recipes.Add(GetRanodmNotInvlolvedRecipe(includedRecipes));
-          if (meal.Recipes.Count > maxRecipes)
-            meal.Recipes.Remove(recipe);
-          break;
-        case MutationType.Replace:
-          meal.Recipes.Remove(recipe);
-          meal.Recipes.Add(GetRanodmNotInvlolvedRecipe(includedRecipes));
-          break;
-        default:
-          throw new ArgumentOutOfRangeException();
-      }
-    }
-
-    private MutationType RandomMutationType()
-    {
-      var randomNumber = _random.NextDouble();
-      if (randomNumber < 0.3) return MutationType.Remove;
-      if (randomNumber < 0.6) return MutationType.Add;
-      return MutationType.Replace;
-    }
-
-    private RecipeGroupSplit GetRanodmNotInvlolvedRecipe(List<Recipe> includedRecipes)
-    {
-      var recipeGroupSplit = new RecipeGroupSplit(_groupSize);
-
-      do
-      {
-        recipeGroupSplit.Recipe = _recipes.GetRandomItem();
-      } while (includedRecipes.Contains(recipeGroupSplit.Recipe));
-
-      return recipeGroupSplit;
-    }
-  }
-
-  internal enum MutationType
-  {
-    Remove,
-    Add,
-    Replace
   }
 }
