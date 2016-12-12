@@ -4,10 +4,11 @@ using Owin;
 [assembly: OwinStartupAttribute(typeof(DietPlanning.Web.Startup))]
 namespace DietPlanning.Web
 {
-    public partial class Startup
+  public partial class Startup
+  {
+    public void Configuration(IAppBuilder app)
     {
-        public void Configuration(IAppBuilder app)
-        {
-        }
+     
     }
+  }
 }

@@ -1,4 +1,7 @@
-﻿@model DietPlanning.Web.Models.PreferencesViewModel
+﻿@using System.Globalization
+@using System.Threading
+@using Microsoft.Ajax.Utilities
+@model DietPlanning.Web.Models.PreferencesViewModel
 
 @{
   ViewBag.Title = "Preferences";
@@ -12,14 +15,14 @@
   @foreach (var mainCatPreference in Model.MainCategoryPreferences)
   {
     <div class="MainCategory">
-      <label class="main_cat_input_label" for="@mainCatPreference.Id"><a data-toggle="collapse" href="#sub_of_@mainCatPreference.Id">@mainCatPreference.Name</a> </label>
-      <input class="main_cat_input" id="@mainCatPreference.Id" type="range" name=@mainCatPreference.Id value="@mainCatPreference.Value" min="-1" max="1">
-      <div id="sub_of_@mainCatPreference.Id" class="panel-collapse collapse">
+      <label class="main_cat_input_label" for="@mainCatPreference.MainCategory"><a data-toggle="collapse" href="#sub_of_@mainCatPreference.MainCategory">@mainCatPreference.DisplayName</a> </label>
+      <input class="main_cat_input" id="@mainCatPreference.MainCategory" type="range" name=@mainCatPreference.MainCategory value="@mainCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
+      <div id="sub_of_@mainCatPreference.MainCategory" class="panel-collapse collapse">
         @foreach (var subCatPreference in mainCatPreference.SubCategoryPreferences)
         {
           <Div class="sub_cat_input_container">
-            <label for="@subCatPreference.Id"> @subCatPreference.Name</label>
-            <input maintCatId="@mainCatPreference.Id" class="sub_cat_input" id="@subCatPreference.Id" type="range" name=@subCatPreference.Id value="@subCatPreference.Value" min="-1" max="1">
+            <label for="@subCatPreference.SubCategory"> @subCatPreference.DisplayName</label>
+            <input maintCatId="@mainCatPreference.MainCategory" class="sub_cat_input" id="@subCatPreference.SubCategory" type="range" name=@subCatPreference.SubCategory value="@subCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
           </Div>
         }
       </div>
@@ -96,8 +99,8 @@
         var mainCatId = $(obj).attr('id');
         var mainCatPreference =
         {
-          Id: mainCatId,
-          Value: $(obj).val(),
+          MainCategory: mainCatId,
+          Value: $(obj).val().toString().replace(".",","),
           SubCategoryPreferences: getSubCatPreferences(mainCatId)
         };
         mainCategoryPreferences.push(mainCatPreference);
@@ -126,8 +129,8 @@
       .each(function(i, obj) {
         var subCatPreference =
         {
-          Id: $(obj).attr('id'),
-          Value: $(obj).val(),
+          SubCategory: $(obj).attr('id'),
+          Value: $(obj).val().toString().replace(".",",")
         };
         subCatPreferences.push(subCatPreference);
       });

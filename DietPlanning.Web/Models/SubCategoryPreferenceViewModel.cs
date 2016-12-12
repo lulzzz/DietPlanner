@@ -1,9 +1,11 @@
-﻿namespace DietPlanning.Web.Models
+﻿using DietPlanning.Core.DomainObjects;
+
+namespace DietPlanning.Web.Models
 {
   public class SubCategoryPreferenceViewModel
   {
-    public string Name { get; set; }
+    public string DisplayName { get; set; }
     public double Value { get; set; }
-    public string Id { get; set; }
+    public SubCategory SubCategory { get; set; }
   }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using DietPlanning.Core.DataProviders.Csv;
+using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.MathImplementation;
@@ -18,6 +19,7 @@ namespace ConsoleInterface
       var nsgaFactory = new NsgaSolverFactory(new Random());
       var recipesProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
       var recipes = recipesProvider.GetRecipes();
+      var m = GroupsMapping.SubToMainCategoryMapping;
       //var configuration = new ConfigurationProvider().GetConfiguration();
       //var personalData = GetPersonalData();
 

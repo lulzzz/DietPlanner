@@ -1,9 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders;
 using DietPlanning.Core.DataProviders.Databse;
+using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
@@ -11,6 +13,7 @@ using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.Web.Helpers;
 using DietPlanning.Web.Models;
 using DietPlanning.Web.Models.Builders;
+using WebGrease.Css.Extensions;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -77,7 +80,6 @@ namespace DietPlanning.Web.Controllers
 
       var recipes = _recipeProvider.GetRecipes();
       var dietPreferences = TempData.GetDietPreferences();
-      //  var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, recipes, dietRequirements, dietPreferences);
       var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
 
       var nsgaResult = nsgaSolver.Solve();
@@ -140,41 +142,37 @@ namespace DietPlanning.Web.Controllers
       var preferences = TempData.GetDietPreferences();
       preferences.CategoryPreferences.Clear();
 
-      var oldPreferencesViewModel = TempData.GetPreferencesViewModel();
+      var oldPreferences = TempData.GetPreferencesViewModel();
+      var oldMainPrefs = oldPreferences.MainCategoryPreferences;
+      var oldSubPrefs = oldPreferences.MainCategoryPreferences.SelectMany(m => m.SubCategoryPreferences).ToList();
 
-      var oldMains = oldPreferencesViewModel.MainCategoryPreferences.ToList();
-      var oldSubs = oldPreferencesViewModel.MainCategoryPreferences.SelectMany(m => m.SubCategoryPreferences).ToList();
-      var mewMains = preferencesViewModel.MainCategoryPreferences.ToList();
-      var newSubs = preferencesViewModel.MainCategoryPreferences.SelectMany(m => m.SubCategoryPreferences).ToList();
-
-      foreach (var oldMain in oldMains)
+      foreach (var mainCategoryPreference in preferencesViewModel.MainCategoryPreferences)
       {
-        oldMain.Value = mewMains.Single(m => m.Id == oldMain.Id).Value;
-        if (oldMain.Value != 0.0)
+        List<SubCategoryPreferenceViewModel> subCategories;
+
+        if (Math.Abs(mainCategoryPreference.Value - 1.0) > 0.01)
         {
+          oldMainPrefs.Single(m => m.MainCategory == mainCategoryPreference.MainCategory).Value = mainCategoryPreference.Value;
+          subCategories = mainCategoryPreference.SubCategoryPreferences;
+        }
+        else
+        {
+          subCategories = mainCategoryPreference.SubCategoryPreferences.Where(sub => Math.Abs(sub.Value - 1.0) > 0.01).ToList();
+        }
+
+        foreach (var subCategory in subCategories)
+        {
+          oldSubPrefs.Single(s => s.SubCategory ==  subCategory.SubCategory).Value = subCategory.Value;
+
           preferences.CategoryPreferences.Add(new CategoryPreference
           {
-            CategoryLevel = CategoryLevel.MainCategory,
-            Name = oldMain.Name,
-            Preference = oldMain.Value
+            Preference = subCategory.Value*mainCategoryPreference.Value,
+            SubCategory = subCategory.SubCategory
           });
         }
       }
 
-      foreach (var oldSub in oldSubs)
-      {
-        oldSub.Value = newSubs.Single(m => m.Id == oldSub.Id).Value;
-        if (oldSub.Value != 0.0)
-        {
-          preferences.CategoryPreferences.Add(new CategoryPreference
-          {
-            CategoryLevel = CategoryLevel.SubCategory,
-            Name = oldSub.Name,
-            Preference = oldSub.Value
-          });
-        }
-      }
-
+      TempData.SavePreferencesViewModel(oldPreferences);
       TempData.SaveDietPreferences(preferences);
     }
 
@@ -203,38 +201,32 @@ namespace DietPlanning.Web.Controllers
 
     private PreferencesViewModel InitializePreferencesViewModel()
     {
-      var recipes = _recipeProvider.GetRecipes();
-      var mainCategories = recipes.Select(recipe => recipe.MainCategory).Distinct();
       var preferencesViewModel = new PreferencesViewModel();
-      var preferenceIndex = 0;
 
-      foreach (var mainCategory in mainCategories)
+      foreach (MainCategory category in Enum.GetValues(typeof(MainCategory)))
       {
-        var mainCategoryPreferenceViewModel = new MainCategoryPreferenceViewModel
+        var mainCategoryPreference = new MainCategoryPreferenceViewModel
         {
-          Name = mainCategory.ToString(),
-          Value = 0.0,
-          Id = $"preference_{++preferenceIndex}"
+          MainCategory = category,
+          DisplayName = category.ToString(),
+          Value = 1,
+          SubCategoryPreferences = CreateSubCategoryPreferenceViewModels(category)
         };
-        var subCategories =
-          recipes.Where(r => r.MainCategory == mainCategory && r.MainCategory.ToString() != r.SubCategory.ToString())
-          .Select(r => r.SubCategory).Distinct().Where(subCategory => subCategory.ToString() != mainCategory.ToString());
-
-        foreach (var subCategory in subCategories)
-        {
-          var subCategoryPreferenceViewModel = new SubCategoryPreferenceViewModel
-          {
-            Name = subCategory.ToString(),
-            Value = 0,
-            Id = $"preference_{++preferenceIndex}"
-          };
-          mainCategoryPreferenceViewModel.SubCategoryPreferences.Add(subCategoryPreferenceViewModel);
-        }
-
-        preferencesViewModel.MainCategoryPreferences.Add(mainCategoryPreferenceViewModel);
+        
+        preferencesViewModel.MainCategoryPreferences.Add(mainCategoryPreference);
       }
-
+      
       return preferencesViewModel;
+    }
+
+    private List<SubCategoryPreferenceViewModel> CreateSubCategoryPreferenceViewModels(MainCategory mainCategory)
+    {
+      var subCategories = GroupsMapping.SubToMainCategoryMapping.Where(k => k.Value == mainCategory).Select(k => k.Key);
+
+      return subCategories.Select(subCategory => new SubCategoryPreferenceViewModel
+      {
+        Value = 1.0, DisplayName = subCategory.ToString(), SubCategory = subCategory
+      }).ToList();
     }
   }
 }
