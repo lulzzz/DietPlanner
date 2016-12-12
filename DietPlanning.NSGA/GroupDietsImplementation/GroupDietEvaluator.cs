@@ -114,11 +114,6 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           Math.Abs(personalData.Requirements.FatRange.GetDistanceToRange(dailySummary.NutritionValues.Fat)) +
           Math.Abs(personalData.Requirements.CarbohydratesRange.GetDistanceToRange(dailySummary.NutritionValues.Carbohydrates));
         
-        if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories))
-        {
-          feasible = false;
-        }
-        
         for (var mealIndex = 0; mealIndex < dailySummary.CaloriesPerMeal.Count; mealIndex++)
         {
           distanceForPerson +=
@@ -126,6 +121,11 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
               personalData.Requirements
                 .MealCaloriesSplit[mealIndex]
                 .GetDistanceToRange(dailySummary.CaloriesPerMeal[mealIndex]));
+        }
+
+        if (!personalData.Requirements.CaloriesAllowedRange.IsInRange(dailySummary.NutritionValues.Calories) || Math.Abs(distanceForPerson) > 200)
+        {
+          feasible = false;
         }
 
         distance += distanceForPerson;
