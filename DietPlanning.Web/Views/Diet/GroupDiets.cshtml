@@ -1,4 +1,5 @@
-﻿@model DietPlanning.Web.Models.GroupDietsResultViewModel
+﻿@using DietPlanning.NSGA
+@model DietPlanning.Web.Models.GroupDietsResultViewModel
 @{
   ViewBag.Title = "Diet";
   Layout = "~/Views/Shared/_Layout.cshtml";
@@ -28,7 +29,14 @@
     <div class="day">
       @foreach (var evaluation in diet.Evaluations)
       {
-      <div><span>@evaluation.Type: @((int)evaluation.Score)</span></div>
+        if (evaluation.Type == ObjectiveType.Preferences)
+        {
+          <div><span>@evaluation.Type: @evaluation.Score.ToString("0.##") </span></div>
+        }
+        else
+        {
+          <div><span>@evaluation.Type: @((int)evaluation.Score)</span></div>
+        }
       }
       <br/>
       <table>

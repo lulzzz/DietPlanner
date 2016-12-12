@@ -80,6 +80,7 @@ namespace DietPlanning.Web.Controllers
 
       var recipes = _recipeProvider.GetRecipes();
       var dietPreferences = TempData.GetDietPreferences();
+      personalData.ForEach(pd => pd.Preferences = dietPreferences);
       var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
 
       var nsgaResult = nsgaSolver.Solve();

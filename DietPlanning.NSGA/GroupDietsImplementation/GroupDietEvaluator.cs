@@ -35,7 +35,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       individual.Evaluations.Add(macroEv);
       individual.Evaluations.Add(EvaluateCost(recipes));
       individual.Evaluations.Add(EvaluatePreparationTime(recipes));
-      //individual.Evaluations.Add(EvaluatePreferences(recipes));
+      individual.Evaluations.Add(EvaluatePreferences(recipes));
 
       //todo preferences
     }
@@ -85,24 +85,19 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       var score = 0.0;
       foreach (var personalData in _personalData)
       {
+        var personalScore = 0.0;
         var recipesForPerson = recipes.RecipesForPerson(personalData.Id);
-        var mainCategories = recipesForPerson.Select(r => r.MainCategory).ToList();
         var subCategories = recipesForPerson.Select(r => r.SubCategory).ToList();
 
-        foreach (var categoryPreference in personalData.Preferences.CategoryPreferences)
+        foreach (var subCategory in subCategories)
         {
-          if (Math.Abs(categoryPreference.Preference) < 0.1)
-            continue;
-
-          //var categorySet = categoryPreference.CategoryLevel == CategoryLevel.MainCategory
-          //  ? mainCategories
-          //  : subCategories;
-
-          //score += categorySet.Count(mainCat => mainCat == categoryPreference.Name)*categoryPreference.Preference;
+          personalScore += personalData.Preferences.CategoryPreferences.SingleOrDefault(s => s.SubCategory == subCategory)?.Preference ?? 1.0;
         }
+
+        score += personalScore/recipesForPerson.Count;
       }
 
-      return score;
+      return score / _personalData.Count;
     }
 
     private double EvaluateDailyMacro(GroupDiet diet, out bool feasible)
