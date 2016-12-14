@@ -96,6 +96,7 @@ namespace DietPlanning.NSGA
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Cost, iteration));
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Macro, iteration));
       log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.PreparationTime, iteration));
+      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Preferences, iteration));
     }
 
     private static ObjectiveLog GetFrontObjectiveLog(List<Individual> individuals, ObjectiveType objectiveType, int iteration)

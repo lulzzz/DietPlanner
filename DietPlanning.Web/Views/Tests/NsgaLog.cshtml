@@ -12,6 +12,7 @@
 <canvas id="macroChart" width="400" height="200"></canvas>
 <canvas id="prepTimeChart" width="400" height="200"></canvas>
 <canvas id="costChart" width="400" height="200"></canvas>
+<canvas id="preferencesChart" width="400" height="200"></canvas>
 <canvas id="frontsChart" width="400" height="200"></canvas>
 <canvas id="frontSizeChart" width="400" height="200"></canvas>
 <canvas id="crowdingDistanceVarChart" width="400" height="200"></canvas>
@@ -34,6 +35,9 @@
   var prepTimeMin = [];
   var prepTimeMax = [];
   var feasibleSolutions = [];
+  var preferencesAvg = [];
+  var preferencesMin = [];
+  var preferencesMax = [];
 
    @foreach (var feasibleRatio in Model.FeasibleSolutions)
   {
@@ -80,6 +84,12 @@
     @:prepTimeAvg.push(@(objLog.Avg.ToString().Replace(',','.')));
     @:prepTimeMin.push(@(objLog.Min.ToString().Replace(',','.')));
     @:prepTimeMax.push(@(objLog.Max.ToString().Replace(',','.')));
+  }
+  @foreach (var objLog in Model.ObjectiveLogs.Where(log => log.ObjectiveType == ObjectiveType.Preferences))
+  {
+    @:preferencesAvg.push(@(objLog.Avg.ToString().Replace(',','.')));
+    @:preferencesMin.push(@(objLog.Min.ToString().Replace(',','.')));
+    @:preferencesMax.push(@(objLog.Max.ToString().Replace(',','.')));
   }
   function CreateDataset(color, label, data) {
     return {
@@ -139,6 +149,11 @@
   var macroChart = new Chart($("#costChart"), {
     type: 'line',
     data: CreateMinMaxAvgData(costAvg, costMin, costMax, "Cost")
+  });
+
+  var macroChart = new Chart($("#preferencesChart"), {
+    type: 'line',
+    data: CreateMinMaxAvgData(preferencesAvg, preferencesMin, preferencesMax, "Preferences")
   });
 
   var macroChart = new Chart($("#frontsChart"), {
