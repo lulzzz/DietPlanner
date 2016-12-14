@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using DietPlanning.Core;
 using DietPlanning.Core.DataProviders;
-using DietPlanning.Core.DataProviders.Databse;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
@@ -130,12 +129,14 @@ namespace DietPlanning.Web.Controllers
     [HttpGet]
     public JsonResult GetFoods(string term)
     {
-      var foods = new FoodDatabaseProvider().GetFoods().ToList();
-      var result =  foods.Where(food => food.Name.ToLower().Contains(term.ToLower())).Take(20).ToList();
+      //var foods = new FoodDatabaseProvider().GetFoods().ToList();
+      //var result =  foods.Where(food => food.Name.ToLower().Contains(term.ToLower())).Take(20).ToList();
      
-      var json = Json(result, JsonRequestBehavior.AllowGet);
+      //var json = Json(result, JsonRequestBehavior.AllowGet);
 
-      return json;
+      //return json;
+
+      return new JsonResult();
     }
 
     private void UpdatePreferences(PreferencesViewModel preferencesViewModel)
