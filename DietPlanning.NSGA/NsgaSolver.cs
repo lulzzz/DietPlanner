@@ -37,6 +37,7 @@ namespace DietPlanning.NSGA
     public NsgaResult Solve()
     {
       var log = new NsgaLog();
+      var watch = Stopwatch.StartNew();
 
       var individuals = InitializeIndividuals();
       _evaluator.Evaluate(individuals);
@@ -63,6 +64,9 @@ namespace DietPlanning.NSGA
 
       _evaluator.Evaluate(individuals);
       fronts = _sorter.Sort(individuals).ToList();
+
+      watch.Stop();
+      log.SolvingTime = watch.ElapsedMilliseconds;
 
       return new NsgaResult
       {
