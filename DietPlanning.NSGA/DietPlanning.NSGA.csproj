@@ -37,15 +37,10 @@
     <Compile Include="Configuration.cs" />
     <Compile Include="ConfigurationProvider.cs" />
     <Compile Include="CrowdedDistanceComparer.cs" />
-    <Compile Include="DayImplementation\DayCrossOver.cs" />
-    <Compile Include="DayImplementation\DayEvaluator.cs" />
-    <Compile Include="DayImplementation\DayIndividual.cs" />
-    <Compile Include="DayImplementation\DayMutator.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietCorrector.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietCopier.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietPopulationInitializer.cs" />
     <Compile Include="Direction.cs" />
-    <Compile Include="DayImplementation\DayPopulationInitializer.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietMutator.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietEvaluator.cs" />
     <Compile Include="GroupDietsImplementation\GroupDietCrossOver.cs" />

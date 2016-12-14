@@ -2,17 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using DietPlanning.Core;
 using DietPlanning.Core.DataProviders;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
-using DietPlanning.NSGA.DayImplementation;
 using DietPlanning.Web.Helpers;
 using DietPlanning.Web.Models;
 using DietPlanning.Web.Models.Builders;
-using WebGrease.Css.Extensions;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -29,18 +26,6 @@ namespace DietPlanning.Web.Controllers
       _recipeProvider = recipeProvider;
     }
 
-    public ActionResult ShowDays()
-    {
-      var dietsViewModel = TempData.GetDailyDietsResultViewModel();
-
-      if (dietsViewModel == null)
-      {
-        return RedirectToAction("GenerateDiets");
-      }
-
-      return View(dietsViewModel);
-    }
-
     public ActionResult GroupDiets()
     {
       var dietsViewModel = TempData.GetGroupDietsResultViewModel();
@@ -51,23 +36,6 @@ namespace DietPlanning.Web.Controllers
       }
 
       return View(dietsViewModel);
-    }
-
-    public ActionResult GenerateDiets()
-    {
-      var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
-      
-      var recipes = _recipeProvider.GetRecipes();
-      var dietPreferences = TempData.GetDietPreferences();
-      var nsgaSolver = _nsgaSolverFactory.GetDailyDietsSolver(TempData.GetSettings().NsgaConfiguration, recipes, dietRequirements, dietPreferences);
-
-      var nsgaResult = nsgaSolver.Solve();
-      TempData.SaveLog(nsgaResult.Log);
-
-      var dietsViewModel = CreateDailyDietsResultViewModel(nsgaResult.Fronts, dietRequirements);
-      TempData.SaveDailyDietsResultViewModel(dietsViewModel);
-
-      return RedirectToAction("ShowDays");
     }
 
     public ActionResult GerateGroupDiets()
@@ -176,29 +144,6 @@ namespace DietPlanning.Web.Controllers
 
       TempData.SavePreferencesViewModel(oldPreferences);
       TempData.SaveDietPreferences(preferences);
-    }
-
-    private DailyDietsResultViewModel CreateDailyDietsResultViewModel(List<List<Individual>> nsgaResult, DietRequirements dietRequirements)
-    {
-      var dietAnalyzer = new DietAnalyzer();
-      var viewModel = new DailyDietsResultViewModel {DietRequirements = dietRequirements };
-
-      foreach (var individual in nsgaResult.SelectMany(r => r))
-      {
-        var dayIndividual = (DayIndividual) individual;
-
-        var dailyDietViewModel = new DailyDietViewModel();
-
-        dailyDietViewModel.Evaluations.AddRange(dayIndividual.Evaluations);
-        dailyDietViewModel.DietSummary = dietAnalyzer.SummarizeDaily(dayIndividual.DailyDiet);
-        dailyDietViewModel.DailyDiet = dayIndividual.DailyDiet;
-
-        viewModel.DailyDietViewModels.Add(dailyDietViewModel);
-      }
-
-      viewModel.DailyDietViewModels = viewModel.DailyDietViewModels.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
-
-      return viewModel;
     }
 
     private PreferencesViewModel InitializePreferencesViewModel()
