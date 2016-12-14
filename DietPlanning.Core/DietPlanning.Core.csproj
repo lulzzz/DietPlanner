@@ -84,9 +84,7 @@
     <Compile Include="DietSummary.cs" />
     <Compile Include="NutritionRequirements\RequirementsProvider.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="MacroSolvers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="DataProviders\Csv\Ing.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

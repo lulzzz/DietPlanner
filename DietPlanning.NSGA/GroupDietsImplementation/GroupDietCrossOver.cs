@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Linq;
+using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.GroupDiets;
 
 namespace DietPlanning.NSGA.GroupDietsImplementation
@@ -63,8 +64,8 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
     {
       var crossOverPoint = _random.Next(1 + Math.Min(parent1.Recipes.Count, parent2.Recipes.Count));
 
-      var child1 = new GroupMeal();
-      var child2 = new GroupMeal();
+      var child1 = new GroupMeal {MealType = parent1.MealType};
+      var child2 = new GroupMeal {MealType = parent1.MealType};
 
       child1.Recipes.AddRange(parent1.Recipes.Take(crossOverPoint));
       child1.Recipes.AddRange(parent2.Recipes.Skip(crossOverPoint));

@@ -13,6 +13,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
     private readonly List<Recipe> _recipes;
     private readonly int _groupSize;
     private readonly GroupDietCorrector _corrector;
+    private Dictionary<MealType, List<Recipe>> _recipesForMealType;
 
 
     public GroupDietMutator(Random random, List<Recipe> recipes, int groupSize, GroupDietCorrector corrector)
@@ -21,12 +22,13 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       _recipes = recipes;
       _groupSize = groupSize;
       _corrector = corrector;
+      InitializeRecipesForMealType();
     }
 
     public void Mutate(Individual individual, double mutationProbability)
     {
       var dietIndividual = individual as GroupDietIndividual;
-      var meals = dietIndividual.GroupDiet.Meals.Select(m => m);
+      var meals = dietIndividual.GroupDiet.Meals.Select(m => m).ToList();
 
       foreach (var meal in meals)
       {
@@ -36,16 +38,18 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         }
       }
       // _corrector.ApplyCorrection(dietIndividual.GroupDiet);
+      if (meals.Any(m => m.Recipes.Any(r => !r.Recipe.ApplicableMeals.Contains(m.MealType))))
+      {
+        throw  new ApplicationException();
+      }
     }
-
-   
-
+    
     private void PerformRecipesLevelMutation(GroupMeal meal, double mutationProbability)
     {
       if (_random.NextDouble() < mutationProbability)
       {
         //add new split
-        var split = new RecipeGroupSplit {Recipe = _recipes.GetRandomItem()};
+        var split = new RecipeGroupSplit {Recipe = _recipesForMealType[meal.MealType].GetRandomItem()};
         var adjustment = new RecipeAdjustment
         {
           AmountMultiplier = RecipeGroupSplit.Multipliers.GetRandomItem(),
@@ -100,6 +104,16 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       } while (adjustments.Any(ad => ad.PersonId == id));
 
       return new RecipeAdjustment {PersonId = id, AmountMultiplier = RecipeGroupSplit.Multipliers.GetRandomItem()};
+    }
+
+    private void InitializeRecipesForMealType()
+    {
+      _recipesForMealType = new Dictionary<MealType, List<Recipe>>();
+
+      foreach (MealType mealType in Enum.GetValues(typeof(MealType)))
+      {
+        _recipesForMealType.Add(mealType, _recipes.Where(r => r.ApplicableMeals.Contains(mealType)).ToList());
+      }
     }
   }
 }
