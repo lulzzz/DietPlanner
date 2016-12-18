@@ -75,7 +75,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
       return new Evaluation
       {
         Type = ObjectiveType.Preferences,
-        Direction = Direction.Maximize,
+        Direction = Direction.Minimize,
         Score = GetPreferencesScore(recipes)
       };
     }
@@ -97,7 +97,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         score += personalScore/recipesForPerson.Count;
       }
 
-      return score / _personalData.Count;
+      return 2 - score / _personalData.Count;
     }
 
     private double EvaluateDailyMacro(GroupDiet diet, out bool feasible)
