@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietPlanning.Web", "DietPla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DietPlanning.NSGA.Tests", "DietPlanning.NSGA.Tests\DietPlanning.NSGA.Tests.csproj", "{CE016F33-597F-4D56-B8F8-AB16FCDF612F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAdapter", "RAdapter\RAdapter.csproj", "{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{CE016F33-597F-4D56-B8F8-AB16FCDF612F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE016F33-597F-4D56-B8F8-AB16FCDF612F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE016F33-597F-4D56-B8F8-AB16FCDF612F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

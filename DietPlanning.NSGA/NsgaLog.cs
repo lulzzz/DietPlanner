@@ -10,7 +10,7 @@ namespace DietPlanning.NSGA
     public List<double> CrowdingDistanceVar;
     public List<double> CrowdingDistanceAvg;
     public List<double> FeasibleSolutions;
-    public long SolvingTime;
+    public int SolvingTime;
 
     public NsgaLog()
     {

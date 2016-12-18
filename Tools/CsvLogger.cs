@@ -32,7 +32,16 @@ namespace Tools
     public static void Write(string loggerName, string filePath)
     {
       if (Loggers.ContainsKey(loggerName))
+      {
         File.WriteAllText(filePath, Loggers[loggerName].ToString());
+        RemvoeLogger(loggerName);
+      }
+    }
+
+    public static void RemvoeLogger(string loggerName)
+    {
+      if (Loggers.ContainsKey(loggerName))
+        Loggers.Remove(loggerName);
     }
   }
 }

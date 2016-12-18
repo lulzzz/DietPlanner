@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.GroupDiets;
 using DietPlanning.Core.NutritionRequirements;
 

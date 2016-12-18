@@ -66,7 +66,7 @@ namespace DietPlanning.NSGA
       fronts = _sorter.Sort(individuals).ToList();
 
       watch.Stop();
-      log.SolvingTime = watch.ElapsedMilliseconds;
+      log.SolvingTime = (int)watch.ElapsedMilliseconds;
 
       return new NsgaResult
       {
