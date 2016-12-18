@@ -37,11 +37,11 @@ namespace DietPlanning.NSGA
 
       return new NsgaSolver(
         new Sorter(),
-        new GroupDietPopulationInitializer(_random, recipes, 5, personalData, groupDietAnalyzer), 
+        new GroupDietPopulationInitializer(new Random(), recipes, 5, personalData, groupDietAnalyzer), 
         new GroupDietEvaluator(personalData, groupDietAnalyzer), 
         new TournamentSelector(new CrowdedDistanceComparer(), TournamentSize, new Random()),
-        new GroupDietCrossOver(_random), 
-        new GroupDietMutator(_random, recipes, personalData.Count, new GroupDietCorrector(groupDietAnalyzer, personalData, recipes)), 
+        new GroupDietCrossOver(new Random()), 
+        new GroupDietMutator(new Random(), recipes, personalData.Count, new GroupDietCorrector(groupDietAnalyzer, personalData, recipes)), 
         configuration);
     }
   }

@@ -55,10 +55,10 @@ namespace ConsoleInterface
 
       var nsgaFactory = new NsgaSolverFactory(new Random());
 
-      const int repeats = 25;
-      const double mutationMin = 0.0005;
-      const double mutationMax = 0.005;
-      const double mutationStep = 0.0005;
+      const int repeats = 10;
+      const double mutationMin = 0.0001;
+      const double mutationMax = 0.04;
+      const double mutationStep = 0.005;
       
       for (var i = mutationMin; i < mutationMax; i += mutationStep)
       {
@@ -66,8 +66,7 @@ namespace ConsoleInterface
         var times = new List<int>();
 
         configuration.MutationProbability = i;
-
-        for (var j = 0; j < repeats; j++)
+       for(var j = 0; j < repeats; j++)
         {
           var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
           var result = solver.Solve();
@@ -75,10 +74,10 @@ namespace ConsoleInterface
           hvs.Add(RInvoker.HyperVolume(result.Fronts.SelectMany(f => f).ToList()));
           times.Add(result.Log.SolvingTime);
 
-          Console.WriteLine((double) (j+1)+"/"+repeats+" current");
+          Console.WriteLine((double)(j + 1) + "/" + repeats + " current");
         }
-
-        Console.WriteLine((i+1) / mutationMax * 100 + "% total");
+        
+        Console.WriteLine(((i+ mutationStep) / mutationMax * 100) + "% total");
 
         var hvsLog = new List<dynamic> {"hvs", configuration.MutationProbability};
         hvsLog.AddRange(hvs.Select(h => (dynamic)h));

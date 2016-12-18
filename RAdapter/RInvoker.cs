@@ -11,6 +11,8 @@ namespace RAdapter
 {
   public static class RInvoker
   {
+    private static readonly object Sync = new object();
+
     public static void UseR()
     {
       var engine = REngine.GetInstance();
@@ -49,20 +51,22 @@ namespace RAdapter
       }
 
 
-      File.WriteAllText("output.txt", scoreS.ToString());
+      //File.WriteAllText("output.txt", scoreS.ToString());
+      lock (Sync)
+      {
+        var engine = REngine.GetInstance();
 
-      var engine = REngine.GetInstance();
+        var data = engine.CreateNumericVector(scores.ToArray());
+        engine.SetSymbol("data", data);
+        engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] { individuals.Count }));
+        engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] { individuals.First().Evaluations.Count }));
 
-      var data = engine.CreateNumericVector(scores.ToArray());
-      engine.SetSymbol("data", data);
-      engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] {individuals.Count}));
-      engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] {individuals.First().Evaluations.Count}));
+        engine.Evaluate(cmd).AsCharacter().ToArray();
 
-      engine.Evaluate(cmd).AsCharacter().ToArray();
+        var hv = engine.GetSymbol("dhv").AsNumeric();
 
-      var hv = engine.GetSymbol("dhv").AsNumeric();
-
-      return hv.ToArray().First();
+        return hv.ToArray().First();
+      }    
     }
   }
 }

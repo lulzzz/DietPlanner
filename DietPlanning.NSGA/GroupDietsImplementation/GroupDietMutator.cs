@@ -15,7 +15,6 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
     private readonly GroupDietCorrector _corrector;
     private Dictionary<MealType, List<Recipe>> _recipesForMealType;
 
-
     public GroupDietMutator(Random random, List<Recipe> recipes, int groupSize, GroupDietCorrector corrector)
     {
       _random = random;
@@ -97,7 +96,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
     private RecipeAdjustment GetRandomMissingAdjustment(List<RecipeAdjustment> adjustments)
     {
       int id;
-
+      
       do
       {
         id = _random.Next(_groupSize);
