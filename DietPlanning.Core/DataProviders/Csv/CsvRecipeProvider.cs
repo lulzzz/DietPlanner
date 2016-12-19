@@ -53,7 +53,8 @@ namespace DietPlanning.Core.DataProviders.Csv
           MainCategory = FoodGroupsMapper.MainCategoryCsvMapper[values[(int)CsvField.MainCategory]],
           SubCategory = FoodGroupsMapper.SubCategoryCsvMapper[values[(int)CsvField.SubCategory]],
           Cost = (int)ParseValue(values[(int)CsvField.Cost]),
-          PreparationTimeInMinutes = (int)ParseValue(values[(int)CsvField.PreparationTime])
+          PreparationTimeInMinutes = (int)ParseValue(values[(int)CsvField.PreparationTime]),
+          Id = (int)ParseValue(values[(int)CsvField.Id]),
         };
 
         if (!string.IsNullOrEmpty(values[(int)CsvField.ApplicableForMeal1]))
@@ -103,6 +104,7 @@ namespace DietPlanning.Core.DataProviders.Csv
     Proteins = 14,
     Carbs = 15,
     Cost = 16,
-    PreparationTime = 17
+    PreparationTime = 17,
+    Id = 18
   }
 }

@@ -1,932 +1,932 @@
-0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17
-Nazwa;Waga nom.;S;DS.;O;P;K;CUSTOM;Samodzielne;Podkategoria;Kategoria glowna;Typ;Kalorie;Tluszcz;Bialko;Weglowodany;Cost;Prep t
-Agrest;;;;;;;;;;;;41;0,2;0,8;11,8;11;80
-Ananas;75;;Y;;Y;;;Y;owoce swieze;owoce i przetwory owocowe;Produkty;54;0,2;0,4;13,6;9;90
-Ananas plastry w syropie;;;;;;;;;inne przetwory;owoce i przetwory owocowe;Produkty;84;0,1;0,4;21;13;50
-Arbuz;75;;Y;;Y;;Y;Y;owoce swieze;owoce i przetwory owocowe;Produkty;36;0,1;0,6;8,4;16;100
-Awokado;50;;Y;;Y;;;Y;owoce swieze;owoce i przetwory owocowe;Produkty;160;15,3;2;7,4;7;40
-Babeczki z kremem smietankowym;50;Y;;Y;;Y;Y;Y;Wypieki;Desery;Produkty;437;20,4;8,1;56,1;8;10
-Babka biszkoptowa;50;Y;;Y;;Y;Y;Y;Wypieki;Desery;Produkty;341;4,2;8,5;67,1;17;20
-Babka drozdzowa luksusowa;50;Y;;Y;;Y;Y;Y;Wypieki;Desery;Produkty;368;13,4;8;55,1;14;90
-Bagietki francuskie;;;;;;;;;;;;283;1,7;8,7;59,2;27;70
-Baklazan;;;;;;;;;;;;21;0,1;1,1;6,3;30;20
-Baleron gotowany;100;;Y;Y;Y;Y;;Y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;244;20,2;15,1;0,9;14;60
-Banan;60;Y;Y;;Y;Y;;Y;owoce swieze;owoce swieze;Produkty;95;0,3;1;23,5;9;40
-Banany suszone;;;;;;;;;;;;360;1,1;3,8;88,8;23;50
-Baranina lopatka;;;;;;;;;Baranina;Mieso i przetwory miesne;Produkty;284;25;15,6;0;16;70
-Baranina udziec;;;;;;;;;Baranina;Mieso i przetwory miesne;Produkty;232;18;18;0;26;60
-Barszcz czerwony zabielany;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;33;1,4;2,1;3,4;23;40
-Barszcz ukrainski mrozony;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;28;0,2;1,6;7,1;29;60
-Barszcz ukrainski z biala fasola;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;54;2,7;2,2;6,6;12;80
-Barszcz ukrainski z fasolka szparagowa;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;36;0,6;1,9;6,9;11;80
-Barszcz z bocwina;200;;;Y;;;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;29;1,7;1,5;2,5;35;100
-"Baton ""Bounty Milk""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;448;25,2;4,2;56,7;23;60
-"Baton ""Mars""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;451;18,2;3,6;68,9;23;10
-"Baton ""Milky Way""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;448;16,2;3,6;71,8;24;100
-"Baton ""Snickers""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;497;28,9;9,7;52,6;14;10
-"Baton ""Twix""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;483;23,2;5,3;64,2;20;70
-Baton szynkowy z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;143;9,3;14,9;0,1;25;80
-Baton z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;144;8,6;16,7;0,1;31;10
-Befsztyk bity wiejski smazony;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;258;19,6;19,4;1,6;19;10
-Befsztyk tatarski;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;195;12,3;18,4;3,4;12;60
-"Bezy z kremem ""Sokoly""";50;;Y;;Y;;Y;Y;slodycze;Desery;Produkty;444;19,6;7,1;60,8;8;80
-Bialko jaja kurzego;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;49;0,2;10,9;0,7;8;60
-Bigos popularny;150;;;Y;;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;119;9,9;5,1;3,8;10;20
-Bitki wieprzowe duszone;150;;;Y;;;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;195;16,1;10,4;2,6;31;40
-Bitki wieprzowe w jarzynach duszone;150;;;Y;;;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;200;16,1;10,7;4,3;26;70
-Bitki wolowe duszone;150;;;Y;;;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;103;4,4;13,6;2,3;15;100
-Bitki wolowe w jarzynach duszone;150;;;Y;;;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;117;4,5;14,3;6,6;24;80
-Bliny ziemniaczane;200;;;Y;;;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;257;16,3;5,7;23,4;5;10
-Bob;;;;;;;;;;;;66;0,4;7,1;14;8;80
-Bob mrozony;;;;;;;;;;;;63;0,4;6,8;13,4;26;30
-Bocwina;;;;;;;;;;;;17;0,5;2,1;5,5;28;20
-Boeuf Strogonow duszony;200;;;;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;220;14,3;19,6;3,7;8;50
-Brokuly;150;Y;Y;Y;Y;Y;Y;Y;Warzywa gotowane;warzywa i przetwory warzywne;Potrawy;27;0,4;3;5,2;8;40
-Brokuly mrozone;;;;;;;;;;;;24;0,4;2,7;4,7;27;80
-Brukselka;;;;;;;;;;;;37;0,5;4,7;8,7;33;10
-Brukselka mrozona;;;;;;;;;;;;36;0,5;4,5;8,4;16;60
-Brukselka z wody;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;110;7,1;4,2;12;5;50
-Bryzol wolowy z poledwicy smazony;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;253;16,6;24,7;1,4;8;20
-Brzoskwinia;;;;;;;;;;;;46;0,2;1;11,9;31;80
-Brzoskwinia w syropie;;;;;;;;;;;;73;0,1;0,4;18,2;35;10
-Budyn w proszku;100;;Y;;Y;;Y;Y;Desery mleczne;Desery;Produkty;369;0,1;0,3;90,5;34;40
-Budyn z miesa i makaronu;200;;;Y;;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;172;4,4;10,7;23;13;60
-Bukiet z jarzyn wiosennych mrozony;100;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;30;0,3;2,8;7,5;34;70
-Bukiet z jarzyn z makaronem mrozony;100;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;133;1,2;5,3;27,8;32;90
-Bukiet z jarzyn z ryzem mrozony;100;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;66;0,3;2,4;15,6;34;20
-Buleczki do hot-dogow;50;;Y;Y;Y;Y;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;341;7,5;9,5;59,8;14;100
-Buleczki drozdzowe z jablkami;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;272;7,2;6,2;47,3;28;70
-Buleczki drozdzowe z nadzieniem makowym;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;352;8,1;7,8;63,8;23;100
-Buleczki drozdzowe z nadzieniem serowym;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;339;6,9;8,5;61,7;11;10
-Buleczki drozdzowe z powidlami sliwkowymi;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;343;6,5;7;65,2;20;30
-Buleczki z jablkiem i kruszonka;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;270;7;6,7;45,9;21;80
-Bulka tarta;;;;;;;;;;;;347;1,9;9,7;77,6;33;100
-Bulki grahamki;50;Y;Y;;Y;Y;;Y;Pieczywo pszenne;Produkty zbozowe;Produkty;252;1,7;9;56,1;31;20
-Bulki i rogale maslane;50;Y;;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;327;5,9;8,5;61;35;50
-Bulki mieszane z cebula;50;Y;;;Y;;;Y;Pieczywo mieszane;Produkty zbozowe;Produkty;284;3,5;7,9;58,4;29;90
-Bulki mleczne;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;314;4,5;9,2;60,3;29;60
-Bulki owsiane;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;304;4,5;9,3;58,4;15;100
-Bulki pszenne zwykle;50;;;;;;;;Pieczywo pszenne;Produkty zbozowe;Produkty;273;1,5;8,1;57,7;29;80
-Bulki pszenne zwykle z serwatka;50;;;;;;;;Pieczywo pszenne;Produkty zbozowe;Produkty;277;1,6;8,8;58;29;60
-Bulki sojowe;50;Y;;;Y;;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;315;4;10,1;61,1;35;20
-Bulki szwedki;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;272;1,3;7,6;58,8;29;70
-Bulki wroclawskie;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;294;4,4;8;56,6;25;10
-Burak;;;;;;;;;;;;38;0,1;1,8;9,5;9;10
-Buraki gotowane;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;71;3,5;1,6;10;27;10
-Buraki puree mrozone;;;;;;;;;;;;34;0,1;1,6;8,6;27;60
-Buraki z jablkami;150;;Y;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;70;3,3;1,5;10,3;35;10
-Buraki zasmazane;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;5,5;1,6;8,6;24;10
-Buraki ze smietana;150;;;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;66;3,4;1,8;8,8;33;30
-Cebula;;;;;;;;;;;;30;0,4;1,4;6,9;25;50
-Cebula konserwowa;;;;;;;;;;;;52;0,2;0,7;12,4;31;20
-Cebula mrozona;;;;;;;;;;;;28;0,4;1,3;6,2;8;40
-Chalki zdobne;50;;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;333;7;7,8;60,8;33;20
-Chalwa kakaowa;;;;;;;;;;;;517;33,5;14,6;45,7;34;10
-Chalwa waniliowa;;;;;;;;;;;;516;33,1;14,2;46,4;20;10
-Chalwa z bakaliami;;;;;;;;;;;;510;34,4;16,5;39,8;13;60
-Chalwa z orzechami;;;;;;;;;;;;537;37,4;17,7;38,7;20;60
-Chipsy bekonowe;75;;y;;y;;y;y;Chipsy;Przekaski;Produkty;537;38;5,9;52,2;13;60
-Chipsy paprykowe;75;;y;;y;;y;y;Chipsy;Przekaski;Produkty;549;40;6;50,4;20;10
-Chipsy solone;75;;y;;y;;y;y;Chipsy;Przekaski;Produkty;552;40,7;5,6;49,9;23;30
-Chleb baltonowski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;251;1,5;7;54,8;30;60
-Chleb beskidzki;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,7;7,5;55,7;28;50
-Chleb chrupki;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;353;2,4;8,7;78,9;34;80
-Chleb ekstrudowany pszenny;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;381;5,2;9,2;78,3;6;10
-Chleb ekstrudowany zytni;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;383;6,1;8,2;78,6;11;40
-Chleb graham;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;221;1,7;8,3;48,7;27;100
-Chleb mazowiecki;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;254;1,4;7,6;55;20;70
-Chleb mieszany jasny rodzynkowy;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;261;1,4;5,8;58,6;12;20
-Chleb mieszany pytlowy z cebula;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;259;3,6;5,7;54,2;21;90
-Chleb mieszany razowy z bakaliami;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;247;3,9;7,2;51,4;12;90
-Chleb mieszany sitkowy z ziarnami;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;242;3;8;50,5;10;100
-Chleb mieszany slonecznikowy;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;240;4,5;6,8;48,9;18;10
-Chleb mieszany z platkami owsianymi;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;238;2,3;7;54,2;21;50
-Chleb mieszany z soja;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;226;2,7;7,1;49,2;8;60
-Chleb mleczny;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;256;1,5;7,7;55,3;18;50
-Chleb naleczowski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,3;6,6;55,3;29;60
-Chleb poleski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;247;2,1;7,1;54,5;8;30
-Chleb praski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,3;6,6;55,3;34;50
-Chleb pszenny;50;Y;Y;Y;Y;Y;;Y;Pieczywo mieszane;Produkty zbozowe;Produkty;257;1,4;8,5;54,3;17;90
-Chleb pszenny z ziarnem pszenicy;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;223;1,8;8,3;49,5;11;30
-Chleb wiejski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;245;1,3;6,9;54;22;100
-Chleb wielkopolski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;254;1,5;6,7;56,6;5;30
-Chleb zakopianski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;261;1,5;7,7;56,9;7;10
-Chleb zwykly;50;Y;Y;Y;Y;Y;;Y;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,3;6,1;56,3;19;40
-Chleb zytni jasny;50;Y;Y;Y;Y;Y;;Y;Pieczywo zytnie;Produkty zbozowe;Produkty;243;1,3;3,8;57,4;7;100
-Chleb zytni jasny mleczny;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;258;1,8;4,6;59,1;23;20
-Chleb zytni pelnoziarnisty;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;225;1,8;6,8;53,8;33;70
-Chleb zytni pytlowy;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;240;1,5;4,4;56,2;14;70
-Chleb zytni razowy;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;213;1,7;5,9;51,2;32;10
-Chleb zytni razowy litewski;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;224;1,7;6,6;52,6;15;40
-Chleb zytni razowy na miodzie;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;225;1,6;5,6;54;16;60
-Chleb zytni razowy wytrawny;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;217;1,7;7;50,8;13;30
-Chleb zytni razowy z soja i slonecznikiem;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;226;3,5;7,8;48,7;33;70
-Chleb zytni razowy ze sliwka;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;228;1,6;5,3;54,3;18;10
-Chleb zytni sitkowy;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;220;1,5;5,4;53;29;70
-Chleb zytni staropolski;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;225;1,4;4,5;52,1;6;90
-Chleb zytni wilenski;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;218;1,5;4,4;52,2;33;50
-Chrupki kukurydziane;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;352;3;8,9;78,9;26;60
-Chrzan;;;;;;;;;;;;67;0,6;4,5;18,1;10;100
-Ciabatta;50;Y;Y;Y;Y;Y;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;298;3,6;8,7;58,7;12;40
-"Ciastka ""Karpatki""";50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;456;30,8;4,9;40,7;17;70
-"Ciastka ""Napoleonki""";50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;348;16,9;6,1;43,5;7;80
-Ciastka drozdzowe z truskawkami;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;383;13,6;8;58,5;6;40
-Ciastka francuskie ze sliwkami;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;435;26,6;5,3;45,4;26;80
-Ciastka ponczowe z kremem;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;393;17,3;4,6;55,3;13;20
-Ciastka tortowe ze swiezymi owocami;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;275;8,8;3,3;47,1;26;100
-Ciasto drozdzowe;50;;y;;y;;y;y;Wypieki;Desery;Produkty;290;8;7,7;47,7;19;40
-Ciasto kruche podstawowe;50;;y;;y;;y;y;Wypieki;Desery;Produkty;435;23,6;5,5;51,4;8;30
-Ciasto nalesnikowe bez piany;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;174;4,2;6,2;28,3;16;40
-Ciasto nalesnikowe biszkoptowe;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;187;5,9;8,5;25,5;23;90
-Cielecina lopatka;;;;;;;;;Cielecina;Mieso i przetwory miesne;Produkty;106;2,8;19,9;0;5;40
-Cielecina sznyclowka;;;;;;;;;Cielecina;Mieso i przetwory miesne;Produkty;105;2,4;20,5;0;8;10
-Cielecina udziec;;;;;;;;;Cielecina;Mieso i przetwory miesne;Produkty;108;3,1;19,9;0;19;70
-Cielecina w potrawce;150;;;Y;;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;104;4,1;13,5;3,9;20;70
-Coca cola, pepsi cola;;;;;;;;;;;;42;0;0;10,4;22;50
-Cukier;;;;;;;;;;;;405;0;0;99,8;29;80
-Cukinia;;;;;;;;;;;;15;0,1;1,2;3,2;10;30
-Cukinia mrozona;;;;;;;;;;;;15;0,1;1,2;3,2;32;10
-Cwikla;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;40;0,1;1,6;10,2;34;90
-Cykoria;;;;;;;;;;;;21;0,2;1,7;4,1;21;80
-Cytryna;;;;;;;;;;;;36;0,3;0,8;9,5;28;10
-Czarne jagody;;;;;;;;;;;;45;0,6;0,8;12,2;14;100
-Czarne jagody mrozone;;;;;;;;;;;;45;0,6;0,8;12,2;21;70
-Czekolada biala;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;578;38,4;7,7;51;13;10
-Czekolada deserowa;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;531;28,9;5,3;64;19;60
-Czekolada gorzka;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;554;34,3;6,7;56,6;13;40
-Czekolada kawowa;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;526;29;5,5;62,7;20;30
-Czekolada mleczna;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;549;32,8;9,8;54,7;11;60
-Czekolada mleczna z orzechami laskowymi;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;539;30,9;8,6;57,3;8;80
-Czekolada nadziewana;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;450;17,6;3,9;68,8;10;10
-Czekolada smietankowa z orzechami laskowymi;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;585;42,3;8,6;45,7;6;60
-Czeresnie;75;y;y;;y;;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;61;0,3;1;14,6;15;60
-Czosnek;;;;;;;;;;;;146;0,5;6,4;32,6;13;60
-Daktyle suszone;;;;;;;;;;;;277;0,4;2;74;5;20
-Delicje szampanskie;;;;;;;;;;;;327;11,2;4,1;52,8;28;50
-Deser mleczny ryzowo-jablkowy;;;;;;;;;Desery mleczne;Mleko i przetwory mleczne;Produkty;134;3;2,8;23,9;8;80
-Deser mleczny ryzowo-waniliowy;;;;;;;;;Desery mleczne;Mleko i przetwory mleczne;Produkty;133;2,9;3;23,5;22;30
-Deser twarogowy termizowany kakaowy;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;156;6,2;13,9;11,2;35;20
-Deser twarogowy termizowany truskawkowy;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;170;5,8;11;18,3;10;30
-Dorsz pulpety;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;112;2,6;14,3;8,7;6;100
-Dorsz swiezy;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;78;0,7;17,7;0;10;10
-Dorsz swiezy filet bez skory;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;70;0,3;16,5;0;30;100
-Dorsz w jarzynach;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;120;5,2;15,6;3,9;24;70
-Dorsz wedzony;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;94;0,5;22,1;0;25;90
-Dorsz z rusztu;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;172;9,1;22,1;0,6;32;90
-Dorsz, filety panierowane smazone;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;273;15,8;19,2;14,5;15;60
-Dorsz, filety po grecku;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;152;10,8;10,6;4,6;24;50
-Dorsz, kotlet mielony smazony;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;260;17,8;15;10,9;11;30
-Drozdze piekarskie prasowane;;;;;;;;;;;;92;2;11,3;14,5;13;80
-Dynia;;;;;;;;;;;;28;0,3;1,3;7,7;8;60
-Dynia pestki;;;;;;;;;;;;556;45,8;24,5;18;26;30
-Dynia z pomidorami;150;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;44;2,4;1,2;6,5;19;60
-Dzem ananasowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;157;0,1;0,2;38,6;7;70
-Dzem brzoskwiniowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;155;0,1;0,5;38,3;29;20
-Dzem jagodowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,2;0,3;38,2;32;10
-Dzem morelowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;157;0,1;0,4;38,8;16;20
-Dzem pomaranczowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;159;0,1;0,3;39,2;5;40
-Dzem sliwkowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,1;0,3;37,9;8;40
-Dzem sliwkowy wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;251;0,1;0,3;62,1;18;40
-Dzem truskawkowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,2;0,3;37,8;13;70
-Dzem truskawkowy niskoslodzony z witamina C;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,2;0,3;37,8;8;60
-Dzem truskawkowy wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;252;0,2;0,3;62,3;22;80
-Dzem wisniowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;154;0,2;0,4;37,5;5;40
-Dzem wisniowy wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;252;0,2;0,4;61,7;31;40
-Dzem z czarnych porzeczek niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;152;0,1;0,5;39,6;5;10
-Dzem z czarnych porzeczek wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;251;0,1;0,5;63,9;7;10
-Dzem z owocow kiwi niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;154;0,2;0,4;37,8;33;60
-Eklery z bita smietana;;;;;;;;;;;;326;18;5,9;35,5;6;70
-Fasola biala nasiona suche;;;;;;;;;;;;288;1,6;21,4;61,6;35;50
-Fasola cieta konserwowa bez zalewy;;;;;;;;;;;;16;0,2;1,5;4,5;35;60
-Fasola mung kielki;;;;;;;;;;;;29;0,4;3;6,2;34;100
-Fasola po bretonsku;200;;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;141;6,6;8;15,9;32;100
-Fasola szparagowa;;;;;;;;;;;;27;0,2;2,4;7,6;8;50
-Fasola szparagowa gotowana, z maslem;100;;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;97;6,9;2,9;10,3;20;90
-Fasolka flageolet konserwowa;;;;;;;;;przetwory warzywne;warzywa i przetwory warzywne;Produkty;61;0,2;6,3;15;26;10
-Fasolka szparagowa mrozona;;;;;;;;;;;;24;0,2;2,2;6,8;11;20
-Faworki luksusowe;;;;;;;;;;;;511;31,6;8,8;49,5;11;50
-Figi suszone;50;y;y;;y;y;y;y;owoce suszone;owoce i przetwory owocowe;Produkty;290;1,2;3,6;78;24;60
-Fladra swieza;;;;;;;;;;;;83;1,8;16,5;0;5;90
-Flaki;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;84;2,2;16;0;31;80
-Galaretka z nozek wieprzowych;100;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;202;14,9;16,9;0,8;35;80
-Ges tuszka;;;;;;;;;Ges;Mieso i przetwory miesne;Produkty;339;31,8;14,1;0;6;80
-Gladzica-plastuga swieza;;;;;;;;;;;;86;1,9;17,1;0;35;10
-Golabki z miesem i ryzem w sosie pomidorowym;150;;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;108;6,7;3,6;10;27;40
-Grejpfrut;50;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;36;0,2;0,6;9,8;11;30
-Groch nasiona suche;;;;;;;;;;;;293;1,4;23,8;60,2;26;20
-Groszek ptysiowy;;;;;;;;;;;;476;30,2;14,9;37,6;29;50
-Groszek zielony;;;;;;;;;;;;75;0,4;6,7;17;24;60
-Groszek zielony gotowany, z maslem;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;100;6,8;3,7;9,3;33;10
-Groszek zielony konserwowy bez zalewy;;;;;;;;;;;;63;0,2;4,9;15,8;27;100
-Groszek zielony mrozony;;;;;;;;;;;;72;0,4;6,4;16,3;13;50
-Gruszka;50;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;54;0,2;0,6;14,4;28;20
-Gruszki w sosie waniliowym;150;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;152;1,1;1,6;34,8;14;100
-Gujawa;;;;;;;;;;;;38;0,6;0,8;11,9;27;100
-Gulasz wolowy duszony;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;148;9,2;14,1;2,6;31;30
-Halibut bialy swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;98;1,9;20,1;0;29;100
-Herbata napar bez cukru;;;;;;;;;;;;0;0;0,1;0;16;10
-Herbatniki;;;;;;;;;;;;437;11;8,2;76,8;22;80
-"Herbatniki ""Corso""";;;;;;;;;;;;440;17,2;5;67,1;17;30
-Herbatniki kakaowe;;;;;;;;;;;;474;22,3;6,9;62,9;10;20
-Herbatniki kokosowe;;;;;;;;;;;;474;25,2;6,4;59,8;6;90
-Herbatniki sezamowe;;;;;;;;;;;;503;28,6;8,1;55,7;10;50
-Herbatniki w czekoladzie;;;;;;;;;;;;489;24;6,3;63,1;22;10
-Herbatniki w czekoladzie z orzechami;;;;;;;;;;;;492;23,7;6;64,7;35;80
-Herbatniki z cukrem;;;;;;;;;;;;460;17,2;6,7;70,7;20;20
-Herbatniki z czekolada;;;;;;;;;;;;493;25,5;5,9;61,2;14;50
-Herbatniki z nadzieniem czekoladowym;;;;;;;;;;;;497;27,9;5,5;57,3;18;90
-Herbatniki z nadzieniem owocowym;;;;;;;;;;;;390;16,1;3,8;58,6;35;90
-Indyk tuszka;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;129;6,8;17;0;14;80
-Irysy, krowki;;;;;;;;;;;;421;10,7;4,3;76,1;17;20
-Jablecznik ze swiezych jablek;;;;;;;;;;;;318;9,3;3,4;56,8;6;40
-Jablka pieczone;100;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;93;1,6;0,3;20,8;20;60
-Jablka suszone;50;y;y;;y;y;y;y;owoce suszone;owoce i przetwory owocowe;Produkty;238;2,1;2,1;62,3;19;50
-Jablka w ciescie francuskim;;;;;;;;;;;;397;22,7;4,4;46,1;12;20
-Jablka w kruchym ciescie;100;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;348;17,4;4,4;45;25;40
-Jablko;50;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;46;0,4;0,4;12,1;34;60
-Jagodzianki;;;;;;;;;;;;316;5,2;7,4;61;21;100
-Jaja gotowane;100;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;109;7,6;9,8;0,5;33;20
-Jaja kurze cale;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;139;9,7;12,5;0,6;31;100
-Jaja sadzone;100;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;168;14,2;9,9;0,6;19;80
-Jajecznica;150;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;119;8,7;9,8;0,5;23;100
-Jarmuz;100;Y;Y;;Y;Y;y;y;Warzywa;warzywa i przetwory warzywne;Produkty;29;0,7;3,3;6,1;33;30
-Jogurt bananowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;70;1,5;3,7;10,4;18;40
-Jogurt jagodowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;62;1,5;3,7;8,8;33;30
-Jogurt morelowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;63;1,5;3,7;8,9;25;80
-Jogurt naturalny 2% tluszczu;;;;;;;;;;;;60;2;4,3;6,2;34;70
-Jogurt truskawkowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;60;1,5;3,7;8,2;32;100
-Jogurt wisniowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;61;1,5;3,7;8,2;16;20
-Kabanosy;50;y;y;y;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;326;24,3;27,4;0;6;100
-Kabanosy z kurczaka;50;y;y;y;y;y;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;247;17,4;22,8;0,1;25;70
-Kaczka tuszka;;;;;;;;;Kaczka;Mieso i przetwory miesne;Produkty;308;28,6;13,5;0;8;10
-Kajzerki;50;Y;Y;Y;Y;Y;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;296;3,6;8,4;58,6;35;90
-Kakao 16% proszek;;;;;;;;;;;;448;21,7;18,2;50,6;14;90
-Kakao rozpuszczalne z witaminami;30;Y;Y;;Y;;y;y;Napoje mleczne;Mleko i przetwory mleczne;;404;3,1;3,8;89,8;14;70
-Kalafior;;;;;;;;;;;;22;0,2;2,4;5;28;90
-Kalafior gotowany, z maslem;100;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;6,8;2;5,5;13;100
-Kalafior mrozony;;;;;;;;;;;;20;0,2;2,2;4,5;12;20
-Kalarepa;;;;;;;;;;;;29;0,3;2,2;6,5;25;30
-Kalarepa mrozona;;;;;;;;;;;;27;0,3;2;5,9;16;30
-Kapusniak mrozony;200;;;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;35;0,2;1,4;9;6;50
-Kapusniak z kwaszonej kapusty;200;;;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;22;1,2;1,5;1,7;34;30
-Kapusniak ze slodkiej kapusty;200;;;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;32;2,1;0,7;3,2;8;90
-Kapusta biala;;;;;;;;;;;;29;0,2;1,7;7,4;30;20
-Kapusta biala gotowana, zasmazana;100;;;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;69;4,7;1,6;7,1;8;70
-Kapusta biala mrozona;;;;;;;;;;;;26;0,2;1,5;6,7;29;30
-Kapusta czerwona;75;y;y;y;y;y;y;y;Warzywa ;warzywa i przetwory warzywne;Produkty;27;0,2;1,9;6,7;12;90
-Kapusta kwaszona;75;y;y;y;y;y;y;y;Warzywa ;warzywa i przetwory warzywne;Produkty;12;0,2;1,1;3,4;25;40
-Kapusta pekinska;75;y;y;y;y;y;y;y;Warzywa ;warzywa i przetwory warzywne;Produkty;12;0,2;1,2;3,2;25;40
-Kapusta wloska;;;;;;;;;;;;38;0,4;3,3;7,8;33;80
-Kapusta wloska mrozona;;;;;;;;;;;;35;0,4;3;7;20;80
-Karmelki nadziewane;;;;;;;;;;;;378;0,5;0,3;92;14;80
-Karmelki nadziewane z witaminami;;;;;;;;;;;;378;0,5;0,3;92;21;80
-Karmelki twarde;;;;;;;;;;;;399;0;0;98,2;21;80
-Karmelki twarde z witamina C;;;;;;;;;;;;399;0;0;98,2;25;90
-Karp swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;110;4,2;18;0;34;100
-Karp w galarecie z warzywami;150;;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;137;2,9;26,1;2,1;23;100
-Karp z wody;150;;;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;102;3,7;16;2;25;50
-Kasza gryczana;;;;;;;;;Kasze;Produkty zbozowe;Produkty;336;3,1;12,6;69,3;16;10
-Kasza gryczana na sypko z tluszczem roslinnym;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;132;2,3;4,5;25;15;30
-Kasza gryczana na sypko ze smalcem;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;138;2,9;4,8;25;5;60
-Kasza jaglana;;;;;;;;;Kasze;Produkty zbozowe;Produkty;346;2,9;10,5;71,6;5;40
-Kasza jeczmienna na mleku;75;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;63;2,2;2,6;8,5;26;20
-Kasza jeczmienna peczak;;;;;;;;;Kasze;Produkty zbozowe;Produkty;334;2;8,4;74,9;11;40
-Kasza jeczmienna perlowa;;;;;;;;;Kasze;Produkty zbozowe;Produkty;327;2,2;6,9;75;29;90
-Kasza manna;;;;;;;;;Kasze;Produkty zbozowe;Produkty;348;1,3;8,7;76,7;9;20
-Kasza manna na mleku;75;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;67;2,1;2,7;9,3;18;100
-Kasza manna na wywarze jarzynowym;;;;;;;;;;;;21;0,8;0,5;3,4;31;90
-Kasza perlowa na sypko z tluszczem roslinnym;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;114;2;2,2;23,6;28;100
-Kasza perlowa na sypko ze smalcem;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;119;2,5;2,2;23,6;15;90
-Kaszanka z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;204;11,7;9,8;16,4;24;50
-Kawa napar bez cukru;;;;;;;;;;;;2;0;0,2;0,3;32;30
-Kefir 2% tluszczu;75;y;y;;y;y;;y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;51;2;3,4;4,7;24;90
-Kefir 2% tluszczu z wapniem;75;y;y;;y;y;;y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;51;2;3,4;4,7;27;90
-Keks bakaliowy;;;;;;;;;;;;385;17,5;6,5;53,7;21;40
-Kielbasa delikatesowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;109;3,3;19,6;0,1;35;30
-Kielbasa domowa;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;320;29,2;14,7;0,5;28;60
-Kielbasa jalowcowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;236;17,9;19;0,1;16;20
-Kielbasa kanapkowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;179;13,5;11,8;3;32;50
-Kielbasa krakowska sucha;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;323;24,8;25,6;0;10;100
-Kielbasa lubuska;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;249;18;17,5;4,8;34;80
-Kielbasa mazurska z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;129;7,7;14,8;0,1;34;40
-Kielbasa mortadela;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;205;17,7;12;0;6;50
-Kielbasa mortadela z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;209;18,5;11;0,1;27;10
-Kielbasa mysliwska sucha;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;291;20,1;27,8;0;27;60
-Kielbasa parowkowa;100;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;323;31,5;11;0;23;50
-Kielbasa podlaska z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;232;16,7;20,7;0,1;11;20
-Kielbasa podsuszana z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;162;8,4;21,7;0;15;10
-Kielbasa podwawelska;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;247;19,6;17,3;0,9;32;50
-Kielbasa rzeszowska;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;203;13,4;20,9;0;26;50
-Kielbasa slaska;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;210;15,3;18,4;0;13;80
-Kielbasa szynkowa z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;88;2;17,2;0,2;26;50
-Kielbasa szynkowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;110;5;16,2;0;15;10
-Kielbasa torunska;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;263;20,1;20,9;0;10;10
-Kielbasa zwyczajna;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;209;15,6;17,6;0;5;100
-Kielbasa zywiecka;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;315;26,3;20,3;0;21;40
-Kielbaski bawarskie;;;;;;;;;;;;308;27,7;15,5;0,1;12;90
-Kisiel porzeczkowy;150;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;98;0,1;0,3;25,7;23;80
-Kisiel w proszku;;;;;;;;;;;;377;0;0,2;92,7;18;40
-Kisiel waniliowy (budyn);150;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;121;4,5;3,3;16,6;29;30
-Kiszka kaszana jeczmienna;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;195;12,6;8,5;13;35;50
-Kiszka krwista;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;404;35;14,2;9,2;28;70
-Kiszka pasztetowa;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;384;35,7;12,5;4,3;25;70
-Kiwi;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;56;0,5;0,9;13,9;23;40
-Klopsiki cielece mielone duszone;150;;Y;Y;Y;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;250;14,6;16,3;14,2;8;10
-Klopsiki mielone z miesa mieszanego duszone;150;;Y;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;272;17,5;13,7;15,7;15;50
-Kluski kladzione;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;165;1,3;5,5;33,3;33;90
-Kluski lane;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;93;2;4,3;14,8;22;30
-Kluski lane na mleku;150;;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;69;3,1;3,6;6,8;23;100
-Kluski slaskie;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;169;3,8;2,6;32,1;13;10
-Knedle ze sliwkami;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;162;5,9;2,8;25,7;15;20
-Kompot z jablek;200;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;51;0,1;0,2;13,2;11;80
-Kompot z wisni;200;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;69;0,1;0,2;16,9;33;90
-Koncentrat pomidorowy 30%;;;;;;;;;;;;92;1,5;5,6;16,7;25;20
-Konina mieso bez kosci;;;;;;;;;Konina;Mieso i przetwory miesne;Produkty;109;2,5;21,5;0;8;100
-Konina mieso z koscia;;;;;;;;;Konina;Mieso i przetwory miesne;Produkty;109;2,5;21,5;0;13;10
-Koper ogrodowy;;;;;;;;;;;;26;0,4;2,8;6,1;21;60
-Kopytka;100;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;147;0,7;4,2;32,1;30;20
-Kopytka z maslem;100;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;151;1,5;3,8;31,6;34;90
-Kosci wywar;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;5;0;1,2;0;27;90
-Kotlet cielecy panierowany smazony;150;;;Y;;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;364;21,3;27,1;17,4;24;90
-Kotlet mielony z kury, smazony;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;382;27,8;20;14,2;31;10
-Kotlet mielony z miesa mieszanego smazony;150;;;Y;;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;285;21,1;13,1;11,7;33;100
-Kotlet schabowy panierowany smazony;150;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;351;24,1;19,1;15,9;22;50
-Kotlety z jaj, smazone;150;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;276;22,8;8,1;10,8;25;90
-Kotlety z kurczaka panierowane smazone;150;;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;249;15,8;19,8;7,6;11;10
-Kotlety z kurczaka saute smazone;150;;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;241;16,5;20,3;3,2;8;60
-Kotlety ziemniaczane;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;242;12,8;4,4;29,3;19;30
-Krem z zielonego groszku;150;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;64;3,8;3,1;5,9;20;30
-Krolik tuszka;;;;;;;;;Krolik;Mieso i przetwory miesne;Produkty;156;8;21;0;9;20
-Krupnik z kaszy gryczanej;200;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;43;1,2;1,7;7,2;17;50
-Krupnik z kaszy jeczmiennej;200;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;40;0,9;1,5;7,4;14;70
-Krupnik z ryzu;200;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;43;1,1;1,5;7,6;21;30
-Kukurydza kolby;;;;;;;;;;;;110;1,5;3,7;23,4;24;90
-Kukurydza kolby mrozona;;;;;;;;;;;;105;1,4;3,6;22,5;14;10
-Kukurydza konserwowa;;;;;;;;;;;;102;1,2;2,9;23,6;32;20
-Kulebiak;200;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;222;12,7;7,8;19,9;20;60
-Kura tuszka;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;202;14,3;18,5;0;35;80
-Kura w galarecie;100;Y;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;192;8,8;27,3;1,2;24;100
-Kurczak faszerowany pieczony;;;;;;;;;;;;199;11,9;20,5;2,8;28;100
-Kurczak tuszka;;;;;;;;;;;;158;9,3;18,6;0;11;10
-Kurczak w jarzynach gotowany;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;99;6,4;7,6;4,6;30;20
-Kurczeta pieczone;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;179;12,7;16,4;0,1;31;30
-Lazanki z biala kapusta;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;147;6,9;3,7;18,9;7;80
-Lemoniada;;;;;;;;;;;;24;0;0;5,8;7;60
-Len nasiona;;;;;;;;;;;;500;31;24,5;35;5;80
-Leniwe pierogi z sera twarogowego;150;;;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;242;13,9;14,6;15;12;10
-Leniwe pierogi z sera twarogowego i ziemniakow;150;;;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;220;10,1;12,9;20;29;50
-Lody mleczno-owocowe;150;;Y;;Y;;;Y;Lody mleczno-owocowe;Mleko i przetwory mleczne;Produkty;116;2,5;3,9;19,4;22;90
-Lody smietankowe;;;;;;;;;Lody smietankowe;Mleko i przetwory mleczne;Produkty;160;8,5;3,2;17,6;15;80
-Losos saute smazony;150;;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;380;31,4;21,2;4;14;40
-Losos swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;201;13,6;19,9;0;15;80
-Losos wedzony;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;162;8,4;21,5;0;14;40
-Losos z rusztu;150;;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;283;22,3;20,7;0,6;29;40
-Majonez domowy z olejem rzepakowym;;;;;;;;;;;;714;79;1,3;2,6;29;60
-Majonez domowy z olejem slonecznikowym;;;;;;;;;;;;714;79;1,3;2,6;23;10
-Mak niebieski;;;;;;;;;;;;478;42,9;20,1;24,7;25;70
-Maka kukurydziana;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;337;3;5,9;78;7;100
-Maka pszenna typ 1850;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;309;2,3;11,9;70;33;40
-Maka pszenna typ 500;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;343;1,2;10,1;74;12;50
-Maka pszenna typ 500 z witaminami;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;343;1,2;10,1;74;35;80
-Maka pszenna typ 550;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;344;1,6;10,5;73;24;20
-Maka pszenna typ 550 z witaminami;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;344;1,6;10,5;73;30;60
-Maka pszenna typ 750;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;341;1,8;11,6;71,3;13;20
-Maka ryzowa;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;348;0,7;7,2;79,2;13;60
-Maka sojowa pelnotlusta;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;424;23,5;45;20,1;23;80
-Maka zytnia typ 1400;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;310;2,2;7,1;75,3;17;60
-Maka zytnia typ 2000;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;301;2,2;8,1;74;27;20
-Maka zytnia typ 580;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;330;1,5;5,1;78,5;24;60
-Maka zytnia typ 720;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;327;1,7;5,9;77,4;10;60
-Makaron bezjajeczny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;364;1,6;11;77,6;17;100
-Makaron bezjajeczny z semoliny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;367;1,4;10,7;79,4;25;50
-Makaron czterojajeczny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;391;3,4;13,2;78,3;6;90
-Makaron dwujajeczny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;373;2,6;12;76,8;11;40
-Makaron dwujajeczny z semoliny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;374;2,4;11,9;77,8;28;80
-Makaron gotowany;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;108;0,7;3,5;22,1;21;30
-Makaron na mleku;150;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;65;2,2;2,9;8,6;22;70
-Makaron z maslem, gotowany;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;126;1,8;3,8;24,2;20;30
-Makaron z serem twarogowym i maslem;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;141;5,2;6,5;17,3;32;90
-Makaron zapiekany z biala kapusta;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;138;5,2;3,7;21,2;21;80
-Makrela swieza;;;;;;;;;;;;181;11,9;18,7;0;26;60
-Makrela wedzona;100;y;y;y;y;y;;y;Ryby wedzone;Ryby i przetwory rybne;Produkty;221;15,5;20,7;0;21;90
-Maliny;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;29;0,3;1,3;12;11;80
-Maliny mrozone;;;;;;;;;;;;29;0,3;1,3;12;34;70
-Mandarynki;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;42;0,2;0,6;11,2;7;90
-Mango;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;67;0,3;0,5;17;26;10
-Marchew;;;;;;;;;;;;27;0,2;1;8,7;8;30
-Marchew mrozona;;;;;;;;;;;;24;0,2;0,9;7,8;35;70
-Marchew z groszkiem mrozona;;;;;;;;;;;;39;0,3;2,6;10,4;20;80
-Marchewka gotowana, zasmazana;150;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;69;4,8;1,1;8,4;35;50
-Marchewka z groszkiem gotowana;150;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;64;3,1;1,7;10,7;32;60
-Margaryna miekka 45% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;398;45;0;0;17;40
-Margaryna miekka 50% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;442;50;0;0;13;20
-Margaryna miekka 60% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;533;60;0,2;0,3;25;50
-Margaryna miekka 70% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;621;70;0,1;0,4;5;100
-Margaryna miekka 80% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;710;80;0,3;0,4;30;20
-Margaryna twarda 80% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;710;80;0,3;0,4;26;100
-Markizy;;;;;;;;;;;;483;23;5,6;64,3;14;80
-Maslanka 0,5% tluszczu z wapniem;150;y;y;y;y;y;;y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;37;0,5;3,4;4,7;14;30
-Maslanka spozywcza 0,5% tluszczu;;;;;;;;;Napoje mleczne;Mleko i przetwory mleczne;Produkty;37;0,5;3,4;4,7;26;10
-Maslo extra;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;735;82,5;0,7;0,7;5;10
-Maslo smietankowe;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;659;73,5;1,1;1,1;21;10
-Medaliony z indyka smazone;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;247;17,9;18,6;3,4;6;90
-Melon;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;36;0,3;0,9;8,4;17;30
-Mielonka (Luncheon meat);;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;171;11,7;12,8;3,7;24;100
-Mieso z piersi indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;84;0,7;19,2;0;34;40
-Mieso z piersi indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;100;2,7;18,7;0;16;100
-Mieso z piersi kurczaka bez skory;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;99;1,3;21,5;0;33;50
-Mieso z podudzia indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;100;3,7;16,6;0;7;30
-Mieso z podudzia indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;142;8,9;15,7;0;35;30
-Mieso z ud kurczaka bez skory;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;125;6;17,8;0;28;40
-Mieso z ud kurczaka ze skora;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;158;10,2;16,8;0;9;100
-Mieso z udzca indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;104;2,8;19,4;0;16;50
-Mieso z udzca indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;131;6,4;18,4;0;31;100
-Mieso ze skrzydel indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;115;4,7;18;0;6;40
-Mieso ze skrzydel indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;168;11,4;16,5;0;30;90
-Mieszanka owocowa mrozona;;;;;;;;;;;;40;0,3;0,9;12,1;7;10
-Mieszanka warzywna z kurczakiem i makaronem mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;90;2,6;4,8;13,2;31;80
-Mieszanka warzywna z kurczakiem i ryzem mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;101;2,7;5,1;15,8;9;20
-Mieszanka warzywna z kurczakiem ryzem fasola czerwona mrozon;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;103;2,6;5,3;16,7;20;100
-Mieszanka warzywna z kurczakiem ryzem grzybami chinskimi mro;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;87;2,4;4,3;13,3;7;40
-Mieszanka warzywna z makaronem i wedzonka wieprzowa mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;84;3;4,6;11,7;14;40
-Mieszanka warzywna z przyprawami mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;38;0,3;1,9;8,8;25;60
-Mieszanka warzywna z ziemniakami i wedzonka wieprzowa mrozon;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;70;3,1;3,6;8,8;10;50
-Migdaly;;;;;;;;;;;;572;52;20;20,5;5;20
-Mintaj swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;73;0,6;16,6;0;22;50
-Miod pszczeli;;;;;;;;;;;;324;0;0,3;79,5;18;10
-Miod sztuczny;;;;;;;;;;;;336;0;0,1;82,5;20;20
-Mizeria ze smietana;100;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;33;2,2;1;2,8;29;80
-Mleko kobiece;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;72;4,3;1,3;7;32;10
-Mleko kozie;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;68;4,1;3,2;4,5;5;10
-Mleko odtluszczone w proszku;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;360;0,8;35,7;51,2;30;70
-Mleko owcze;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;107;7;6;5,1;23;40
-Mleko pelne w proszku;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;479;24;27;38,7;7;20
-Mleko spozywcze 0,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;39;0,5;3,5;5,1;30;80
-Mleko spozywcze 1,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;47;1,5;3,4;5;5;60
-Mleko spozywcze 2% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;51;2;3,4;4,9;13;60
-Mleko spozywcze 3,2% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;61;3,2;3,3;4,8;9;80
-Mleko spozywcze 3,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;64;3,5;3,3;4,8;9;60
-Mleko UHT 0,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;39;0,5;3,5;5,1;17;20
-Mleko UHT 1,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;47;1,5;3,4;5;11;80
-Mleko UHT 1,5% tluszczu z witaminami;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;47;1,5;3,4;5;26;100
-Mleko UHT 3,2% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;61;3,2;3,3;4,8;14;30
-Mleko zageszczone nieslodzone;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;131;7,5;6,6;9,4;6;70
-Mleko zageszczone slodzone;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;326;8;7,5;55,3;16;90
-Morele;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;47;0,2;0,9;11,9;14;10
-Morele suszone;75;y;y;;y;y;y;y;owoce suszone;owoce i przetwory owocowe;Produkty;284;1,2;5,4;72,2;7;80
-Morszczuk swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;89;2,2;17,2;0;6;30
-Mozg wieprzowy;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;139;10,6;11,1;0;23;80
-Mus jablkowy;100;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;124;0,2;2,2;28,7;5;40
-Musli z owocami suszonymi;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;325;3,4;8,4;72,2;35;70
-Musli z rodzynkami i orzechami;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;375;12,7;11,5;62,9;19;100
-Musztarda;;;;;;;;;;;;162;6,4;5,7;22;10;30
-Nalesniki z kapusta;200;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;147;9,2;3,3;15,1;13;30
-Nalesniki z serem twarogowym;200;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;242;10,3;10,2;27,3;28;20
-Napoj jablkowo-mietowy;;;;;;;;;;;;42;0,1;0,1;10,1;32;70
-Napoj jablkowy;;;;;;;;;;;;39;0;0;9,6;35;30
-Napoj jablkowy z czerwonym winogronem;;;;;;;;;;;;43;0;0;10,7;34;80
-Napoj jablkowy z czerwonym winogronem i witaminami;;;;;;;;;;;;43;0;0;10,7;18;20
-Napoj jablkowy z wisnia;;;;;;;;;;;;39;0;0;9,6;13;60
-Napoj jablkowy z wisnia i witaminami;;;;;;;;;;;;39;0;0;9,6;30;100
-Napoj jablkowy z witaminami;;;;;;;;;;;;39;0;0;9,6;5;90
-Napoj mleczny jogurtowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;82;1,9;4;12,1;24;70
-Napoj mleczny kakaowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;81;2,1;3,3;12,1;26;70
-Napoj mleczny serwatkowo-smietankowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;73;2,2;0,9;12,4;17;30
-Napoj mleczny smietankowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;63;0,5;3,5;10,9;27;30
-Napoj mleczny z truskawkami;200;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;109;0,7;1,2;24,9;33;70
-Napoj pomaranczowy;;;;;;;;;;;;43;0;0,1;10,5;10;20
-Napoj pomaranczowy z witaminami;;;;;;;;;;;;43;0;0,1;10,5;24;20
-Napoj winogronowy;;;;;;;;;;;;36;0;0;9,1;34;50
-Napoj winogronowy z witaminami;;;;;;;;;;;;36;0;0;9,1;26;40
-Napoje gazowane o smaku owocowym;;;;;;;;;;;;42;0;0;10,3;19;70
-Nektar ananasowy;;;;;;;;;;;;41;0,1;0,1;9,8;33;20
-Nektar ananasowy z witaminami;;;;;;;;;;;;41;0,1;0,1;9,8;19;40
-Nektar brzoskwiniowy;;;;;;;;;;;;55;0,1;0,3;13,4;31;20
-Nektar brzoskwiniowy z witaminami;;;;;;;;;;;;55;0,1;0,3;13,4;22;60
-Nektar wisniowy;;;;;;;;;;;;50;0,1;0,3;12,1;20;80
-Nektar wisniowy z witaminami;;;;;;;;;;;;50;0,1;0,3;12,1;8;90
-Nektar z bialych grejpfrutow;;;;;;;;;;;;37;0,1;0,2;8,7;19;20
-Nektar z bialych grejpfrutow z witaminami;;;;;;;;;;;;37;0,1;0,2;8,7;31;90
-Nektar z czarnych porzeczek;;;;;;;;;;;;53;0,1;0,3;12,7;21;60
-Nektar z czarnych porzeczek z witaminami;;;;;;;;;;;;53;0,1;0,3;12,7;35;20
-Nektar z rozowych grejpfrutow;;;;;;;;;;;;36;0,1;0,2;8,6;8;50
-Nektar z rozowych grejpfrutow z witaminami;;;;;;;;;;;;36;0,1;0,2;8,6;20;30
-Nektarynka;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;48;0,2;0,9;11,8;14;100
-Nerki wieprzowe;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;102;3,8;16,8;0;33;20
-Noga (udo) kurczaka;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;158;10,2;16,8;0;32;60
-Nogi wieprzowe;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;274;20,4;23;0;31;100
-Ogorek;;;;;;;;;;;;13;0,1;0,7;2,9;34;20
-Ogorek kwaszony;;;;;;;;;;;;11;0,1;1;1,9;21;60
-Ogorki konserwowe;;;;;;;;;;;;24;0,1;0,3;5,6;26;40
-Ogorki mizeria mrozone;;;;;;;;;;;;12;0,1;0,6;2,6;19;100
-Ogorki z papryka, konserwowe;;;;;;;;;;;;41;0,1;0,3;9,9;14;70
-Okon swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;82;0,8;18,4;0;5;70
-Olej krokoszowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;29;30
-Olej kukurydziany;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;21;70
-Olej palmowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;31;10
-Olej rzepakowo-sojowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;20
-Olej rzepakowy o obnizonej zawartosci kwasu erukowego;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;50
-Olej rzepakowy tloczony na zimno;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;80
-Olej rzepakowy uniwersalny;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;25;30
-Olej sezamowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;11;60
-Olej slonecznikowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;31;100
-Olej sojowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;10
-Olej z pestek winogron;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;25;60
-Olej z zarodkow pszennych;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;17;60
-Oliwa z oliwek;;;;;;;;;;;;882;99,6;0;0,2;31;80
-Oliwki zielone marynowane konserwowe;;;;;;;;;;;;125;12,7;1,4;4,1;33;40
-Omlet biszkoptowy ze szpinakiem;200;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;138;9,7;5,9;9,3;8;70
-Orzech kokosowy;;;;;;;;;;;;335;33,5;3,4;15,2;17;70
-Orzechy arachidowe;;;;;;;;;;;;560;46,1;25,7;19,2;34;40
-Orzechy laskowe;;;;;;;;;;;;640;63;14,4;14,9;14;20
-Orzechy pistacjowe;;;;;;;;;;;;589;48,5;20,5;25;10;20
-Orzechy wloskie;;;;;;;;;;;;645;60,3;16;18;17;80
-Otreby pszenne;50;Y;Y;Y;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;185;4,6;16;61,9;9;40
-Ozor wieprzowy;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;165;11,1;16,5;0;27;70
-Ozory w galarecie;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;141;7,6;16,7;1,7;33;50
-Paczki tradycyjne;;;;;;;;;;;;414;15,5;7,6;62,1;7;10
-Paluszki z kminkiem;;;;;;;;;;;;490;30,5;16,5;38,9;20;80
-Papaja;;;;;;;;;;;;41;0,1;0,6;11,1;16;10
-Papryka czerwona;;;;;;;;;;;;28;0,5;1,3;6,6;28;80
-Papryka czerwona konserwowa;;;;;;;;;;;;30;1,5;0,8;5;21;50
-Papryka czerwona mrozona;;;;;;;;;;;;28;0,5;1,3;6,6;28;70
-Papryka nadziewana miesem i ryzem;75;;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;153;10;3,9;13,7;17;80
-Papryka zielona;;;;;;;;;;;;18;0,3;1,1;4,6;11;30
-"Paprykarz ""Szczecinski""";;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;178;11,9;9,9;8,6;18;70
-Paprykarz mrozony;;;;;;;;;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;19;0,3;1,1;4,4;5;20
-Paroweczki sniadaniowe z olejem;100;y;y;;;;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;234;20,9;11,9;0,1;35;40
-Parowki popularne;100;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;342;34,3;9,5;0;22;40
-Parowki z kurczaka;100;y;y;;y;y;;y;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;259;22,4;10,8;4,2;21;100
-Pasta kanapkowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;156;11,3;10,4;3,5;8;20
-Pasta z jaj;75;Y;Y;Y;Y;Y;;Y;Przystawki;Przystawki;Potrawy;197;18,6;7,2;1,2;35;80
-Pasta z jaj i ryby wedzonej;75;Y;Y;Y;Y;Y;;Y;Przystawki;Przystawki;Potrawy;262;23,1;13,3;1,2;18;60
-Pasta z twarogu i ryby wedzonej;75;Y;Y;Y;Y;Y;;Y;Przystawki;Przystawki;Potrawy;273;23;15,2;1,9;23;40
-Pasternak;;;;;;;;;;;;57;0,6;1,6;15,5;9;70
-Paszteciki drozdzowe z miesem;150;;;y;;y;;y;Produkty obiadowe;Produkty zbozowe;Produkty;343;20,4;9,7;31,9;20;20
-Pasztet pieczony;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;390;31,2;17;13,5;31;20
-Pasztet podlaski z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;228;21,1;6,7;3,6;28;80
-Pasztet rybny;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;265;21,3;10,6;8,8;13;20
-Pasztet z kurczaka pieczony;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;214;14,3;14,4;7,5;18;20
-Pasztet z miesa mieszanego pieczony;75;Y;Y;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;361;31,1;15,1;6,5;31;40
-Pasztet z ryb wedzonych;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;151;10,6;12,9;1,2;9;70
-Pieczarka uprawna swieza;;;;;;;;;;;;17;0,4;2,7;2,6;25;70
-Pieczarki marynowane konserwowe;;;;;;;;;;;;19;0,4;2,3;4,3;20;50
-Pieczarki smazone;75;;Y;Y;Y;Y;;Y;Potrawy z grzybow;Potrawy z warzyw;Potrawy;232;24,3;3,4;3,3;9;70
-Pieczen cieleca duszona;150;;Y;Y;Y;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;192;11,8;20,1;1,7;26;40
-Pieczen rzymska;150;;Y;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;208;11,4;14,5;12,5;32;70
-Pieczen wieprzowa duszona;150;;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;225;19,8;11,4;1,2;6;80
-Pieczen wolowa duszona;150;;Y;Y;Y;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;156;9,5;15,8;1,9;29;70
-Pieczen z kurczaka z pieczarkami;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;180;10,2;13,8;9,1;33;70
-Pieczen z kurczaka z serem zoltym;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;205;12,1;16;8,8;6;20
-Pieczen zulawska;150;;Y;Y;Y;Y;;Y;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;170;11,7;13,8;2,6;14;80
-Pieczywo polfrancuskie z dzemem;50;;;;;;;;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;410;9,9;8,3;73;14;10
-Pieczywo polfrancuskie z serem;50;;;;;;;;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;396;10;10,7;66,6;32;20
-Pieczywo tostowe;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;305;4,7;8,1;58,8;19;100
-Pieczywo tostowe grahamowe;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;273;4,2;7,5;53,8;25;20
-Piernik z bakaliami;;;;;;;;;;;;373;12,4;6,6;60,9;9;20
-Pierniki alpejskie;;;;;;;;;;;;368;9,7;4;66,3;33;30
-Pierniki beskidzkie;;;;;;;;;;;;338;1,6;3,5;77,3;33;90
-Pierogi ruskie;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;167;5;5,9;25,5;21;10
-Pierogi z miesem;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;205;10,1;11,9;17,1;20;70
-Pierogi z serem twarogowym;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;239;9,9;11,1;26,6;9;20
-Pierogi z truskawkami;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;241;11,4;4,1;32,1;6;60
-Pietruszka korzen;;;;;;;;;;;;38;0,5;2,6;10,5;25;40
-Pietruszka korzen mrozona;;;;;;;;;;;;34;0,5;2,3;9,5;31;60
-Pietruszka liscie;;;;;;;;;;;;41;0,4;4,4;9;28;40
-Pikle konserwowe;;;;;;;;;;;;62;0,2;1,3;15,5;26;20
-Piwo pelne;;;;;;;;;;;;49;0;0,5;3,8;26;70
-Pizza miesno-ziolowa;100;Y;Y;Y;Y;Y;;Y;Produkty obiadowe;Produkty zbozowe;Produkty;332;13,2;18;36,8;30;30
-Pizza z pieczarkami i cebula;100;Y;Y;Y;Y;Y;;Y;Produkty obiadowe;Produkty zbozowe;Produkty;293;13,1;13,3;32,1;19;70
-Placek z kruszonka;;;;;;;;;;;;375;13,6;7,5;56,7;32;20
-Placki ziemniaczane;100;y;y;y;y;y;y;y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;231;14,5;3,6;23,6;16;70
-Planta tluszcz roslinny;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;19;20
-Platki jeczmienne;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;355;3,6;9,8;79,4;18;50
-Platki kukurydziane;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;363;2,5;6,9;83,6;31;40
-Platki kukurydziane z cukrem z witaminami i zelazem;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;375;1,7;4,6;88,4;18;30
-Platki kukurydziane z miodem, orzechami, witaminami, zelazem;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;387;5,1;6,4;82,6;9;50
-Platki kukurydziane z witaminami i zelazem;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;363;2,5;6,9;83,6;17;80
-Platki owsiane;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;366;7,2;11,9;69,3;18;80
-Platki owsiane na mleku;200;Y;Y;;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;62;2,3;2,7;8,2;18;70
-Platki pszenne;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;351;3;9;81;25;80
-Platki ziemniaczane;;;;;;;;;;;;335;2,5;6,7;78,2;32;10
-Platki zytnie;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;343;3,2;6,4;82,6;24;40
-Poledwica luksusowa;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;177;10;19,5;2,4;6;80
-Poledwica sopocka;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;165;9,1;19,9;0,9;8;80
-Poledwica w galarecie;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;101;4,4;14,5;1,4;25;40
-Poledwica wolowa pieczona;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;168;9,9;19,7;0;33;40
-Poledwica z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;105;4,6;15,8;0,1;19;90
-Poledwica z piersi kurczaka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;93;1,2;20,4;0;26;40
-Pomarancza;;;;;;;;;;;;44;0,2;0,9;11,3;34;70
-Pomidor;;;;;;;;;;;;15;0,2;0,9;3,6;23;40
-Pomidor mrozony;;;;;;;;;;;;15;0,2;0,9;3,6;35;80
-Por;;;;;;;;;;;;24;0,3;2,2;5,7;32;30
-Por mrozony;;;;;;;;;;;;24;0,3;2,2;5,7;32;50
-Porzeczki biale;;;;;;;;;;;;33;0,2;1;13,1;13;40
-Porzeczki czarne;;;;;;;;;;;;35;0,2;1,3;14,9;12;90
-Porzeczki czarne mrozone;;;;;;;;;;;;35;0,2;1,3;14,9;27;70
-Porzeczki czerwone;;;;;;;;;;;;31;0,2;1,1;13,8;24;80
-Potrawka z kurczaka;150;Y;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;148;9;13,3;4,6;28;60
-Powidla sliwkowe;;;;;;;;;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;214;0,2;1;53;11;70
-Poziomki;;;;;;;;;;;;33;0,5;0,8;8,3;8;70
-Proszek jajeczny;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;576;41,7;48,4;2,7;26;30
-"Przyprawa ""Jarzynka""";;;;;;;;;;;;90;0,4;1,9;23,3;32;40
-Pstrag strumieniowy swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;97;2,1;19,2;0;35;90
-Pstrag teczowy swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;160;9,6;18,6;0;23;70
-Ptysie z bita smietana;;;;;;;;;;;;346;24,9;5,5;25,7;23;100
-Pulpety z miesa mieszanego gotowane;150;;;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;223;11,1;18,8;13,3;6;50
-Pumpernikiel;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;240;2;5,9;58,2;13;60
-Pyzy ziemniaczane;150;;;Y;;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;210;6,2;3,7;37,4;34;70
-Pyzy ziemniaczane w proszku;;;;;;;;;;;;324;1,4;5,1;77,3;29;60
-Pyzy ziemniaczane z miesem;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;292;14;7,9;36,2;25;30
-Rabarbar;;;;;;;;;;;;9;0,1;0,5;4,6;6;30
-Risotto z miesem;;;;;;;;;;;;228;11,9;6,8;24,2;27;100
-Risotto z miesem i warzywami;150;Y;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;185;10;6,6;18,3;22;80
-Rodzynki suszone;;;;;;;;;;;;277;0,5;2,3;71,2;23;100
-Rogale kruche;50;Y;Y;;Y;Y;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;331;7,2;8,2;59,4;7;10
-Rolada biszkoptowa z dzemem;150;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;299;4,8;7;56,7;31;40
-Rolada wieprzowa pieczona;150;;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;414;32,6;21,3;9,9;30;50
-Rolada z masa makowa;;;;;;;;;;;;349;15,8;9,4;46,6;6;30
-Rozki z ciasta francuskiego z jablkami;;;;;;;;;;;;392;25,1;5;38,6;23;60
-Ryz bialy;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;344;0,7;6,7;78,9;25;70
-Ryz brazowy;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;322;1,9;7,1;76,8;6;40
-Ryz gotowany;100;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;124;0,3;2,4;28,4;24;70
-Ryz na mleku;150;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;66;2,1;2,7;9,1;35;40
-Ryz na sypko z tluszczem roslinnym;125;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;135;1,5;2,4;28,4;34;80
-Ryz na sypko ze smalcem;125;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;124;2;2,1;24,9;22;70
-Ryz preparowany;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;361;1,6;6,3;84,1;32;80
-Ryz z jablkami;125;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;154;2,2;2;32,3;27;70
-Rzepa;;;;;;;;;;;;26;0,3;1,1;8,2;25;60
-Rzodkiewka;;;;;;;;;;;;14;0,2;1;4,4;14;10
-Salami luksusowe;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;540;50,6;21,9;0,9;18;50
-Salami mini;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;548;51,6;21,7;0,9;28;90
-Salami popularne;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;568;53,7;21,6;1,4;8;60
-Salata;;;;;;;;;;;;14;0,2;1,4;2,9;17;10
-Salata zielona z olejem;50;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;111;11,6;1;2,1;13;50
-Salata zielona z pomidorem, ogorkiem, olejem;50;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;56;4,7;0,9;3,6;6;100
-Salata zielona ze smietana;50;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;41;2,3;1,4;4,5;22;90
-Salatka jarzynowa mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;26;0,2;1,9;6,4;18;10
-Salatka jarzynowa z kukurydza mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;63;0,6;3,4;14,8;29;100
-Salatka jarzynowa z warzyw got, z majonezem i jogurtem nat,;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;116;7,5;3,2;11,6;19;80
-Salatka jarzynowa z warzyw gotowanych z majonezem;80;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;192;16,5;2,9;10,9;10;90
-Salatka meksykanska mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;45;0,5;2,5;10,8;18;40
-Salatka pikantna z makreli;80;Y;Y;Y;Y;Y;;Y;Przetwory rybne;Ryby i przetwory rybne;Produkty;181;13,2;10,2;6,9;11;60
-Salatka skandynawska mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;28;0,2;1,9;6,9;6;80
-Salatka szwedzka konserwowa;80;Y;Y;Y;Y;Y;;Y;przetwory warzywne;warzywa i przetwory warzywne;Produkty;36;0,1;0,4;8,6;15;50
-Salatka z czerwonej kapusty;80;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;6,5;1,4;7;31;30
-Salatka z czerwonej kapusty konserwowa;80;Y;Y;Y;Y;Y;;Y;przetwory warzywne;warzywa i przetwory warzywne;Produkty;88;0,1;1,1;21,9;10;70
-Salatka z dorsza;80;Y;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;187;13,9;9,8;7,2;31;20
-Salatka z groszku zielonego;80;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;159;13,1;4;10,4;26;10
-Salceson czarny;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;336;32;12,6;0,5;17;20
-Salceson wloski;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;318;29,3;14,6;0;6;100
-Sandacz swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;84;0,7;19,2;0;19;100
-Sardynka swieza;;;;;;;;;;;;169;9,6;20,6;0;22;60
-Sardynka w oleju;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;221;13,9;24,1;0;6;50
-Sardynka w pomidorach;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;162;9,9;17;1,4;22;20
-Schab pieczony;150;Y;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;291;18,7;30,4;0,7;20;70
-Seler korzeniowy;;;;;;;;;;;;21;0,3;1,6;7,7;30;80
-Seler korzeniowy mrozony;;;;;;;;;;;;18;0,3;1,4;6,9;17;60
-Seler naciowy;;;;;;;;;;;;13;0,2;1;3,6;6;60
-Semolina;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;346;1,3;10,1;75;34;80
-Ser Brie pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;329;28;19,8;0,2;22;60
-Ser Camembert pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;291;23;21,4;0,2;22;10
-Ser Cheddar pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;391;31,7;27,1;0,1;24;50
-Ser Edamski tlusty;;;;;;;;;;;;313;23,4;26,1;0,1;6;30
-Ser Ementaler pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;380;29,7;28,8;0,1;9;60
-Ser Gouda tlusty;;;;;;;;;;;;316;22,9;27,9;0,1;31;90
-Ser Mysliwski pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;346;27,4;25,5;0,1;20;70
-Ser Mysliwski tlusty;;;;;;;;;;;;338;24,9;29;0,1;33;70
-Ser Parmezan;;;;;;;;;;;;452;32;41,5;0,1;17;90
-Ser Rokpol pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;363;30,6;22,6;0,1;34;100
-Ser Salami pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;351;28,1;25,2;0,1;16;80
-Ser topiony edamski;;;;;;;;;Sery topione;Mleko i przetwory mleczne;Produkty;298;27;13,5;1,2;35;100
-Ser Trapistow pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;367;30,7;23,5;0,1;22;90
-Ser Trapistow tlusty;;;;;;;;;;;;351;26,8;28;0,1;7;80
-Ser twarogowy chudy;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;99;0,5;19,8;3,5;28;50
-Ser twarogowy poltlusty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;133;4,7;18,7;3,7;17;50
-Ser twarogowy tlusty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;175;10,1;17,7;3,5;20;60
-Ser Tylzycki pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;353;27,9;26,1;0,1;5;60
-Ser Tylzycki tlusty;;;;;;;;;;;;334;25;27,8;0,1;19;30
-Ser typu Feta;;;;;;;;;;;;215;16;17;1;31;50
-Serca wieprzowe;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;111;4,8;16,9;0;14;60
-Serek termizowany pieczarkowy;;;;;;;;;;;;113;4;15,9;3,5;11;50
-Serek twarogowy homogenizowany pelnotlusty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;161;11;12,7;3;33;70
-Serek twarogowy homogenizowany truskawkowy;75;Y;Y;;Y;Y;;Y;Sery twarogowe;Mleko i przetwory mleczne;Produkty;168;3,9;15,3;17,7;26;10
-Serek twarogowy homogenizowany waniliowy;75;Y;Y;;Y;Y;;Y;Sery twarogowe;Mleko i przetwory mleczne;Produkty;159;4,2;16,8;13,3;6;90
-Serek twarogowy ziarnisty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;101;4,3;12,3;3,3;28;70
-Serek typu Fromage naturalny;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;379;37,1;10,2;2,4;29;30
-Serek typu Fromage z czosnkiem;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;367;35,2;10;4;15;80
-Sernik bez ciasta;;;;;;;;;;;;363;18,3;13,5;36,8;14;50
-Sernik krakowski;;;;;;;;;;;;329;13,4;14;38,2;27;30
-Sernik wiedenski z polewa kakaowa;;;;;;;;;;;;340;18,1;12,6;32,1;26;20
-Sernik z makiem;;;;;;;;;;;;444;23,4;12,5;49;26;100
-Serwatka plynna;;;;;;;;;Napoje mleczne;Mleko i przetwory mleczne;Produkty;25;0,1;0,8;5,1;14;10
-Sezam nasiona;;;;;;;;;;;;632;59,9;23,2;10;31;70
-Sezamki;;;;;;;;;;;;402;26,4;10,2;34,7;34;100
-Sezamki z orzechami;;;;;;;;;;;;376;26,1;9,6;29,4;24;40
-Skora z indyka;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;413;42,4;9,4;0;5;90
-Skorki kurze;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;379;37,9;10,7;0;8;10
-Skrobia kukurydziana;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;353;0;0,2;88,5;14;70
-Skrobia ziemniaczana;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;343;0,1;0,6;83,9;32;20
-Skrzydlo indyka;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;168;11,4;16,5;0;14;10
-Skrzydlo kurczaka;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;186;12,2;19,2;0;35;70
-Sledz marynowany;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;192;12,6;16,5;3,4;9;10
-Sledz solony;;;;;;;;;;;;217;15,4;19,8;0;21;40
-Sledz swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;161;10,7;16,3;0;33;10
-Sledz w oleju;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;301;26,5;16,4;0;30;40
-Sledz w smietanie;;;;;;;;;;;;96;6,2;5,5;5,3;11;50
-Sledz w sosie pomidorowym;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;160;9,7;13,8;4,6;19;60
-Sledz wedzony Pikling;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;215;14,3;21,8;0;33;60
-"Sledzie marynowane ""Rolmopsy""";;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;104;7;8;3;21;80
-Sliwki;;;;;;;;;;;;45;0,2;0,6;11,7;24;60
-Sliwki bez pestek mrozone;;;;;;;;;;;;45;0,2;0,6;11,7;34;70
-Sliwki z pestka suszone;;;;;;;;;;;;267;1,2;3,5;68,9;34;20
-Slonecznik nasiona;;;;;;;;;;;;561;43,7;24,4;24,6;21;60
-Slonina;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;797;89;2,4;0;31;40
-Smalec;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;880;99,5;0;0;14;20
-Smietana 12% tluszczu;;;;;;;;;;;;133;12;2,7;3,9;7;100
-Smietana 18% tluszczu;;;;;;;;;;;;184;18;2,5;3,6;19;60
-Smietanka do kawy 9% tluszczu;;;;;;;;;Smietana;Mleko i przetwory mleczne;Produkty;107;9;2,8;4;7;80
-Smietanka kremowa 30% tluszczu;;;;;;;;;Smietana;Mleko i przetwory mleczne;Produkty;287;30;2,2;3,1;34;10
-Soczewica czerwona nasiona suche;;;;;;;;;;;;327;3;25,4;57,5;27;20
-Soczewica kielki;;;;;;;;;;;;119;0,6;9;22,1;6;100
-Soja kielki;;;;;;;;;;;;141;6,7;13,1;9,6;19;40
-Soja nasiona suche;;;;;;;;;;;;382;19,6;34,3;32,7;33;20
-Sok ananasowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;48;0,1;0,3;11,4;30;40
-Sok brzoskwiniowo-pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;32;0,1;0,7;7,4;34;30
-"Sok buraczany ""Barszczyk czerwony""";200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;34;0,2;0,8;7,6;31;30
-Sok cytrynowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;30;0,3;0,4;6,4;31;40
-Sok grejpfrutowo-pomaranczowy slodzony aspartamem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,3;30;30
-Sok grejpfrutowo-pomaranczowy slodzony aspartamem, z wapniem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,3;35;50
-Sok grejpfrutowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,2;23;40
-Sok grejpfrutowy slodzony aspartamem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,1;0,6;9;26;80
-Sok grejpfrutowy z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,2;9;30
-Sok jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;42;0,1;0,1;10;27;10
-Sok jablkowy z wapniem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;42;0,1;0,1;10;32;80
-Sok jablkowy z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;42;0,1;0,1;10;14;10
-Sok marchwiowo-bananowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,1;0,3;10,2;11;10
-Sok marchwiowo-bananowo-jablkowy z witaminami E i C;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,1;0,3;10,2;6;60
-Sok marchwiowo-brzoskwiniowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;45;0,1;0,4;11,8;27;90
-Sok marchwiowo-brzoskwiniowo-jablkowy z witaminami E i C;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;45;0,1;0,4;11,8;27;40
-Sok marchwiowo-brzoskwiniowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,1;0,5;11,3;18;30
-Sok marchwiowo-jablkowo-pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,2;0,6;11,8;29;40
-Sok marchwiowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,2;0,5;12,1;9;50
-Sok marchwiowo-jablkowy z witaminami E i C;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,2;0,5;12,1;25;20
-Sok marchwiowo-morelowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,2;0,4;10,2;34;10
-Sok marchwiowo-pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,6;10,8;33;10
-Sok marchwiowo-sliwkowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,2;0,4;10,2;9;80
-Sok marchwiowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,4;11,3;31;40
-Sok marchwiowy z witamina C i wapniem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,4;11,3;31;70
-Sok pomaranczowo-grejpfrutowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,6;9,8;27;10
-Sok pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,6;9,9;20;80
-Sok pomaranczowy z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,6;9,9;17;80
-Sok pomidorowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;14;0,2;0,8;3,3;31;90
-Sok pomidorowy z witaminami C i E;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;14;0,2;0,8;3,3;5;50
-Sok wieloowocowy egzotyczny;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;57;0,3;0,8;12,7;25;10
-Sok wieloowocowy egzotyczny z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;57;0,3;0,8;12,7;13;50
-Sok wieloowocowy z owocow krajowych;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;45;0,1;0,2;10,9;33;100
-Sok wielowarzywny;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;25;0,3;1;5,7;27;70
-Sok z bialych winogron;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;68;0,2;0,5;15,9;33;60
-Sok z jablek i mango;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;48;0,4;0,4;12,3;14;10
-Sok z marchwi, jablek i owocow tropikalnych;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;52;0,3;0,7;14;15;40
-Sol biala;;;;;;;;;;;;0;0;0;0;34;80
-Sola swieza;;;;;;;;;;;;83;1,4;17,5;0;31;10
-Solinki paluszki;;;;;;;;;;;;385;4,9;9,9;75,2;5;60
-Sos keczup;;;;;;;;;;;;93;1;1,8;22,2;35;100
-Spirytus rektyfikowany;;;;;;;;;;;;521;0;0;0;26;100
-Stek wieprzowy smazony;150;;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;471;42,7;21,7;1,5;32;30
-Strucla z makiem;;;;;;;;;;;;361;15,5;8,3;51,2;23;20
-Strucle tureckie;;;;;;;;;;;;322;2,8;7,7;67,4;31;70
-Strucle wroclawskie;50;Y;Y;;Y;Y;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;303;4,8;8,9;56,9;7;10
-Surowka wielowarzywna z jogurtem naturalnym;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;35;0,6;1,7;7;24;100
-Surowka z bialej kapusty;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;67;4,7;1,6;7;34;10
-Surowka z cykorii i jablek;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;161;16,4;1;3,8;29;60
-Surowka z kapusty pekinskiej z majonezem;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;94;8,1;1,6;6;7;90
-Surowka z kapusty pekinskiej z olejem;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;53;3,8;1,1;5,7;18;80
-Surowka z kwaszonej kapusty;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;68;4,7;0,9;7,5;11;50
-Surowka z marchwi;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;47;2,3;1,1;7,7;26;30
-Surowka z marchwi i jablek;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;59;0,3;1;16,6;22;60
-Surowka z ogorkow i pomidorow;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;32;1,8;1,1;3,6;35;10
-Surowka z owocow;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;103;0,3;0,5;25,9;5;100
-Surowka z owocow i warzyw;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;148;14,3;1,1;5,1;25;20
-Surowka z papryki;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;91;7,5;1;6,3;12;80
-Surowka z pomidorow;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;14;0,2;0,8;3,2;9;60
-Surowka z porow z jablkami;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;141;12,5;1,7;7,9;33;50
-Surowka z rzodkiewki;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;93;5,9;7,5;3,5;27;60
-Surowka z selerow i jablek z olejem;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;92;7,5;1,1;8,9;6;70
-Surowka z selerow, jablek i marchwi;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;60;0,4;0,9;16,5;7;20
-Syrop truskawkowy;;;;;;;;;;;;264;0,1;0,2;65;33;80
-Szampan;;;;;;;;;;;;76;0;0,3;1,4;20;40
-Szczaw;;;;;;;;;;;;21;0,8;1,1;4,9;29;70
-Szczupak swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;82;0,8;18,4;0;10;30
-Szczypiorek;;;;;;;;;;;;29;0,8;4,1;3,9;8;90
-Szparagi;;;;;;;;;;;;18;0,2;1,9;3,7;34;60
-Szparagi konserwowe;;;;;;;;;;;;19;0,7;2,1;2,5;5;40
-Szpinak;;;;;;;;;;;;16;0,4;2,6;3;27;40
-Szpinak gotowany, zasmazany;75;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;6,1;3,8;6,2;17;70
-Szpinak mrozony;;;;;;;;;;;;15;0,4;2,3;2,7;10;40
-Sztuka miesa gotowana;100;Y;Y;Y;Y;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;225;10,4;30,8;3,2;31;40
-Szynka delikatesowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;123;5,6;18,2;0;34;100
-Szynka kanapkowa;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;102;4,4;14,2;1,4;8;30
-Szynka wiejska;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;253;20,3;17,1;0,9;35;40
-Szynka wieprzowa gotowana;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;233;18,3;16,4;1;16;100
-Szynka wolowa gotowana;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;107;2;20,9;1,1;6;80
-Szynka z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;84;1,6;17,1;0,1;35;50
-Szynka z piersi kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;98;1,2;21,2;0,2;12;10
-Szynka z udzca kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;117;5,3;17,2;0;7;100
-Szynkowka wieprzowa;;;;;;;;;;;;191;14,7;13,6;1,4;31;90
-Szynkowka wolowa;;;;;;;;;;;;85;1,5;16,2;1,4;26;90
-Tluszcz mieszany roslinno-zwierzecy 60% tluszczu;;;;;;;;;Tluszcze mieszane;Tluszcze;Produkty;573;64;0,9;0,9;18;70
-"Torcik ""Wuzetka""";;;;;;;;;;;;318;11,1;5,8;49;13;90
-Tort ananasowy;;;;;;;;;;;;309;10,7;4,4;49;6;50
-Truskawki;;;;;;;;;;;;28;0,4;0,7;7,2;12;20
-Truskawki mrozone;;;;;;;;;;;;28;0,4;0,7;7,2;6;10
-Truskawki w galaretce;150;Y;Y;;Y;;;Y;Desery;Desery;Potrawy;127;0,2;15,4;16;26;70
-Truskawki z bita smietana;100;Y;Y;;Y;;;Y;Desery;Desery;Potrawy;127;10,4;1,1;8,4;12;40
-Tunczyk swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;137;4,6;23,7;0;33;40
-Tunczyk w oleju;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;190;9;27,1;0;19;40
-Tunczyk w wodzie;75;Y;Y;Y;Y;Y;;Y;Przetwory rybne;Ryby i przetwory rybne;Produkty;96;1,2;21;0;32;70
-Wafle nadziewane;;;;;;;;;;;;519;27,5;8,3;60,7;20;80
-Wafle w czekoladzie;;;;;;;;;;;;553;33,9;7,4;55,6;22;80
-Watroba cieleca;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;124;3,3;19,2;4,1;12;60
-Watroba wieprzowa;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;130;3,4;22;2,6;10;90
-Watroba wolowa;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;125;3,1;20;4;25;30
-Watrobianka;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;231;20,9;10,7;0,7;27;60
-Watrobka kurczaka;;;;;;;;;Podroby drobiowe;Mieso i przetwory miesne;Produkty;136;6,3;19,1;0,6;31;40
-Watrobka wieprzowa saute smazona;75;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;241;15,8;20,5;4,8;13;90
-Wedzonka wolowa gotowana;;;;;;;;;;;;102;3,1;17,8;0,5;14;20
-Wegorz swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;278;24,5;15;0;9;20
-Wegorz wedzony;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;326;28,6;17,9;0;7;10
-Wermut slodki;;;;;;;;;;;;155;0;0;15,9;28;10
-Wieprzowina boczek bez kosci;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;510;53;10,1;0;20;100
-Wieprzowina golonka ze skora;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;294;24,7;18,6;0;6;20
-Wieprzowina gotowana;150;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;362;29,8;22,5;3,1;35;80
-Wieprzowina karkowka;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;267;22,8;16,1;0;34;30
-Wieprzowina lopatka;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;257;21,7;16;0;35;60
-Wieprzowina pieczona;150;;;Y;;Y;;Y;Wieprzowina;Mieso i przetwory miesne;Produkty;276;24,1;15,4;0,1;6;10
-Wieprzowina podgardle;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;630;67,8;7,4;0;22;100
-Wieprzowina schab surowy z koscia;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;174;10;21;0;28;100
-Wieprzowina szynka surowa;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;261;21,3;18;0;18;40
-Wieprzowina zeberka;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;321;29,3;15,2;0;28;70
-Wino biale polwytrawne;150;y;y;y;y;y;y;y;Wina;Napoje alkoholowe;Produkty;81;0;0;3,7;24;60
-Wino biale slodkie;150;y;y;y;y;y;y;y;Wina;Napoje alkoholowe;Produkty;95;0;0,2;5,9;7;80
-Wino biale wytrawne;150;y;y;y;y;y;y;y;Wina;Napoje alkoholowe;Produkty;66;0;0,1;0,6;15;10
-Wino czerwone;;;;;;;;;;;;68;0;0,1;0,2;30;10
-Winogrona;;;;;;;;;;;;69;0,2;0,5;17,6;19;100
-Wiorki kokosowe;;;;;;;;;;;;606;63,2;5,6;27;21;100
-Wisnie;;;;;;;;;;;;47;0,4;0,9;10,9;9;70
-Wisnie bez pestek mrozone;;;;;;;;;;;;47;0,4;0,9;10,9;12;80
-Wloszczyzna krojona w paski mrozona;;;;;;;;;;;;25;0,3;1,4;7,9;32;40
-Wodki;50;y;y;y;y;y;y;y;Wodki;Napoje alkoholowe;Produkty;220;0;0;0;15;90
-Wolowina pieczen;150;;;Y;;Y;;Y;Wolowina;Mieso i przetwory miesne;Produkty;117;3,6;20,9;0;33;20
-Wolowina poledwica;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;113;3,5;20,1;0;29;100
-Wolowina rostbef;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;152;7,3;21,5;0;18;20
-Wolowina rozbratel;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;157;10,1;16,7;0;33;10
-Wolowina szponder;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;217;15,7;19,3;0;26;50
-Zarodki pszenne;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;323;9,4;27,5;45,5;34;10
-Zeberka wieprzowe duszone;150;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;210;19,2;7,9;2,2;21;30
-Zelatyna;;;;;;;;;;;;343;0,1;84,2;0;35;90
-Zelki;;;;;;;;;;;;306;0;3;72,3;18;50
-Ziarno pszenicy;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;306;2,4;11,1;70,5;6;10
-Ziarno zyta;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;301;2,2;7,9;74,2;18;70
-Ziemniaki mrozone;;;;;;;;;;;;69;0,1;1,7;16,5;18;100
-Ziemniaki pozne;;;;;;;;;;;;85;0,1;1,9;20,5;10;30
-Ziemniaki puree;150;;;Y;;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;90;1,4;2,1;18,4;32;10
-Ziemniaki srednio;;;;;;;;;;;;77;0,1;1,9;18,3;22;100
-Ziemniaki wczesne;;;;;;;;;;;;69;0,1;1,8;16,3;32;50
-Ziemniaki z tluszczem roslinnym;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;105;3,1;2;18,7;26;80
-Zoladek kurczaka;;;;;;;;;Podroby drobiowe;Mieso i przetwory miesne;Produkty;114;4,2;18,2;0,6;16;80
-Zoltko jaja kurzego;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;314;28,2;15,5;0,3;18;20
-Zrazy wolowe zawijane ze slonina duszone;150;;Y;Y;Y;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;144;9,4;12,1;3,2;9;100
-Zupa brokulowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;25;0,4;2,3;5,6;32;20
-Zupa cebulowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;44;2,7;1,4;4;7;50
-Zupa cebulowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;25;0,3;1,2;6,3;8;30
-Zupa cytrynowa z ryzem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;58;2,2;1,4;8,6;9;80
-Zupa fasolowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;63;1,8;4;10;23;60
-Zupa fasolowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;111;3,1;6,8;18,8;34;70
-Zupa grochowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;66;2,4;4,4;8,9;30;30
-Zupa grzybowa zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;29;1,9;1,5;1,8;9;70
-Zupa jarzynowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;28;1,1;1,4;4,3;11;90
-Zupa jarzynowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;22;0,2;2,2;6;22;70
-Zupa jarzynowa zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;44;1,8;1,7;6,2;29;30
-Zupa jesienna mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;27;0,2;1,6;7,2;34;90
-Zupa kalafiorowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;27;0,5;1,7;4,9;19;60
-Zupa kalafiorowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;22;0,2;2;5,5;28;10
-Zupa neapolitanska z ementalerem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;62;2,5;2,2;8,1;33;20
-Zupa ogorkowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;42;2;1,4;5;22;80
-Zupa owocowa z jablek;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;42;0,1;0,1;10,6;23;90
-Zupa pieczarkowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;16;0,3;1,8;3,7;14;70
-Zupa pomidorowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;11;0,1;1;2,1;31;40
-Zupa pomidorowa z makaronem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;35;1,8;1,6;3,3;25;40
-Zupa pomidorowa z ryzem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;37;1,8;1,5;3,9;33;80
-Zupa pomidorowa zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;17;0,6;1,2;2,3;5;50
-Zupa selerowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;37;1,8;1,6;4,5;17;10
-Zupa selerowa z grzankami;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;52;1,9;1,9;8;16;20
-Zupa szczawiowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;40;2,5;1,7;2,9;7;50
-Zupa szpinakowa z ziemniakami;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;40;0,9;2,2;6,6;35;50
-Zupa wloska mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;27;0,3;1,8;6,9;9;100
-Zupa z fasoli szparagowej;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;43;0,6;2,2;8,9;35;90
-Zupa z porow z makaronem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;59;1,4;2,5;10,3;26;20
-Zupa z zielonego groszku;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;57;1,2;3,2;11,2;30;30
-Zupa ziemniaczana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;39;1,1;1,4;6,6;9;50
-Zupa ziemniaczana mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;41;0,2;1,5;11;26;20
-Zupa ziemniaczana zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;48;1,9;1,6;6,5;32;10
+0;1;2;3;4;5;6;7;8;9;10;11;12;13;14;15;16;17;18
+Nazwa;Waga nom.;S;DS.;O;P;K;CUSTOM;Samodzielne;Podkategoria;Kategoria glowna;Typ;Kalorie;Tluszcz;Bialko;Weglowodany;Cost;Prep t;id
+Agrest;;;;;;;;;;;;41;0,2;0,8;11,8;11;80;1
+Ananas;75;;Y;;Y;;;Y;owoce swieze;owoce i przetwory owocowe;Produkty;54;0,2;0,4;13,6;9;90;2
+Ananas plastry w syropie;;;;;;;;;inne przetwory;owoce i przetwory owocowe;Produkty;84;0,1;0,4;21;13;50;3
+Arbuz;75;;Y;;Y;;Y;Y;owoce swieze;owoce i przetwory owocowe;Produkty;36;0,1;0,6;8,4;16;100;4
+Awokado;50;;Y;;Y;;;Y;owoce swieze;owoce i przetwory owocowe;Produkty;160;15,3;2;7,4;7;40;5
+Babeczki z kremem smietankowym;50;Y;;Y;;Y;Y;Y;Wypieki;Desery;Produkty;437;20,4;8,1;56,1;8;10;6
+Babka biszkoptowa;50;Y;;Y;;Y;Y;Y;Wypieki;Desery;Produkty;341;4,2;8,5;67,1;17;20;7
+Babka drozdzowa luksusowa;50;Y;;Y;;Y;Y;Y;Wypieki;Desery;Produkty;368;13,4;8;55,1;14;90;8
+Bagietki francuskie;;;;;;;;;;;;283;1,7;8,7;59,2;27;70;9
+Baklazan;;;;;;;;;;;;21;0,1;1,1;6,3;30;20;10
+Baleron gotowany;100;;Y;Y;Y;Y;;Y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;244;20,2;15,1;0,9;14;60;11
+Banan;60;Y;Y;;Y;Y;;Y;owoce swieze;owoce swieze;Produkty;95;0,3;1;23,5;9;40;12
+Banany suszone;;;;;;;;;;;;360;1,1;3,8;88,8;23;50;13
+Baranina lopatka;;;;;;;;;Baranina;Mieso i przetwory miesne;Produkty;284;25;15,6;0;16;70;14
+Baranina udziec;;;;;;;;;Baranina;Mieso i przetwory miesne;Produkty;232;18;18;0;26;60;15
+Barszcz czerwony zabielany;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;33;1,4;2,1;3,4;23;40;16
+Barszcz ukrainski mrozony;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;28;0,2;1,6;7,1;29;60;17
+Barszcz ukrainski z biala fasola;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;54;2,7;2,2;6,6;12;80;18
+Barszcz ukrainski z fasolka szparagowa;200;;;Y;;Y;;Y;Zupy;Zupy;Potrawy;36;0,6;1,9;6,9;11;80;19
+Barszcz z bocwina;200;;;Y;;;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;29;1,7;1,5;2,5;35;100;20
+"Baton ""Bounty Milk""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;448;25,2;4,2;56,7;23;60;21
+"Baton ""Mars""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;451;18,2;3,6;68,9;23;10;22
+"Baton ""Milky Way""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;448;16,2;3,6;71,8;24;100;23
+"Baton ""Snickers""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;497;28,9;9,7;52,6;14;10;24
+"Baton ""Twix""";50;;Y;;Y;;Y;Y;slodycze;Przekaski;Produkty;483;23,2;5,3;64,2;20;70;25
+Baton szynkowy z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;143;9,3;14,9;0,1;25;80;26
+Baton z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;144;8,6;16,7;0,1;31;10;27
+Befsztyk bity wiejski smazony;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;258;19,6;19,4;1,6;19;10;28
+Befsztyk tatarski;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;195;12,3;18,4;3,4;12;60;29
+"Bezy z kremem ""Sokoly""";50;;Y;;Y;;Y;Y;slodycze;Desery;Produkty;444;19,6;7,1;60,8;8;80;30
+Bialko jaja kurzego;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;49;0,2;10,9;0,7;8;60;31
+Bigos popularny;150;;;Y;;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;119;9,9;5,1;3,8;10;20;32
+Bitki wieprzowe duszone;150;;;Y;;;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;195;16,1;10,4;2,6;31;40;33
+Bitki wieprzowe w jarzynach duszone;150;;;Y;;;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;200;16,1;10,7;4,3;26;70;34
+Bitki wolowe duszone;150;;;Y;;;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;103;4,4;13,6;2,3;15;100;35
+Bitki wolowe w jarzynach duszone;150;;;Y;;;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;117;4,5;14,3;6,6;24;80;36
+Bliny ziemniaczane;200;;;Y;;;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;257;16,3;5,7;23,4;5;10;37
+Bob;;;;;;;;;;;;66;0,4;7,1;14;8;80;38
+Bob mrozony;;;;;;;;;;;;63;0,4;6,8;13,4;26;30;39
+Bocwina;;;;;;;;;;;;17;0,5;2,1;5,5;28;20;40
+Boeuf Strogonow duszony;200;;;;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;220;14,3;19,6;3,7;8;50;41
+Brokuly;150;Y;Y;Y;Y;Y;Y;Y;Warzywa gotowane;warzywa i przetwory warzywne;Potrawy;27;0,4;3;5,2;8;40;42
+Brokuly mrozone;;;;;;;;;;;;24;0,4;2,7;4,7;27;80;43
+Brukselka;;;;;;;;;;;;37;0,5;4,7;8,7;33;10;44
+Brukselka mrozona;;;;;;;;;;;;36;0,5;4,5;8,4;16;60;45
+Brukselka z wody;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;110;7,1;4,2;12;5;50;46
+Bryzol wolowy z poledwicy smazony;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;253;16,6;24,7;1,4;8;20;47
+Brzoskwinia;;;;;;;;;;;;46;0,2;1;11,9;31;80;48
+Brzoskwinia w syropie;;;;;;;;;;;;73;0,1;0,4;18,2;35;10;49
+Budyn w proszku;100;;Y;;Y;;Y;Y;Desery mleczne;Desery;Produkty;369;0,1;0,3;90,5;34;40;50
+Budyn z miesa i makaronu;200;;;Y;;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;172;4,4;10,7;23;13;60;51
+Bukiet z jarzyn wiosennych mrozony;100;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;30;0,3;2,8;7,5;34;70;52
+Bukiet z jarzyn z makaronem mrozony;100;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;133;1,2;5,3;27,8;32;90;53
+Bukiet z jarzyn z ryzem mrozony;100;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;66;0,3;2,4;15,6;34;20;54
+Buleczki do hot-dogow;50;;Y;Y;Y;Y;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;341;7,5;9,5;59,8;14;100;55
+Buleczki drozdzowe z jablkami;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;272;7,2;6,2;47,3;28;70;56
+Buleczki drozdzowe z nadzieniem makowym;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;352;8,1;7,8;63,8;23;100;57
+Buleczki drozdzowe z nadzieniem serowym;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;339;6,9;8,5;61,7;11;10;58
+Buleczki drozdzowe z powidlami sliwkowymi;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;343;6,5;7;65,2;20;30;59
+Buleczki z jablkiem i kruszonka;50;Y;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;270;7;6,7;45,9;21;80;60
+Bulka tarta;;;;;;;;;;;;347;1,9;9,7;77,6;33;100;61
+Bulki grahamki;50;Y;Y;;Y;Y;;Y;Pieczywo pszenne;Produkty zbozowe;Produkty;252;1,7;9;56,1;31;20;62
+Bulki i rogale maslane;50;Y;;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;327;5,9;8,5;61;35;50;63
+Bulki mieszane z cebula;50;Y;;;Y;;;Y;Pieczywo mieszane;Produkty zbozowe;Produkty;284;3,5;7,9;58,4;29;90;64
+Bulki mleczne;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;314;4,5;9,2;60,3;29;60;65
+Bulki owsiane;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;304;4,5;9,3;58,4;15;100;66
+Bulki pszenne zwykle;50;;;;;;;;Pieczywo pszenne;Produkty zbozowe;Produkty;273;1,5;8,1;57,7;29;80;67
+Bulki pszenne zwykle z serwatka;50;;;;;;;;Pieczywo pszenne;Produkty zbozowe;Produkty;277;1,6;8,8;58;29;60;68
+Bulki sojowe;50;Y;;;Y;;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;315;4;10,1;61,1;35;20;69
+Bulki szwedki;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;272;1,3;7,6;58,8;29;70;70
+Bulki wroclawskie;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;294;4,4;8;56,6;25;10;71
+Burak;;;;;;;;;;;;38;0,1;1,8;9,5;9;10;72
+Buraki gotowane;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;71;3,5;1,6;10;27;10;73
+Buraki puree mrozone;;;;;;;;;;;;34;0,1;1,6;8,6;27;60;74
+Buraki z jablkami;150;;Y;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;70;3,3;1,5;10,3;35;10;75
+Buraki zasmazane;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;5,5;1,6;8,6;24;10;76
+Buraki ze smietana;150;;;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;66;3,4;1,8;8,8;33;30;77
+Cebula;;;;;;;;;;;;30;0,4;1,4;6,9;25;50;78
+Cebula konserwowa;;;;;;;;;;;;52;0,2;0,7;12,4;31;20;79
+Cebula mrozona;;;;;;;;;;;;28;0,4;1,3;6,2;8;40;80
+Chalki zdobne;50;;Y;;Y;;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;333;7;7,8;60,8;33;20;81
+Chalwa kakaowa;;;;;;;;;;;;517;33,5;14,6;45,7;34;10;82
+Chalwa waniliowa;;;;;;;;;;;;516;33,1;14,2;46,4;20;10;83
+Chalwa z bakaliami;;;;;;;;;;;;510;34,4;16,5;39,8;13;60;84
+Chalwa z orzechami;;;;;;;;;;;;537;37,4;17,7;38,7;20;60;85
+Chipsy bekonowe;75;;y;;y;;y;y;Chipsy;Przekaski;Produkty;537;38;5,9;52,2;13;60;86
+Chipsy paprykowe;75;;y;;y;;y;y;Chipsy;Przekaski;Produkty;549;40;6;50,4;20;10;87
+Chipsy solone;75;;y;;y;;y;y;Chipsy;Przekaski;Produkty;552;40,7;5,6;49,9;23;30;88
+Chleb baltonowski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;251;1,5;7;54,8;30;60;89
+Chleb beskidzki;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,7;7,5;55,7;28;50;90
+Chleb chrupki;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;353;2,4;8,7;78,9;34;80;91
+Chleb ekstrudowany pszenny;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;381;5,2;9,2;78,3;6;10;92
+Chleb ekstrudowany zytni;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;383;6,1;8,2;78,6;11;40;93
+Chleb graham;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;221;1,7;8,3;48,7;27;100;94
+Chleb mazowiecki;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;254;1,4;7,6;55;20;70;95
+Chleb mieszany jasny rodzynkowy;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;261;1,4;5,8;58,6;12;20;96
+Chleb mieszany pytlowy z cebula;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;259;3,6;5,7;54,2;21;90;97
+Chleb mieszany razowy z bakaliami;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;247;3,9;7,2;51,4;12;90;98
+Chleb mieszany sitkowy z ziarnami;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;242;3;8;50,5;10;100;99
+Chleb mieszany slonecznikowy;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;240;4,5;6,8;48,9;18;10;100
+Chleb mieszany z platkami owsianymi;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;238;2,3;7;54,2;21;50;101
+Chleb mieszany z soja;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;226;2,7;7,1;49,2;8;60;102
+Chleb mleczny;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;256;1,5;7,7;55,3;18;50;103
+Chleb naleczowski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,3;6,6;55,3;29;60;104
+Chleb poleski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;247;2,1;7,1;54,5;8;30;105
+Chleb praski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,3;6,6;55,3;34;50;106
+Chleb pszenny;50;Y;Y;Y;Y;Y;;Y;Pieczywo mieszane;Produkty zbozowe;Produkty;257;1,4;8,5;54,3;17;90;107
+Chleb pszenny z ziarnem pszenicy;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;223;1,8;8,3;49,5;11;30;108
+Chleb wiejski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;245;1,3;6,9;54;22;100;109
+Chleb wielkopolski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;254;1,5;6,7;56,6;5;30;110
+Chleb zakopianski;50;;;;;;;;Pieczywo mieszane;Produkty zbozowe;Produkty;261;1,5;7,7;56,9;7;10;111
+Chleb zwykly;50;Y;Y;Y;Y;Y;;Y;Pieczywo mieszane;Produkty zbozowe;Produkty;248;1,3;6,1;56,3;19;40;112
+Chleb zytni jasny;50;Y;Y;Y;Y;Y;;Y;Pieczywo zytnie;Produkty zbozowe;Produkty;243;1,3;3,8;57,4;7;100;113
+Chleb zytni jasny mleczny;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;258;1,8;4,6;59,1;23;20;114
+Chleb zytni pelnoziarnisty;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;225;1,8;6,8;53,8;33;70;115
+Chleb zytni pytlowy;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;240;1,5;4,4;56,2;14;70;116
+Chleb zytni razowy;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;213;1,7;5,9;51,2;32;10;117
+Chleb zytni razowy litewski;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;224;1,7;6,6;52,6;15;40;118
+Chleb zytni razowy na miodzie;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;225;1,6;5,6;54;16;60;119
+Chleb zytni razowy wytrawny;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;217;1,7;7;50,8;13;30;120
+Chleb zytni razowy z soja i slonecznikiem;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;226;3,5;7,8;48,7;33;70;121
+Chleb zytni razowy ze sliwka;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;228;1,6;5,3;54,3;18;10;122
+Chleb zytni sitkowy;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;220;1,5;5,4;53;29;70;123
+Chleb zytni staropolski;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;225;1,4;4,5;52,1;6;90;124
+Chleb zytni wilenski;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;218;1,5;4,4;52,2;33;50;125
+Chrupki kukurydziane;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;352;3;8,9;78,9;26;60;126
+Chrzan;;;;;;;;;;;;67;0,6;4,5;18,1;10;100;127
+Ciabatta;50;Y;Y;Y;Y;Y;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;298;3,6;8,7;58,7;12;40;128
+"Ciastka ""Karpatki""";50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;456;30,8;4,9;40,7;17;70;129
+"Ciastka ""Napoleonki""";50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;348;16,9;6,1;43,5;7;80;130
+Ciastka drozdzowe z truskawkami;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;383;13,6;8;58,5;6;40;131
+Ciastka francuskie ze sliwkami;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;435;26,6;5,3;45,4;26;80;132
+Ciastka ponczowe z kremem;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;393;17,3;4,6;55,3;13;20;133
+Ciastka tortowe ze swiezymi owocami;50;;y;;y;;y;y;Ciastka;Przekaski;Produkty;275;8,8;3,3;47,1;26;100;134
+Ciasto drozdzowe;50;;y;;y;;y;y;Wypieki;Desery;Produkty;290;8;7,7;47,7;19;40;135
+Ciasto kruche podstawowe;50;;y;;y;;y;y;Wypieki;Desery;Produkty;435;23,6;5,5;51,4;8;30;136
+Ciasto nalesnikowe bez piany;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;174;4,2;6,2;28,3;16;40;137
+Ciasto nalesnikowe biszkoptowe;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;187;5,9;8,5;25,5;23;90;138
+Cielecina lopatka;;;;;;;;;Cielecina;Mieso i przetwory miesne;Produkty;106;2,8;19,9;0;5;40;139
+Cielecina sznyclowka;;;;;;;;;Cielecina;Mieso i przetwory miesne;Produkty;105;2,4;20,5;0;8;10;140
+Cielecina udziec;;;;;;;;;Cielecina;Mieso i przetwory miesne;Produkty;108;3,1;19,9;0;19;70;141
+Cielecina w potrawce;150;;;Y;;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;104;4,1;13,5;3,9;20;70;142
+Coca cola, pepsi cola;;;;;;;;;;;;42;0;0;10,4;22;50;143
+Cukier;;;;;;;;;;;;405;0;0;99,8;29;80;144
+Cukinia;;;;;;;;;;;;15;0,1;1,2;3,2;10;30;145
+Cukinia mrozona;;;;;;;;;;;;15;0,1;1,2;3,2;32;10;146
+Cwikla;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;40;0,1;1,6;10,2;34;90;147
+Cykoria;;;;;;;;;;;;21;0,2;1,7;4,1;21;80;148
+Cytryna;;;;;;;;;;;;36;0,3;0,8;9,5;28;10;149
+Czarne jagody;;;;;;;;;;;;45;0,6;0,8;12,2;14;100;150
+Czarne jagody mrozone;;;;;;;;;;;;45;0,6;0,8;12,2;21;70;151
+Czekolada biala;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;578;38,4;7,7;51;13;10;152
+Czekolada deserowa;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;531;28,9;5,3;64;19;60;153
+Czekolada gorzka;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;554;34,3;6,7;56,6;13;40;154
+Czekolada kawowa;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;526;29;5,5;62,7;20;30;155
+Czekolada mleczna;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;549;32,8;9,8;54,7;11;60;156
+Czekolada mleczna z orzechami laskowymi;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;539;30,9;8,6;57,3;8;80;157
+Czekolada nadziewana;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;450;17,6;3,9;68,8;10;10;158
+Czekolada smietankowa z orzechami laskowymi;50;;y;;y;;y;y;Slodycze;Przekaski;Produkty;585;42,3;8,6;45,7;6;60;159
+Czeresnie;75;y;y;;y;;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;61;0,3;1;14,6;15;60;160
+Czosnek;;;;;;;;;;;;146;0,5;6,4;32,6;13;60;161
+Daktyle suszone;;;;;;;;;;;;277;0,4;2;74;5;20;162
+Delicje szampanskie;;;;;;;;;;;;327;11,2;4,1;52,8;28;50;163
+Deser mleczny ryzowo-jablkowy;;;;;;;;;Desery mleczne;Mleko i przetwory mleczne;Produkty;134;3;2,8;23,9;8;80;164
+Deser mleczny ryzowo-waniliowy;;;;;;;;;Desery mleczne;Mleko i przetwory mleczne;Produkty;133;2,9;3;23,5;22;30;165
+Deser twarogowy termizowany kakaowy;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;156;6,2;13,9;11,2;35;20;166
+Deser twarogowy termizowany truskawkowy;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;170;5,8;11;18,3;10;30;167
+Dorsz pulpety;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;112;2,6;14,3;8,7;6;100;168
+Dorsz swiezy;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;78;0,7;17,7;0;10;10;169
+Dorsz swiezy filet bez skory;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;70;0,3;16,5;0;30;100;170
+Dorsz w jarzynach;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;120;5,2;15,6;3,9;24;70;171
+Dorsz wedzony;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;94;0,5;22,1;0;25;90;172
+Dorsz z rusztu;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;172;9,1;22,1;0,6;32;90;173
+Dorsz, filety panierowane smazone;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;273;15,8;19,2;14,5;15;60;174
+Dorsz, filety po grecku;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;152;10,8;10,6;4,6;24;50;175
+Dorsz, kotlet mielony smazony;150;;;Y;;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;260;17,8;15;10,9;11;30;176
+Drozdze piekarskie prasowane;;;;;;;;;;;;92;2;11,3;14,5;13;80;177
+Dynia;;;;;;;;;;;;28;0,3;1,3;7,7;8;60;178
+Dynia pestki;;;;;;;;;;;;556;45,8;24,5;18;26;30;179
+Dynia z pomidorami;150;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;44;2,4;1,2;6,5;19;60;180
+Dzem ananasowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;157;0,1;0,2;38,6;7;70;181
+Dzem brzoskwiniowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;155;0,1;0,5;38,3;29;20;182
+Dzem jagodowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,2;0,3;38,2;32;10;183
+Dzem morelowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;157;0,1;0,4;38,8;16;20;184
+Dzem pomaranczowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;159;0,1;0,3;39,2;5;40;185
+Dzem sliwkowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,1;0,3;37,9;8;40;186
+Dzem sliwkowy wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;251;0,1;0,3;62,1;18;40;187
+Dzem truskawkowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,2;0,3;37,8;13;70;188
+Dzem truskawkowy niskoslodzony z witamina C;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;153;0,2;0,3;37,8;8;60;189
+Dzem truskawkowy wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;252;0,2;0,3;62,3;22;80;190
+Dzem wisniowy niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;154;0,2;0,4;37,5;5;40;191
+Dzem wisniowy wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;252;0,2;0,4;61,7;31;40;192
+Dzem z czarnych porzeczek niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;152;0,1;0,5;39,6;5;10;193
+Dzem z czarnych porzeczek wysokoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;251;0,1;0,5;63,9;7;10;194
+Dzem z owocow kiwi niskoslodzony;50;y;;;;;;y;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;154;0,2;0,4;37,8;33;60;195
+Eklery z bita smietana;;;;;;;;;;;;326;18;5,9;35,5;6;70;196
+Fasola biala nasiona suche;;;;;;;;;;;;288;1,6;21,4;61,6;35;50;197
+Fasola cieta konserwowa bez zalewy;;;;;;;;;;;;16;0,2;1,5;4,5;35;60;198
+Fasola mung kielki;;;;;;;;;;;;29;0,4;3;6,2;34;100;199
+Fasola po bretonsku;200;;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;141;6,6;8;15,9;32;100;200
+Fasola szparagowa;;;;;;;;;;;;27;0,2;2,4;7,6;8;50;201
+Fasola szparagowa gotowana, z maslem;100;;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;97;6,9;2,9;10,3;20;90;202
+Fasolka flageolet konserwowa;;;;;;;;;przetwory warzywne;warzywa i przetwory warzywne;Produkty;61;0,2;6,3;15;26;10;203
+Fasolka szparagowa mrozona;;;;;;;;;;;;24;0,2;2,2;6,8;11;20;204
+Faworki luksusowe;;;;;;;;;;;;511;31,6;8,8;49,5;11;50;205
+Figi suszone;50;y;y;;y;y;y;y;owoce suszone;owoce i przetwory owocowe;Produkty;290;1,2;3,6;78;24;60;206
+Fladra swieza;;;;;;;;;;;;83;1,8;16,5;0;5;90;207
+Flaki;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;84;2,2;16;0;31;80;208
+Galaretka z nozek wieprzowych;100;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;202;14,9;16,9;0,8;35;80;209
+Ges tuszka;;;;;;;;;Ges;Mieso i przetwory miesne;Produkty;339;31,8;14,1;0;6;80;210
+Gladzica-plastuga swieza;;;;;;;;;;;;86;1,9;17,1;0;35;10;211
+Golabki z miesem i ryzem w sosie pomidorowym;150;;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;108;6,7;3,6;10;27;40;212
+Grejpfrut;50;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;36;0,2;0,6;9,8;11;30;213
+Groch nasiona suche;;;;;;;;;;;;293;1,4;23,8;60,2;26;20;214
+Groszek ptysiowy;;;;;;;;;;;;476;30,2;14,9;37,6;29;50;215
+Groszek zielony;;;;;;;;;;;;75;0,4;6,7;17;24;60;216
+Groszek zielony gotowany, z maslem;150;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;100;6,8;3,7;9,3;33;10;217
+Groszek zielony konserwowy bez zalewy;;;;;;;;;;;;63;0,2;4,9;15,8;27;100;218
+Groszek zielony mrozony;;;;;;;;;;;;72;0,4;6,4;16,3;13;50;219
+Gruszka;50;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;54;0,2;0,6;14,4;28;20;220
+Gruszki w sosie waniliowym;150;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;152;1,1;1,6;34,8;14;100;221
+Gujawa;;;;;;;;;;;;38;0,6;0,8;11,9;27;100;222
+Gulasz wolowy duszony;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;148;9,2;14,1;2,6;31;30;223
+Halibut bialy swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;98;1,9;20,1;0;29;100;224
+Herbata napar bez cukru;;;;;;;;;;;;0;0;0,1;0;16;10;225
+Herbatniki;;;;;;;;;;;;437;11;8,2;76,8;22;80;226
+"Herbatniki ""Corso""";;;;;;;;;;;;440;17,2;5;67,1;17;30;227
+Herbatniki kakaowe;;;;;;;;;;;;474;22,3;6,9;62,9;10;20;228
+Herbatniki kokosowe;;;;;;;;;;;;474;25,2;6,4;59,8;6;90;229
+Herbatniki sezamowe;;;;;;;;;;;;503;28,6;8,1;55,7;10;50;230
+Herbatniki w czekoladzie;;;;;;;;;;;;489;24;6,3;63,1;22;10;231
+Herbatniki w czekoladzie z orzechami;;;;;;;;;;;;492;23,7;6;64,7;35;80;232
+Herbatniki z cukrem;;;;;;;;;;;;460;17,2;6,7;70,7;20;20;233
+Herbatniki z czekolada;;;;;;;;;;;;493;25,5;5,9;61,2;14;50;234
+Herbatniki z nadzieniem czekoladowym;;;;;;;;;;;;497;27,9;5,5;57,3;18;90;235
+Herbatniki z nadzieniem owocowym;;;;;;;;;;;;390;16,1;3,8;58,6;35;90;236
+Indyk tuszka;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;129;6,8;17;0;14;80;237
+Irysy, krowki;;;;;;;;;;;;421;10,7;4,3;76,1;17;20;238
+Jablecznik ze swiezych jablek;;;;;;;;;;;;318;9,3;3,4;56,8;6;40;239
+Jablka pieczone;100;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;93;1,6;0,3;20,8;20;60;240
+Jablka suszone;50;y;y;;y;y;y;y;owoce suszone;owoce i przetwory owocowe;Produkty;238;2,1;2,1;62,3;19;50;241
+Jablka w ciescie francuskim;;;;;;;;;;;;397;22,7;4,4;46,1;12;20;242
+Jablka w kruchym ciescie;100;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;348;17,4;4,4;45;25;40;243
+Jablko;50;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;46;0,4;0,4;12,1;34;60;244
+Jagodzianki;;;;;;;;;;;;316;5,2;7,4;61;21;100;245
+Jaja gotowane;100;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;109;7,6;9,8;0,5;33;20;246
+Jaja kurze cale;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;139;9,7;12,5;0,6;31;100;247
+Jaja sadzone;100;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;168;14,2;9,9;0,6;19;80;248
+Jajecznica;150;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;119;8,7;9,8;0,5;23;100;249
+Jarmuz;100;Y;Y;;Y;Y;y;y;Warzywa;warzywa i przetwory warzywne;Produkty;29;0,7;3,3;6,1;33;30;250
+Jogurt bananowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;70;1,5;3,7;10,4;18;40;251
+Jogurt jagodowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;62;1,5;3,7;8,8;33;30;252
+Jogurt morelowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;63;1,5;3,7;8,9;25;80;253
+Jogurt naturalny 2% tluszczu;;;;;;;;;;;;60;2;4,3;6,2;34;70;254
+Jogurt truskawkowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;60;1,5;3,7;8,2;32;100;255
+Jogurt wisniowy 1,5% tluszczu;100;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;61;1,5;3,7;8,2;16;20;256
+Kabanosy;50;y;y;y;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;326;24,3;27,4;0;6;100;257
+Kabanosy z kurczaka;50;y;y;y;y;y;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;247;17,4;22,8;0,1;25;70;258
+Kaczka tuszka;;;;;;;;;Kaczka;Mieso i przetwory miesne;Produkty;308;28,6;13,5;0;8;10;259
+Kajzerki;50;Y;Y;Y;Y;Y;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;296;3,6;8,4;58,6;35;90;260
+Kakao 16% proszek;;;;;;;;;;;;448;21,7;18,2;50,6;14;90;261
+Kakao rozpuszczalne z witaminami;30;Y;Y;;Y;;y;y;Napoje mleczne;Mleko i przetwory mleczne;;404;3,1;3,8;89,8;14;70;262
+Kalafior;;;;;;;;;;;;22;0,2;2,4;5;28;90;263
+Kalafior gotowany, z maslem;100;;;Y;;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;6,8;2;5,5;13;100;264
+Kalafior mrozony;;;;;;;;;;;;20;0,2;2,2;4,5;12;20;265
+Kalarepa;;;;;;;;;;;;29;0,3;2,2;6,5;25;30;266
+Kalarepa mrozona;;;;;;;;;;;;27;0,3;2;5,9;16;30;267
+Kapusniak mrozony;200;;;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;35;0,2;1,4;9;6;50;268
+Kapusniak z kwaszonej kapusty;200;;;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;22;1,2;1,5;1,7;34;30;269
+Kapusniak ze slodkiej kapusty;200;;;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;32;2,1;0,7;3,2;8;90;270
+Kapusta biala;;;;;;;;;;;;29;0,2;1,7;7,4;30;20;271
+Kapusta biala gotowana, zasmazana;100;;;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;69;4,7;1,6;7,1;8;70;272
+Kapusta biala mrozona;;;;;;;;;;;;26;0,2;1,5;6,7;29;30;273
+Kapusta czerwona;75;y;y;y;y;y;y;y;Warzywa ;warzywa i przetwory warzywne;Produkty;27;0,2;1,9;6,7;12;90;274
+Kapusta kwaszona;75;y;y;y;y;y;y;y;Warzywa ;warzywa i przetwory warzywne;Produkty;12;0,2;1,1;3,4;25;40;275
+Kapusta pekinska;75;y;y;y;y;y;y;y;Warzywa ;warzywa i przetwory warzywne;Produkty;12;0,2;1,2;3,2;25;40;276
+Kapusta wloska;;;;;;;;;;;;38;0,4;3,3;7,8;33;80;277
+Kapusta wloska mrozona;;;;;;;;;;;;35;0,4;3;7;20;80;278
+Karmelki nadziewane;;;;;;;;;;;;378;0,5;0,3;92;14;80;279
+Karmelki nadziewane z witaminami;;;;;;;;;;;;378;0,5;0,3;92;21;80;280
+Karmelki twarde;;;;;;;;;;;;399;0;0;98,2;21;80;281
+Karmelki twarde z witamina C;;;;;;;;;;;;399;0;0;98,2;25;90;282
+Karp swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;110;4,2;18;0;34;100;283
+Karp w galarecie z warzywami;150;;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;137;2,9;26,1;2,1;23;100;284
+Karp z wody;150;;;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;102;3,7;16;2;25;50;285
+Kasza gryczana;;;;;;;;;Kasze;Produkty zbozowe;Produkty;336;3,1;12,6;69,3;16;10;286
+Kasza gryczana na sypko z tluszczem roslinnym;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;132;2,3;4,5;25;15;30;287
+Kasza gryczana na sypko ze smalcem;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;138;2,9;4,8;25;5;60;288
+Kasza jaglana;;;;;;;;;Kasze;Produkty zbozowe;Produkty;346;2,9;10,5;71,6;5;40;289
+Kasza jeczmienna na mleku;75;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;63;2,2;2,6;8,5;26;20;290
+Kasza jeczmienna peczak;;;;;;;;;Kasze;Produkty zbozowe;Produkty;334;2;8,4;74,9;11;40;291
+Kasza jeczmienna perlowa;;;;;;;;;Kasze;Produkty zbozowe;Produkty;327;2,2;6,9;75;29;90;292
+Kasza manna;;;;;;;;;Kasze;Produkty zbozowe;Produkty;348;1,3;8,7;76,7;9;20;293
+Kasza manna na mleku;75;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;67;2,1;2,7;9,3;18;100;294
+Kasza manna na wywarze jarzynowym;;;;;;;;;;;;21;0,8;0,5;3,4;31;90;295
+Kasza perlowa na sypko z tluszczem roslinnym;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;114;2;2,2;23,6;28;100;296
+Kasza perlowa na sypko ze smalcem;75;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;119;2,5;2,2;23,6;15;90;297
+Kaszanka z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;204;11,7;9,8;16,4;24;50;298
+Kawa napar bez cukru;;;;;;;;;;;;2;0;0,2;0,3;32;30;299
+Kefir 2% tluszczu;75;y;y;;y;y;;y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;51;2;3,4;4,7;24;90;300
+Kefir 2% tluszczu z wapniem;75;y;y;;y;y;;y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;51;2;3,4;4,7;27;90;301
+Keks bakaliowy;;;;;;;;;;;;385;17,5;6,5;53,7;21;40;302
+Kielbasa delikatesowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;109;3,3;19,6;0,1;35;30;303
+Kielbasa domowa;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;320;29,2;14,7;0,5;28;60;304
+Kielbasa jalowcowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;236;17,9;19;0,1;16;20;305
+Kielbasa kanapkowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;179;13,5;11,8;3;32;50;306
+Kielbasa krakowska sucha;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;323;24,8;25,6;0;10;100;307
+Kielbasa lubuska;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;249;18;17,5;4,8;34;80;308
+Kielbasa mazurska z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;129;7,7;14,8;0,1;34;40;309
+Kielbasa mortadela;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;205;17,7;12;0;6;50;310
+Kielbasa mortadela z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;209;18,5;11;0,1;27;10;311
+Kielbasa mysliwska sucha;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;291;20,1;27,8;0;27;60;312
+Kielbasa parowkowa;100;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;323;31,5;11;0;23;50;313
+Kielbasa podlaska z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;232;16,7;20,7;0,1;11;20;314
+Kielbasa podsuszana z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;162;8,4;21,7;0;15;10;315
+Kielbasa podwawelska;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;247;19,6;17,3;0,9;32;50;316
+Kielbasa rzeszowska;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;203;13,4;20,9;0;26;50;317
+Kielbasa slaska;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;210;15,3;18,4;0;13;80;318
+Kielbasa szynkowa z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;88;2;17,2;0,2;26;50;319
+Kielbasa szynkowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;110;5;16,2;0;15;10;320
+Kielbasa torunska;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;263;20,1;20,9;0;10;10;321
+Kielbasa zwyczajna;75;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;209;15,6;17,6;0;5;100;322
+Kielbasa zywiecka;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;315;26,3;20,3;0;21;40;323
+Kielbaski bawarskie;;;;;;;;;;;;308;27,7;15,5;0,1;12;90;324
+Kisiel porzeczkowy;150;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;98;0,1;0,3;25,7;23;80;325
+Kisiel w proszku;;;;;;;;;;;;377;0;0,2;92,7;18;40;326
+Kisiel waniliowy (budyn);150;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;121;4,5;3,3;16,6;29;30;327
+Kiszka kaszana jeczmienna;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;195;12,6;8,5;13;35;50;328
+Kiszka krwista;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;404;35;14,2;9,2;28;70;329
+Kiszka pasztetowa;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;384;35,7;12,5;4,3;25;70;330
+Kiwi;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;56;0,5;0,9;13,9;23;40;331
+Klopsiki cielece mielone duszone;150;;Y;Y;Y;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;250;14,6;16,3;14,2;8;10;332
+Klopsiki mielone z miesa mieszanego duszone;150;;Y;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;272;17,5;13,7;15,7;15;50;333
+Kluski kladzione;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;165;1,3;5,5;33,3;33;90;334
+Kluski lane;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;93;2;4,3;14,8;22;30;335
+Kluski lane na mleku;150;;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;69;3,1;3,6;6,8;23;100;336
+Kluski slaskie;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;169;3,8;2,6;32,1;13;10;337
+Knedle ze sliwkami;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;162;5,9;2,8;25,7;15;20;338
+Kompot z jablek;200;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;51;0,1;0,2;13,2;11;80;339
+Kompot z wisni;200;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;69;0,1;0,2;16,9;33;90;340
+Koncentrat pomidorowy 30%;;;;;;;;;;;;92;1,5;5,6;16,7;25;20;341
+Konina mieso bez kosci;;;;;;;;;Konina;Mieso i przetwory miesne;Produkty;109;2,5;21,5;0;8;100;342
+Konina mieso z koscia;;;;;;;;;Konina;Mieso i przetwory miesne;Produkty;109;2,5;21,5;0;13;10;343
+Koper ogrodowy;;;;;;;;;;;;26;0,4;2,8;6,1;21;60;344
+Kopytka;100;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;147;0,7;4,2;32,1;30;20;345
+Kopytka z maslem;100;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;151;1,5;3,8;31,6;34;90;346
+Kosci wywar;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;5;0;1,2;0;27;90;347
+Kotlet cielecy panierowany smazony;150;;;Y;;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;364;21,3;27,1;17,4;24;90;348
+Kotlet mielony z kury, smazony;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;382;27,8;20;14,2;31;10;349
+Kotlet mielony z miesa mieszanego smazony;150;;;Y;;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;285;21,1;13,1;11,7;33;100;350
+Kotlet schabowy panierowany smazony;150;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;351;24,1;19,1;15,9;22;50;351
+Kotlety z jaj, smazone;150;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;276;22,8;8,1;10,8;25;90;352
+Kotlety z kurczaka panierowane smazone;150;;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;249;15,8;19,8;7,6;11;10;353
+Kotlety z kurczaka saute smazone;150;;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;241;16,5;20,3;3,2;8;60;354
+Kotlety ziemniaczane;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;242;12,8;4,4;29,3;19;30;355
+Krem z zielonego groszku;150;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;64;3,8;3,1;5,9;20;30;356
+Krolik tuszka;;;;;;;;;Krolik;Mieso i przetwory miesne;Produkty;156;8;21;0;9;20;357
+Krupnik z kaszy gryczanej;200;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;43;1,2;1,7;7,2;17;50;358
+Krupnik z kaszy jeczmiennej;200;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;40;0,9;1,5;7,4;14;70;359
+Krupnik z ryzu;200;Y;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;43;1,1;1,5;7,6;21;30;360
+Kukurydza kolby;;;;;;;;;;;;110;1,5;3,7;23,4;24;90;361
+Kukurydza kolby mrozona;;;;;;;;;;;;105;1,4;3,6;22,5;14;10;362
+Kukurydza konserwowa;;;;;;;;;;;;102;1,2;2,9;23,6;32;20;363
+Kulebiak;200;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;222;12,7;7,8;19,9;20;60;364
+Kura tuszka;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;202;14,3;18,5;0;35;80;365
+Kura w galarecie;100;Y;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;192;8,8;27,3;1,2;24;100;366
+Kurczak faszerowany pieczony;;;;;;;;;;;;199;11,9;20,5;2,8;28;100;367
+Kurczak tuszka;;;;;;;;;;;;158;9,3;18,6;0;11;10;368
+Kurczak w jarzynach gotowany;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;99;6,4;7,6;4,6;30;20;369
+Kurczeta pieczone;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;179;12,7;16,4;0,1;31;30;370
+Lazanki z biala kapusta;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;147;6,9;3,7;18,9;7;80;371
+Lemoniada;;;;;;;;;;;;24;0;0;5,8;7;60;372
+Len nasiona;;;;;;;;;;;;500;31;24,5;35;5;80;373
+Leniwe pierogi z sera twarogowego;150;;;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;242;13,9;14,6;15;12;10;374
+Leniwe pierogi z sera twarogowego i ziemniakow;150;;;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;220;10,1;12,9;20;29;50;375
+Lody mleczno-owocowe;150;;Y;;Y;;;Y;Lody mleczno-owocowe;Mleko i przetwory mleczne;Produkty;116;2,5;3,9;19,4;22;90;376
+Lody smietankowe;;;;;;;;;Lody smietankowe;Mleko i przetwory mleczne;Produkty;160;8,5;3,2;17,6;15;80;377
+Losos saute smazony;150;;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;380;31,4;21,2;4;14;40;378
+Losos swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;201;13,6;19,9;0;15;80;379
+Losos wedzony;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;162;8,4;21,5;0;14;40;380
+Losos z rusztu;150;;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;283;22,3;20,7;0,6;29;40;381
+Majonez domowy z olejem rzepakowym;;;;;;;;;;;;714;79;1,3;2,6;29;60;382
+Majonez domowy z olejem slonecznikowym;;;;;;;;;;;;714;79;1,3;2,6;23;10;383
+Mak niebieski;;;;;;;;;;;;478;42,9;20,1;24,7;25;70;384
+Maka kukurydziana;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;337;3;5,9;78;7;100;385
+Maka pszenna typ 1850;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;309;2,3;11,9;70;33;40;386
+Maka pszenna typ 500;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;343;1,2;10,1;74;12;50;387
+Maka pszenna typ 500 z witaminami;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;343;1,2;10,1;74;35;80;388
+Maka pszenna typ 550;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;344;1,6;10,5;73;24;20;389
+Maka pszenna typ 550 z witaminami;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;344;1,6;10,5;73;30;60;390
+Maka pszenna typ 750;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;341;1,8;11,6;71,3;13;20;391
+Maka ryzowa;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;348;0,7;7,2;79,2;13;60;392
+Maka sojowa pelnotlusta;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;424;23,5;45;20,1;23;80;393
+Maka zytnia typ 1400;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;310;2,2;7,1;75,3;17;60;394
+Maka zytnia typ 2000;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;301;2,2;8,1;74;27;20;395
+Maka zytnia typ 580;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;330;1,5;5,1;78,5;24;60;396
+Maka zytnia typ 720;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;327;1,7;5,9;77,4;10;60;397
+Makaron bezjajeczny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;364;1,6;11;77,6;17;100;398
+Makaron bezjajeczny z semoliny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;367;1,4;10,7;79,4;25;50;399
+Makaron czterojajeczny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;391;3,4;13,2;78,3;6;90;400
+Makaron dwujajeczny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;373;2,6;12;76,8;11;40;401
+Makaron dwujajeczny z semoliny;;;;;;;;;Makarony;Produkty zbozowe;Produkty;374;2,4;11,9;77,8;28;80;402
+Makaron gotowany;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;108;0,7;3,5;22,1;21;30;403
+Makaron na mleku;150;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;65;2,2;2,9;8,6;22;70;404
+Makaron z maslem, gotowany;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;126;1,8;3,8;24,2;20;30;405
+Makaron z serem twarogowym i maslem;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;141;5,2;6,5;17,3;32;90;406
+Makaron zapiekany z biala kapusta;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;138;5,2;3,7;21,2;21;80;407
+Makrela swieza;;;;;;;;;;;;181;11,9;18,7;0;26;60;408
+Makrela wedzona;100;y;y;y;y;y;;y;Ryby wedzone;Ryby i przetwory rybne;Produkty;221;15,5;20,7;0;21;90;409
+Maliny;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;29;0,3;1,3;12;11;80;410
+Maliny mrozone;;;;;;;;;;;;29;0,3;1,3;12;34;70;411
+Mandarynki;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;42;0,2;0,6;11,2;7;90;412
+Mango;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;67;0,3;0,5;17;26;10;413
+Marchew;;;;;;;;;;;;27;0,2;1;8,7;8;30;414
+Marchew mrozona;;;;;;;;;;;;24;0,2;0,9;7,8;35;70;415
+Marchew z groszkiem mrozona;;;;;;;;;;;;39;0,3;2,6;10,4;20;80;416
+Marchewka gotowana, zasmazana;150;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;69;4,8;1,1;8,4;35;50;417
+Marchewka z groszkiem gotowana;150;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;64;3,1;1,7;10,7;32;60;418
+Margaryna miekka 45% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;398;45;0;0;17;40;419
+Margaryna miekka 50% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;442;50;0;0;13;20;420
+Margaryna miekka 60% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;533;60;0,2;0,3;25;50;421
+Margaryna miekka 70% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;621;70;0,1;0,4;5;100;422
+Margaryna miekka 80% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;710;80;0,3;0,4;30;20;423
+Margaryna twarda 80% tluszczu;;;;;;;;;Margaryny;Tluszcze;Produkty;710;80;0,3;0,4;26;100;424
+Markizy;;;;;;;;;;;;483;23;5,6;64,3;14;80;425
+Maslanka 0,5% tluszczu z wapniem;150;y;y;y;y;y;;y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;37;0,5;3,4;4,7;14;30;426
+Maslanka spozywcza 0,5% tluszczu;;;;;;;;;Napoje mleczne;Mleko i przetwory mleczne;Produkty;37;0,5;3,4;4,7;26;10;427
+Maslo extra;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;735;82,5;0,7;0,7;5;10;428
+Maslo smietankowe;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;659;73,5;1,1;1,1;21;10;429
+Medaliony z indyka smazone;150;;;Y;;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;247;17,9;18,6;3,4;6;90;430
+Melon;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;36;0,3;0,9;8,4;17;30;431
+Mielonka (Luncheon meat);;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;171;11,7;12,8;3,7;24;100;432
+Mieso z piersi indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;84;0,7;19,2;0;34;40;433
+Mieso z piersi indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;100;2,7;18,7;0;16;100;434
+Mieso z piersi kurczaka bez skory;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;99;1,3;21,5;0;33;50;435
+Mieso z podudzia indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;100;3,7;16,6;0;7;30;436
+Mieso z podudzia indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;142;8,9;15,7;0;35;30;437
+Mieso z ud kurczaka bez skory;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;125;6;17,8;0;28;40;438
+Mieso z ud kurczaka ze skora;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;158;10,2;16,8;0;9;100;439
+Mieso z udzca indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;104;2,8;19,4;0;16;50;440
+Mieso z udzca indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;131;6,4;18,4;0;31;100;441
+Mieso ze skrzydel indyka bez skory;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;115;4,7;18;0;6;40;442
+Mieso ze skrzydel indyka ze skora;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;168;11,4;16,5;0;30;90;443
+Mieszanka owocowa mrozona;;;;;;;;;;;;40;0,3;0,9;12,1;7;10;444
+Mieszanka warzywna z kurczakiem i makaronem mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;90;2,6;4,8;13,2;31;80;445
+Mieszanka warzywna z kurczakiem i ryzem mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;101;2,7;5,1;15,8;9;20;446
+Mieszanka warzywna z kurczakiem ryzem fasola czerwona mrozon;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;103;2,6;5,3;16,7;20;100;447
+Mieszanka warzywna z kurczakiem ryzem grzybami chinskimi mro;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;87;2,4;4,3;13,3;7;40;448
+Mieszanka warzywna z makaronem i wedzonka wieprzowa mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;84;3;4,6;11,7;14;40;449
+Mieszanka warzywna z przyprawami mrozona;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;38;0,3;1,9;8,8;25;60;450
+Mieszanka warzywna z ziemniakami i wedzonka wieprzowa mrozon;200;;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;70;3,1;3,6;8,8;10;50;451
+Migdaly;;;;;;;;;;;;572;52;20;20,5;5;20;452
+Mintaj swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;73;0,6;16,6;0;22;50;453
+Miod pszczeli;;;;;;;;;;;;324;0;0,3;79,5;18;10;454
+Miod sztuczny;;;;;;;;;;;;336;0;0,1;82,5;20;20;455
+Mizeria ze smietana;100;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;33;2,2;1;2,8;29;80;456
+Mleko kobiece;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;72;4,3;1,3;7;32;10;457
+Mleko kozie;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;68;4,1;3,2;4,5;5;10;458
+Mleko odtluszczone w proszku;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;360;0,8;35,7;51,2;30;70;459
+Mleko owcze;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;107;7;6;5,1;23;40;460
+Mleko pelne w proszku;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;479;24;27;38,7;7;20;461
+Mleko spozywcze 0,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;39;0,5;3,5;5,1;30;80;462
+Mleko spozywcze 1,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;47;1,5;3,4;5;5;60;463
+Mleko spozywcze 2% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;51;2;3,4;4,9;13;60;464
+Mleko spozywcze 3,2% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;61;3,2;3,3;4,8;9;80;465
+Mleko spozywcze 3,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;64;3,5;3,3;4,8;9;60;466
+Mleko UHT 0,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;39;0,5;3,5;5,1;17;20;467
+Mleko UHT 1,5% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;47;1,5;3,4;5;11;80;468
+Mleko UHT 1,5% tluszczu z witaminami;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;47;1,5;3,4;5;26;100;469
+Mleko UHT 3,2% tluszczu;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;61;3,2;3,3;4,8;14;30;470
+Mleko zageszczone nieslodzone;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;131;7,5;6,6;9,4;6;70;471
+Mleko zageszczone slodzone;;;;;;;;;Mleko;Mleko i przetwory mleczne;Produkty;326;8;7,5;55,3;16;90;472
+Morele;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;47;0,2;0,9;11,9;14;10;473
+Morele suszone;75;y;y;;y;y;y;y;owoce suszone;owoce i przetwory owocowe;Produkty;284;1,2;5,4;72,2;7;80;474
+Morszczuk swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;89;2,2;17,2;0;6;30;475
+Mozg wieprzowy;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;139;10,6;11,1;0;23;80;476
+Mus jablkowy;100;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;124;0,2;2,2;28,7;5;40;477
+Musli z owocami suszonymi;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;325;3,4;8,4;72,2;35;70;478
+Musli z rodzynkami i orzechami;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;375;12,7;11,5;62,9;19;100;479
+Musztarda;;;;;;;;;;;;162;6,4;5,7;22;10;30;480
+Nalesniki z kapusta;200;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;147;9,2;3,3;15,1;13;30;481
+Nalesniki z serem twarogowym;200;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;242;10,3;10,2;27,3;28;20;482
+Napoj jablkowo-mietowy;;;;;;;;;;;;42;0,1;0,1;10,1;32;70;483
+Napoj jablkowy;;;;;;;;;;;;39;0;0;9,6;35;30;484
+Napoj jablkowy z czerwonym winogronem;;;;;;;;;;;;43;0;0;10,7;34;80;485
+Napoj jablkowy z czerwonym winogronem i witaminami;;;;;;;;;;;;43;0;0;10,7;18;20;486
+Napoj jablkowy z wisnia;;;;;;;;;;;;39;0;0;9,6;13;60;487
+Napoj jablkowy z wisnia i witaminami;;;;;;;;;;;;39;0;0;9,6;30;100;488
+Napoj jablkowy z witaminami;;;;;;;;;;;;39;0;0;9,6;5;90;489
+Napoj mleczny jogurtowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;82;1,9;4;12,1;24;70;490
+Napoj mleczny kakaowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;81;2,1;3,3;12,1;26;70;491
+Napoj mleczny serwatkowo-smietankowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;73;2,2;0,9;12,4;17;30;492
+Napoj mleczny smietankowy;200;Y;Y;;Y;Y;;Y;Napoje mleczne;Mleko i przetwory mleczne;Produkty;63;0,5;3,5;10,9;27;30;493
+Napoj mleczny z truskawkami;200;Y;Y;;Y;Y;;Y;Desery;Desery;Potrawy;109;0,7;1,2;24,9;33;70;494
+Napoj pomaranczowy;;;;;;;;;;;;43;0;0,1;10,5;10;20;495
+Napoj pomaranczowy z witaminami;;;;;;;;;;;;43;0;0,1;10,5;24;20;496
+Napoj winogronowy;;;;;;;;;;;;36;0;0;9,1;34;50;497
+Napoj winogronowy z witaminami;;;;;;;;;;;;36;0;0;9,1;26;40;498
+Napoje gazowane o smaku owocowym;;;;;;;;;;;;42;0;0;10,3;19;70;499
+Nektar ananasowy;;;;;;;;;;;;41;0,1;0,1;9,8;33;20;500
+Nektar ananasowy z witaminami;;;;;;;;;;;;41;0,1;0,1;9,8;19;40;501
+Nektar brzoskwiniowy;;;;;;;;;;;;55;0,1;0,3;13,4;31;20;502
+Nektar brzoskwiniowy z witaminami;;;;;;;;;;;;55;0,1;0,3;13,4;22;60;503
+Nektar wisniowy;;;;;;;;;;;;50;0,1;0,3;12,1;20;80;504
+Nektar wisniowy z witaminami;;;;;;;;;;;;50;0,1;0,3;12,1;8;90;505
+Nektar z bialych grejpfrutow;;;;;;;;;;;;37;0,1;0,2;8,7;19;20;506
+Nektar z bialych grejpfrutow z witaminami;;;;;;;;;;;;37;0,1;0,2;8,7;31;90;507
+Nektar z czarnych porzeczek;;;;;;;;;;;;53;0,1;0,3;12,7;21;60;508
+Nektar z czarnych porzeczek z witaminami;;;;;;;;;;;;53;0,1;0,3;12,7;35;20;509
+Nektar z rozowych grejpfrutow;;;;;;;;;;;;36;0,1;0,2;8,6;8;50;510
+Nektar z rozowych grejpfrutow z witaminami;;;;;;;;;;;;36;0,1;0,2;8,6;20;30;511
+Nektarynka;75;y;y;;y;y;y;y;owoce swieze;owoce i przetwory owocowe;Produkty;48;0,2;0,9;11,8;14;100;512
+Nerki wieprzowe;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;102;3,8;16,8;0;33;20;513
+Noga (udo) kurczaka;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;158;10,2;16,8;0;32;60;514
+Nogi wieprzowe;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;274;20,4;23;0;31;100;515
+Ogorek;;;;;;;;;;;;13;0,1;0,7;2,9;34;20;516
+Ogorek kwaszony;;;;;;;;;;;;11;0,1;1;1,9;21;60;517
+Ogorki konserwowe;;;;;;;;;;;;24;0,1;0,3;5,6;26;40;518
+Ogorki mizeria mrozone;;;;;;;;;;;;12;0,1;0,6;2,6;19;100;519
+Ogorki z papryka, konserwowe;;;;;;;;;;;;41;0,1;0,3;9,9;14;70;520
+Okon swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;82;0,8;18,4;0;5;70;521
+Olej krokoszowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;29;30;522
+Olej kukurydziany;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;21;70;523
+Olej palmowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;31;10;524
+Olej rzepakowo-sojowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;20;525
+Olej rzepakowy o obnizonej zawartosci kwasu erukowego;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;50;526
+Olej rzepakowy tloczony na zimno;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;80;527
+Olej rzepakowy uniwersalny;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;25;30;528
+Olej sezamowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;11;60;529
+Olej slonecznikowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;31;100;530
+Olej sojowy;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;7;10;531
+Olej z pestek winogron;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;25;60;532
+Olej z zarodkow pszennych;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;17;60;533
+Oliwa z oliwek;;;;;;;;;;;;882;99,6;0;0,2;31;80;534
+Oliwki zielone marynowane konserwowe;;;;;;;;;;;;125;12,7;1,4;4,1;33;40;535
+Omlet biszkoptowy ze szpinakiem;200;Y;Y;Y;Y;Y;;Y;Potrawy z jaj;Potrawy z jaj;Potrawy;138;9,7;5,9;9,3;8;70;536
+Orzech kokosowy;;;;;;;;;;;;335;33,5;3,4;15,2;17;70;537
+Orzechy arachidowe;;;;;;;;;;;;560;46,1;25,7;19,2;34;40;538
+Orzechy laskowe;;;;;;;;;;;;640;63;14,4;14,9;14;20;539
+Orzechy pistacjowe;;;;;;;;;;;;589;48,5;20,5;25;10;20;540
+Orzechy wloskie;;;;;;;;;;;;645;60,3;16;18;17;80;541
+Otreby pszenne;50;Y;Y;Y;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;185;4,6;16;61,9;9;40;542
+Ozor wieprzowy;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;165;11,1;16,5;0;27;70;543
+Ozory w galarecie;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;141;7,6;16,7;1,7;33;50;544
+Paczki tradycyjne;;;;;;;;;;;;414;15,5;7,6;62,1;7;10;545
+Paluszki z kminkiem;;;;;;;;;;;;490;30,5;16,5;38,9;20;80;546
+Papaja;;;;;;;;;;;;41;0,1;0,6;11,1;16;10;547
+Papryka czerwona;;;;;;;;;;;;28;0,5;1,3;6,6;28;80;548
+Papryka czerwona konserwowa;;;;;;;;;;;;30;1,5;0,8;5;21;50;549
+Papryka czerwona mrozona;;;;;;;;;;;;28;0,5;1,3;6,6;28;70;550
+Papryka nadziewana miesem i ryzem;75;;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;153;10;3,9;13,7;17;80;551
+Papryka zielona;;;;;;;;;;;;18;0,3;1,1;4,6;11;30;552
+"Paprykarz ""Szczecinski""";;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;178;11,9;9,9;8,6;18;70;553
+Paprykarz mrozony;;;;;;;;;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;19;0,3;1,1;4,4;5;20;554
+Paroweczki sniadaniowe z olejem;100;y;y;;;;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;234;20,9;11,9;0,1;35;40;555
+Parowki popularne;100;y;y;;y;y;;y;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;342;34,3;9,5;0;22;40;556
+Parowki z kurczaka;100;y;y;;y;y;;y;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;259;22,4;10,8;4,2;21;100;557
+Pasta kanapkowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;156;11,3;10,4;3,5;8;20;558
+Pasta z jaj;75;Y;Y;Y;Y;Y;;Y;Przystawki;Przystawki;Potrawy;197;18,6;7,2;1,2;35;80;559
+Pasta z jaj i ryby wedzonej;75;Y;Y;Y;Y;Y;;Y;Przystawki;Przystawki;Potrawy;262;23,1;13,3;1,2;18;60;560
+Pasta z twarogu i ryby wedzonej;75;Y;Y;Y;Y;Y;;Y;Przystawki;Przystawki;Potrawy;273;23;15,2;1,9;23;40;561
+Pasternak;;;;;;;;;;;;57;0,6;1,6;15,5;9;70;562
+Paszteciki drozdzowe z miesem;150;;;y;;y;;y;Produkty obiadowe;Produkty zbozowe;Produkty;343;20,4;9,7;31,9;20;20;563
+Pasztet pieczony;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;390;31,2;17;13,5;31;20;564
+Pasztet podlaski z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;228;21,1;6,7;3,6;28;80;565
+Pasztet rybny;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;265;21,3;10,6;8,8;13;20;566
+Pasztet z kurczaka pieczony;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;214;14,3;14,4;7,5;18;20;567
+Pasztet z miesa mieszanego pieczony;75;Y;Y;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;361;31,1;15,1;6,5;31;40;568
+Pasztet z ryb wedzonych;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;151;10,6;12,9;1,2;9;70;569
+Pieczarka uprawna swieza;;;;;;;;;;;;17;0,4;2,7;2,6;25;70;570
+Pieczarki marynowane konserwowe;;;;;;;;;;;;19;0,4;2,3;4,3;20;50;571
+Pieczarki smazone;75;;Y;Y;Y;Y;;Y;Potrawy z grzybow;Potrawy z warzyw;Potrawy;232;24,3;3,4;3,3;9;70;572
+Pieczen cieleca duszona;150;;Y;Y;Y;Y;;Y;Potrawy z cieleciny;Potrawy miesne;Potrawy;192;11,8;20,1;1,7;26;40;573
+Pieczen rzymska;150;;Y;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;208;11,4;14,5;12,5;32;70;574
+Pieczen wieprzowa duszona;150;;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;225;19,8;11,4;1,2;6;80;575
+Pieczen wolowa duszona;150;;Y;Y;Y;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;156;9,5;15,8;1,9;29;70;576
+Pieczen z kurczaka z pieczarkami;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;180;10,2;13,8;9,1;33;70;577
+Pieczen z kurczaka z serem zoltym;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;205;12,1;16;8,8;6;20;578
+Pieczen zulawska;150;;Y;Y;Y;Y;;Y;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;170;11,7;13,8;2,6;14;80;579
+Pieczywo polfrancuskie z dzemem;50;;;;;;;;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;410;9,9;8,3;73;14;10;580
+Pieczywo polfrancuskie z serem;50;;;;;;;;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;396;10;10,7;66,6;32;20;581
+Pieczywo tostowe;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;305;4,7;8,1;58,8;19;100;582
+Pieczywo tostowe grahamowe;50;;;;;;;;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;273;4,2;7,5;53,8;25;20;583
+Piernik z bakaliami;;;;;;;;;;;;373;12,4;6,6;60,9;9;20;584
+Pierniki alpejskie;;;;;;;;;;;;368;9,7;4;66,3;33;30;585
+Pierniki beskidzkie;;;;;;;;;;;;338;1,6;3,5;77,3;33;90;586
+Pierogi ruskie;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;167;5;5,9;25,5;21;10;587
+Pierogi z miesem;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;205;10,1;11,9;17,1;20;70;588
+Pierogi z serem twarogowym;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;239;9,9;11,1;26,6;9;20;589
+Pierogi z truskawkami;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;241;11,4;4,1;32,1;6;60;590
+Pietruszka korzen;;;;;;;;;;;;38;0,5;2,6;10,5;25;40;591
+Pietruszka korzen mrozona;;;;;;;;;;;;34;0,5;2,3;9,5;31;60;592
+Pietruszka liscie;;;;;;;;;;;;41;0,4;4,4;9;28;40;593
+Pikle konserwowe;;;;;;;;;;;;62;0,2;1,3;15,5;26;20;594
+Piwo pelne;;;;;;;;;;;;49;0;0,5;3,8;26;70;595
+Pizza miesno-ziolowa;100;Y;Y;Y;Y;Y;;Y;Produkty obiadowe;Produkty zbozowe;Produkty;332;13,2;18;36,8;30;30;596
+Pizza z pieczarkami i cebula;100;Y;Y;Y;Y;Y;;Y;Produkty obiadowe;Produkty zbozowe;Produkty;293;13,1;13,3;32,1;19;70;597
+Placek z kruszonka;;;;;;;;;;;;375;13,6;7,5;56,7;32;20;598
+Placki ziemniaczane;100;y;y;y;y;y;y;y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;231;14,5;3,6;23,6;16;70;599
+Planta tluszcz roslinny;;;;;;;;;Oleje;Tluszcze;Produkty;884;100;0;0;19;20;600
+Platki jeczmienne;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;355;3,6;9,8;79,4;18;50;601
+Platki kukurydziane;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;363;2,5;6,9;83,6;31;40;602
+Platki kukurydziane z cukrem z witaminami i zelazem;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;375;1,7;4,6;88,4;18;30;603
+Platki kukurydziane z miodem, orzechami, witaminami, zelazem;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;387;5,1;6,4;82,6;9;50;604
+Platki kukurydziane z witaminami i zelazem;100;Y;Y;;Y;Y;;Y;Produkty sniadaniowe;Produkty zbozowe;Produkty;363;2,5;6,9;83,6;17;80;605
+Platki owsiane;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;366;7,2;11,9;69,3;18;80;606
+Platki owsiane na mleku;200;Y;Y;;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;62;2,3;2,7;8,2;18;70;607
+Platki pszenne;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;351;3;9;81;25;80;608
+Platki ziemniaczane;;;;;;;;;;;;335;2,5;6,7;78,2;32;10;609
+Platki zytnie;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;343;3,2;6,4;82,6;24;40;610
+Poledwica luksusowa;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;177;10;19,5;2,4;6;80;611
+Poledwica sopocka;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;165;9,1;19,9;0,9;8;80;612
+Poledwica w galarecie;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;101;4,4;14,5;1,4;25;40;613
+Poledwica wolowa pieczona;150;;;Y;;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;168;9,9;19,7;0;33;40;614
+Poledwica z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;105;4,6;15,8;0,1;19;90;615
+Poledwica z piersi kurczaka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;93;1,2;20,4;0;26;40;616
+Pomarancza;;;;;;;;;;;;44;0,2;0,9;11,3;34;70;617
+Pomidor;;;;;;;;;;;;15;0,2;0,9;3,6;23;40;618
+Pomidor mrozony;;;;;;;;;;;;15;0,2;0,9;3,6;35;80;619
+Por;;;;;;;;;;;;24;0,3;2,2;5,7;32;30;620
+Por mrozony;;;;;;;;;;;;24;0,3;2,2;5,7;32;50;621
+Porzeczki biale;;;;;;;;;;;;33;0,2;1;13,1;13;40;622
+Porzeczki czarne;;;;;;;;;;;;35;0,2;1,3;14,9;12;90;623
+Porzeczki czarne mrozone;;;;;;;;;;;;35;0,2;1,3;14,9;27;70;624
+Porzeczki czerwone;;;;;;;;;;;;31;0,2;1,1;13,8;24;80;625
+Potrawka z kurczaka;150;Y;Y;Y;Y;Y;;Y;Potrawy drobiowe;Potrawy miesne;Potrawy;148;9;13,3;4,6;28;60;626
+Powidla sliwkowe;;;;;;;;;dzemy, konfitury, marmolady, powidla;owoce i przetwory owocowe;Produkty;214;0,2;1;53;11;70;627
+Poziomki;;;;;;;;;;;;33;0,5;0,8;8,3;8;70;628
+Proszek jajeczny;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;576;41,7;48,4;2,7;26;30;629
+"Przyprawa ""Jarzynka""";;;;;;;;;;;;90;0,4;1,9;23,3;32;40;630
+Pstrag strumieniowy swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;97;2,1;19,2;0;35;90;631
+Pstrag teczowy swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;160;9,6;18,6;0;23;70;632
+Ptysie z bita smietana;;;;;;;;;;;;346;24,9;5,5;25,7;23;100;633
+Pulpety z miesa mieszanego gotowane;150;;;Y;Y;Y;;Y;Potrawy z miesa mieszanego;Potrawy miesne;Potrawy;223;11,1;18,8;13,3;6;50;634
+Pumpernikiel;50;;;;;;;;Pieczywo zytnie;Produkty zbozowe;Produkty;240;2;5,9;58,2;13;60;635
+Pyzy ziemniaczane;150;;;Y;;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;210;6,2;3,7;37,4;34;70;636
+Pyzy ziemniaczane w proszku;;;;;;;;;;;;324;1,4;5,1;77,3;29;60;637
+Pyzy ziemniaczane z miesem;150;;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;292;14;7,9;36,2;25;30;638
+Rabarbar;;;;;;;;;;;;9;0,1;0,5;4,6;6;30;639
+Risotto z miesem;;;;;;;;;;;;228;11,9;6,8;24,2;27;100;640
+Risotto z miesem i warzywami;150;Y;Y;Y;Y;Y;;Y;Potrawy warzywno-miesne;Potrawy warzywno-miesne;Potrawy;185;10;6,6;18,3;22;80;641
+Rodzynki suszone;;;;;;;;;;;;277;0,5;2,3;71,2;23;100;642
+Rogale kruche;50;Y;Y;;Y;Y;;Y;Pieczywo pszenne polcukiernicze;Produkty zbozowe;Produkty;331;7,2;8,2;59,4;7;10;643
+Rolada biszkoptowa z dzemem;150;Y;Y;Y;Y;Y;;Y;Desery;Desery;Potrawy;299;4,8;7;56,7;31;40;644
+Rolada wieprzowa pieczona;150;;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;414;32,6;21,3;9,9;30;50;645
+Rolada z masa makowa;;;;;;;;;;;;349;15,8;9,4;46,6;6;30;646
+Rozki z ciasta francuskiego z jablkami;;;;;;;;;;;;392;25,1;5;38,6;23;60;647
+Ryz bialy;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;344;0,7;6,7;78,9;25;70;648
+Ryz brazowy;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;322;1,9;7,1;76,8;6;40;649
+Ryz gotowany;100;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;124;0,3;2,4;28,4;24;70;650
+Ryz na mleku;150;Y;Y;Y;Y;Y;;Y;Zupy mleczne;Zupy;Potrawy;66;2,1;2,7;9,1;35;40;651
+Ryz na sypko z tluszczem roslinnym;125;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;135;1,5;2,4;28,4;34;80;652
+Ryz na sypko ze smalcem;125;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;124;2;2,1;24,9;22;70;653
+Ryz preparowany;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;361;1,6;6,3;84,1;32;80;654
+Ryz z jablkami;125;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;154;2,2;2;32,3;27;70;655
+Rzepa;;;;;;;;;;;;26;0,3;1,1;8,2;25;60;656
+Rzodkiewka;;;;;;;;;;;;14;0,2;1;4,4;14;10;657
+Salami luksusowe;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;540;50,6;21,9;0,9;18;50;658
+Salami mini;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;548;51,6;21,7;0,9;28;90;659
+Salami popularne;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;568;53,7;21,6;1,4;8;60;660
+Salata;;;;;;;;;;;;14;0,2;1,4;2,9;17;10;661
+Salata zielona z olejem;50;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;111;11,6;1;2,1;13;50;662
+Salata zielona z pomidorem, ogorkiem, olejem;50;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;56;4,7;0,9;3,6;6;100;663
+Salata zielona ze smietana;50;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;41;2,3;1,4;4,5;22;90;664
+Salatka jarzynowa mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;26;0,2;1,9;6,4;18;10;665
+Salatka jarzynowa z kukurydza mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;63;0,6;3,4;14,8;29;100;666
+Salatka jarzynowa z warzyw got, z majonezem i jogurtem nat,;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;116;7,5;3,2;11,6;19;80;667
+Salatka jarzynowa z warzyw gotowanych z majonezem;80;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;192;16,5;2,9;10,9;10;90;668
+Salatka meksykanska mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;45;0,5;2,5;10,8;18;40;669
+Salatka pikantna z makreli;80;Y;Y;Y;Y;Y;;Y;Przetwory rybne;Ryby i przetwory rybne;Produkty;181;13,2;10,2;6,9;11;60;670
+Salatka skandynawska mrozona;80;Y;Y;Y;Y;Y;;Y;mieszanki warzywne mrozone;warzywa i przetwory warzywne;Produkty;28;0,2;1,9;6,9;6;80;671
+Salatka szwedzka konserwowa;80;Y;Y;Y;Y;Y;;Y;przetwory warzywne;warzywa i przetwory warzywne;Produkty;36;0,1;0,4;8,6;15;50;672
+Salatka z czerwonej kapusty;80;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;6,5;1,4;7;31;30;673
+Salatka z czerwonej kapusty konserwowa;80;Y;Y;Y;Y;Y;;Y;przetwory warzywne;warzywa i przetwory warzywne;Produkty;88;0,1;1,1;21,9;10;70;674
+Salatka z dorsza;80;Y;Y;Y;Y;Y;;Y;Potrawy rybne;Potrawy rybne;Potrawy;187;13,9;9,8;7,2;31;20;675
+Salatka z groszku zielonego;80;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;159;13,1;4;10,4;26;10;676
+Salceson czarny;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;336;32;12,6;0,5;17;20;677
+Salceson wloski;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;318;29,3;14,6;0;6;100;678
+Sandacz swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;84;0,7;19,2;0;19;100;679
+Sardynka swieza;;;;;;;;;;;;169;9,6;20,6;0;22;60;680
+Sardynka w oleju;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;221;13,9;24,1;0;6;50;681
+Sardynka w pomidorach;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;162;9,9;17;1,4;22;20;682
+Schab pieczony;150;Y;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;291;18,7;30,4;0,7;20;70;683
+Seler korzeniowy;;;;;;;;;;;;21;0,3;1,6;7,7;30;80;684
+Seler korzeniowy mrozony;;;;;;;;;;;;18;0,3;1,4;6,9;17;60;685
+Seler naciowy;;;;;;;;;;;;13;0,2;1;3,6;6;60;686
+Semolina;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;346;1,3;10,1;75;34;80;687
+Ser Brie pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;329;28;19,8;0,2;22;60;688
+Ser Camembert pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;291;23;21,4;0,2;22;10;689
+Ser Cheddar pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;391;31,7;27,1;0,1;24;50;690
+Ser Edamski tlusty;;;;;;;;;;;;313;23,4;26,1;0,1;6;30;691
+Ser Ementaler pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;380;29,7;28,8;0,1;9;60;692
+Ser Gouda tlusty;;;;;;;;;;;;316;22,9;27,9;0,1;31;90;693
+Ser Mysliwski pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;346;27,4;25,5;0,1;20;70;694
+Ser Mysliwski tlusty;;;;;;;;;;;;338;24,9;29;0,1;33;70;695
+Ser Parmezan;;;;;;;;;;;;452;32;41,5;0,1;17;90;696
+Ser Rokpol pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;363;30,6;22,6;0,1;34;100;697
+Ser Salami pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;351;28,1;25,2;0,1;16;80;698
+Ser topiony edamski;;;;;;;;;Sery topione;Mleko i przetwory mleczne;Produkty;298;27;13,5;1,2;35;100;699
+Ser Trapistow pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;367;30,7;23,5;0,1;22;90;700
+Ser Trapistow tlusty;;;;;;;;;;;;351;26,8;28;0,1;7;80;701
+Ser twarogowy chudy;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;99;0,5;19,8;3,5;28;50;702
+Ser twarogowy poltlusty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;133;4,7;18,7;3,7;17;50;703
+Ser twarogowy tlusty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;175;10,1;17,7;3,5;20;60;704
+Ser Tylzycki pelnotlusty;;;;;;;;;Sery podpuszczkowe dojrzewajace;Mleko i przetwory mleczne;Produkty;353;27,9;26,1;0,1;5;60;705
+Ser Tylzycki tlusty;;;;;;;;;;;;334;25;27,8;0,1;19;30;706
+Ser typu Feta;;;;;;;;;;;;215;16;17;1;31;50;707
+Serca wieprzowe;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;111;4,8;16,9;0;14;60;708
+Serek termizowany pieczarkowy;;;;;;;;;;;;113;4;15,9;3,5;11;50;709
+Serek twarogowy homogenizowany pelnotlusty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;161;11;12,7;3;33;70;710
+Serek twarogowy homogenizowany truskawkowy;75;Y;Y;;Y;Y;;Y;Sery twarogowe;Mleko i przetwory mleczne;Produkty;168;3,9;15,3;17,7;26;10;711
+Serek twarogowy homogenizowany waniliowy;75;Y;Y;;Y;Y;;Y;Sery twarogowe;Mleko i przetwory mleczne;Produkty;159;4,2;16,8;13,3;6;90;712
+Serek twarogowy ziarnisty;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;101;4,3;12,3;3,3;28;70;713
+Serek typu Fromage naturalny;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;379;37,1;10,2;2,4;29;30;714
+Serek typu Fromage z czosnkiem;;;;;;;;;Sery twarogowe;Mleko i przetwory mleczne;Produkty;367;35,2;10;4;15;80;715
+Sernik bez ciasta;;;;;;;;;;;;363;18,3;13,5;36,8;14;50;716
+Sernik krakowski;;;;;;;;;;;;329;13,4;14;38,2;27;30;717
+Sernik wiedenski z polewa kakaowa;;;;;;;;;;;;340;18,1;12,6;32,1;26;20;718
+Sernik z makiem;;;;;;;;;;;;444;23,4;12,5;49;26;100;719
+Serwatka plynna;;;;;;;;;Napoje mleczne;Mleko i przetwory mleczne;Produkty;25;0,1;0,8;5,1;14;10;720
+Sezam nasiona;;;;;;;;;;;;632;59,9;23,2;10;31;70;721
+Sezamki;;;;;;;;;;;;402;26,4;10,2;34,7;34;100;722
+Sezamki z orzechami;;;;;;;;;;;;376;26,1;9,6;29,4;24;40;723
+Skora z indyka;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;413;42,4;9,4;0;5;90;724
+Skorki kurze;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;379;37,9;10,7;0;8;10;725
+Skrobia kukurydziana;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;353;0;0,2;88,5;14;70;726
+Skrobia ziemniaczana;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;343;0,1;0,6;83,9;32;20;727
+Skrzydlo indyka;;;;;;;;;Indyk;Mieso i przetwory miesne;Produkty;168;11,4;16,5;0;14;10;728
+Skrzydlo kurczaka;;;;;;;;;Kura i kurczak;Mieso i przetwory miesne;Produkty;186;12,2;19,2;0;35;70;729
+Sledz marynowany;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;192;12,6;16,5;3,4;9;10;730
+Sledz solony;;;;;;;;;;;;217;15,4;19,8;0;21;40;731
+Sledz swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;161;10,7;16,3;0;33;10;732
+Sledz w oleju;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;301;26,5;16,4;0;30;40;733
+Sledz w smietanie;;;;;;;;;;;;96;6,2;5,5;5,3;11;50;734
+Sledz w sosie pomidorowym;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;160;9,7;13,8;4,6;19;60;735
+Sledz wedzony Pikling;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;215;14,3;21,8;0;33;60;736
+"Sledzie marynowane ""Rolmopsy""";;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;104;7;8;3;21;80;737
+Sliwki;;;;;;;;;;;;45;0,2;0,6;11,7;24;60;738
+Sliwki bez pestek mrozone;;;;;;;;;;;;45;0,2;0,6;11,7;34;70;739
+Sliwki z pestka suszone;;;;;;;;;;;;267;1,2;3,5;68,9;34;20;740
+Slonecznik nasiona;;;;;;;;;;;;561;43,7;24,4;24,6;21;60;741
+Slonina;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;797;89;2,4;0;31;40;742
+Smalec;;;;;;;;;Tluszcze zwierzece;Tluszcze;Produkty;880;99,5;0;0;14;20;743
+Smietana 12% tluszczu;;;;;;;;;;;;133;12;2,7;3,9;7;100;744
+Smietana 18% tluszczu;;;;;;;;;;;;184;18;2,5;3,6;19;60;745
+Smietanka do kawy 9% tluszczu;;;;;;;;;Smietana;Mleko i przetwory mleczne;Produkty;107;9;2,8;4;7;80;746
+Smietanka kremowa 30% tluszczu;;;;;;;;;Smietana;Mleko i przetwory mleczne;Produkty;287;30;2,2;3,1;34;10;747
+Soczewica czerwona nasiona suche;;;;;;;;;;;;327;3;25,4;57,5;27;20;748
+Soczewica kielki;;;;;;;;;;;;119;0,6;9;22,1;6;100;749
+Soja kielki;;;;;;;;;;;;141;6,7;13,1;9,6;19;40;750
+Soja nasiona suche;;;;;;;;;;;;382;19,6;34,3;32,7;33;20;751
+Sok ananasowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;48;0,1;0,3;11,4;30;40;752
+Sok brzoskwiniowo-pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;32;0,1;0,7;7,4;34;30;753
+"Sok buraczany ""Barszczyk czerwony""";200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;34;0,2;0,8;7,6;31;30;754
+Sok cytrynowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;30;0,3;0,4;6,4;31;40;755
+Sok grejpfrutowo-pomaranczowy slodzony aspartamem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,3;30;30;756
+Sok grejpfrutowo-pomaranczowy slodzony aspartamem, z wapniem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,3;35;50;757
+Sok grejpfrutowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,2;23;40;758
+Sok grejpfrutowy slodzony aspartamem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,1;0,6;9;26;80;759
+Sok grejpfrutowy z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,5;9,2;9;30;760
+Sok jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;42;0,1;0,1;10;27;10;761
+Sok jablkowy z wapniem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;42;0,1;0,1;10;32;80;762
+Sok jablkowy z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;42;0,1;0,1;10;14;10;763
+Sok marchwiowo-bananowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,1;0,3;10,2;11;10;764
+Sok marchwiowo-bananowo-jablkowy z witaminami E i C;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,1;0,3;10,2;6;60;765
+Sok marchwiowo-brzoskwiniowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;45;0,1;0,4;11,8;27;90;766
+Sok marchwiowo-brzoskwiniowo-jablkowy z witaminami E i C;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;45;0,1;0,4;11,8;27;40;767
+Sok marchwiowo-brzoskwiniowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,1;0,5;11,3;18;30;768
+Sok marchwiowo-jablkowo-pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,2;0,6;11,8;29;40;769
+Sok marchwiowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,2;0,5;12,1;9;50;770
+Sok marchwiowo-jablkowy z witaminami E i C;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;44;0,2;0,5;12,1;25;20;771
+Sok marchwiowo-morelowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,2;0,4;10,2;34;10;772
+Sok marchwiowo-pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;40;0,1;0,6;10,8;33;10;773
+Sok marchwiowo-sliwkowo-jablkowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;39;0,2;0,4;10,2;9;80;774
+Sok marchwiowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,4;11,3;31;40;775
+Sok marchwiowy z witamina C i wapniem;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,4;11,3;31;70;776
+Sok pomaranczowo-grejpfrutowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,6;9,8;27;10;777
+Sok pomaranczowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,6;9,9;20;80;778
+Sok pomaranczowy z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;43;0,1;0,6;9,9;17;80;779
+Sok pomidorowy;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;14;0,2;0,8;3,3;31;90;780
+Sok pomidorowy z witaminami C i E;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;14;0,2;0,8;3,3;5;50;781
+Sok wieloowocowy egzotyczny;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;57;0,3;0,8;12,7;25;10;782
+Sok wieloowocowy egzotyczny z witaminami;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;57;0,3;0,8;12,7;13;50;783
+Sok wieloowocowy z owocow krajowych;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;45;0,1;0,2;10,9;33;100;784
+Sok wielowarzywny;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;25;0,3;1;5,7;27;70;785
+Sok z bialych winogron;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;68;0,2;0,5;15,9;33;60;786
+Sok z jablek i mango;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;48;0,4;0,4;12,3;14;10;787
+Sok z marchwi, jablek i owocow tropikalnych;200;y;y;y;y;y;y;y;Soki;Napoje;Produkty;52;0,3;0,7;14;15;40;788
+Sol biala;;;;;;;;;;;;0;0;0;0;34;80;789
+Sola swieza;;;;;;;;;;;;83;1,4;17,5;0;31;10;790
+Solinki paluszki;;;;;;;;;;;;385;4,9;9,9;75,2;5;60;791
+Sos keczup;;;;;;;;;;;;93;1;1,8;22,2;35;100;792
+Spirytus rektyfikowany;;;;;;;;;;;;521;0;0;0;26;100;793
+Stek wieprzowy smazony;150;;Y;Y;Y;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;471;42,7;21,7;1,5;32;30;794
+Strucla z makiem;;;;;;;;;;;;361;15,5;8,3;51,2;23;20;795
+Strucle tureckie;;;;;;;;;;;;322;2,8;7,7;67,4;31;70;796
+Strucle wroclawskie;50;Y;Y;;Y;Y;;Y;Pieczywo pszenne wyborowe;Produkty zbozowe;Produkty;303;4,8;8,9;56,9;7;10;797
+Surowka wielowarzywna z jogurtem naturalnym;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;35;0,6;1,7;7;24;100;798
+Surowka z bialej kapusty;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;67;4,7;1,6;7;34;10;799
+Surowka z cykorii i jablek;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;161;16,4;1;3,8;29;60;800
+Surowka z kapusty pekinskiej z majonezem;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;94;8,1;1,6;6;7;90;801
+Surowka z kapusty pekinskiej z olejem;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;53;3,8;1,1;5,7;18;80;802
+Surowka z kwaszonej kapusty;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;68;4,7;0,9;7,5;11;50;803
+Surowka z marchwi;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;47;2,3;1,1;7,7;26;30;804
+Surowka z marchwi i jablek;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;59;0,3;1;16,6;22;60;805
+Surowka z ogorkow i pomidorow;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;32;1,8;1,1;3,6;35;10;806
+Surowka z owocow;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;103;0,3;0,5;25,9;5;100;807
+Surowka z owocow i warzyw;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;148;14,3;1,1;5,1;25;20;808
+Surowka z papryki;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;91;7,5;1;6,3;12;80;809
+Surowka z pomidorow;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;14;0,2;0,8;3,2;9;60;810
+Surowka z porow z jablkami;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;141;12,5;1,7;7,9;33;50;811
+Surowka z rzodkiewki;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;93;5,9;7,5;3,5;27;60;812
+Surowka z selerow i jablek z olejem;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;92;7,5;1,1;8,9;6;70;813
+Surowka z selerow, jablek i marchwi;75;Y;Y;Y;Y;Y;;Y;Surowki;Potrawy z warzyw;Potrawy;60;0,4;0,9;16,5;7;20;814
+Syrop truskawkowy;;;;;;;;;;;;264;0,1;0,2;65;33;80;815
+Szampan;;;;;;;;;;;;76;0;0,3;1,4;20;40;816
+Szczaw;;;;;;;;;;;;21;0,8;1,1;4,9;29;70;817
+Szczupak swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;82;0,8;18,4;0;10;30;818
+Szczypiorek;;;;;;;;;;;;29;0,8;4,1;3,9;8;90;819
+Szparagi;;;;;;;;;;;;18;0,2;1,9;3,7;34;60;820
+Szparagi konserwowe;;;;;;;;;;;;19;0,7;2,1;2,5;5;40;821
+Szpinak;;;;;;;;;;;;16;0,4;2,6;3;27;40;822
+Szpinak gotowany, zasmazany;75;Y;Y;Y;Y;Y;;Y;Warzywa gotowane;Potrawy z warzyw;Potrawy;83;6,1;3,8;6,2;17;70;823
+Szpinak mrozony;;;;;;;;;;;;15;0,4;2,3;2,7;10;40;824
+Sztuka miesa gotowana;100;Y;Y;Y;Y;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;225;10,4;30,8;3,2;31;40;825
+Szynka delikatesowa z kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;123;5,6;18,2;0;34;100;826
+Szynka kanapkowa;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;102;4,4;14,2;1,4;8;30;827
+Szynka wiejska;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;253;20,3;17,1;0,9;35;40;828
+Szynka wieprzowa gotowana;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;233;18,3;16,4;1;16;100;829
+Szynka wolowa gotowana;;;;;;;;;Wedliny wieprzowe, wolowe i mieszane;Mieso i przetwory miesne;Produkty;107;2;20,9;1,1;6;80;830
+Szynka z indyka;;;;;;;;;Wedliny z indyka;Mieso i przetwory miesne;Produkty;84;1,6;17,1;0,1;35;50;831
+Szynka z piersi kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;98;1,2;21,2;0,2;12;10;832
+Szynka z udzca kurczaka;;;;;;;;;Wedliny z kurczaka;Mieso i przetwory miesne;Produkty;117;5,3;17,2;0;7;100;833
+Szynkowka wieprzowa;;;;;;;;;;;;191;14,7;13,6;1,4;31;90;834
+Szynkowka wolowa;;;;;;;;;;;;85;1,5;16,2;1,4;26;90;835
+Tluszcz mieszany roslinno-zwierzecy 60% tluszczu;;;;;;;;;Tluszcze mieszane;Tluszcze;Produkty;573;64;0,9;0,9;18;70;836
+"Torcik ""Wuzetka""";;;;;;;;;;;;318;11,1;5,8;49;13;90;837
+Tort ananasowy;;;;;;;;;;;;309;10,7;4,4;49;6;50;838
+Truskawki;;;;;;;;;;;;28;0,4;0,7;7,2;12;20;839
+Truskawki mrozone;;;;;;;;;;;;28;0,4;0,7;7,2;6;10;840
+Truskawki w galaretce;150;Y;Y;;Y;;;Y;Desery;Desery;Potrawy;127;0,2;15,4;16;26;70;841
+Truskawki z bita smietana;100;Y;Y;;Y;;;Y;Desery;Desery;Potrawy;127;10,4;1,1;8,4;12;40;842
+Tunczyk swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;137;4,6;23,7;0;33;40;843
+Tunczyk w oleju;;;;;;;;;Przetwory rybne;Ryby i przetwory rybne;Produkty;190;9;27,1;0;19;40;844
+Tunczyk w wodzie;75;Y;Y;Y;Y;Y;;Y;Przetwory rybne;Ryby i przetwory rybne;Produkty;96;1,2;21;0;32;70;845
+Wafle nadziewane;;;;;;;;;;;;519;27,5;8,3;60,7;20;80;846
+Wafle w czekoladzie;;;;;;;;;;;;553;33,9;7,4;55,6;22;80;847
+Watroba cieleca;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;124;3,3;19,2;4,1;12;60;848
+Watroba wieprzowa;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;130;3,4;22;2,6;10;90;849
+Watroba wolowa;;;;;;;;;Podroby;Mieso i przetwory miesne;Produkty;125;3,1;20;4;25;30;850
+Watrobianka;;;;;;;;;Wedliny podrobowe;Mieso i przetwory miesne;Produkty;231;20,9;10,7;0,7;27;60;851
+Watrobka kurczaka;;;;;;;;;Podroby drobiowe;Mieso i przetwory miesne;Produkty;136;6,3;19,1;0,6;31;40;852
+Watrobka wieprzowa saute smazona;75;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;241;15,8;20,5;4,8;13;90;853
+Wedzonka wolowa gotowana;;;;;;;;;;;;102;3,1;17,8;0,5;14;20;854
+Wegorz swiezy;;;;;;;;;Ryby swieze;Ryby i przetwory rybne;Produkty;278;24,5;15;0;9;20;855
+Wegorz wedzony;;;;;;;;;Ryby wedzone;Ryby i przetwory rybne;Produkty;326;28,6;17,9;0;7;10;856
+Wermut slodki;;;;;;;;;;;;155;0;0;15,9;28;10;857
+Wieprzowina boczek bez kosci;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;510;53;10,1;0;20;100;858
+Wieprzowina golonka ze skora;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;294;24,7;18,6;0;6;20;859
+Wieprzowina gotowana;150;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;362;29,8;22,5;3,1;35;80;860
+Wieprzowina karkowka;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;267;22,8;16,1;0;34;30;861
+Wieprzowina lopatka;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;257;21,7;16;0;35;60;862
+Wieprzowina pieczona;150;;;Y;;Y;;Y;Wieprzowina;Mieso i przetwory miesne;Produkty;276;24,1;15,4;0,1;6;10;863
+Wieprzowina podgardle;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;630;67,8;7,4;0;22;100;864
+Wieprzowina schab surowy z koscia;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;174;10;21;0;28;100;865
+Wieprzowina szynka surowa;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;261;21,3;18;0;18;40;866
+Wieprzowina zeberka;;;;;;;;;Wieprzowina;Mieso i przetwory miesne;Produkty;321;29,3;15,2;0;28;70;867
+Wino biale polwytrawne;150;y;y;y;y;y;y;y;Wina;Napoje alkoholowe;Produkty;81;0;0;3,7;24;60;868
+Wino biale slodkie;150;y;y;y;y;y;y;y;Wina;Napoje alkoholowe;Produkty;95;0;0,2;5,9;7;80;869
+Wino biale wytrawne;150;y;y;y;y;y;y;y;Wina;Napoje alkoholowe;Produkty;66;0;0,1;0,6;15;10;870
+Wino czerwone;;;;;;;;;;;;68;0;0,1;0,2;30;10;871
+Winogrona;;;;;;;;;;;;69;0,2;0,5;17,6;19;100;872
+Wiorki kokosowe;;;;;;;;;;;;606;63,2;5,6;27;21;100;873
+Wisnie;;;;;;;;;;;;47;0,4;0,9;10,9;9;70;874
+Wisnie bez pestek mrozone;;;;;;;;;;;;47;0,4;0,9;10,9;12;80;875
+Wloszczyzna krojona w paski mrozona;;;;;;;;;;;;25;0,3;1,4;7,9;32;40;876
+Wodki;50;y;y;y;y;y;y;y;Wodki;Napoje alkoholowe;Produkty;220;0;0;0;15;90;877
+Wolowina pieczen;150;;;Y;;Y;;Y;Wolowina;Mieso i przetwory miesne;Produkty;117;3,6;20,9;0;33;20;878
+Wolowina poledwica;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;113;3,5;20,1;0;29;100;879
+Wolowina rostbef;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;152;7,3;21,5;0;18;20;880
+Wolowina rozbratel;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;157;10,1;16,7;0;33;10;881
+Wolowina szponder;;;;;;;;;Wolowina;Mieso i przetwory miesne;Produkty;217;15,7;19,3;0;26;50;882
+Zarodki pszenne;;;;;;;;;Produkty sniadaniowe;Produkty zbozowe;Produkty;323;9,4;27,5;45,5;34;10;883
+Zeberka wieprzowe duszone;150;;;Y;;Y;;Y;Potrawy z wieprzowiny;Potrawy miesne;Potrawy;210;19,2;7,9;2,2;21;30;884
+Zelatyna;;;;;;;;;;;;343;0,1;84,2;0;35;90;885
+Zelki;;;;;;;;;;;;306;0;3;72,3;18;50;886
+Ziarno pszenicy;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;306;2,4;11,1;70,5;6;10;887
+Ziarno zyta;;;;;;;;;Ziarna, maki i skrobie;Produkty zbozowe;Produkty;301;2,2;7,9;74,2;18;70;888
+Ziemniaki mrozone;;;;;;;;;;;;69;0,1;1,7;16,5;18;100;889
+Ziemniaki pozne;;;;;;;;;;;;85;0,1;1,9;20,5;10;30;890
+Ziemniaki puree;150;;;Y;;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;90;1,4;2,1;18,4;32;10;891
+Ziemniaki srednio;;;;;;;;;;;;77;0,1;1,9;18,3;22;100;892
+Ziemniaki wczesne;;;;;;;;;;;;69;0,1;1,8;16,3;32;50;893
+Ziemniaki z tluszczem roslinnym;150;Y;Y;Y;Y;Y;;Y;Potrawy z kasz, maki, ziemniakow;Potrawy z kasz, maki, ziemniakow;Potrawy;105;3,1;2;18,7;26;80;894
+Zoladek kurczaka;;;;;;;;;Podroby drobiowe;Mieso i przetwory miesne;Produkty;114;4,2;18,2;0,6;16;80;895
+Zoltko jaja kurzego;;;;;;;;;Jaja;Mleko i przetwory mleczne;Produkty;314;28,2;15,5;0,3;18;20;896
+Zrazy wolowe zawijane ze slonina duszone;150;;Y;Y;Y;Y;;Y;Potrawy z wolowiny;Potrawy miesne;Potrawy;144;9,4;12,1;3,2;9;100;897
+Zupa brokulowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;25;0,4;2,3;5,6;32;20;898
+Zupa cebulowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;44;2,7;1,4;4;7;50;899
+Zupa cebulowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;25;0,3;1,2;6,3;8;30;900
+Zupa cytrynowa z ryzem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;58;2,2;1,4;8,6;9;80;901
+Zupa fasolowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;63;1,8;4;10;23;60;902
+Zupa fasolowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;111;3,1;6,8;18,8;34;70;903
+Zupa grochowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;66;2,4;4,4;8,9;30;30;904
+Zupa grzybowa zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;29;1,9;1,5;1,8;9;70;905
+Zupa jarzynowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;28;1,1;1,4;4,3;11;90;906
+Zupa jarzynowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;22;0,2;2,2;6;22;70;907
+Zupa jarzynowa zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;44;1,8;1,7;6,2;29;30;908
+Zupa jesienna mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;27;0,2;1,6;7,2;34;90;909
+Zupa kalafiorowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;27;0,5;1,7;4,9;19;60;910
+Zupa kalafiorowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;22;0,2;2;5,5;28;10;911
+Zupa neapolitanska z ementalerem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;62;2,5;2,2;8,1;33;20;912
+Zupa ogorkowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;42;2;1,4;5;22;80;913
+Zupa owocowa z jablek;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;42;0,1;0,1;10,6;23;90;914
+Zupa pieczarkowa mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;16;0,3;1,8;3,7;14;70;915
+Zupa pomidorowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;11;0,1;1;2,1;31;40;916
+Zupa pomidorowa z makaronem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;35;1,8;1,6;3,3;25;40;917
+Zupa pomidorowa z ryzem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;37;1,8;1,5;3,9;33;80;918
+Zupa pomidorowa zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;17;0,6;1,2;2,3;5;50;919
+Zupa selerowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;37;1,8;1,6;4,5;17;10;920
+Zupa selerowa z grzankami;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;52;1,9;1,9;8;16;20;921
+Zupa szczawiowa;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;40;2,5;1,7;2,9;7;50;922
+Zupa szpinakowa z ziemniakami;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;40;0,9;2,2;6,6;35;50;923
+Zupa wloska mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;27;0,3;1,8;6,9;9;100;924
+Zupa z fasoli szparagowej;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;43;0,6;2,2;8,9;35;90;925
+Zupa z porow z makaronem;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;59;1,4;2,5;10,3;26;20;926
+Zupa z zielonego groszku;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;57;1,2;3,2;11,2;30;30;927
+Zupa ziemniaczana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;39;1,1;1,4;6,6;9;50;928
+Zupa ziemniaczana mrozona;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;41;0,2;1,5;11;26;20;929
+Zupa ziemniaczana zabielana;200;;Y;Y;Y;Y;;Y;Zupy;Zupy;Potrawy;48;1,9;1,6;6,5;32;10;930

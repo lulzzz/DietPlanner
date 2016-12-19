@@ -12,6 +12,7 @@ namespace DietPlanning.Core.DomainObjects
     public double NominalWeight;
     public MainCategory MainCategory;
     public SubCategory SubCategory;
+    public int Id;
 
     public string Name;
 
