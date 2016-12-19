@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using DietPlanning.NSGA;
@@ -11,26 +10,6 @@ namespace RAdapter
 {
   public static class RInvoker
   {
-    private static readonly object Sync = new object();
-
-    public static void UseR()
-    {
-      var engine = REngine.GetInstance();
-
-      var directory = Environment.CurrentDirectory;
-      var rFilePath = directory + "\\hv.r";
-      var cmd = $"source('{rFilePath}')".Replace("\\","/");
-
-      Console.WriteLine(cmd);
-      Console.WriteLine(rFilePath);
-
-      string[] a = engine.Evaluate(cmd).AsCharacter().ToArray();
-
-      Console.Write(a);
-
-      engine.Dispose();
-    }
-
     public static double HyperVolume(List<Individual> individuals)
     {
       var directory = Environment.CurrentDirectory;
@@ -46,27 +25,29 @@ namespace RAdapter
         scores.AddRange(currentIndividualScores);
         foreach (var currentIndividualScore in currentIndividualScores)
         {
-          scoreS.Append(currentIndividualScore.ToString(CultureInfo.InvariantCulture)+", ");
+          scoreS.Append(currentIndividualScore.ToString(CultureInfo.InvariantCulture) + ", ");
         }
       }
 
+      var engine = REngine.GetInstance();
 
-      //File.WriteAllText("output.txt", scoreS.ToString());
-      lock (Sync)
+      var data = engine.CreateNumericVector(scores.ToArray());
+      engine.SetSymbol("data", data);
+      engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] { individuals.Count }));
+      engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] { individuals.First().Evaluations.Count }));
+
+      engine.Evaluate(cmd).AsCharacter().ToArray();
+
+      var hv = engine.GetSymbol("dhv").AsNumeric();
+
+      var hvValue = hv.ToArray().First();
+
+      if (Math.Abs(hvValue) < 0.0001)
       {
-        var engine = REngine.GetInstance();
+        var letsTakeABreak = true;
+      }
 
-        var data = engine.CreateNumericVector(scores.ToArray());
-        engine.SetSymbol("data", data);
-        engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] { individuals.Count }));
-        engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] { individuals.First().Evaluations.Count }));
-
-        engine.Evaluate(cmd).AsCharacter().ToArray();
-
-        var hv = engine.GetSymbol("dhv").AsNumeric();
-
-        return hv.ToArray().First();
-      }    
+      return hvValue;
     }
   }
 }

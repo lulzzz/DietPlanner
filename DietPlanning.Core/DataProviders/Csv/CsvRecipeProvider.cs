@@ -52,9 +52,8 @@ namespace DietPlanning.Core.DataProviders.Csv
           NominalWeight = ParseValue(values[(int)CsvField.NominalWeight]),
           MainCategory = FoodGroupsMapper.MainCategoryCsvMapper[values[(int)CsvField.MainCategory]],
           SubCategory = FoodGroupsMapper.SubCategoryCsvMapper[values[(int)CsvField.SubCategory]],
-          Cost = _random.Next(5, 35),
-
-          PreparationTimeInMinutes = _random.Next(1, 10) * 10
+          Cost = (int)ParseValue(values[(int)CsvField.Cost]),
+          PreparationTimeInMinutes = (int)ParseValue(values[(int)CsvField.PreparationTime])
         };
 
         if (!string.IsNullOrEmpty(values[(int)CsvField.ApplicableForMeal1]))
@@ -102,6 +101,8 @@ namespace DietPlanning.Core.DataProviders.Csv
     Calories = 12,
     Fats = 13,
     Proteins = 14,
-    Carbs = 15
+    Carbs = 15,
+    Cost = 16,
+    PreparationTime = 17
   }
 }

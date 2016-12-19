@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DietPlanning.NSGA
@@ -25,7 +26,7 @@ namespace DietPlanning.NSGA
     {
       var currentFront = fronts.Last();
       var rank = 2;
-
+      var assigned = currentFront.Count;
       do
       {
         //TODO: Sort by numbers od dominating solutions (no need to loop)
@@ -34,22 +35,28 @@ namespace DietPlanning.NSGA
 
         foreach (var individual in currentFront)
         {
-          foreach (var dominated in individual.Dominated)
+          foreach (var dominated in individual.Dominated.Where(d => d.DominatedByCount > 0))
           {
             dominated.DominatedByCount--;
             if (dominated.DominatedByCount == 0)
             {
               dominated.Rank = rank;
               nextFront.Add(dominated);
+              assigned++;
             }
           }
         }
         if (nextFront.Count > 0)
         {
           fronts.Add(nextFront);
+          currentFront = fronts.Last();
           rank++;
         }
-      } while (individuals.Count > fronts.Select(f => f.Count).Sum());
+        else if(individuals.Count != assigned)
+        {
+          throw new ApplicationException();
+        }
+      } while (individuals.Count > assigned);
     }
 
     private List<Individual> SetDomintaionRelations(List<Individual> individuals)

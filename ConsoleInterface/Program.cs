@@ -31,16 +31,33 @@ namespace ConsoleInterface
       //var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
 
       //var result = solver.Solve();
+    //  int repeats = int.Parse(args[4]);
+      configuration.MaxIterations = 35;
 
-      MutationTests(recipes, personalData, configuration);
+      MutationTests(recipes, personalData, configuration, 0.017, 0.018, 0.001, 25);
+
+      //switch (args[0])
+      //{
+      //  case "mutation":
+      //    var min = double.Parse(args[1]);
+      //    var max = double.Parse(args[2]);
+      //    var step = double.Parse(args[3]);
+      //    MutationTests(recipes, personalData, configuration, min, max, step, repeats);
+      //    break;
+      //  case "population":
+      //    PopulationTests(recipes, personalData, configuration, int.Parse(args[1]), int.Parse(args[2]), int.Parse(args[3]), repeats);
+      //    break;
+      //}
+      //  MutationTests(recipes, personalData, configuration);
+      //PopulationTests(recipes, personalData, configuration);
       //LogAverage(result);
 
-      
+
       Console.WriteLine("done");
       Console.ReadKey();
     }
 
-    private static void MutationTests(List<Recipe> recipes, List<PersonalData> personalData, Configuration configuration)
+    private static void MutationTests(List<Recipe> recipes, List<PersonalData> personalData, Configuration configuration, double min, double max, double step, int repeats)
     {
       const string averageValues = "average";
       const string eachIterationValues = "each";
@@ -54,13 +71,8 @@ namespace ConsoleInterface
       });
 
       var nsgaFactory = new NsgaSolverFactory(new Random());
-
-      const int repeats = 10;
-      const double mutationMin = 0.0001;
-      const double mutationMax = 0.04;
-      const double mutationStep = 0.005;
       
-      for (var i = mutationMin; i < mutationMax; i += mutationStep)
+      for (var i = min; i < max; i += step)
       {
         var hvs = new List<double>();
         var times = new List<int>();
@@ -77,7 +89,7 @@ namespace ConsoleInterface
           Console.WriteLine((double)(j + 1) + "/" + repeats + " current");
         }
         
-        Console.WriteLine(((i+ mutationStep) / mutationMax * 100) + "% total");
+        Console.WriteLine(((i+ step) / max * 100) + "% total");
 
         var hvsLog = new List<dynamic> {"hvs", configuration.MutationProbability};
         hvsLog.AddRange(hvs.Select(h => (dynamic)h));
@@ -89,8 +101,64 @@ namespace ConsoleInterface
 
         LogAverage(averageValues, configuration, times.Average(), hvs.Average());
       }
-
+      
       var saveDirectory = OutputPath + "\\" + DateTime.Now.Ticks + "_mutation";
+
+      if (!Directory.Exists(saveDirectory))
+      {
+        Directory.CreateDirectory(saveDirectory);
+      }
+
+      CsvLogger.Write(averageValues, saveDirectory + "\\average.csv");
+      CsvLogger.Write(eachIterationValues, saveDirectory + "\\iterations.csv");
+    }
+
+    private static void PopulationTests(List<Recipe> recipes, List<PersonalData> personalData, Configuration configuration, int min, int max, int step, int repeats)
+    {
+      const string averageValues = "average";
+      const string eachIterationValues = "each";
+
+      CsvLogger.RegisterLogger(averageValues);
+      CsvLogger.RegisterLogger(eachIterationValues);
+
+      CsvLogger.AddRow(averageValues, new dynamic[]
+      {
+        "MaxIterations", "PopulationSize", "MutationProbability", "SolvingTime", "hyperVolume"
+      });
+
+      var nsgaFactory = new NsgaSolverFactory(new Random());
+
+      for (var i = min; i < max; i += step)
+      {
+        var hvs = new List<double>();
+        var times = new List<int>();
+
+        configuration.PopulationSize = i;
+        for (var j = 0; j < repeats; j++)
+        {
+          var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
+          var result = solver.Solve();
+
+          hvs.Add(RInvoker.HyperVolume(result.Fronts.SelectMany(f => f).ToList()));
+          times.Add(result.Log.SolvingTime);
+
+          Console.WriteLine((double) (j + 1) + "/" + repeats + " current");
+        }
+
+        Console.WriteLine(step + " step");
+
+        var hvsLog = new List<dynamic> {"hvs", configuration.MutationProbability};
+        hvsLog.AddRange(hvs.Select(h => (dynamic) h));
+        CsvLogger.AddRow(eachIterationValues, hvsLog.ToArray());
+
+        var timeLog = new List<dynamic> {"time", configuration.MutationProbability};
+        timeLog.AddRange(times.Select(t => (dynamic) t));
+        CsvLogger.AddRow(eachIterationValues, timeLog.ToArray());
+
+        LogAverage(averageValues, configuration, times.Average(), hvs.Average());
+      }
+
+      var saveDirectory = OutputPath + "\\" + DateTime.Now.Ticks + "_population";
 
       if (!Directory.Exists(saveDirectory))
       {
