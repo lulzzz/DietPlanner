@@ -2,18 +2,13 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
-using System.IO;
-using System.Linq;
 using System.Threading;
-using System.Threading.Tasks;
 using ConsoleInterface.Storage;
 using DietPlanning.Core.DataProviders.Csv;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
-using RAdapter;
-using Tools;
 using Random = System.Random;
 
 namespace ConsoleInterface
@@ -25,8 +20,9 @@ namespace ConsoleInterface
 
     public static void Main(string[] args)
     {
-      //args = new[] { "population", "100", "150", "25", "2", "33" };
-      //var nsgaFactory = new NsgaSolverFactory(new Random());
+      //min max step reps timeout
+      args = new[] { "population", "100", "150", "25", "2", "33" };
+
       var recipesProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
       var recipes = recipesProvider.GetRecipes();
       var personalData = GetPersonalData();
@@ -42,7 +38,6 @@ namespace ConsoleInterface
 
       foreach (var configuration in configurations)
       {
-        
         for (int j = 0; j < repeats; j++)
         {
           NsgaResult result = null;
@@ -52,7 +47,7 @@ namespace ConsoleInterface
             result = RunConfigurationWithTimer(timeBound, configuration, recipes, personalData);
           }
           currentStep++;
-          Console.WriteLine((double)currentStep / totalSteps + "%  " + (double)result.Log.SolvingTime/1000);
+          Console.WriteLine((double)currentStep * 100/ totalSteps + "%  " + (double)result.Log.SolvingTime/1000);
           var testResult = StorageHelper.CreatTestResult(result, configuration);
           StorageHelper.SaveAsJson(OutputPath, seriesName, testResult);
         }
@@ -156,71 +151,7 @@ namespace ConsoleInterface
     {
       res = new NsgaResult();
     }
-
-    private static void MutationTests(List<Recipe> recipes, List<PersonalData> personalData, Configuration configuration, double min, double max, double step, int repeats)
-    {
-      const string averageValues = "average";
-      const string eachIterationValues = "each";
-
-      CsvLogger.RegisterLogger(averageValues);
-      CsvLogger.RegisterLogger(eachIterationValues);
-      
-      CsvLogger.AddRow(averageValues, new dynamic[]
-      {
-       "MaxIterations" , "PopulationSize", "MutationProbability", "SolvingTime", "hyperVolume"
-      });
-
-      var nsgaFactory = new NsgaSolverFactory(new Random());
-      
-      for (var i = min; i < max; i += step)
-      {
-        var hvs = new List<double>();
-        var times = new List<int>();
-
-        configuration.MutationProbability = i;
-       for(var j = 0; j < repeats; j++)
-        {
-          var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
-          var result = solver.Solve();
-
-          hvs.Add(RInvoker.HyperVolume(result.Fronts.SelectMany(f => f).ToList()));
-          times.Add(result.Log.SolvingTime);
-
-          Console.WriteLine((double)(j + 1) + "/" + repeats + " current");
-        }
-        
-        Console.WriteLine(((i+ step) / max * 100) + "% total");
-
-        var hvsLog = new List<dynamic> {"hvs", configuration.MutationProbability};
-        hvsLog.AddRange(hvs.Select(h => (dynamic)h));
-        CsvLogger.AddRow(eachIterationValues, hvsLog.ToArray());
-
-        var timeLog = new List<dynamic> { "time", configuration.MutationProbability };
-        timeLog.AddRange(times.Select(t => (dynamic)t));
-        CsvLogger.AddRow(eachIterationValues, timeLog.ToArray());
-
-        LogAverage(averageValues, configuration, times.Average(), hvs.Average());
-      }
-      
-      var saveDirectory = OutputPath + "\\" + DateTime.Now.Ticks + "_mutation";
-
-      if (!Directory.Exists(saveDirectory))
-      {
-        Directory.CreateDirectory(saveDirectory);
-      }
-
-      CsvLogger.Write(averageValues, saveDirectory + "\\average.csv");
-      CsvLogger.Write(eachIterationValues, saveDirectory + "\\iterations.csv");
-    }
-    
-    private static void LogAverage(string loggername, Configuration configuration, double avgTime, double avgHv)
-    {
-      CsvLogger.AddRow(loggername, new dynamic[]
-      {
-       configuration.MaxIterations ,configuration.PopulationSize, configuration.MutationProbability, avgTime, avgHv
-      });     
-    }
-    
+ 
     private static List<PersonalData> GetPersonalData()
     {
       var rp = new RequirementsProvider();
@@ -274,37 +205,7 @@ namespace ConsoleInterface
 
     private static DietPreferences Getpreferences()
     {
-      var catPreferenres = new List<CategoryPreference>();
-      var random = new Random();
-
-      for (int i = 0; i < 10; i++)
-      {
-        catPreferenres.Add(new CategoryPreference
-        {
-          SubCategory = RandomEnumValue<SubCategory>(random),
-          Preference = 0.5 + random.NextDouble()
-        });
-      }
-
-      var dietPreferences = new DietPreferences();
-
-      foreach (var preference in catPreferenres)
-      {
-        if (dietPreferences.CategoryPreferences.Any(p => p.SubCategory == preference.SubCategory))
-        {
-          continue;
-        }
-
-        dietPreferences.CategoryPreferences.Add(preference);
-      }
-
-      return dietPreferences;
-    }
-
-    static T RandomEnumValue<T>(Random random)
-    {
-      var v = Enum.GetValues(typeof(T));
-      return (T)v.GetValue(random.Next(v.Length));
+      return new DietPreferences {CategoryPreferences = FixedPreferencesProvider.GetPreferences()};
     }
   }
 }

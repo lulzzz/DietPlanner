@@ -5,21 +5,22 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using Newtonsoft.Json;
+using RAdapter;
 
 namespace Aggregator
 {
   class Program
   {
+    const string OutputsDirectory = @"D:\Studia\Informatyka\praca dyplomowa\outputs";
+    
     static void Main(string[] args)
     {
-      const string searchDirectory = @"D:\Studia\Informatyka\praca dyplomowa\outputs";
-
-      if (!Directory.Exists(searchDirectory))
+      if (!Directory.Exists(OutputsDirectory))
       {
-        Console.WriteLine($"{searchDirectory} does not exist");
+        Console.WriteLine($"{OutputsDirectory} does not exist");
       }
 
-      var results = LoadResults(searchDirectory);
+      var results = LoadResults(OutputsDirectory);
       //WriteToCsv(searchDirectory, results);
 
       var groupped =
@@ -28,6 +29,16 @@ namespace Aggregator
             r.PopulationSize.ToString(CultureInfo.InvariantCulture) + "_" +
             r.Iterations.ToString(CultureInfo.InvariantCulture) + "_" +
             r.MutationProbability.ToString(CultureInfo.InvariantCulture)).ToList();
+
+      var shapiroResults = new List<NormalityResult>();
+
+      foreach (var group in groupped)
+      {
+        var frontResults = group.ToList();
+        var times = frontResults.Select(fr => fr.Time).ToList();
+
+        shapiroResults.Add(RInvoker.Shapiro(times));
+      }
 
       Console.WriteLine("done");
       Console.ReadLine();
