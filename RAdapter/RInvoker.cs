@@ -56,6 +56,8 @@ namespace RAdapter
       var pValue = engine.GetSymbol("pv").AsNumeric().ToArray()[0];
       var statistic = engine.GetSymbol("w").AsNumeric().ToArray()[0]; 
 
+      engine.Dispose();
+
       return new NormalityResult { Pvalue = pValue, Statistuc = statistic };
     }
 

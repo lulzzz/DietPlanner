@@ -59,7 +59,7 @@ namespace DietPlanning.NSGA
       } while (individuals.Count > assigned);
     }
 
-    private List<Individual> SetDomintaionRelations(List<Individual> individuals)
+    public List<Individual> SetDomintaionRelations(List<Individual> individuals)
     {
       var front = new List<Individual>();
 

@@ -9,7 +9,6 @@ using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
-using Random = System.Random;
 
 namespace ConsoleInterface
 {

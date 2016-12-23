@@ -61,9 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Mapper.cs" />
+    <Compile Include="NsgaHelper.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ResultPoint.cs" />
     <Compile Include="FrontResult.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,6 +72,14 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\ConsoleInterface\ConsoleInterface.csproj">
+      <Project>{64F02B3C-B3F8-40F6-9281-0C7484832C0E}</Project>
+      <Name>ConsoleInterface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
+      <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
+      <Name>DietPlanning.NSGA</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\RAdapter\RAdapter.csproj">
       <Project>{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}</Project>
       <Name>RAdapter</Name>
