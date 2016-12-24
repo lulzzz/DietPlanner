@@ -23,19 +23,39 @@ namespace Aggregator
         Console.WriteLine($"{OutputsDirectory} does not exist");
       }
 
-      var referencePareto = LoadPareto();
+      var referencePareto = LoadReferencePareto();
+      NsgaHelper.AssignCrowdingDistances(referencePareto.ResultPoints);
+      var filteredIndividuals = referencePareto.ResultPoints.OrderByDescending(i => i.CrowdingDistance).Take(150).ToList();
+      var nadir = FindNadir(filteredIndividuals);
+      var referenceParetoHyperVolume = RInvoker.HyperVolume(filteredIndividuals, nadir);
 
-      var macros = referencePareto.ResultPoints.Select(p => p.Macro).ToList().OrderByDescending(p => p).ToList();
+      var results = LoadResults(OutputsDirectory);
 
-      var individuals = referencePareto.ResultPoints.Select(Mapper.ToIndividual).ToList();
-      NsgaHelper.AssignCrowdingDistances(individuals);
-      var filteredIndividuals = individuals.OrderBy(i => i.CrowdingDistance).Take(150).ToList();
+      var counter = 0;
+      var counterMax = results.Count;
 
+      foreach (var result in results)
+      {
+        result.HyperVolume = referenceParetoHyperVolume - RInvoker.HyperVolume(result.ResultPoints, nadir);
+        counter++;
+        Console.WriteLine($"{counter}/{counterMax}");
+      }
 
+      WriteToCsv(OutputsDirectory, results);
 
-      var hv = RInvoker.HyperVolume(filteredIndividuals);
-
+      Console.WriteLine("done");
       Console.ReadLine();
+    }
+
+    private static ResultPoint FindNadir(List<ResultPoint> resultPoints)
+    {
+      return new ResultPoint
+      {
+        PreparationTime = resultPoints.Select(rp => rp.PreparationTime).Max(),
+        Cost = resultPoints.Select(rp => rp.Cost).Max(),
+        Macro = resultPoints.Select(rp => rp.Macro).Max(),
+        Preferences = resultPoints.Select(rp => rp.Preferences).Max()
+      };
     }
 
     private static void AggregateOutputsToPareto()
@@ -98,7 +118,7 @@ namespace Aggregator
       return results;
     }
 
-    public static FrontResult LoadPareto()
+    public static FrontResult LoadReferencePareto()
     {
       const string filepath = OutputsDirectory + "\\pareto\\pareto.json";
 
@@ -116,7 +136,7 @@ namespace Aggregator
       foreach (var testResult in results)
       {
         csv.AppendLine(
-          $"{testResult.SeriesName};{testResult.Iterations};{testResult.Machine};{testResult.MutationProbability};{testResult.PopulationSize};{testResult.Time}");
+          $"{testResult.SeriesName};{testResult.Iterations};{testResult.Machine};{testResult.MutationProbability};{testResult.PopulationSize};{testResult.Time}; {testResult.HyperVolume}");
       }
 
       var filesInOutputDir = Directory.GetFiles(outputPath);

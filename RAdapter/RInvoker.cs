@@ -5,12 +5,13 @@ using System.Linq;
 using System.Text;
 using DietPlanning.NSGA;
 using RDotNet;
+using Storage;
 
 namespace RAdapter
 {
   public static class RInvoker
   {
-    public static double HyperVolume(List<Individual> individuals)
+    public static double HyperVolume(List<Individual> individuals, ResultPoint resultPoint = null)
     {
       var scores = new List<double>();
 
@@ -23,6 +24,11 @@ namespace RAdapter
         {
           scoreS.Append(currentIndividualScore.ToString(CultureInfo.InvariantCulture) + ", ");
         }
+      }
+
+      if (resultPoint != null)
+      {
+        //todo finish
       }
 
       var engine = REngine.GetInstance();
@@ -44,6 +50,48 @@ namespace RAdapter
       }
 
       return hvValue;
+    }
+
+    public static double HyperVolume(List<ResultPoint> resultPoints, ResultPoint resultPoint = null)
+    {
+      var scores = new List<double>();
+      var engine = REngine.GetInstance();
+
+      foreach (var point in resultPoints)
+      {
+        scores.Add(point.Macro);
+        scores.Add(point.PreparationTime);
+        scores.Add(point.Cost);
+        scores.Add(point.Preferences);
+      }
+
+      if (resultPoint != null)
+      {
+        engine.SetSymbol("useReferecnePoint", engine.CreateLogical(true));
+        engine.SetSymbol("referencePoint", engine.CreateNumericVector(new []
+        {
+          resultPoint.Macro, resultPoint.PreparationTime, resultPoint.Cost, resultPoint.Preferences
+        }));
+      }
+      else
+      {
+        engine.SetSymbol("useReferecnePoint", engine.CreateLogical(false));
+      }
+
+      engine.SetSymbol("data", engine.CreateNumericVector(scores.ToArray()));
+      engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] { resultPoints.Count }));
+      engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] { 4 }));
+
+      RunScript("hv", engine);
+
+      var hv = engine.GetSymbol("dhv").AsNumeric().ToArray().First();
+
+      if (Math.Abs(hv) < 0.0001)
+      {
+        throw new ArgumentException();
+      }
+
+      return hv;
     }
 
     public static NormalityResult Shapiro(List<double> values)

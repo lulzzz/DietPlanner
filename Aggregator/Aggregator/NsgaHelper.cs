@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using DietPlanning.NSGA;
+using Storage;
 
 namespace Aggregator
 {
@@ -69,6 +70,42 @@ namespace Aggregator
               (individualsByObjective[individualIndex + 1].Evaluations[evaluationIndex].Score -
                individualsByObjective[individualIndex - 1].Evaluations[evaluationIndex].Score) /
               evaluationRange);
+        }
+      }
+    }
+
+    public static void AssignCrowdingDistances(List<ResultPoint> resultPoints)
+    {
+      resultPoints.ForEach(p => p.CrowdingDistance = 0);
+
+      var scoreGetters = new List<Func<ResultPoint, double>>
+      {
+        (rp) => rp.Macro,
+        (rp) => rp.Cost,
+        (rp) => rp.Preferences,
+        (rp) => rp.PreparationTime
+      };
+
+      foreach (var scoreGetter in scoreGetters)
+      {
+        var poiontsByScore = resultPoints.OrderBy(scoreGetter).ToList();
+
+        poiontsByScore.First().CrowdingDistance = double.PositiveInfinity;
+        poiontsByScore.Last().CrowdingDistance = double.PositiveInfinity;
+
+        var minEvaluation = scoreGetter(poiontsByScore.Last());
+        var maxEvaluation = scoreGetter(poiontsByScore.First());
+        var evaluationRange = maxEvaluation - minEvaluation;
+
+        if (evaluationRange == 0)
+        {
+          continue;
+        }
+
+        for (var index = 1; index < poiontsByScore.Count - 1; index++)
+        {
+          poiontsByScore[index].CrowdingDistance +=
+            Math.Abs((scoreGetter(poiontsByScore[index + 1])  - scoreGetter(poiontsByScore[index - 1])) / evaluationRange);
         }
       }
     }

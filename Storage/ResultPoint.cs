@@ -18,6 +18,8 @@ namespace Storage
     [DataMember(Name = "PR")]
     public double Preferences { get; set; }
 
+    public double CrowdingDistance { get; set; }
+
     //[DataMember(Name = "DT")]
     //public DietData Diet { get; set; }
   }

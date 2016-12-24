@@ -71,6 +71,10 @@
       <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
       <Name>DietPlanning.NSGA</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Storage\Storage.csproj">
+      <Project>{c56f548b-df8f-465d-a040-87cda9a33bb3}</Project>
+      <Name>Storage</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

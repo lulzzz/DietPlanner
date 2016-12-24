@@ -24,6 +24,9 @@ namespace Storage
     [DataMember]
     public List<ResultPoint> ResultPoints { get; set; }
 
+    [DataMember]
+    public double HyperVolume { get; set; }
+
     public string Machine { get; set; }
   }
 }
