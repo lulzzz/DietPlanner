@@ -4,17 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CA442899-46A6-4E95-8574-B11105941923}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{C56F548B-DF8F-465D-A040-87CDA9A33BB3}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Aggregator</RootNamespace>
-    <AssemblyName>Aggregator</AssemblyName>
+    <RootNamespace>Storage</RootNamespace>
+    <AssemblyName>Storage</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -33,25 +30,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicInterop, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicInterop.0.7.4\lib\net40\DynamicInterop.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="RDotNet, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\R.NET.Community.1.6.5\lib\net40\RDotNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet.NativeLibrary, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\R.NET.Community.1.6.5\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,31 +45,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Mapper.cs" />
-    <Compile Include="NsgaHelper.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="FrontResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResultPoint.cs" />
+    <Compile Include="StorageHelper.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\ConsoleInterface\ConsoleInterface.csproj">
-      <Project>{64F02B3C-B3F8-40F6-9281-0C7484832C0E}</Project>
-      <Name>ConsoleInterface</Name>
+    <ProjectReference Include="..\DietPlanning.Core\DietPlanning.Core.csproj">
+      <Project>{05dfe2c4-eb22-4e58-80c0-155897ad986d}</Project>
+      <Name>DietPlanning.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
-      <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
+    <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
+      <Project>{64dcb637-6456-440b-99a9-33c3198f48d1}</Project>
       <Name>DietPlanning.NSGA</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\RAdapter\RAdapter.csproj">
-      <Project>{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}</Project>
-      <Name>RAdapter</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Storage\Storage.csproj">
-      <Project>{c56f548b-df8f-465d-a040-87cda9a33bb3}</Project>
-      <Name>Storage</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

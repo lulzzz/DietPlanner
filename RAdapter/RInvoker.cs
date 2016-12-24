@@ -32,6 +32,8 @@ namespace RAdapter
       engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] {individuals.Count}));
       engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] {individuals.First().Evaluations.Count}));
 
+      RunScript("hv", engine);
+
       var hv = engine.GetSymbol("dhv").AsNumeric();
 
       var hvValue = hv.ToArray().First();

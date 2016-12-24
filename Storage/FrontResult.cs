@@ -1,8 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Runtime.Serialization;
-using ConsoleInterface.Storage;
 
-namespace Aggregator
+namespace Storage
 {
   [DataContract]
   public class FrontResult

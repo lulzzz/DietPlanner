@@ -7,6 +7,7 @@ using DietPlanning.Core.GroupDiets;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.GroupDietsImplementation;
 using Newtonsoft.Json;
+using Storage;
 
 namespace ConsoleInterface.Storage
 {
@@ -50,16 +51,16 @@ namespace ConsoleInterface.Storage
       };
     }
 
-    public static TestResult CreatTestResult(NsgaResult nsgaResult, Configuration configuration)
+    public static FrontResult CreatTestResult(NsgaResult nsgaResult, Configuration configuration)
     {
-      var testResult = new TestResult
+      var testResult = new FrontResult
       {
         Iterations = configuration.MaxIterations,
         PopulationSize = configuration.PopulationSize,
         MutationProbability = configuration.MutationProbability,
         Time = nsgaResult.Log.SolvingTime,
         ResultPoints = nsgaResult.Fronts.SelectMany(f => f).Select(g => CreateResultPoint((GroupDietIndividual) g)).ToList(),
-        Name = CreateName(configuration)
+        SeriesName = CreateName(configuration)
       };
 
       return testResult;
@@ -73,7 +74,7 @@ namespace ConsoleInterface.Storage
        + "_i" + configuration.MaxIterations + "_m" + configuration.MutationProbability.ToString(CultureInfo.InvariantCulture).Replace(".", "") + "_p" + configuration.PopulationSize;
     }
 
-    public static void SaveAsJson(string outputPath, string seriesName, TestResult testResult)
+    public static void SaveAsJson(string outputPath, string seriesName, FrontResult testResult)
     {
       var json = JsonConvert.SerializeObject(testResult);
 
@@ -84,10 +85,10 @@ namespace ConsoleInterface.Storage
         Directory.CreateDirectory(saveDirectory);
       }
 
-      File.WriteAllText(saveDirectory + "\\" + testResult.Name + ".json", json);
+      File.WriteAllText(saveDirectory + "\\" + testResult.SeriesName + ".json", json);
     }
 
-    public static TestResult ReadFromJson(string outputPath, string seriesName, string filename)
+    public static FrontResult ReadFromJson(string outputPath, string seriesName, string filename)
     {
       var saveDirectory = outputPath + "\\" + seriesName;
 
@@ -96,7 +97,7 @@ namespace ConsoleInterface.Storage
         return null;
       }
 
-      return JsonConvert.DeserializeObject<TestResult>(File.ReadAllText(saveDirectory + "\\" + filename));
+      return JsonConvert.DeserializeObject<FrontResult>(File.ReadAllText(saveDirectory + "\\" + filename));
     }
   }
 }

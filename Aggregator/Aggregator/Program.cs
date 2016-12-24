@@ -7,6 +7,8 @@ using System.Text;
 using ConsoleInterface.Storage;
 using DietPlanning.NSGA;
 using Newtonsoft.Json;
+using RAdapter;
+using Storage;
 
 namespace Aggregator
 {
@@ -20,8 +22,18 @@ namespace Aggregator
       {
         Console.WriteLine($"{OutputsDirectory} does not exist");
       }
-      
-      AggregateOutputsToPareto();
+
+      var referencePareto = LoadPareto();
+
+      var macros = referencePareto.ResultPoints.Select(p => p.Macro).ToList().OrderByDescending(p => p).ToList();
+
+      var individuals = referencePareto.ResultPoints.Select(Mapper.ToIndividual).ToList();
+      NsgaHelper.AssignCrowdingDistances(individuals);
+      var filteredIndividuals = individuals.OrderBy(i => i.CrowdingDistance).Take(150).ToList();
+
+
+
+      var hv = RInvoker.HyperVolume(filteredIndividuals);
 
       Console.ReadLine();
     }
@@ -48,7 +60,7 @@ namespace Aggregator
 
       var referenceParetoConverted = NsgaHelper.FindFirstFront(paretoFronts.SelectMany(p => p).ToList()).Select(Mapper.CreateResultPoint);
 
-      SaveAsJson(OutputsDirectory, new TestResult { ResultPoints = referenceParetoConverted.ToList() });
+      SaveAsJson(OutputsDirectory, new FrontResult { ResultPoints = referenceParetoConverted.ToList() });
 
       Console.WriteLine("Pareto aggregated");
     }
@@ -86,6 +98,15 @@ namespace Aggregator
       return results;
     }
 
+    public static FrontResult LoadPareto()
+    {
+      const string filepath = OutputsDirectory + "\\pareto\\pareto.json";
+
+      var json = File.ReadAllText(filepath);
+
+      return JsonConvert.DeserializeObject<FrontResult>(json);
+    }
+
     private static void WriteToCsv(string outputPath, List<FrontResult> results)
     {
       var csv = new StringBuilder();
@@ -111,7 +132,7 @@ namespace Aggregator
       File.WriteAllText($"{outputPath}\\{fileName}" , csv.ToString());
     }
 
-    public static void SaveAsJson(string outputPath, TestResult testResult)
+    public static void SaveAsJson(string outputPath, FrontResult testResult)
     {
       var json = JsonConvert.SerializeObject(testResult);
 

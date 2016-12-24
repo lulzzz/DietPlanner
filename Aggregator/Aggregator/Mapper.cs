@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using ConsoleInterface.Storage;
 using DietPlanning.NSGA;
+using Storage;
 
 namespace Aggregator
 {
