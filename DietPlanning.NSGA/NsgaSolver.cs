@@ -97,10 +97,12 @@ namespace DietPlanning.NSGA
       var feasibleRatio = (double)individuals.Where(i => i.IsFeasible).ToList().Count / individuals.Count;
       log.FeasibleSolutions.Add(feasibleRatio);
 
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Cost, iteration));
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Macro, iteration));
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.PreparationTime, iteration));
-      log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, ObjectiveType.Preferences, iteration));
+      var evaluiationTypes = individuals.First().Evaluations.Select(e => e.Type);
+
+      foreach (var evaluiationType in evaluiationTypes)
+      {
+        log.ObjectiveLogs.Add(GetFrontObjectiveLog(individuals, evaluiationType, iteration));
+      }
     }
 
     private static ObjectiveLog GetFrontObjectiveLog(List<Individual> individuals, ObjectiveType objectiveType, int iteration)

@@ -13,17 +13,14 @@ namespace DietPlanning.NSGA.MathImplementation
     {
       var mathIndividual = individual as MathIndividual;
       individual.IsFeasible = CheckIfFeasible(mathIndividual);
-
+      mathIndividual.Evaluations.Clear();
       mathIndividual.Evaluations.Add(new Evaluation {Type = ObjectiveType.Cost, Direction = Direction.Minimize, Score = f1(mathIndividual.X1)});
       mathIndividual.Evaluations.Add(new Evaluation {Type = ObjectiveType.Macro, Direction = Direction.Minimize, Score = f2(mathIndividual.X1)});
     }
 
     private bool CheckIfFeasible(MathIndividual individual)
     {
-      return true;
-      //!(
-      //individual.X1 < 0.1 ||
-      //individual.X1 > 1;
+      return!(individual.X1 < 0.5 || individual.X1 > 1.5);
 
     }
 

@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aggregator", "Aggregator\Ag
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Storage", "Storage\Storage.csproj", "{C56F548B-DF8F-465D-A040-87CDA9A33BB3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathProblemsConsoleInterface", "MathProblemsConsoleInterface\MathProblemsConsoleInterface.csproj", "{9FB82778-430D-40B0-B4D0-19197CDCA2A0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{C56F548B-DF8F-465D-A040-87CDA9A33BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C56F548B-DF8F-465D-A040-87CDA9A33BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C56F548B-DF8F-465D-A040-87CDA9A33BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9FB82778-430D-40B0-B4D0-19197CDCA2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FB82778-430D-40B0-B4D0-19197CDCA2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FB82778-430D-40B0-B4D0-19197CDCA2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FB82778-430D-40B0-B4D0-19197CDCA2A0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
