@@ -96,7 +96,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
         score += personalScore/recipesForPerson.Count;
       }
 
-      return 2 - score / _personalData.Count;
+      return 2.25 - score / _personalData.Count;
     }
 
     private double EvaluateDailyMacro(GroupDiet diet, out bool feasible)
