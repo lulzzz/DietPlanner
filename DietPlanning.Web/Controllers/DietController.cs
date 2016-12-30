@@ -38,6 +38,30 @@ namespace DietPlanning.Web.Controllers
       return View(dietsViewModel);
     }
 
+    [HttpGet]
+    public ActionResult Ahp()
+    {
+      return View("Ahp");
+    }
+
+    [HttpPost]
+    public ActionResult Ahp(AhpModel ahp)
+    {
+      return View("Topsis");
+    }
+
+    [HttpGet]
+    public ActionResult Topsis()
+    {
+      return View("Topsis");
+    }
+
+    [HttpPost]
+    public ActionResult Topsis(TopsisModel topsis)
+    {
+      return View("Ahp");
+    }
+
     public ActionResult GerateGroupDiets()
     {
       var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);

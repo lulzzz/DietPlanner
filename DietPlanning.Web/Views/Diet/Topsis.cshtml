@@ -1,0 +1,56 @@
+﻿@model DietPlanning.Web.Models.TopsisModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Wagi kryteriów oceny diety</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Za pomocą suwaków określ istotność poszczególnych kryteriów</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CostWeight, "Minimalizacja kosztów",  htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.CostWeight, new { htmlAttributes = new { @class = "form-control", type = "range", min = "1", max = "10", step = "1", defaultValue = "5" } })
+                @Html.ValidationMessageFor(model => model.CostWeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PreferncesWeight, "Preferencje kulinarne" ,htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PreferncesWeight, new { htmlAttributes = new { @class = "form-control", type = "range", min = "1", max = "10", step = "1", defaultValue = "5" } })
+                @Html.ValidationMessageFor(model => model.PreferncesWeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MacroWeight, "Zgodność z normami",htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MacroWeight, new { htmlAttributes = new { @class = "form-control", type = "range", min = "1", max = "10", step = "1", defaultValue = "5" } })
+                @Html.ValidationMessageFor(model => model.MacroWeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PreparationTimeWeight, "Minimalizacja czasu przygotowania" , htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PreparationTimeWeight, new { htmlAttributes = new { @class = "form-control", type = "range", min = "1", max ="10", step = "1", defaultValue = "5"  } })
+                @Html.ValidationMessageFor(model => model.PreparationTimeWeight, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Dalej" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,108 @@
+﻿@model DietPlanning.Web.Models.AhpModel
+
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Oceny kryteriów parami</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+      <h4>Porównaj parami każde z kryteriów oceny diety</h4>
+      <table cellspacing="0" cellpadding="3" border="1" style="text-align:center">
+        <tr>
+          <td><b>Wartość</b></td>
+          <td><b>Ocena elementu A względem B</b></td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>A jest ekstremalnie preferowane</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>A jest bardzo silnie preferowane</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>A jest silnie preferowane</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>A jest słabo preferowane</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>A jest równoważne z B</td>
+        </tr>
+      </table>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.CostMacro, "Minimalizacja kosztów",htmlAttributes: new { @class = "control-label col-md-2" })
+          <div class="col-md-3">
+            @Html.EditorFor(model => model.CostMacro, new { htmlAttributes = new { oninput = "CostMacroAmount.value=CostMacro.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            <output class="col-md-1" name="CostMacroAmount" for="CostMacro">1</output>
+             @Html.ValidationMessageFor(model => model.CostMacro, "", new { @class = "text-danger" })
+          </div>
+          @Html.LabelFor(model => model.CostMacro,"Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeMacro, "Krótki czas przygotowania", htmlAttributes: new { @class = "control-label col-md-2" })
+          <div class="col-md-3">
+            @Html.EditorFor(model => model.TimeMacro, new { htmlAttributes = new { oninput = "TimeMacroAmount.value=TimeMacro.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            <output class="col-md-1" name="TimeMacroAmount" for="TimeMacro">1</output>
+            @Html.ValidationMessageFor(model => model.TimeMacro, "", new { @class = "text-danger" })
+          </div>
+          @Html.LabelFor(model => model.TimeMacro, "Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TimeCost, "Krótki czas przygotowania", htmlAttributes: new { @class = "control-label col-md-2" })
+          <div class="col-md-3">
+            @Html.EditorFor(model => model.TimeCost, new { htmlAttributes = new { oninput = "TimeCostAmount.value=TimeCost.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            <output class="col-md-1" name="TimeCostAmount" for="TimeCost">1</output>
+            @Html.ValidationMessageFor(model => model.TimeCost, "", new { @class = "text-danger" })
+          </div>
+          @Html.LabelFor(model => model.TimeCost, "Minimalizacja kosztów", htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrefMacro, "Zgodność z preferencjami", htmlAttributes: new { @class = "control-label col-md-2" })
+          <div class="col-md-3">
+            @Html.EditorFor(model => model.PrefMacro, new { htmlAttributes = new { oninput = "PrefMacroAmount.value=PrefMacro.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            <output class="col-md-1" name="PrefMacroAmount" for="PrefMacro">1</output>
+            @Html.ValidationMessageFor(model => model.PrefMacro, "", new { @class = "text-danger" })
+          </div>
+          @Html.LabelFor(model => model.PrefMacro, "Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrefCost, "Zgodność z preferencjami", htmlAttributes: new { @class = "control-label col-md-2" })
+          <div class="col-md-3">
+            @Html.EditorFor(model => model.PrefCost, new { htmlAttributes = new { oninput = "PrefCostAmount.value=PrefCost.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            <output class="col-md-1" name="PrefCostAmount" for="PrefCost">1</output>
+            @Html.ValidationMessageFor(model => model.PrefCost, "", new { @class = "text-danger" })
+          </div>
+          @Html.LabelFor(model => model.PrefCost, "Minimalizacja kosztów", htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PrefTime, "Zgodność z preferencjami", htmlAttributes: new { @class = "control-label col-md-2" })
+          <div class="col-md-3">
+            @Html.EditorFor(model => model.PrefTime, new { htmlAttributes = new { oninput = "PrefTimeAmount.value=PrefTime.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            <output class="col-md-1" name="PrefTimeAmount" for="PrefTime">1</output>
+            @Html.ValidationMessageFor(model => model.PrefTime, "", new { @class = "text-danger" })
+          </div>
+          @Html.LabelFor(model => model.PrefTime, "Krótki czas przygotowania", htmlAttributes: new { @class = "control-label col-md-2" })
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Dalej" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

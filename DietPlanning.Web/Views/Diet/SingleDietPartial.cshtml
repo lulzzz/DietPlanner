@@ -1,0 +1,52 @@
+﻿
+@using DietPlanning.NSGA
+@model DietPlanning.Web.Models.GroupDietViewModel
+  
+<div class="day">
+  @foreach (var evaluation in Model.Evaluations)
+      {
+        if (evaluation.Type == ObjectiveType.Preferences)
+        {
+      <div><span>@evaluation.Type: @evaluation.Score.ToString("0.##") </span></div>
+    }
+    else
+    {
+      <div><span>@evaluation.Type: @((int)evaluation.Score)</span></div>
+    }
+  }
+  <br />
+  <table>
+    <tr>
+      @foreach (var personDiet in Model.PersonDietViewModels)
+      {
+        <td>
+          <div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Calories) Calories</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Carbohydrates) g Carbohydrates</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Fat) g Fats</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Proteins) g Proteins</span></div>
+          </div>
+          <br />
+          @foreach (var meal in personDiet.Meals)
+          {
+            var mealIndex = personDiet.Meals.IndexOf(meal);
+            var rangeClass = meal.IsInRange ? "in_range" : "out_of_range";
+            var mealCalories = meal.Calories;
+            var distanceToRange = meal.IsInRange ? "" : "(" + meal.DistanceToRange + ")";
+
+            <div class="meal">
+              <span>Meal @(mealIndex + 1):</span>
+              <span class="@rangeClass">@mealCalories Cal @distanceToRange</span>
+              @foreach (var recipe in meal.Recipes)
+              {
+                <div class="recipe">
+                  <span>@recipe.Name (@(recipe.Amount)g)</span>
+                </div>
+              }
+            </div>
+          }
+        </td>
+      }
+    </tr>
+  </table>
+</div>
