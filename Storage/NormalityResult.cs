@@ -1,4 +1,4 @@
-﻿namespace RAdapter
+﻿namespace Storage
 {
   public class NormalityResult
   {

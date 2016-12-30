@@ -23,6 +23,7 @@ namespace Aggregator
         Console.WriteLine($"{OutputsDirectory} does not exist");
       }
 
+      //AggregateOutputsToPareto();
       var referencePareto = LoadReferencePareto();
       NsgaHelper.AssignCrowdingDistances(referencePareto.ResultPoints);
       var filteredIndividuals = referencePareto.ResultPoints.OrderByDescending(i => i.CrowdingDistance).Take(150).ToList();
@@ -42,9 +43,57 @@ namespace Aggregator
       }
 
       WriteToCsv(OutputsDirectory, results);
+      SaveAverageValues(results);
 
       Console.WriteLine("done");
       Console.ReadLine();
+    }
+
+    private static void SaveAverageValues(List<FrontResult> results)
+    {
+      var groupped =
+        results.GroupBy(
+          r =>
+            r.PopulationSize.ToString(CultureInfo.InvariantCulture) + "_" +
+            r.Iterations.ToString(CultureInfo.InvariantCulture) + "_" +
+            r.MutationProbability.ToString(CultureInfo.InvariantCulture)).ToList();
+
+      var csv = new StringBuilder();
+      csv.AppendLine("Iterations;MutationProbability;PopulationSize;Time;pvalue;w;HyperVolume;pvalue;w");
+
+      foreach (var group in groupped)
+      {
+        var hvs = group.Select(i => i.HyperVolume).ToList();
+        var times = group.Select(i => i.Time).ToList();
+        var avg = new AverageResult();
+
+        if (hvs.Count > 3 && hvs.Any(value => value > 0))
+        {
+          avg.NormalityHv = RInvoker.Shapiro(hvs);
+        }
+
+        if (times.Count > 3 && hvs.Any(value => value > 0))
+        {
+          avg.NormalityTime = RInvoker.Shapiro(times);
+        }
+        avg.Hypervolume = group.Select(i => i.HyperVolume).Average();
+        avg.Time = group.Select(i => i.Time).Average();
+        
+        csv.AppendLine(
+         $"{group.First().Iterations};{group.First().MutationProbability};{group.First().PopulationSize};{avg.Time};{avg.NormalityTime.Pvalue};{avg.NormalityTime.Statistuc};{avg.Hypervolume};{avg.NormalityHv.Pvalue};{avg.NormalityHv.Statistuc}");
+      }
+
+      var filesInOutputDir = Directory.GetFiles(OutputsDirectory);
+      var fileIndex = 0;
+      var fileName = "averageResults.csv";
+
+      while (filesInOutputDir.Any(path => path.EndsWith(fileName)))
+      {
+        fileIndex++;
+        fileName = $"averageResults_{fileIndex}.csv";
+      }
+
+      File.WriteAllText($"{OutputsDirectory}\\{fileName}", csv.ToString());
     }
 
     private static ResultPoint FindNadir(List<ResultPoint> resultPoints)
@@ -74,7 +123,10 @@ namespace Aggregator
       foreach (var group in groupped)
       {
         var individuals = ExtractIndividuals(group.ToList());
-
+        if (individuals.Any(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score > 400))
+        {
+          continue;
+        }
         paretoFronts.Add(NsgaHelper.FindFirstFront(individuals));
       }
 
@@ -104,6 +156,10 @@ namespace Aggregator
 
       foreach (var output in outputs)
       {
+        if (output.Contains("pareto"))
+        {
+          continue;
+        }
         var json = File.ReadAllText(output);
         var testResult = JsonConvert.DeserializeObject<FrontResult>(json);
 

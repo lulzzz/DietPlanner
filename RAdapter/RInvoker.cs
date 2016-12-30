@@ -56,6 +56,7 @@ namespace RAdapter
     {
       var scores = new List<double>();
       var engine = REngine.GetInstance();
+      engine.ClearGlobalEnvironment();
 
       foreach (var point in resultPoints)
       {
@@ -86,10 +87,10 @@ namespace RAdapter
 
       var hv = engine.GetSymbol("dhv").AsNumeric().ToArray().First();
 
-      if (Math.Abs(hv) < 0.0001)
-      {
-        throw new ArgumentException();
-      }
+      //if (Math.Abs(hv) < 0.0001)
+      //{
+      //  throw new ArgumentException();
+      //}
 
       return hv;
     }
@@ -97,6 +98,7 @@ namespace RAdapter
     public static NormalityResult Shapiro(List<double> values)
     {
       var engine = REngine.GetInstance();
+      engine.ClearGlobalEnvironment();
 
       var data = engine.CreateNumericVector(values.ToArray());
       engine.SetSymbol("data", data);
@@ -106,7 +108,7 @@ namespace RAdapter
       var pValue = engine.GetSymbol("pv").AsNumeric().ToArray()[0];
       var statistic = engine.GetSymbol("w").AsNumeric().ToArray()[0]; 
 
-      engine.Dispose();
+      //engine.Dispose();
 
       return new NormalityResult { Pvalue = pValue, Statistuc = statistic };
     }

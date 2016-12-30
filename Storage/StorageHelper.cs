@@ -99,5 +99,11 @@ namespace ConsoleInterface.Storage
 
       return JsonConvert.DeserializeObject<FrontResult>(File.ReadAllText(saveDirectory + "\\" + filename));
     }
+
+    public static void Add (FrontResult f1, FrontResult f2)
+    {
+      f1.HyperVolume += f2.HyperVolume;
+      f1.Time += f2.Time;
+    }
   }
 }

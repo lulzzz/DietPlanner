@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using DietPlanning.NSGA;
 using Storage;
@@ -15,7 +16,7 @@ namespace Aggregator
       foreach (var p1 in individuals)
       {
         if(p1.DominatedByCount > 0) continue;
-        
+
         foreach (var p2 in individuals)
         {
           if (p2.DominatedByCount > 2) continue;

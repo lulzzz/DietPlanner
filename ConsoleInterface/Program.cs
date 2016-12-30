@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
+using System.Linq;
 using System.Threading;
 using ConsoleInterface.Storage;
 using DietPlanning.Core.DataProviders.Csv;
@@ -9,6 +10,7 @@ using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
+using Storage;
 
 namespace ConsoleInterface
 {
@@ -20,20 +22,35 @@ namespace ConsoleInterface
     public static void Main(string[] args)
     {
       //min max step reps timeout
-      args = new[] { "population", "100", "150", "25", "2", "33" };
+     // args = new[] { "population", "100", "150", "25", "2", "33" };
+      var arguments = new string[10];
 
+      Console.Write("mutation base: \n"); arguments[7] = Console.ReadLine();
+      Console.Write("iterations base: \n"); arguments[8] = Console.ReadLine();
+      Console.Write("population base: \n"); arguments[9] = Console.ReadLine();
+      Console.Write("series for: mutation, iterations, population? \n");arguments[0] = Console.ReadLine();
+      Console.Write("min: \n");arguments[1] = Console.ReadLine();
+      Console.Write("max: \n");arguments[2] = Console.ReadLine();
+      Console.Write("step: \n");arguments[3] = Console.ReadLine();
+      Console.Write("repeats: \n");arguments[4] = Console.ReadLine();
+      Console.Write("time bound [s]: \n");arguments[5] = Console.ReadLine();
+      Console.Write("number of people: \n");arguments[6] = Console.ReadLine();
+      
       var recipesProvider = new CsvRecipeProvider(new Random(), "DataProviders/Csv/ingredientsv3.csv");
       var recipes = recipesProvider.GetRecipes();
-      var personalData = GetPersonalData();
-      var repeats = int.Parse(args[4]);
-      var timeBound = int.Parse(args[5]);
+      var numOfPeople = int.Parse(arguments[6]);
+      var personalData = GetPersonalData().Take(numOfPeople).ToList();
+      var repeats = int.Parse(arguments[4]);
+      var timeBound = int.Parse(arguments[5]);
       string seriesName;
 
-      var configurations = CreateConfigurations(args, out seriesName);
-      seriesName += "_" + repeats + DateTime.Now.ToString(dateFormat);
+      var configurations = CreateConfigurations(arguments, out seriesName);
+      seriesName += "_" + repeats + "_ppl" + numOfPeople + DateTime.Now.ToString(dateFormat);
 
       var totalSteps = configurations.Count*repeats;
       var currentStep = 0;
+
+      var testStop = false;
 
       foreach (var configuration in configurations)
       {
@@ -41,14 +58,32 @@ namespace ConsoleInterface
         {
           NsgaResult result = null;
 
-          while (result == null)
+          var nullResultCounter = 0;
+
+          while (result == null && !testStop)
           {
+            nullResultCounter++;
+            if (nullResultCounter > 3)
+            {
+              testStop = true;
+            }
             result = RunConfigurationWithTimer(timeBound, configuration, recipes, personalData);
+
           }
+          if (testStop)
+          {
+            Console.WriteLine("Program stopped due to failing tests");
+            break;
+          }
+
           currentStep++;
           Console.WriteLine((double)currentStep * 100/ totalSteps + "%  " + (double)result.Log.SolvingTime/1000);
           var testResult = StorageHelper.CreatTestResult(result, configuration);
           StorageHelper.SaveAsJson(OutputPath, seriesName, testResult);
+        }
+        if (testStop)
+        {
+          break;
         }
       }
 
@@ -63,6 +98,10 @@ namespace ConsoleInterface
       var configurations = new List<Configuration>();
       seriesName = "";
 
+      var baseMutation = double.Parse(args[7], CultureInfo.InvariantCulture);
+      var baseIterations = int.Parse(args[8], CultureInfo.InvariantCulture);
+      var basePopulation = int.Parse(args[9], CultureInfo.InvariantCulture);
+      
       if (type == "mutation")
       {
         var min = double.Parse(args[1], CultureInfo.InvariantCulture);
@@ -75,6 +114,8 @@ namespace ConsoleInterface
         {
           var config = configurationProvider.GetConfiguration();
           config.MutationProbability = i;
+          config.MaxIterations = baseIterations;
+          config.PopulationSize = basePopulation;
           configurations.Add(config);
         }
       }
@@ -89,13 +130,15 @@ namespace ConsoleInterface
         for (var i = min; i <= max; i += step)
         {
           var config = configurationProvider.GetConfiguration();
-         
+          config.MutationProbability = baseMutation;
           if (type == "iterations")
           {
+            config.PopulationSize = basePopulation;
             config.MaxIterations = i;
           }
           else
           {
+            config.MaxIterations = baseIterations;
             config.PopulationSize = i;
           }
           configurations.Add(config);
@@ -105,7 +148,7 @@ namespace ConsoleInterface
       return configurations;
     }
 
-    private static NsgaResult RunConfigurationWithTimer(int maxSeconnds, Configuration configuration, List<Recipe> recipes, List<PersonalData> personalData)
+    private static NsgaResult RunConfigurationWithTimer(int maxSeconds, Configuration configuration, List<Recipe> recipes, List<PersonalData> personalData)
     {
       NsgaResult result = new NsgaResult();
       var failed = false;
@@ -123,17 +166,23 @@ namespace ConsoleInterface
         {
           watch.Stop();
           failed = true;
-          Console.WriteLine("Aborted");
+          Console.WriteLine($"Aborted (calculation time exceeded {maxSeconds} seconds limit)");
         }
       });
 
       var timeoutTimer = new Timer(s =>
       {
         workerThread.Abort();
-      }, null, TimeSpan.FromSeconds(maxSeconnds), TimeSpan.FromDays(1));
+      }, null, TimeSpan.FromSeconds(maxSeconds), TimeSpan.FromDays(1));
 
       workerThread.Start();
       workerThread.Join();
+
+      if (!failed && result.Fronts.First().Any(i => !i.IsFeasible))
+      {
+        failed = true;
+        Console.WriteLine("Aborted (getting infeasible solutions)");
+      }
 
       return failed ? null : result;
     }
@@ -175,25 +224,25 @@ namespace ConsoleInterface
             Pal = 1.8,
             Id = 1
           },
-          //new PersonalData
-          //{
-          //  Age = 35,
-          //  Gender = Gender.Male,
-          //  Height = 220,
-          //  Weight = 110,
-          //  Pal = 1.9,
-          //  Id = 2,
+          new PersonalData
+          {
+            Age = 35,
+            Gender = Gender.Male,
+            Height = 220,
+            Weight = 110,
+            Pal = 1.9,
+            Id = 2,
 
-          //},
-          //new PersonalData
-          //{
-          //  Age = 44,
-          //  Gender = Gender.Female,
-          //  Height = 170,
-          //  Weight = 65,
-          //  Pal = 1.3,
-          //  Id = 3
-          //}
+          },
+          new PersonalData
+          {
+            Age = 44,
+            Gender = Gender.Female,
+            Height = 170,
+            Weight = 65,
+            Pal = 1.3,
+            Id = 3
+          }
       };
       var preferences = Getpreferences();
       pd.ForEach(d => d.Requirements = rp.GetRequirements(d, 5));
