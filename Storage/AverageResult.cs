@@ -3,16 +3,16 @@
   public class AverageResult
   {
     public NormalityResult NormalityHv;
-    public NormalityResult NormalitySigma;
+    public NormalityResult NormalityEpsilon;
     public NormalityResult NormalityTime;
     public double Hypervolume;
     public double Time;
-    public double Sigma;
+    public double Epsilon;
 
     public AverageResult()
     {
       NormalityTime = new NormalityResult();
-      NormalitySigma = new NormalityResult();
+      NormalityEpsilon = new NormalityResult();
       NormalityHv = new NormalityResult();
     }
   }

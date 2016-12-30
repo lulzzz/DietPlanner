@@ -52,7 +52,7 @@ namespace RAdapter
       return hvValue;
     }
 
-    public static double HyperVolume(List<ResultPoint> resultPoints, ResultPoint resultPoint = null)
+    public static double HyperVolume(List<ResultPoint> resultPoints, ResultPoint referencePoint = null)
     {
       var scores = new List<double>();
       var engine = REngine.GetInstance();
@@ -66,12 +66,12 @@ namespace RAdapter
         scores.Add(point.Preferences);
       }
 
-      if (resultPoint != null)
+      if (referencePoint != null)
       {
         engine.SetSymbol("useReferecnePoint", engine.CreateLogical(true));
         engine.SetSymbol("referencePoint", engine.CreateNumericVector(new []
         {
-          resultPoint.Macro, resultPoint.PreparationTime, resultPoint.Cost, resultPoint.Preferences
+          referencePoint.Macro, referencePoint.PreparationTime, referencePoint.Cost, referencePoint.Preferences
         }));
       }
       else
@@ -87,12 +87,46 @@ namespace RAdapter
 
       var hv = engine.GetSymbol("dhv").AsNumeric().ToArray().First();
 
-      //if (Math.Abs(hv) < 0.0001)
-      //{
-      //  throw new ArgumentException();
-      //}
-
       return hv;
+    }
+
+    public static double Epsilon(List<ResultPoint> resultPoints, List<ResultPoint> trueFront)
+    {
+      var engine = REngine.GetInstance();
+
+      var data = new List<double>();
+      var dataTf = new List<double>();
+
+      foreach (var point in resultPoints)
+      {
+        data.Add(point.Macro);
+        data.Add(point.PreparationTime);
+        data.Add(point.Cost);
+        data.Add(point.Preferences);
+      }
+
+      foreach (var point in trueFront)
+      {
+        dataTf.Add(point.Macro);
+        dataTf.Add(point.PreparationTime);
+        dataTf.Add(point.Cost);
+        dataTf.Add(point.Preferences);
+      }
+
+      engine.SetSymbol("data", engine.CreateNumericVector(data.ToArray()));
+      engine.SetSymbol("data_tf", engine.CreateNumericVector(dataTf.ToArray()));
+
+      engine.SetSymbol("individuals", engine.CreateNumericVector(new double[] { resultPoints.Count }));
+      engine.SetSymbol("individuals_tf", engine.CreateNumericVector(new double[] { trueFront.Count }));
+
+      engine.SetSymbol("criterions", engine.CreateNumericVector(new double[] { 4 }));
+      engine.SetSymbol("criterions_tf", engine.CreateNumericVector(new double[] { 4 }));
+
+      RunScript("Epsilon", engine);
+
+      var epsilon = engine.GetSymbol("eps").AsNumeric().ToArray().First();
+
+      return epsilon;
     }
 
     public static NormalityResult Shapiro(List<double> values)
@@ -110,7 +144,7 @@ namespace RAdapter
 
       //engine.Dispose();
 
-      return new NormalityResult { Pvalue = pValue, Statistuc = statistic };
+      return new NormalityResult { Pvalue = pValue, Statistic = statistic };
     }
 
     private static void RunScript(string scriptname, REngine engine)

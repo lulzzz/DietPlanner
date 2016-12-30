@@ -27,6 +27,9 @@ namespace Storage
     [DataMember]
     public double HyperVolume { get; set; }
 
+    [DataMember]
+    public double EpsilonIndicator { get; set; }
+
     public string Machine { get; set; }
   }
 }

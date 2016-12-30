@@ -194,11 +194,6 @@ namespace ConsoleInterface
       var solver = nsgaFactory.GetGroupDietSolver(recipes, personalData, configuration);
       return solver.Solve();
     }
-
-    private static void Ts(out NsgaResult res)
-    {
-      res = new NsgaResult();
-    }
  
     private static List<PersonalData> GetPersonalData()
     {

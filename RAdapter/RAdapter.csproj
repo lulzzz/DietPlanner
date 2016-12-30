@@ -58,6 +58,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Rscripts\Epsilon.R">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Rscripts\hv.R">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
