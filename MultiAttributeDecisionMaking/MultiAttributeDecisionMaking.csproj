@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}</ProjectGuid>
+    <ProjectGuid>{E34C7E5B-A486-4181-A927-F26D4F37746A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RAdapter</RootNamespace>
-    <AssemblyName>RAdapter</AssemblyName>
+    <RootNamespace>MultiAttributeDecisionMaking</RootNamespace>
+    <AssemblyName>MultiAttributeDecisionMaking</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,21 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DynamicInterop, Version=0.7.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\DynamicInterop.0.7.4\lib\net40\DynamicInterop.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\R.NET.Community.1.6.5\lib\net40\RDotNet.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="RDotNet.NativeLibrary, Version=1.6.5.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\R.NET.Community.1.6.5\lib\net40\RDotNet.NativeLibrary.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,30 +40,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RInvoker.cs" />
+    <Compile Include="AhpModel.cs" />
+    <Compile Include="EuclidianHelper.cs" />
+    <Compile Include="Solver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
-    <None Include="Rscripts\Epsilon.R">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Rscripts\hv.R">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Rscripts\Shapiro.R">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="Rscripts\Topsis.R" />
+    <Compile Include="WeightsModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
-      <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
+      <Project>{64dcb637-6456-440b-99a9-33c3198f48d1}</Project>
       <Name>DietPlanning.NSGA</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Storage\Storage.csproj">
-      <Project>{c56f548b-df8f-465d-a040-87cda9a33bb3}</Project>
-      <Name>Storage</Name>
+    <ProjectReference Include="..\RAdapter\RAdapter.csproj">
+      <Project>{f6d9adfc-8e32-4db9-b260-bd5008d8f072}</Project>
+      <Name>RAdapter</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

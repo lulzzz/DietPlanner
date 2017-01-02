@@ -10,6 +10,7 @@ using DietPlanning.NSGA;
 using DietPlanning.Web.Helpers;
 using DietPlanning.Web.Models;
 using DietPlanning.Web.Models.Builders;
+using MultiAttributeDecisionMaking;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -47,6 +48,8 @@ namespace DietPlanning.Web.Controllers
     [HttpPost]
     public ActionResult Ahp(AhpModel ahp)
     {
+      TempData.SaveAhpModel(ahp);
+
       return View("Topsis");
     }
 
@@ -57,7 +60,7 @@ namespace DietPlanning.Web.Controllers
     }
 
     [HttpPost]
-    public ActionResult Topsis(TopsisModel topsis)
+    public ActionResult Topsis(WeightsModel weights)
     {
       return View("Ahp");
     }

@@ -149,7 +149,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\TempDataAccessor.cs" />
-    <Compile Include="Models\AhpModel.cs" />
     <Compile Include="Models\Builders\GroupDietViewModelBuilder.cs" />
     <Compile Include="Models\DailyDietsResultViewModel.cs" />
     <Compile Include="Models\DailyDietViewModel.cs" />
@@ -161,7 +160,6 @@
     <Compile Include="Models\PreferencesViewModel.cs" />
     <Compile Include="Models\SettingsViewModel.cs" />
     <Compile Include="Models\SubCategoryPreferenceViewModel.cs" />
-    <Compile Include="Models\TopsisModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -221,6 +219,7 @@
     <Content Include="Views\Diet\SingleDietPartial.cshtml" />
     <Content Include="Views\Diet\Topsis.cshtml" />
     <Content Include="Views\Diet\Ahp.cshtml" />
+    <Content Include="Views\Diet\View.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -240,6 +239,10 @@
     <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
       <Project>{64DCB637-6456-440B-99A9-33C3198F48D1}</Project>
       <Name>DietPlanning.NSGA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MultiAttributeDecisionMaking\MultiAttributeDecisionMaking.csproj">
+      <Project>{e34c7e5b-a486-4181-a927-f26d4f37746a}</Project>
+      <Name>MultiAttributeDecisionMaking</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

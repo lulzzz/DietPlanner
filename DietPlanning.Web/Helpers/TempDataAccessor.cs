@@ -6,6 +6,7 @@ using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.Web.Models;
+using MultiAttributeDecisionMaking;
 
 namespace DietPlanning.Web.Helpers
 {
@@ -20,6 +21,28 @@ namespace DietPlanning.Web.Helpers
     private const string DietPreferencesKey = "DietPreferencesKey";
     private const string PersonalDataListKey = "PersonalDataListKey";
     private const string GroupDietsResultViewModeltKey = "GroupDietsResultViewModeltKey";
+    private const string AhpKey = "Ahp";
+    private const string TopsisKey = "Topsis";
+
+    public static void SaveAhpModel(this TempDataDictionary tempData, AhpModel ahpModel)
+    {
+      tempData[AhpKey] = ahpModel;
+    }
+
+    public static AhpModel GetAhpModel(this TempDataDictionary tempData)
+    {
+      return tempData.ContainsKey(AhpKey) ? tempData.Peek(AhpKey) as AhpModel : new AhpModel();
+    }
+
+    public static void SaveTopsisModel(this TempDataDictionary tempData, WeightsModel weightsModel)
+    {
+      tempData[TopsisKey] = weightsModel;
+    }
+
+    public static WeightsModel GetTopsisModel(this TempDataDictionary tempData)
+    {
+      return tempData.ContainsKey(TopsisKey) ? tempData.Peek(TopsisKey) as WeightsModel : new WeightsModel();
+    }
 
     public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
     {

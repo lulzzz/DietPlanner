@@ -4,6 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using DietPlanning.NSGA;
+using DietPlanning.NSGA.GroupDietsImplementation;
 using RDotNet;
 using Storage;
 
@@ -11,6 +12,42 @@ namespace RAdapter
 {
   public static class RInvoker
   {
+    public static List<GroupDietIndividual> Topsis(List<GroupDietIndividual> individuals, double costWeight, double prefrencesWeight, double prepTimeWeight, double macroWeight)
+    {
+      var engine = REngine.GetInstance();
+      engine.ClearGlobalEnvironment();
+
+      var scores = new List<double>();
+
+      foreach (var individual in individuals)
+      {
+        scores.Add(individual.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score);
+        scores.Add(individual.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score);
+        scores.Add(individual.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score);
+        scores.Add(individual.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score);
+      }
+      var data = engine.CreateNumericVector(scores.ToArray());
+
+      engine.SetSymbol("data", data);
+      engine.SetSymbol("individualsCount", engine.CreateNumericVector(new double[] { individuals.Count }));
+      engine.SetSymbol("weights", engine.CreateNumericVector(new[] { costWeight, prefrencesWeight, prepTimeWeight, macroWeight }));
+      engine.SetSymbol("impacts", engine.CreateCharacterVector(new[] { "-", "-", "-", "-" }));
+
+      RunScript("Topsis", engine);
+
+      var ranks = engine.GetSymbol("rank").AsNumeric().ToList().Select(r => (int)r).ToList();
+
+      var orderedIndividuals = new List<GroupDietIndividual>();
+
+      for (var rank = 1; rank < ranks.Count + 1 ; rank++)
+      {
+        orderedIndividuals.Add(individuals[ranks.IndexOf(rank)]);
+      }
+
+      return orderedIndividuals;
+    }
+
+
     public static double HyperVolume(List<Individual> individuals, ResultPoint resultPoint = null)
     {
       var scores = new List<double>();
