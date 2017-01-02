@@ -143,6 +143,11 @@ namespace DietPlanning.Web.Helpers
       return tempData.Peek(PersonalDataKey) as PersonalData;
     }
 
+    public static void SavePersonalDataList(this TempDataDictionary tempData, List<PersonalData> personalDatas)
+    {
+      tempData[PersonalDataListKey] = personalDatas;
+    }
+
     public static List<PersonalData> GetPersonalDataList(this TempDataDictionary tempData)
     {
       if (!tempData.ContainsKey(PersonalDataListKey))

@@ -1,16 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Hosting;
 using System.Web.Mvc;
 using DietPlanning.Core.DataProviders;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
+using DietPlanning.NSGA.GroupDietsImplementation;
 using DietPlanning.Web.Helpers;
 using DietPlanning.Web.Models;
 using DietPlanning.Web.Models.Builders;
 using MultiAttributeDecisionMaking;
+using RAdapter;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -25,6 +28,34 @@ namespace DietPlanning.Web.Controllers
       _requirementsProvider = requirementsProvider;
       _nsgaSolverFactory = nsgaSolverFactory;
       _recipeProvider = recipeProvider;
+
+      RInvoker.Path = HostingEnvironment.MapPath(@"~/Content");
+    }
+
+    public ActionResult TopsisDiets()
+    {
+      var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual) i).ToList();
+      var preferences = TempData.GetDietPreferences();
+      var solver = new Solver();
+
+      var ordered = solver.TopsisSort(individuals, TempData.GetTopsisModel());
+    //  var ordered = solver.EuclideanSort(individuals, TempData.GetTopsisModel());
+
+      var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
+
+      return PartialView("DietsPartial", model);
+    }
+
+    public ActionResult Summary()
+    {
+      var dietsViewModel = TempData.GetGroupDietsResultViewModel();
+
+      if (dietsViewModel == null)
+      {
+        return RedirectToAction("GerateSummary");
+      }
+
+      return View(dietsViewModel);
     }
 
     public ActionResult GroupDiets()
@@ -62,6 +93,8 @@ namespace DietPlanning.Web.Controllers
     [HttpPost]
     public ActionResult Topsis(WeightsModel weights)
     {
+      TempData.SaveTopsisModel(weights);
+
       return View("Ahp");
     }
 
@@ -71,14 +104,39 @@ namespace DietPlanning.Web.Controllers
       var personalData = TempData.GetPersonalDataList();
       personalData.ForEach(pd => pd.Requirements = _requirementsProvider.GetRequirements(pd, 5));
 
-
       var recipes = _recipeProvider.GetRecipes();
       var dietPreferences = TempData.GetDietPreferences();
       personalData.ForEach(pd => pd.Preferences = dietPreferences);
+      TempData.SavePersonalDataList(personalData);
+
       var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
 
       var nsgaResult = nsgaSolver.Solve();
       TempData.SaveLog(nsgaResult.Log);
+      TempData.SaveNsgaResult(nsgaResult);
+      var viewModelBuilder = new GroupDietViewModelBuilder();
+
+      var dietsViewModel = viewModelBuilder.Build(nsgaResult, personalData);
+      TempData.SaveGroupDietsResultViewModel(dietsViewModel);
+
+      return RedirectToAction("GroupDiets");
+    }
+
+    public ActionResult GerateSummary()
+    {
+      var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
+      var personalData = TempData.GetPersonalDataList();
+      personalData.ForEach(pd => pd.Requirements = _requirementsProvider.GetRequirements(pd, 5));
+
+      var recipes = _recipeProvider.GetRecipes();
+      var dietPreferences = TempData.GetDietPreferences();
+      personalData.ForEach(pd => pd.Preferences = dietPreferences);
+      TempData.SavePersonalDataList(personalData);
+      var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
+
+      var nsgaResult = nsgaSolver.Solve();
+      TempData.SaveLog(nsgaResult.Log);
+      TempData.SaveNsgaResult(nsgaResult);
 
       var viewModelBuilder = new GroupDietViewModelBuilder();
 

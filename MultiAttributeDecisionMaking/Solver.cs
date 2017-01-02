@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using DietPlanning.Core.GroupDiets;
+using DietPlanning.NSGA;
 using DietPlanning.NSGA.GroupDietsImplementation;
 using RAdapter;
 
@@ -9,7 +11,31 @@ namespace MultiAttributeDecisionMaking
   {
     public List<GroupDietIndividual> TopsisSort(List<GroupDietIndividual> individuals, WeightsModel topisiModel)
     {
-      return RInvoker.Topsis(individuals, topisiModel.CostWeight, topisiModel.PreferncesWeight, topisiModel.PreparationTimeWeight, topisiModel.MacroWeight);
+      var macroMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).Min();
+      var prepTimeMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score).Min();
+      var costMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score).Min();
+      var preferencesMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score).Min();
+
+      var macroMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).Max();
+      var prepTimeMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score).Max();
+      var costMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score).Max();
+      var preferencesMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score).Max();
+
+      var normalized = individuals.Select(i => new GroupDietIndividual(new GroupDiet())
+      {
+        Evaluations = new List<Evaluation>
+        {
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.Macro), macroMin, macroMax),
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime), prepTimeMin, prepTimeMax),
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.Cost), costMin, costMax),
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.Preferences), preferencesMin, preferencesMax)
+        },
+        Rank = individuals.IndexOf(i)
+      });
+
+      var result = RInvoker.Topsis(normalized.ToList(), topisiModel.CostWeight, topisiModel.PreferncesWeight, topisiModel.PreparationTimeWeight, topisiModel.MacroWeight);
+
+      return result.Select(i => individuals[i.Rank]).ToList();
     }
 
     public List<GroupDietIndividual> AhpSort(List<GroupDietIndividual> individuals, AhpModel ahpModel)
@@ -71,9 +97,41 @@ namespace MultiAttributeDecisionMaking
 
     public List<GroupDietIndividual> EuclideanSort(List<GroupDietIndividual> individuals, WeightsModel weights)
     {
-      var sorted = individuals.OrderBy(i => EuclidianHelper.Euclidian(i, weights)).ToList();
+      var macroMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).Min();
+      var prepTimeMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score).Min();
+      var costMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score).Min();
+      var preferencesMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score).Min();
+
+      var macroMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).Max();
+      var prepTimeMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score).Max();
+      var costMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score).Max();
+      var preferencesMax = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score).Max();
+
+
+      var sorted = individuals.OrderBy(i => EuclidianHelper.Euclidian(new GroupDietIndividual(new GroupDiet())
+      {
+        Evaluations = new List<Evaluation>
+        {
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.Macro), macroMin, macroMax),
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime), prepTimeMin, prepTimeMax),
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.Cost), costMin, costMax),
+          Normalize(i.Evaluations.Single(e => e.Type == ObjectiveType.Preferences), preferencesMin, preferencesMax)
+        }
+      }, weights)).ToList();
 
       return sorted;
+    }
+
+    private Evaluation Normalize(Evaluation evaluation, double min, double max)
+    {
+      if (min != max)
+      {
+        return new Evaluation {Type = evaluation.Type, Score = (evaluation.Score - min)/(max - min)};
+      }
+      else
+      {
+      return new Evaluation { Type = evaluation.Type, Score = 1 };
+    }
     }
   }
 }

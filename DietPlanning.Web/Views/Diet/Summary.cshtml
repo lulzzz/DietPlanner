@@ -1,0 +1,48 @@
+﻿@using DietPlanning.NSGA
+@model DietPlanning.Web.Models.GroupDietsResultViewModel
+@{
+  ViewBag.Title = "Diet";
+  Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Scripts.Render("~/bundles/masonry")
+
+<link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
+<br />
+<a href="@Url.Action("GerateGroupDiets")" class="btn btn-info" role="button">Generate Diet</a>
+
+<h2>Diets</h2>
+<div><span>Goals:</span></div>
+
+@foreach (var personaldata in Model.PersonalDatas)
+{
+  <span>Person @personaldata.Id</span>
+  <div><span>@((int)personaldata.Requirements.Calories) Calories</span></div>
+  <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) to @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Carbohydrates</span></div>
+  <div><span>@((int)personaldata.Requirements.FatRange.Lower) to @((int)personaldata.Requirements.FatRange.Upper) g Fats</span></div>
+  <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) to @((int)personaldata.Requirements.ProteinRange.Upper) g Proteins</span></div>
+}
+
+<div id="topsis">
+  @{ Html.RenderAction("TopsisDiets");}
+</div>
+
+<div id="masonry">
+  @foreach (var diet in Model.GroupDiets)
+  {
+    Html.RenderPartial("SingleDietPartial", diet);
+  }
+</div>
+<script>
+  var container = document.querySelector('#topsis');
+  var masonry = new Masonry(container, {
+    columnWidth: 40,
+    itemSelector: '.day'
+  });
+  var container = document.querySelector('#masonry');
+  var masonry = new Masonry(container, {
+    columnWidth: 40,
+    itemSelector: '.day'
+  });
+</script>
+

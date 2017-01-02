@@ -47,6 +47,10 @@
     <Compile Include="WeightsModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DietPlanning.Core\DietPlanning.Core.csproj">
+      <Project>{05DFE2C4-EB22-4E58-80C0-155897AD986D}</Project>
+      <Name>DietPlanning.Core</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">
       <Project>{64dcb637-6456-440b-99a9-33c3198f48d1}</Project>
       <Name>DietPlanning.NSGA</Name>

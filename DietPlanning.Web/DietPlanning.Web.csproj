@@ -180,6 +180,9 @@
     <Content Include="Content\ingredientsv3.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\Topsis.R">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="Properties\PublishProfiles\Local.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Chart.min.js" />
@@ -219,7 +222,8 @@
     <Content Include="Views\Diet\SingleDietPartial.cshtml" />
     <Content Include="Views\Diet\Topsis.cshtml" />
     <Content Include="Views\Diet\Ahp.cshtml" />
-    <Content Include="Views\Diet\View.cshtml" />
+    <Content Include="Views\Diet\Summary.cshtml" />
+    <Content Include="Views\Diet\DietsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -243,6 +247,10 @@
     <ProjectReference Include="..\MultiAttributeDecisionMaking\MultiAttributeDecisionMaking.csproj">
       <Project>{e34c7e5b-a486-4181-a927-f26d4f37746a}</Project>
       <Name>MultiAttributeDecisionMaking</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RAdapter\RAdapter.csproj">
+      <Project>{F6D9ADFC-8E32-4DB9-B260-BD5008D8F072}</Project>
+      <Name>RAdapter</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

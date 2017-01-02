@@ -12,9 +12,12 @@ namespace RAdapter
 {
   public static class RInvoker
   {
+    public static string Path = "";
+
     public static List<GroupDietIndividual> Topsis(List<GroupDietIndividual> individuals, double costWeight, double prefrencesWeight, double prepTimeWeight, double macroWeight)
     {
       var engine = REngine.GetInstance();
+      engine.Initialize();
       engine.ClearGlobalEnvironment();
 
       var scores = new List<double>();
@@ -35,15 +38,16 @@ namespace RAdapter
 
       RunScript("Topsis", engine);
 
-      var ranks = engine.GetSymbol("rank").AsNumeric().ToList().Select(r => (int)r).ToList();
+      var topsisScores = engine.GetSymbol("scores").AsNumeric().ToList();
 
-      var orderedIndividuals = new List<GroupDietIndividual>();
-
-      for (var rank = 1; rank < ranks.Count + 1 ; rank++)
+      var result = new List<Tuple<int, double>>();
+      for (int i = 0; i < topsisScores.Count; i++)
       {
-        orderedIndividuals.Add(individuals[ranks.IndexOf(rank)]);
+        result.Add(new Tuple<int, double>(i, topsisScores[i]));
       }
 
+      var orderedIndividuals = result.OrderByDescending(r => r.Item2).Select(r => individuals[r.Item1]).ToList();
+      
       return orderedIndividuals;
     }
 
@@ -186,11 +190,17 @@ namespace RAdapter
 
     private static void RunScript(string scriptname, REngine engine)
     {
-      var directory = Environment.CurrentDirectory;
-      var rFilePath = directory + $"\\Rscripts\\{scriptname}.R";
-      var cmd = $"source('{rFilePath}')".Replace("\\", "/");
-
-      engine.Evaluate(cmd);
+      if (string.IsNullOrEmpty(Path))
+      {
+        var directory = Environment.CurrentDirectory;
+        var rFilePath = directory + $"\\Rscripts\\{scriptname}.R";
+        var cmd = $"source('{rFilePath}')".Replace("\\", "/");
+      }
+      else
+      {
+        var cmd = $"source('{Path}\\{scriptname}.R')".Replace("\\", "/");
+        engine.Evaluate(cmd);
+      }
     }
   }
 }

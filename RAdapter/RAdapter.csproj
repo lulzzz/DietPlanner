@@ -67,7 +67,9 @@
     <None Include="Rscripts\Shapiro.R">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Rscripts\Topsis.R" />
+    <None Include="Rscripts\Topsis.R">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DietPlanning.NSGA\DietPlanning.NSGA.csproj">

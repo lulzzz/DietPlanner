@@ -1,0 +1,7 @@
+﻿@model List<DietPlanning.Web.Models.GroupDietViewModel>
+  
+@foreach (var diet in Model)
+{
+  Html.RenderPartial("SingleDietPartial", diet);
+}
+

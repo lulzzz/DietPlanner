@@ -20,6 +20,17 @@ namespace DietPlanning.Web.Models.Builders
       return groupDietsResultViewModel;
     }
 
+    public GroupDietsResultViewModel BuildSummaryViewModel(NsgaResult result, List<PersonalData> personalDataList)
+    {
+      var groupDietsResultViewModel = new GroupDietsResultViewModel();
+
+      groupDietsResultViewModel.PersonalDatas = personalDataList;
+      groupDietsResultViewModel.GroupDiets = CreateGroupDietsViewModel(result, personalDataList);
+      groupDietsResultViewModel.GroupDiets = groupDietsResultViewModel.GroupDiets.OrderBy(d => d.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).ToList();
+
+      return groupDietsResultViewModel;
+    }
+
     private List<GroupDietViewModel> CreateGroupDietsViewModel(NsgaResult result, List<PersonalData> personalDataList)
     {
       var models = new List<GroupDietViewModel>();
@@ -34,7 +45,7 @@ namespace DietPlanning.Web.Models.Builders
       return models;
     }
 
-    private GroupDietViewModel CreateGroupDietViewModel(GroupDietIndividual individual, List<PersonalData> personalDataList)
+    public GroupDietViewModel CreateGroupDietViewModel(GroupDietIndividual individual, List<PersonalData> personalDataList)
     {
       var groupDietViewModel = new GroupDietViewModel();
       var dietAnalizer = new GroupDietAnalyzer();

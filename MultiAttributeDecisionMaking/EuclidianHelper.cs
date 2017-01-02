@@ -25,10 +25,10 @@ namespace MultiAttributeDecisionMaking
 
       //macro, cost, time, preferences
       return Math.Sqrt(
-        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score / summarizedScores - normalziedWeights.MacroWeight, 2) -
-        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score / summarizedScores - normalziedWeights.CostWeight, 2) -
-        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score / summarizedScores - normalziedWeights.PreparationTimeWeight, 2) -
-        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score / summarizedScores - normalziedWeights.PreferncesWeight, 2));
+        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score / summarizedScores - 1+ normalziedWeights.MacroWeight, 2) +
+        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.Cost).Score / summarizedScores - 1 + normalziedWeights.CostWeight, 2) +
+        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score / summarizedScores - 1 + normalziedWeights.PreparationTimeWeight, 2) +
+        Math.Pow(individual.Evaluations.Single(e => e.Type == ObjectiveType.Preferences).Score / summarizedScores - 1 + normalziedWeights.PreferncesWeight, 2));
     }
 
     private static double SummarizeScores(GroupDietIndividual individual)
