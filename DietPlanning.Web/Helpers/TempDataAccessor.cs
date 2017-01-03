@@ -23,6 +23,7 @@ namespace DietPlanning.Web.Helpers
     private const string GroupDietsResultViewModeltKey = "GroupDietsResultViewModeltKey";
     private const string AhpKey = "Ahp";
     private const string TopsisKey = "Topsis";
+    private const string PrefPointKey = "PrefPointKey";
 
     public static void SaveAhpModel(this TempDataDictionary tempData, AhpModel ahpModel)
     {
@@ -42,6 +43,16 @@ namespace DietPlanning.Web.Helpers
     public static WeightsModel GetTopsisModel(this TempDataDictionary tempData)
     {
       return tempData.ContainsKey(TopsisKey) ? tempData.Peek(TopsisKey) as WeightsModel : new WeightsModel();
+    }
+
+    public static void SavePreferencePointModel(this TempDataDictionary tempData, WeightsModel weightsModel)
+    {
+      tempData[PrefPointKey] = weightsModel;
+    }
+
+    public static WeightsModel GetPreferencePointModel(this TempDataDictionary tempData)
+    {
+      return tempData.ContainsKey(PrefPointKey) ? tempData.Peek(PrefPointKey) as WeightsModel : new WeightsModel();
     }
 
     public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
@@ -133,7 +144,7 @@ namespace DietPlanning.Web.Helpers
         tempData[PersonalDataKey] = new PersonalData
         {
           Age = 25,
-          Gender = Gender.Male,
+          Gender = Gender.M,
           Height = 185,
           Weight = 85,
           Pal = 1.5
@@ -157,7 +168,7 @@ namespace DietPlanning.Web.Helpers
           new PersonalData
           {
             Age = 25,
-            Gender = Gender.Male,
+            Gender = Gender.M,
             Height = 185,
             Weight = 85,
             Pal = 1.5,
@@ -167,7 +178,7 @@ namespace DietPlanning.Web.Helpers
           new PersonalData
           {
             Age = 22,
-            Gender = Gender.Female,
+            Gender = Gender.K,
             Height = 160,
             Weight = 50,
             Pal = 1.8,
@@ -176,7 +187,7 @@ namespace DietPlanning.Web.Helpers
           //new PersonalData
           //{
           //  Age = 35,
-          //  Gender = Gender.Male,
+          //  Gender = Gender.M,
           //  Height = 220,
           //  Weight = 110,
           //  Pal = 1.9,
@@ -186,7 +197,7 @@ namespace DietPlanning.Web.Helpers
           //new PersonalData
           //{
           //  Age = 44,
-          //  Gender = Gender.Female,
+          //  Gender = Gender.K,
           //  Height = 170,
           //  Weight = 65,
           //  Pal = 1.3,

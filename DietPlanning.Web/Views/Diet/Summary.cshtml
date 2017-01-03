@@ -9,36 +9,64 @@
 
 <link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
 <br />
-<a href="@Url.Action("GerateGroupDiets")" class="btn btn-info" role="button">Generate Diet</a>
+<a href="@Url.Action("GerateGroupDiets")" class="btn btn-info" role="button">Generuj</a>
 
-<h2>Diets</h2>
-<div><span>Goals:</span></div>
+<h2>Wygenerowane diety</h2>
+<div><span>Założenia:</span></div>
 
 @foreach (var personaldata in Model.PersonalDatas)
 {
-  <span>Person @personaldata.Id</span>
-  <div><span>@((int)personaldata.Requirements.Calories) Calories</span></div>
-  <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) to @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Carbohydrates</span></div>
-  <div><span>@((int)personaldata.Requirements.FatRange.Lower) to @((int)personaldata.Requirements.FatRange.Upper) g Fats</span></div>
-  <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) to @((int)personaldata.Requirements.ProteinRange.Upper) g Proteins</span></div>
+  <span>Osoba @personaldata.Id</span>
+  <div><span>@((int)personaldata.Requirements.Calories) kcal</span></div>
+  <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) - @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Węglowodanów</span></div>
+  <div><span>@((int)personaldata.Requirements.FatRange.Lower) - @((int)personaldata.Requirements.FatRange.Upper) g Tłuszczy</span></div>
+  <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) - @((int)personaldata.Requirements.ProteinRange.Upper) g Białek</span></div>
 }
+
+<h2>Metoda Topsis</h2>
 
 <div id="topsis">
   @{ Html.RenderAction("TopsisDiets");}
 </div>
 
-<div id="masonry">
+<h2>Metoda AHP</h2>
+
+<div id="ahp">
+  @{ Html.RenderAction("AhpDiets");}
+</div>
+
+<h2>Metoda Punktu Referencyjnego</h2>
+
+<div id="point">
+  @{ Html.RenderAction("ReferencePointDiets");}
+</div>
+
+@*<div id="masonry">
   @foreach (var diet in Model.GroupDiets)
   {
     Html.RenderPartial("SingleDietPartial", diet);
   }
-</div>
+</div>*@
+
 <script>
   var container = document.querySelector('#topsis');
   var masonry = new Masonry(container, {
     columnWidth: 40,
     itemSelector: '.day'
   });
+
+  var container = document.querySelector('#ahp');
+  var masonry = new Masonry(container, {
+    columnWidth: 40,
+    itemSelector: '.day'
+  });
+
+  var container = document.querySelector('#point');
+  var masonry = new Masonry(container, {
+    columnWidth: 40,
+    itemSelector: '.day'
+  });
+
   var container = document.querySelector('#masonry');
   var masonry = new Masonry(container, {
     columnWidth: 40,

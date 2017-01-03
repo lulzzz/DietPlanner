@@ -203,7 +203,7 @@ namespace ConsoleInterface
         new PersonalData
           {
             Age = 25,
-            Gender = Gender.Male,
+            Gender = Gender.M,
             Height = 185,
             Weight = 85,
             Pal = 1.5,
@@ -213,7 +213,7 @@ namespace ConsoleInterface
           new PersonalData
           {
             Age = 22,
-            Gender = Gender.Female,
+            Gender = Gender.K,
             Height = 160,
             Weight = 50,
             Pal = 1.8,
@@ -222,7 +222,7 @@ namespace ConsoleInterface
           new PersonalData
           {
             Age = 35,
-            Gender = Gender.Male,
+            Gender = Gender.M,
             Height = 220,
             Weight = 110,
             Pal = 1.9,
@@ -232,7 +232,7 @@ namespace ConsoleInterface
           new PersonalData
           {
             Age = 44,
-            Gender = Gender.Female,
+            Gender = Gender.K,
             Height = 170,
             Weight = 65,
             Pal = 1.3,

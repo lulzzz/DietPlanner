@@ -35,11 +35,33 @@ namespace DietPlanning.Web.Controllers
     public ActionResult TopsisDiets()
     {
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual) i).ToList();
-      var preferences = TempData.GetDietPreferences();
       var solver = new Solver();
 
       var ordered = solver.TopsisSort(individuals, TempData.GetTopsisModel());
-    //  var ordered = solver.EuclideanSort(individuals, TempData.GetTopsisModel());
+
+      var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
+
+      return PartialView("DietsPartial", model);
+    }
+
+    public ActionResult AhpDiets()
+    {
+      var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual)i).ToList();
+      var solver = new Solver();
+
+      var ordered = solver.AhpSort(individuals, TempData.GetAhpModel());
+
+      var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
+
+      return PartialView("DietsPartial", model);
+    }
+
+    public ActionResult ReferencePointDiets()
+    {
+      var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual)i).ToList();
+      var solver = new Solver();
+
+      var ordered = solver.EuclideanSort(individuals, TempData.GetTopsisModel());
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 
@@ -73,7 +95,7 @@ namespace DietPlanning.Web.Controllers
     [HttpGet]
     public ActionResult Ahp()
     {
-      return View("Ahp");
+      return View("Ahp", TempData.GetAhpModel());
     }
 
     [HttpPost]
@@ -87,7 +109,7 @@ namespace DietPlanning.Web.Controllers
     [HttpGet]
     public ActionResult Topsis()
     {
-      return View("Topsis");
+      return View("Topsis", TempData.GetTopsisModel());
     }
 
     [HttpPost]
@@ -143,7 +165,7 @@ namespace DietPlanning.Web.Controllers
       var dietsViewModel = viewModelBuilder.Build(nsgaResult, personalData);
       TempData.SaveGroupDietsResultViewModel(dietsViewModel);
 
-      return RedirectToAction("GroupDiets");
+      return RedirectToAction("Summary");
     }
 
 

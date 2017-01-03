@@ -37,7 +37,7 @@ namespace DietPlanning.Core.NutritionRequirements
 
     private double GetPpm(PersonalData personalData)
     {
-      if (personalData.Gender == Gender.Male)
+      if (personalData.Gender == Gender.M)
       {
         return 66.47 + 13.75*personalData.Weight + 5*personalData.Height - 6.75*personalData.Age;
       }

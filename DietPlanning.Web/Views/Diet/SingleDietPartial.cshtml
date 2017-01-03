@@ -4,14 +4,19 @@
   
 <div class="day">
   @foreach (var evaluation in Model.Evaluations)
+  {
+    string name = "";
+    if (evaluation.Type == ObjectiveType.Cost) { name = "Koszt";}
+    if (evaluation.Type == ObjectiveType.Macro) { name = "Błąd norm żyw.";}
+    if (evaluation.Type == ObjectiveType.PreparationTime) { name = "Czas przygotowania";}
+    if (evaluation.Type == ObjectiveType.Preferences) { name = "Błąd preferencji";}
+      if (evaluation.Type == ObjectiveType.Preferences)
       {
-        if (evaluation.Type == ObjectiveType.Preferences)
-        {
-      <div><span>@evaluation.Type: @evaluation.Score.ToString("0.##") </span></div>
+      <div><span>@name: @evaluation.Score.ToString("0.##") </span></div>
     }
     else
     {
-      <div><span>@evaluation.Type: @((int)evaluation.Score)</span></div>
+      <div><span>@name: @((int)evaluation.Score)</span></div>
     }
   }
   <br />
@@ -21,10 +26,10 @@
       {
         <td>
           <div>
-            <div><span>@((int)personDiet.DietSummary.NutritionValues.Calories) Calories</span></div>
-            <div><span>@((int)personDiet.DietSummary.NutritionValues.Carbohydrates) g Carbohydrates</span></div>
-            <div><span>@((int)personDiet.DietSummary.NutritionValues.Fat) g Fats</span></div>
-            <div><span>@((int)personDiet.DietSummary.NutritionValues.Proteins) g Proteins</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Calories) kcal</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Carbohydrates) g Węglowodanów</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Fat) g Tłuszczy</span></div>
+            <div><span>@((int)personDiet.DietSummary.NutritionValues.Proteins) g Białek</span></div>
           </div>
           <br />
           @foreach (var meal in personDiet.Meals)
@@ -35,7 +40,7 @@
             var distanceToRange = meal.IsInRange ? "" : "(" + meal.DistanceToRange + ")";
 
             <div class="meal">
-              <span>Meal @(mealIndex + 1):</span>
+              <span>Posiłek @(mealIndex + 1):</span>
               <span class="@rangeClass">@mealCalories Cal @distanceToRange</span>
               @foreach (var recipe in meal.Recipes)
               {
