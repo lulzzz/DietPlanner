@@ -195,6 +195,7 @@ namespace RAdapter
         var directory = Environment.CurrentDirectory;
         var rFilePath = directory + $"\\Rscripts\\{scriptname}.R";
         var cmd = $"source('{rFilePath}')".Replace("\\", "/");
+        engine.Evaluate(cmd);
       }
       else
       {
