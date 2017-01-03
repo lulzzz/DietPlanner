@@ -144,6 +144,7 @@
     <Compile Include="Controllers\DietController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NinjectControllerFactory.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
     <Compile Include="Controllers\SettingsController.cs" />
     <Compile Include="Controllers\TestsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -215,7 +216,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Settings\Settings.cshtml" />
-    <Content Include="Views\Diet\PersonalData.cshtml" />
+    <Content Include="Views\People\PersonalData.cshtml" />
     <Content Include="Views\Diet\Preferences.cshtml" />
     <Content Include="Views\Diet\FoodSelect.cshtml" />
     <Content Include="Views\Tests\NsgaLog.cshtml" />
@@ -225,6 +226,7 @@
     <Content Include="Views\Diet\Ahp.cshtml" />
     <Content Include="Views\Diet\Summary.cshtml" />
     <Content Include="Views\Diet\DietsPartial.cshtml" />
+    <Content Include="Views\People\People.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

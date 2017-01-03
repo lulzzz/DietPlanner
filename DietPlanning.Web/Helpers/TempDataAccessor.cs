@@ -143,6 +143,7 @@ namespace DietPlanning.Web.Helpers
       {
         tempData[PersonalDataKey] = new PersonalData
         {
+          Name = "Stefan",
           Age = 25,
           Gender = Gender.M,
           Height = 185,
@@ -167,42 +168,24 @@ namespace DietPlanning.Web.Helpers
         {
           new PersonalData
           {
+            Name = "Johny",
             Age = 25,
             Gender = Gender.M,
             Height = 185,
             Weight = 85,
             Pal = 1.5,
             Id = 0,
-
           },
           new PersonalData
           {
+            Name = "Anna",
             Age = 22,
             Gender = Gender.K,
             Height = 160,
             Weight = 50,
             Pal = 1.8,
             Id = 1
-          },
-          //new PersonalData
-          //{
-          //  Age = 35,
-          //  Gender = Gender.M,
-          //  Height = 220,
-          //  Weight = 110,
-          //  Pal = 1.9,
-          //  Id = 2,
-
-          //},
-          //new PersonalData
-          //{
-          //  Age = 44,
-          //  Gender = Gender.K,
-          //  Height = 170,
-          //  Weight = 65,
-          //  Pal = 1.3,
-          //  Id = 3
-          //}
+          }
         };
       }
 

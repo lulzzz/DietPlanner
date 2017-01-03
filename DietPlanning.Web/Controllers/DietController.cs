@@ -103,7 +103,7 @@ namespace DietPlanning.Web.Controllers
     {
       TempData.SaveAhpModel(ahp);
 
-      return View("Topsis");
+      return View("Ahp", ahp);
     }
 
     [HttpGet]
@@ -117,7 +117,7 @@ namespace DietPlanning.Web.Controllers
     {
       TempData.SaveTopsisModel(weights);
 
-      return View("Ahp");
+      return View("Topsis", weights);
     }
 
     public ActionResult GerateGroupDiets()
@@ -167,22 +167,7 @@ namespace DietPlanning.Web.Controllers
 
       return RedirectToAction("Summary");
     }
-
-
-    [HttpGet]
-    public ActionResult PersonalData()
-    {
-      return View(TempData.GetPersonalData());
-    }
-
-    [HttpPost]
-    public ActionResult PersonalData(PersonalData personalData)
-    {
-      TempData.SavePersonalData(personalData);
-
-      return View(personalData);
-    }
-
+    
     [HttpGet]
     public ActionResult Preferences()
     {

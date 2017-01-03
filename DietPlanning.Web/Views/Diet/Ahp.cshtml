@@ -1,7 +1,7 @@
 ﻿@model MultiAttributeDecisionMaking.AhpModel
 
 @{
-    ViewBag.Title = "View";
+    ViewBag.Title = "Ahp";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <h2>Oceny kryteriów parami</h2>
@@ -38,13 +38,13 @@
           <td>A jest równoważne z B</td>
         </tr>
       </table>
+      W lewej kolumnie znajduje się A, w prawej B. Zaznaczenie "odwróć" odwraca tą zależność - element w prawej kolumnie jest bardziej preferowany.
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
       <div class="form-group">
         @Html.LabelFor(model => model.CostMacro, "Minimalizacja kosztów",htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="col-md-3">
-          @Html.EditorFor(model => model.CostMacro, new { htmlAttributes = new { oninput = "CostMacroAmount.value=CostMacro.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
-          <output class="col-md-1" name="CostMacroAmount" for="CostMacro">5</output>
+          @Html.EditorFor(model => model.CostMacro, new { htmlAttributes = new { @class = "form-control col-md-4", type = "number", min = "1", max = "9", step = "2", defaultValue = "1" } })
           @Html.ValidationMessageFor(model => model.CostMacro, "", new { @class = "text-danger" })
         </div>
         @Html.LabelFor(model => model.CostMacro,"Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -58,8 +58,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TimeMacro, "Krótki czas przygotowania", htmlAttributes: new { @class = "control-label col-md-2" })
           <div class="col-md-3">
-            @Html.EditorFor(model => model.TimeMacro, new { htmlAttributes = new { oninput = "TimeMacroAmount.value=TimeMacro.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
-            <output class="col-md-1" name="TimeMacroAmount" for="TimeMacro">5</output>
+            @Html.EditorFor(model => model.TimeMacro, new { htmlAttributes = new { @class = "form-control col-md-4", type = "number", min = "1", max = "9", step = "2", defaultValue = "1" } })
             @Html.ValidationMessageFor(model => model.TimeMacro, "", new { @class = "text-danger" })
           </div>
           @Html.LabelFor(model => model.TimeMacro, "Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -73,8 +72,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.TimeCost, "Krótki czas przygotowania", htmlAttributes: new { @class = "control-label col-md-2" })
           <div class="col-md-3">
-            @Html.EditorFor(model => model.TimeCost, new { htmlAttributes = new { oninput = "TimeCostAmount.value=TimeCost.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
-            <output class="col-md-1" name="TimeCostAmount" for="TimeCost">5</output>
+            @Html.EditorFor(model => model.TimeCost, new { htmlAttributes = new { @class = "form-control col-md-4", type = "number", min = "1", max = "9", step = "2", defaultValue = "1" } })
             @Html.ValidationMessageFor(model => model.TimeCost, "", new { @class = "text-danger" })
           </div>
           @Html.LabelFor(model => model.TimeCost, "Minimalizacja kosztów", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -88,7 +86,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PrefMacro, "Zgodność z preferencjami", htmlAttributes: new { @class = "control-label col-md-2" })
           <div class="col-md-3">
-            @Html.EditorFor(model => model.PrefMacro, new { htmlAttributes = new { oninput = "PrefMacroAmount.value=PrefMacro.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
+            @Html.EditorFor(model => model.PrefMacro, new { htmlAttributes = new { @class = "form-control col-md-4", type = "number", min = "1", max = "9", step = "2", defaultValue = "1" } })
             @Html.ValidationMessageFor(model => model.PrefMacro, "", new { @class = "text-danger" })
           </div>
           @Html.LabelFor(model => model.PrefMacro, "Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -102,8 +100,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PrefCost, "Zgodność z preferencjami", htmlAttributes: new { @class = "control-label col-md-2" })
           <div class="col-md-3">
-            @Html.EditorFor(model => model.PrefCost, new { htmlAttributes = new { oninput = "PrefCostAmount.value=PrefCost.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
-            <output class="col-md-1" name="PrefCostAmount" for="PrefCost">5</output>
+            @Html.EditorFor(model => model.PrefCost, new { htmlAttributes = new { @class = "form-control col-md-4", type = "number", min = "1", max = "9", step = "2", defaultValue = "1" } })
             @Html.ValidationMessageFor(model => model.PrefCost, "", new { @class = "text-danger" })
           </div>
           @Html.LabelFor(model => model.PrefCost, "Minimalizacja kosztów", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -117,8 +114,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.PrefTime, "Zgodność z preferencjami", htmlAttributes: new { @class = "control-label col-md-2" })
           <div class="col-md-3">
-            @Html.EditorFor(model => model.PrefTime, new { htmlAttributes = new { oninput = "PrefTimeAmount.value=PrefTime.value", @class = "form-control col-md-4", type = "range", min = "1", max = "10", step = "2", defaultValue = "1" } })
-            <output class="col-md-1" name="PrefTimeAmount" for="PrefTime">5</output>
+            @Html.EditorFor(model => model.PrefTime, new { htmlAttributes = new {@class = "form-control col-md-4", type = "number", min = "1", max = "9", step = "2", defaultValue = "1" } })
             @Html.ValidationMessageFor(model => model.PrefTime, "", new { @class = "text-danger" })
           </div>
           @Html.LabelFor(model => model.PrefTime, "Krótki czas przygotowania", htmlAttributes: new { @class = "control-label col-md-2" })
@@ -131,7 +127,7 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Dalej" class="btn btn-default" />
+                <input type="submit" value="Zapisz" class="btn btn-default" />
             </div>
         </div>
     </div>

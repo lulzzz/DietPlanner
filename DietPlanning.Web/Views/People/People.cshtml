@@ -1,0 +1,56 @@
+﻿@model IEnumerable<DietPlanning.Core.NutritionRequirements.PersonalData>
+
+@{
+    ViewBag.Title = "Osoby";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Osoby dla których układana jest dieta</h2>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create")
+</p>
+<table class="table">
+    <tr>
+      <th>
+        Imię
+      </th>
+      <th>
+        Wiek
+      </th>
+      <th>
+        Waga
+      </th>
+      <th>
+        Wzorst
+      </th>
+      <th>
+        PAL
+      </th>
+    </tr>
+
+@foreach (var item in Model) {
+  <tr>
+    <td>
+      @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+      @Html.DisplayFor(modelItem => item.Age)
+    </td>
+    <td>
+      @Html.DisplayFor(modelItem => item.Weight)
+    </td>
+    <td>
+      @Html.DisplayFor(modelItem => item.Height)
+    </td>
+    <td>
+      @Html.DisplayFor(modelItem => item.Pal)
+    </td>
+    <td>
+      @Html.ActionLink("Edytuj", "Edit", new {id = item.Id}) |
+      @Html.ActionLink("Usuń", "Delete", new {id = item.Id})
+    </td>
+  </tr>
+}
+
+</table>

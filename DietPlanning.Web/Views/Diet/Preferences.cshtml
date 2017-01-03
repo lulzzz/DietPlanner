@@ -3,7 +3,7 @@
 @model DietPlanning.Web.Models.PreferencesViewModel
 
 @{
-  ViewBag.Title = "Preferences";
+  ViewBag.Title = "Preferencje";
   Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -31,12 +31,12 @@
 
 <br />
 
-<h3> Foods to avoid</h3>
+@*<h3> Foods to avoid</h3>
 
 <div class="ui-widget">
   <label for="food_name_input">Search </label>
   <input id="food_name_input" size="50">
-</div>
+</div>*@
 
 
 <script>
@@ -79,14 +79,14 @@
   }
 </script>
 
-<ul id="disliked" class="list-group">
+@*<ul id="disliked" class="list-group">
   @foreach (var food in Model.DislikedFoods)
   {
   <li id="@food.Id" class="list-group-item" foodId="@food.Name" foodName="@food.Name">@food.Name <a onclick="javascript:removeItem(@food.Id);">Remove</a></li>
   }
-</ul>
+</ul>*@
 
-<button onclick="submit();">Save</button>
+<button onclick="submit();">Zapisz</button>
 
 <script>
   function submit() {

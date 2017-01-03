@@ -15,6 +15,15 @@
   <div class="form-horizontal">
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    
+    <div class="form-group">
+      @Html.LabelFor(model => model.Name, "Imię", htmlAttributes: new { @class = "control-label col-md-2" })
+      <div class="col-md-10">
+        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+      </div>
+    </div>
+
     <div class="form-group">
       @Html.LabelFor(model => model.Age, "Wiek", htmlAttributes: new { @class = "control-label col-md-2" })
       <div class="col-md-10">
@@ -48,14 +57,14 @@
     </div>
 
     <div class="form-group">
-      @Html.LabelFor(model => model.Pal,"PAL",  htmlAttributes: new { @class = "control-label col-md-2" })
+      <label class="control-label col-md-2" for="Pal">PAL</label>
       <div class="col-md-10">
         <input class="form-control text-box single-line" id="Pal" max="2.4" min="1.4" name="Pal" step="0.1" type="number" value="@Model.Pal.ToString(CultureInfo.InvariantCulture)">
       </div>
     </div>
     <div class="form-group">
       <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Save" class="btn btn-default" />
+        <input type="submit" value="Zapisz" class="btn btn-default" />
       </div>
     </div>
     <a href="https://pl.wikipedia.org/wiki/Ca%C5%82kowita_przemiana_materii">Definicja PAL</a>
