@@ -9,7 +9,7 @@
 
 <link href="@Url.Content("~/Content/Diets.css")" rel="stylesheet" type="text/css" />
 <br />
-<a href="@Url.Action("GerateGroupDiets")" class="btn btn-info" role="button">Generuj</a>
+<a href="@Url.Action("GerateSummary")" class="btn btn-info" role="button">Generuj</a>
 
 <h2>Wygenerowane diety</h2>
 <div><span>Założenia:</span></div>
@@ -36,6 +36,12 @@
 </div>
 
 <h2>Metoda Punktu Referencyjnego</h2>
+
+<div id="point">
+  @{ Html.RenderAction("ReferencePointDiets");}
+</div>
+
+<h2>Przeszukiwanie wszystkich rozwiązań</h2>
 
 <div id="point">
   @{ Html.RenderAction("ReferencePointDiets");}
