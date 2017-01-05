@@ -49,9 +49,9 @@
         </div>
         @Html.LabelFor(model => model.CostMacro,"Zgodność z normami", htmlAttributes: new { @class = "control-label col-md-2" })
         <div class="checkbox col-md-2">
-          @Html.EditorFor(model => model.InvertTimeCost)
-          @Html.LabelFor(model => model.InvertTimeCost, "Odwróć", htmlAttributes: new { @class = "control-label col-md-2" })
-          @Html.ValidationMessageFor(model => model.InvertTimeCost, "", new { @class = "text-danger" })
+          @Html.EditorFor(model => model.InvertCostMacro)
+          @Html.LabelFor(model => model.InvertCostMacro, "Odwróć", htmlAttributes: new { @class = "control-label col-md-2" })
+          @Html.ValidationMessageFor(model => model.InvertCostMacro, "", new { @class = "text-danger" })
         </div>
       </div>
      

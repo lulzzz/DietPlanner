@@ -36,7 +36,7 @@ namespace DietPlanning.NSGA.GroupDietsImplementation
           PerformRecipesLevelMutation(meal, mutationProbability);
         }
       }
-      // _corrector.ApplyCorrection(dietIndividual.GroupDiet);
+
       if (meals.Any(m => m.Recipes.Any(r => !r.Recipe.ApplicableMeals.Contains(m.MealType))))
       {
         throw  new ApplicationException();
