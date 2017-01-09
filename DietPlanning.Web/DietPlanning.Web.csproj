@@ -222,8 +222,8 @@
     <Content Include="Views\Tests\NsgaLog.cshtml" />
     <Content Include="Views\Diet\GroupDiets.cshtml" />
     <Content Include="Views\Diet\SingleDietPartial.cshtml" />
-    <Content Include="Views\Diet\Topsis.cshtml" />
-    <Content Include="Views\Diet\Ahp.cshtml" />
+    <Content Include="Views\Diet\Point.cshtml" />
+    <Content Include="Views\Diet\Pairwise.cshtml" />
     <Content Include="Views\Diet\Summary.cshtml" />
     <Content Include="Views\Diet\DietsPartial.cshtml" />
     <Content Include="Views\People\People.cshtml" />

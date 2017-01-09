@@ -93,31 +93,31 @@ namespace DietPlanning.Web.Controllers
     }
 
     [HttpGet]
-    public ActionResult Ahp()
+    public ActionResult Pairwise()
     {
-      return View("Ahp", TempData.GetAhpModel());
+      return View("Pairwise", TempData.GetAhpModel());
     }
 
     [HttpPost]
-    public ActionResult Ahp(AhpModel ahp)
+    public ActionResult Pairwise(AhpModel ahp)
     {
       TempData.SaveAhpModel(ahp);
 
-      return View("Ahp", ahp);
+      return View("Pairwise", ahp);
     }
 
     [HttpGet]
-    public ActionResult Topsis()
+    public ActionResult Point()
     {
-      return View("Topsis", TempData.GetTopsisModel());
+      return View("Point", TempData.GetTopsisModel());
     }
 
     [HttpPost]
-    public ActionResult Topsis(WeightsModel weights)
+    public ActionResult Point(WeightsModel weights)
     {
       TempData.SaveTopsisModel(weights);
 
-      return View("Topsis", weights);
+      return View("Point", weights);
     }
 
     public ActionResult GerateGroupDiets()

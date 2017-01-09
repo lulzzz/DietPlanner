@@ -21,8 +21,8 @@ namespace DietPlanning.Web.Helpers
     private const string DietPreferencesKey = "DietPreferencesKey";
     private const string PersonalDataListKey = "PersonalDataListKey";
     private const string GroupDietsResultViewModeltKey = "GroupDietsResultViewModeltKey";
-    private const string AhpKey = "Ahp";
-    private const string TopsisKey = "Topsis";
+    private const string AhpKey = "Pairwise";
+    private const string TopsisKey = "Point";
     private const string PrefPointKey = "PrefPointKey";
 
     public static void SaveAhpModel(this TempDataDictionary tempData, AhpModel ahpModel)

@@ -16,26 +16,26 @@
 
 @foreach (var personaldata in Model.PersonalDatas)
 {
-  <span>Osoba @personaldata.Id</span>
+  <span>@personaldata.Name</span>
   <div><span>@((int)personaldata.Requirements.Calories) kcal</span></div>
   <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) - @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Węglowodanów</span></div>
   <div><span>@((int)personaldata.Requirements.FatRange.Lower) - @((int)personaldata.Requirements.FatRange.Upper) g Tłuszczy</span></div>
   <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) - @((int)personaldata.Requirements.ProteinRange.Upper) g Białek</span></div>
 }
 
-<h2>Metoda Topsis</h2>
+<h2>Metoda A</h2>
 
 <div id="topsis">
   @{ Html.RenderAction("TopsisDiets");}
 </div>
 
-<h2>Metoda AHP</h2>
+<h2>Metoda B</h2>
 
 <div id="ahp">
   @{ Html.RenderAction("AhpDiets");}
 </div>
 
-<h2>Metoda Punktu Referencyjnego</h2>
+<h2>Metoda C</h2>
 
 <div id="point">
   @{ Html.RenderAction("ReferencePointDiets");}
