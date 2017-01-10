@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
@@ -137,6 +138,23 @@ namespace DietPlanning.Web.Helpers
       return preferences;
     }
 
+    public static PreferencesViewModel GetPreferencesViewModel(this TempDataDictionary tempData, int personId)
+    {
+      return tempData.ContainsKey(PreferencesKey + personId) ? tempData.Peek(PreferencesKey + personId) as PreferencesViewModel : InitializePreferencesViewModel();
+    }
+
+    public static PreferencesViewModel SavePreferencesViewModel(this TempDataDictionary tempData, PreferencesViewModel preferences, int personId)
+    {
+      tempData[PreferencesKey + personId] = preferences;
+
+      return preferences;
+    }
+
+    public static void RemovePreferencesViewModel(this TempDataDictionary tempData, int personId)
+    {
+      tempData.Remove(PreferencesKey + personId);
+    }
+
     public static PersonalData GetPersonalData(this TempDataDictionary tempData)
     {
       if (!tempData.ContainsKey(PersonalDataKey))
@@ -195,6 +213,38 @@ namespace DietPlanning.Web.Helpers
     public static void SavePersonalData(this TempDataDictionary tempData, PersonalData personalData)
     {
       tempData[PersonalDataKey] = personalData;
+    }
+
+    private static PreferencesViewModel InitializePreferencesViewModel()
+    {
+      var preferencesViewModel = new PreferencesViewModel();
+
+      foreach (MainCategory category in Enum.GetValues(typeof(MainCategory)))
+      {
+        var mainCategoryPreference = new MainCategoryPreferenceViewModel
+        {
+          MainCategory = category,
+          DisplayName = category.ToString(),
+          Value = 1,
+          SubCategoryPreferences = CreateSubCategoryPreferenceViewModels(category)
+        };
+
+        preferencesViewModel.MainCategoryPreferences.Add(mainCategoryPreference);
+      }
+
+      return preferencesViewModel;
+    }
+
+    private static List<SubCategoryPreferenceViewModel> CreateSubCategoryPreferenceViewModels(MainCategory mainCategory)
+    {
+      var subCategories = GroupsMapping.SubToMainCategoryMapping.Where(k => k.Value == mainCategory).Select(k => k.Key);
+
+      return subCategories.Select(subCategory => new SubCategoryPreferenceViewModel
+      {
+        Value = 1.0,
+        DisplayName = subCategory.ToString(),
+        SubCategory = subCategory
+      }).ToList();
     }
   }
 }

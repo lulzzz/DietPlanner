@@ -217,7 +217,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Settings\Settings.cshtml" />
     <Content Include="Views\People\PersonalData.cshtml" />
-    <Content Include="Views\Diet\Preferences.cshtml" />
+    <Content Include="Views\Diet\PreferencesOld.cshtml" />
     <Content Include="Views\Diet\FoodSelect.cshtml" />
     <Content Include="Views\Tests\NsgaLog.cshtml" />
     <Content Include="Views\Diet\GroupDiets.cshtml" />
@@ -227,6 +227,7 @@
     <Content Include="Views\Diet\Summary.cshtml" />
     <Content Include="Views\Diet\DietsPartial.cshtml" />
     <Content Include="Views\People\People.cshtml" />
+    <Content Include="Views\People\Preferences.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

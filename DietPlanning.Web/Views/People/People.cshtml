@@ -16,6 +16,9 @@
         Imię
       </th>
       <th>
+        Preferencje kulinarne
+      </th>
+      <th>
         Wiek
       </th>
       <th>
@@ -33,6 +36,9 @@
   <tr>
     <td>
       @Html.DisplayFor(modelItem => item.Name)
+    </td>
+    <td>
+      @Html.ActionLink("Edytuj preferencje", "Preferences", new { id = item.Id })
     </td>
     <td>
       @Html.DisplayFor(modelItem => item.Age)
