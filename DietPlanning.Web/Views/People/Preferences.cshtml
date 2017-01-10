@@ -15,20 +15,31 @@
   {
     <div class="MainCategory">
       <label class="main_cat_input_label" for="@mainCatPreference.MainCategory"><a data-toggle="collapse" href="#sub_of_@mainCatPreference.MainCategory">@mainCatPreference.DisplayName</a> </label>
-      <input class="main_cat_input" id="@mainCatPreference.MainCategory" type="range" name=@mainCatPreference.MainCategory value="@mainCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
+      <input oninput="DisplayIfMin('main_@mainCatPreference.MainCategory')" class="main_cat_input" id="main_@mainCatPreference.MainCategory" type="range" name=@mainCatPreference.MainCategory value="@mainCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
+      <div style="display:none" id="warning_main_@mainCatPreference.MainCategory">Kategoria wraz z podkategoriami zostanie wykluczona z diety</div>
       <div id="sub_of_@mainCatPreference.MainCategory" class="panel-collapse collapse">
         @foreach (var subCatPreference in mainCatPreference.SubCategoryPreferences)
         {
           <Div class="sub_cat_input_container">
             <label for="@subCatPreference.SubCategory"> @subCatPreference.DisplayName</label>
-            <input maintCatId="@mainCatPreference.MainCategory" class="sub_cat_input" id="@subCatPreference.SubCategory" type="range" name=@subCatPreference.SubCategory value="@subCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
+            <input onchange="DisplayIfMin('sub_@subCatPreference.SubCategory')" maintCatId="@mainCatPreference.MainCategory" class="sub_cat_input" id="sub_@subCatPreference.SubCategory" type="range" name=@subCatPreference.SubCategory value="@subCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
+            <div style="display:none" id="warning_sub_@subCatPreference.SubCategory">Kategoria zostanie wykluczona z diety</div>
           </Div>
         }
       </div>
     </div>
   }
 </div>
-
+<script>
+  function DisplayIfMin(id) {
+    var value = $('#' + id).val();
+    if (value === "0.5") {
+      $("#warning_" + id).show(100);
+    } else {
+      $("#warning_" + id).hide(100);
+    }
+  }
+</script>
 <br />
 
 @*<h3> Foods to avoid</h3>
@@ -118,10 +129,10 @@
       complete: function(){window.location.href = "@Url.Action("Point", new {id = Model.PersonId})";},
       data: {
         preferences: {
-        personId: $("#PersonId").val(),
-        MainCategoryPreferences: mainCategoryPreferences,
-        DislikedFoods: dislikedFoods
-      } }
+          personId: $("#PersonId").val(),
+          MainCategoryPreferences: mainCategoryPreferences,
+          DislikedFoods: dislikedFoods
+        } }
     });
   }
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
-using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.Web.Helpers;
@@ -13,7 +12,6 @@ namespace DietPlanning.Web.Controllers
 {
   public class PeopleController : Controller
   {
-    // GET: People
     public ActionResult People()
     {
       return View(TempData.GetPersonalDataList());
