@@ -32,7 +32,7 @@ namespace DietPlanning.Web.Controllers
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual) i).ToList();
       var solver = new Solver();
 
-      var ordered = solver.TopsisSort(individuals, TempData.GetPreferencePointModel(0));
+      var ordered = solver.TopsisSort(individuals, TempData.GetPersonalDataList().Select(p => TempData.GetPreferencePointModel(p.Id)).ToList());
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 
@@ -44,7 +44,7 @@ namespace DietPlanning.Web.Controllers
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual)i).ToList();
       var solver = new Solver();
 
-      var ordered = solver.AhpSort(individuals, TempData.GetAhpModel(0));
+      var ordered = solver.AhpSort(individuals, TempData.GetPersonalDataList().Select(p => TempData.GetAhpModel(p.Id)).ToList());
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 
@@ -56,7 +56,7 @@ namespace DietPlanning.Web.Controllers
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual)i).ToList();
       var solver = new Solver();
 
-      var ordered = solver.EuclideanSort(individuals, TempData.GetPreferencePointModel(0));
+      var ordered = solver.EuclideanSort(individuals, TempData.GetPersonalDataList().Select(p => TempData.GetPreferencePointModel(p.Id)).ToList());
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 

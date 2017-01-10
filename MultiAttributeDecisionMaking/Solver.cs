@@ -9,7 +9,7 @@ namespace MultiAttributeDecisionMaking
 {
   public class Solver
   {
-    public List<GroupDietIndividual> TopsisSort(List<GroupDietIndividual> individuals, WeightsModel topisiModel)
+    public List<GroupDietIndividual> TopsisSort(List<GroupDietIndividual> individuals, List<WeightsModel> topisModels)
     {
       var macroMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).Min();
       var prepTimeMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score).Min();
@@ -33,21 +33,38 @@ namespace MultiAttributeDecisionMaking
         Rank = individuals.IndexOf(i)
       });
 
-      var result = RInvoker.Topsis(normalized.ToList(), topisiModel.CostWeight, topisiModel.PreferncesWeight, topisiModel.PreparationTimeWeight, topisiModel.MacroWeight);
+      var averageTopsis = MakeAverage(topisModels);
+
+      var result = RInvoker.Topsis(normalized.ToList(), averageTopsis.CostWeight, averageTopsis.PreferncesWeight, averageTopsis.PreparationTimeWeight, averageTopsis.MacroWeight);
 
       return result.Select(i => individuals[i.Rank]).ToList();
     }
 
-    public List<GroupDietIndividual> AhpSort(List<GroupDietIndividual> individuals, AhpModel ahpModel)
+    public List<GroupDietIndividual> AhpSort(List<GroupDietIndividual> individuals, List<AhpModel> ahpModels)
+    {
+      var priorityVectors = ahpModels.Select(GetPriorityVector).ToList();
+
+      var averageWeightModel = new WeightsModel
+      {
+        MacroWeight = priorityVectors.Select(v => v.MacroWeight).Average(),
+        CostWeight = priorityVectors.Select(v => v.CostWeight).Average(),
+        PreferncesWeight = priorityVectors.Select(v => v.PreferncesWeight).Average(),
+        PreparationTimeWeight = priorityVectors.Select(v => v.PreparationTimeWeight).Average()
+      };
+
+      return EuclideanSort(individuals, averageWeightModel);
+    }
+
+    public WeightsModel GetPriorityVector(AhpModel ahpModel)
     {
       var invAhp = new AhpModel
       {
-        CostMacro = ahpModel.InvertCostMacro ? ahpModel.CostMacro : 1.0/ahpModel.CostMacro,
-        PrefTime = ahpModel.InvertPrefTime ? ahpModel.PrefTime : 1.0/ahpModel.PrefTime,
-        PrefCost = ahpModel.InvertPrefCost ? ahpModel.PrefCost : 1.0/ahpModel.PrefCost,
-        PrefMacro = ahpModel.InvertPrefMacro ? ahpModel.PrefMacro : 1.0/ahpModel.PrefMacro,
-        TimeCost = ahpModel.InvertTimeCost ? ahpModel.TimeCost : 1.0/ahpModel.TimeCost,
-        TimeMacro = ahpModel.InvertTimeMacro ? ahpModel.TimeMacro : 1.0/ahpModel.TimeMacro
+        CostMacro = ahpModel.InvertCostMacro ? ahpModel.CostMacro : 1.0 / ahpModel.CostMacro,
+        PrefTime = ahpModel.InvertPrefTime ? ahpModel.PrefTime : 1.0 / ahpModel.PrefTime,
+        PrefCost = ahpModel.InvertPrefCost ? ahpModel.PrefCost : 1.0 / ahpModel.PrefCost,
+        PrefMacro = ahpModel.InvertPrefMacro ? ahpModel.PrefMacro : 1.0 / ahpModel.PrefMacro,
+        TimeCost = ahpModel.InvertTimeCost ? ahpModel.TimeCost : 1.0 / ahpModel.TimeCost,
+        TimeMacro = ahpModel.InvertTimeMacro ? ahpModel.TimeMacro : 1.0 / ahpModel.TimeMacro
       };
 
       var matrix = new double[][]
@@ -71,10 +88,10 @@ namespace MultiAttributeDecisionMaking
       {
         for (var c = 0; c < 4; c++)
         {
-          matrix[r][c] = matrix[r][c]/columnSums[c];
+          matrix[r][c] = matrix[r][c] / columnSums[c];
         }
       }
-      
+
       //macro, cost, time, preferences
       var priorityVector = new double[4];
       for (int r = 0; r < 4; r++)
@@ -82,20 +99,34 @@ namespace MultiAttributeDecisionMaking
         priorityVector[r] = matrix[0].Average();
       }
 
-      var weightModel = new WeightsModel
+      return new WeightsModel
       {
         MacroWeight = matrix[0].Average(),
         CostWeight = matrix[1].Average(),
         PreparationTimeWeight = matrix[2].Average(),
         PreferncesWeight = matrix[3].Average(),
       };
-
-      var sorted = individuals.OrderBy(i => EuclidianHelper.Euclidian(i, weightModel)).ToList();
-
-      return sorted;
     }
 
-    public List<GroupDietIndividual> EuclideanSort(List<GroupDietIndividual> individuals, WeightsModel weights)
+    public List<GroupDietIndividual> EuclideanSort(List<GroupDietIndividual> individuals, List<WeightsModel> weights)
+    {
+      var average = MakeAverage(weights);
+
+      return EuclideanSort(individuals, average);
+    }
+
+    private WeightsModel MakeAverage(List<WeightsModel> weights)
+    {
+      return new WeightsModel
+      {
+        MacroWeight = weights.Select(v => v.MacroWeight).Average(),
+        CostWeight = weights.Select(v => v.CostWeight).Average(),
+        PreferncesWeight = weights.Select(v => v.PreferncesWeight).Average(),
+        PreparationTimeWeight = weights.Select(v => v.PreparationTimeWeight).Average()
+      };
+    }
+
+    private List<GroupDietIndividual> EuclideanSort(List<GroupDietIndividual> individuals, WeightsModel weights)
     {
       var macroMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.Macro).Score).Min();
       var prepTimeMin = individuals.Select(i => i.Evaluations.Single(e => e.Type == ObjectiveType.PreparationTime).Score).Min();
@@ -126,12 +157,12 @@ namespace MultiAttributeDecisionMaking
     {
       if (min != max)
       {
-        return new Evaluation {Type = evaluation.Type, Score = (evaluation.Score - min)/(max - min)};
+        return new Evaluation { Type = evaluation.Type, Score = (evaluation.Score - min) / (max - min) };
       }
       else
       {
-      return new Evaluation { Type = evaluation.Type, Score = 1 };
-    }
+        return new Evaluation { Type = evaluation.Type, Score = 1 };
+      }
     }
   }
 }
