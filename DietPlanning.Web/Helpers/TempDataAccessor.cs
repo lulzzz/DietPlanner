@@ -19,42 +19,48 @@ namespace DietPlanning.Web.Helpers
     private const string NsgaResultKey = "NsgaResult";
     private const string DailyDietsResultViewModeltKey = "DailyDietsResultViewModel";
     private const string SettingsKey = "Settings";
-    private const string DietPreferencesKey = "DietPreferencesKey";
     private const string PersonalDataListKey = "PersonalDataListKey";
     private const string GroupDietsResultViewModeltKey = "GroupDietsResultViewModeltKey";
     private const string AhpKey = "Pairwise";
-    private const string TopsisKey = "Point";
     private const string PrefPointKey = "PrefPointKey";
 
-    public static void SaveAhpModel(this TempDataDictionary tempData, AhpModel ahpModel)
+    #region AHP
+
+    public static void SaveAhpModel(this TempDataDictionary tempData, AhpModel ahpModel, int personId)
     {
-      tempData[AhpKey] = ahpModel;
+      tempData[AhpKey + personId] = ahpModel;
     }
 
-    public static AhpModel GetAhpModel(this TempDataDictionary tempData)
+    public static AhpModel GetAhpModel(this TempDataDictionary tempData, int personId)
     {
-      return tempData.ContainsKey(AhpKey) ? tempData.Peek(AhpKey) as AhpModel : new AhpModel();
+      return tempData.ContainsKey(AhpKey + personId) ? tempData.Peek(AhpKey + personId) as AhpModel : new AhpModel();
     }
 
-    public static void SaveTopsisModel(this TempDataDictionary tempData, WeightsModel weightsModel)
+    public static void RemoveAhpModel(this TempDataDictionary tempData, int personId)
     {
-      tempData[TopsisKey] = weightsModel;
+      tempData.Remove(AhpKey + personId);
     }
 
-    public static WeightsModel GetTopsisModel(this TempDataDictionary tempData)
+    #endregion
+
+    #region Point
+
+    public static void SavePreferencePointModel(this TempDataDictionary tempData, WeightsModel weightsModel, int personId)
     {
-      return tempData.ContainsKey(TopsisKey) ? tempData.Peek(TopsisKey) as WeightsModel : new WeightsModel();
+      tempData[PrefPointKey + personId] = weightsModel;
     }
 
-    public static void SavePreferencePointModel(this TempDataDictionary tempData, WeightsModel weightsModel)
+    public static WeightsModel GetPreferencePointModel(this TempDataDictionary tempData, int personId)
     {
-      tempData[PrefPointKey] = weightsModel;
+      return tempData.ContainsKey(PrefPointKey + personId) ? tempData.Peek(PrefPointKey + personId) as WeightsModel : new WeightsModel();
     }
 
-    public static WeightsModel GetPreferencePointModel(this TempDataDictionary tempData)
+    public static void RemovePreferencePointModel(this TempDataDictionary tempData, int personId)
     {
-      return tempData.ContainsKey(PrefPointKey) ? tempData.Peek(PrefPointKey) as WeightsModel : new WeightsModel();
+      tempData.Remove(PrefPointKey + personId);
     }
+
+    #endregion
 
     public static SettingsViewModel GetSettings(this TempDataDictionary tempData)
     {
@@ -66,15 +72,15 @@ namespace DietPlanning.Web.Helpers
       return tempData.Peek(SettingsKey) as SettingsViewModel;
     }
 
-    public static DietPreferences GetDietPreferences(this TempDataDictionary tempData)
-    {
-      return tempData.ContainsKey(DietPreferencesKey) ? tempData.Peek(DietPreferencesKey) as DietPreferences : new DietPreferences();
-    }
+    //public static DietPreferences GetDietPreferences(this TempDataDictionary tempData)
+    //{
+    //  return tempData.ContainsKey(DietPreferencesKey) ? tempData.Peek(DietPreferencesKey) as DietPreferences : new DietPreferences();
+    //}
 
-    public static void SaveDietPreferences(this TempDataDictionary tempData, DietPreferences dietPreferences)
-    {
-      tempData[DietPreferencesKey] = dietPreferences;
-    }
+    //public static void SaveDietPreferences(this TempDataDictionary tempData, DietPreferences dietPreferences)
+    //{
+    //  tempData[DietPreferencesKey] = dietPreferences;
+    //}
 
     public static void SaveSettings(this TempDataDictionary tempData, SettingsViewModel settings)
     {
@@ -215,6 +221,8 @@ namespace DietPlanning.Web.Helpers
       tempData[PersonalDataKey] = personalData;
     }
 
+    #region private
+
     private static PreferencesViewModel InitializePreferencesViewModel()
     {
       var preferencesViewModel = new PreferencesViewModel();
@@ -246,5 +254,7 @@ namespace DietPlanning.Web.Helpers
         SubCategory = subCategory
       }).ToList();
     }
+
+    #endregion
   }
 }

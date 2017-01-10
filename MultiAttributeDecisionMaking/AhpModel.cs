@@ -2,6 +2,8 @@
 {
   public class AhpModel
   {
+    public string PersonName { get; set; }
+    public int PersonId { get; set; }
     public double CostMacro { get; set; } = 1;
     public double TimeMacro { get; set; } = 1;
     public double TimeCost { get; set; } = 1;

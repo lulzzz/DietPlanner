@@ -8,7 +8,7 @@
 }
 
 <h2>@Model.PersonName: preferencje kulinarne</h2>
-<input type="hidden" id="person_id" value="@Model.PersonId"/>
+<input type="hidden" id="PersonId" name="PersonId" value="@Model.PersonId"/>
 <div id="CategoryPreferences">
 
   @foreach (var mainCatPreference in Model.MainCategoryPreferences)
@@ -86,7 +86,7 @@
   }
 </ul>*@
 
-<button onclick="submit();">Zapisz</button>
+<button onclick="submit();">Dalej</button>
 
 <script>
   function submit() {
@@ -115,14 +115,14 @@
       dataType: "json",
       url: '@Url.Action("Preferences")',
       type: 'POST',
+      complete: function(){window.location.href = "@Url.Action("Point", new {id = Model.PersonId})";},
       data: {
-        personId: $("#person_id").val(),
         preferences: {
+        personId: $("#PersonId").val(),
         MainCategoryPreferences: mainCategoryPreferences,
         DislikedFoods: dislikedFoods
       } }
     });
-    window.location.href = "@Url.Action("People")";
   }
 
   function getSubCatPreferences(mainCategory) {

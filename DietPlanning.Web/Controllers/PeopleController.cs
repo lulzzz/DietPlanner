@@ -7,6 +7,7 @@ using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.Web.Helpers;
 using DietPlanning.Web.Models;
+using MultiAttributeDecisionMaking;
 
 namespace DietPlanning.Web.Controllers
 {
@@ -34,12 +35,15 @@ namespace DietPlanning.Web.Controllers
 
       return RedirectToAction("People");
     }
-    
+
     public ActionResult Delete(int id)
     {
       var people = TempData.GetPersonalDataList();
       people.Remove(people.Single(p => p.Id == id));
       TempData.SavePersonalDataList(people);
+      TempData.RemoveAhpModel(id);
+      TempData.RemovePreferencePointModel(id);
+      TempData.RemovePreferencesViewModel(id);
 
       return RedirectToAction("People");
     }
@@ -54,11 +58,11 @@ namespace DietPlanning.Web.Controllers
     public ActionResult Create(PersonalData personalData)
     {
       var people = TempData.GetPersonalDataList();
-      personalData.Id = people.Any() ? people.Select(p => p.Id).Max() + 1 : 1;
+      personalData.Id = people.Any() ? people.Select(p => p.Id).Max() + 1 : 0;
       people.Add(personalData);
       TempData.SavePersonalDataList(people);
 
-      return RedirectToAction("People");
+      return RedirectToAction("Preferences", new { id = personalData.Id});
     }
 
     [HttpGet]
@@ -76,12 +80,51 @@ namespace DietPlanning.Web.Controllers
     {
       UpdatePreferences(preferences);
 
+      return new HttpStatusCodeResult(200);
+    }
+
+
+    [HttpGet]
+    public ActionResult Pairwise(int id)
+    {
+      var ahpModel = TempData.GetAhpModel(id);
+      ahpModel.PersonId = id;
+      ahpModel.PersonName = TempData.GetPersonalDataList().Single(p => p.Id == id).Name;
+
+      return View("Pairwise", ahpModel);
+    }
+
+    [HttpPost]
+    public ActionResult Pairwise(AhpModel ahp)
+    {
+      TempData.SaveAhpModel(ahp, ahp.PersonId);
+
       return RedirectToAction("People");
     }
 
+    [HttpGet]
+    public ActionResult Point(int id)
+    {
+      var pointModel = TempData.GetPreferencePointModel(id);
+      pointModel.PersonId = id;
+      pointModel.PersonName = TempData.GetPersonalDataList().Single(p => p.Id == id).Name;
+
+      return View("Point", pointModel);
+    }
+
+    [HttpPost]
+    public ActionResult Point(WeightsModel weights)
+    {
+      TempData.SavePreferencePointModel(weights, weights.PersonId);
+
+      return RedirectToAction("Pairwise", new { id = weights.PersonId } );
+    }
+
+
     private void UpdatePreferences(PreferencesViewModel preferencesViewModel)
     {
-      var preferences = TempData.GetPersonalDataList().Single(p => p.Id == preferencesViewModel.PersonId).Preferences;
+      var personalData = TempData.GetPersonalDataList();
+      var preferences = personalData.Single(p => p.Id == preferencesViewModel.PersonId).Preferences;
       preferences.CategoryPreferences.Clear();
 
       var oldPreferences = TempData.GetPreferencesViewModel(preferencesViewModel.PersonId);
@@ -115,6 +158,7 @@ namespace DietPlanning.Web.Controllers
       }
 
       TempData.SavePreferencesViewModel(oldPreferences, preferencesViewModel.PersonId);
+      TempData.SavePersonalDataList(personalData);
     }
   }
 }

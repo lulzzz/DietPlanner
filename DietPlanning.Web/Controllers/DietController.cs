@@ -1,16 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using DietPlanning.Core.DataProviders;
-using DietPlanning.Core.DomainObjects;
-using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.GroupDietsImplementation;
 using DietPlanning.Web.Helpers;
-using DietPlanning.Web.Models;
 using DietPlanning.Web.Models.Builders;
 using MultiAttributeDecisionMaking;
 using RAdapter;
@@ -37,7 +32,7 @@ namespace DietPlanning.Web.Controllers
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual) i).ToList();
       var solver = new Solver();
 
-      var ordered = solver.TopsisSort(individuals, TempData.GetTopsisModel());
+      var ordered = solver.TopsisSort(individuals, TempData.GetPreferencePointModel(0));
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 
@@ -49,7 +44,7 @@ namespace DietPlanning.Web.Controllers
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual)i).ToList();
       var solver = new Solver();
 
-      var ordered = solver.AhpSort(individuals, TempData.GetAhpModel());
+      var ordered = solver.AhpSort(individuals, TempData.GetAhpModel(0));
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 
@@ -61,7 +56,7 @@ namespace DietPlanning.Web.Controllers
       var individuals = TempData.GetNsgaResult().Fronts.First().Select(i => (GroupDietIndividual)i).ToList();
       var solver = new Solver();
 
-      var ordered = solver.EuclideanSort(individuals, TempData.GetTopsisModel());
+      var ordered = solver.EuclideanSort(individuals, TempData.GetPreferencePointModel(0));
 
       var model = ordered.Select(i => new GroupDietViewModelBuilder().CreateGroupDietViewModel(i, TempData.GetPersonalDataList())).Take(5).ToList();
 
@@ -74,85 +69,18 @@ namespace DietPlanning.Web.Controllers
 
       if (dietsViewModel == null)
       {
-        return RedirectToAction("GerateSummary");
+        return RedirectToAction("GenerateSummary");
       }
 
       return View(dietsViewModel);
     }
 
-    public ActionResult GroupDiets()
+    public ActionResult GenerateSummary()
     {
-      var dietsViewModel = TempData.GetGroupDietsResultViewModel();
-
-      if (dietsViewModel == null)
-      {
-        return RedirectToAction("GerateGroupDiets");
-      }
-
-      return View(dietsViewModel);
-    }
-
-    [HttpGet]
-    public ActionResult Pairwise()
-    {
-      return View("Pairwise", TempData.GetAhpModel());
-    }
-
-    [HttpPost]
-    public ActionResult Pairwise(AhpModel ahp)
-    {
-      TempData.SaveAhpModel(ahp);
-
-      return View("Pairwise", ahp);
-    }
-
-    [HttpGet]
-    public ActionResult Point()
-    {
-      return View("Point", TempData.GetTopsisModel());
-    }
-
-    [HttpPost]
-    public ActionResult Point(WeightsModel weights)
-    {
-      TempData.SaveTopsisModel(weights);
-
-      return View("Point", weights);
-    }
-
-    public ActionResult GerateGroupDiets()
-    {
-      var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
       var personalData = TempData.GetPersonalDataList();
       personalData.ForEach(pd => pd.Requirements = _requirementsProvider.GetRequirements(pd, 5));
 
       var recipes = _recipeProvider.GetRecipes();
-      var dietPreferences = TempData.GetDietPreferences();
-      personalData.ForEach(pd => pd.Preferences = dietPreferences);
-      TempData.SavePersonalDataList(personalData);
-
-      var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
-
-      var nsgaResult = nsgaSolver.Solve();
-      TempData.SaveLog(nsgaResult.Log);
-      TempData.SaveNsgaResult(nsgaResult);
-      var viewModelBuilder = new GroupDietViewModelBuilder();
-
-      var dietsViewModel = viewModelBuilder.Build(nsgaResult, personalData);
-      TempData.SaveGroupDietsResultViewModel(dietsViewModel);
-
-      return RedirectToAction("GroupDiets");
-    }
-
-    public ActionResult GerateSummary()
-    {
-      var dietRequirements = _requirementsProvider.GetRequirements(TempData.GetPersonalData(), 5);
-      var personalData = TempData.GetPersonalDataList();
-      personalData.ForEach(pd => pd.Requirements = _requirementsProvider.GetRequirements(pd, 5));
-
-      var recipes = _recipeProvider.GetRecipes();
-      var dietPreferences = TempData.GetDietPreferences();
-      personalData.ForEach(pd => pd.Preferences = dietPreferences);
       TempData.SavePersonalDataList(personalData);
       var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
 
@@ -167,25 +95,7 @@ namespace DietPlanning.Web.Controllers
 
       return RedirectToAction("Summary");
     }
-    
-    [HttpGet]
-    public ActionResult Preferences()
-    {
-      var preferences = TempData.GetPreferencesViewModel() ?? InitializePreferencesViewModel();
-
-      TempData.SavePreferencesViewModel(preferences);
-
-      return View(preferences);
-    }
-
-    [HttpPost]
-    public ActionResult Preferences(PreferencesViewModel preferences)
-    {
-      UpdatePreferences(preferences);
-
-      return View(TempData.GetPreferencesViewModel());
-    }
-
+   
     [HttpGet]
     public JsonResult GetFoods(string term)
     {
@@ -197,75 +107,6 @@ namespace DietPlanning.Web.Controllers
       //return json;
 
       return new JsonResult();
-    }
-
-    private void UpdatePreferences(PreferencesViewModel preferencesViewModel)
-    {
-      var preferences = TempData.GetDietPreferences();
-      preferences.CategoryPreferences.Clear();
-
-      var oldPreferences = TempData.GetPreferencesViewModel();
-      var oldMainPrefs = oldPreferences.MainCategoryPreferences;
-      var oldSubPrefs = oldPreferences.MainCategoryPreferences.SelectMany(m => m.SubCategoryPreferences).ToList();
-
-      foreach (var mainCategoryPreference in preferencesViewModel.MainCategoryPreferences)
-      {
-        List<SubCategoryPreferenceViewModel> subCategories;
-
-        if (Math.Abs(mainCategoryPreference.Value - 1.0) > 0.01)
-        {
-          oldMainPrefs.Single(m => m.MainCategory == mainCategoryPreference.MainCategory).Value = mainCategoryPreference.Value;
-          subCategories = mainCategoryPreference.SubCategoryPreferences;
-        }
-        else
-        {
-          subCategories = mainCategoryPreference.SubCategoryPreferences.Where(sub => Math.Abs(sub.Value - 1.0) > 0.01).ToList();
-        }
-
-        foreach (var subCategory in subCategories)
-        {
-          oldSubPrefs.Single(s => s.SubCategory ==  subCategory.SubCategory).Value = subCategory.Value;
-
-          preferences.CategoryPreferences.Add(new CategoryPreference
-          {
-            Preference = subCategory.Value*mainCategoryPreference.Value,
-            SubCategory = subCategory.SubCategory
-          });
-        }
-      }
-
-      TempData.SavePreferencesViewModel(oldPreferences);
-      TempData.SaveDietPreferences(preferences);
-    }
-
-    private PreferencesViewModel InitializePreferencesViewModel()
-    {
-      var preferencesViewModel = new PreferencesViewModel();
-
-      foreach (MainCategory category in Enum.GetValues(typeof(MainCategory)))
-      {
-        var mainCategoryPreference = new MainCategoryPreferenceViewModel
-        {
-          MainCategory = category,
-          DisplayName = category.ToString(),
-          Value = 1,
-          SubCategoryPreferences = CreateSubCategoryPreferenceViewModels(category)
-        };
-        
-        preferencesViewModel.MainCategoryPreferences.Add(mainCategoryPreference);
-      }
-      
-      return preferencesViewModel;
-    }
-
-    private List<SubCategoryPreferenceViewModel> CreateSubCategoryPreferenceViewModels(MainCategory mainCategory)
-    {
-      var subCategories = GroupsMapping.SubToMainCategoryMapping.Where(k => k.Value == mainCategory).Select(k => k.Key);
-
-      return subCategories.Select(subCategory => new SubCategoryPreferenceViewModel
-      {
-        Value = 1.0, DisplayName = subCategory.ToString(), SubCategory = subCategory
-      }).ToList();
     }
   }
 }
