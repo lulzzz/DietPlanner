@@ -59,20 +59,20 @@ namespace MultiAttributeDecisionMaking
     {
       var invAhp = new AhpModel
       {
-        CostMacro = ahpModel.InvertCostMacro ? ahpModel.CostMacro : 1.0 / ahpModel.CostMacro,
-        PrefTime = ahpModel.InvertPrefTime ? ahpModel.PrefTime : 1.0 / ahpModel.PrefTime,
-        PrefCost = ahpModel.InvertPrefCost ? ahpModel.PrefCost : 1.0 / ahpModel.PrefCost,
-        PrefMacro = ahpModel.InvertPrefMacro ? ahpModel.PrefMacro : 1.0 / ahpModel.PrefMacro,
-        TimeCost = ahpModel.InvertTimeCost ? ahpModel.TimeCost : 1.0 / ahpModel.TimeCost,
-        TimeMacro = ahpModel.InvertTimeMacro ? ahpModel.TimeMacro : 1.0 / ahpModel.TimeMacro
+        CostMacro = !ahpModel.InvertCostMacro ? ahpModel.CostMacro : 1.0 / ahpModel.CostMacro,
+        PrefTime = !ahpModel.InvertPrefTime ? ahpModel.PrefTime : 1.0 / ahpModel.PrefTime,
+        PrefCost = !ahpModel.InvertPrefCost ? ahpModel.PrefCost : 1.0 / ahpModel.PrefCost,
+        PrefMacro = !ahpModel.InvertPrefMacro ? ahpModel.PrefMacro : 1.0 / ahpModel.PrefMacro,
+        TimeCost = !ahpModel.InvertTimeCost ? ahpModel.TimeCost : 1.0 / ahpModel.TimeCost,
+        TimeMacro = !ahpModel.InvertTimeMacro ? ahpModel.TimeMacro : 1.0 / ahpModel.TimeMacro
       };
 
       var matrix = new double[][]
       {
-        new[] { 1.0, 1.0 / invAhp.CostMacro, 1.0 / invAhp.TimeMacro, 1.0/ invAhp.PrefMacro},
-        new[] { invAhp.CostMacro, 1.0, 1.0 / invAhp.TimeCost, 1.0 / invAhp.PrefCost},
-        new[] { invAhp.TimeMacro, invAhp.TimeCost, 1.0, 1.0 / invAhp.PrefTime},
-        new[] { invAhp.PrefMacro, 1.0 / invAhp.PrefCost, 1.0 / invAhp.PrefTime, 1.0 }
+        new[] { 1.0, 1.0 / invAhp.CostMacro, 1.0 / invAhp.TimeMacro, 1.0/ invAhp.PrefMacro}, //macro
+        new[] { invAhp.CostMacro, 1.0, 1.0 / invAhp.TimeCost, 1.0 / invAhp.PrefCost}, // cost
+        new[] { invAhp.TimeMacro, invAhp.TimeCost, 1.0, 1.0 / invAhp.PrefTime}, //time
+        new[] { invAhp.PrefMacro, 1.0 / invAhp.PrefCost, 1.0 / invAhp.PrefTime, 1.0 } //pref
       };
 
       var columnSums = new double[4];
@@ -96,7 +96,7 @@ namespace MultiAttributeDecisionMaking
       var priorityVector = new double[4];
       for (int r = 0; r < 4; r++)
       {
-        priorityVector[r] = matrix[0].Average();
+        priorityVector[r] = matrix[r].Average();
       }
 
       return new WeightsModel

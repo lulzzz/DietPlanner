@@ -1,7 +1,10 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using DietPlanning.Core.DataProviders;
+using DietPlanning.Core.DomainObjects;
+using DietPlanning.Core.FoodPreferences;
 using DietPlanning.Core.NutritionRequirements;
 using DietPlanning.NSGA;
 using DietPlanning.NSGA.GroupDietsImplementation;
@@ -79,8 +82,11 @@ namespace DietPlanning.Web.Controllers
     {
       var personalData = TempData.GetPersonalDataList();
       personalData.ForEach(pd => pd.Requirements = _requirementsProvider.GetRequirements(pd, 5));
+      var bannedSubCategories = GetBannedSubCategories();
+      var bannedMainCategories = GetBannedMainCategories();
 
-      var recipes = _recipeProvider.GetRecipes();
+      var recipes = _recipeProvider.GetRecipes().Where(r => !bannedMainCategories.Contains(r.MainCategory) && !bannedSubCategories.Contains(r.SubCategory)).ToList();
+
       TempData.SavePersonalDataList(personalData);
       var nsgaSolver = _nsgaSolverFactory.GetGroupDietSolver(recipes, personalData, TempData.GetSettings().NsgaConfiguration);
 
@@ -107,6 +113,24 @@ namespace DietPlanning.Web.Controllers
       //return json;
 
       return new JsonResult();
+    }
+
+    private List<MainCategory> GetBannedMainCategories()
+    {
+      var preferencesModels = TempData.GetPersonalDataList().Select(pd => TempData.GetPreferencesViewModel(pd.Id));
+
+      var bannedCategories = preferencesModels.SelectMany(p => p.MainCategoryPreferences.Where(cp => cp.Value <= 0.5));
+
+      return bannedCategories.Select(cat => cat.MainCategory).Distinct().ToList();
+    }
+
+    private List<SubCategory> GetBannedSubCategories()
+    {
+      var preferencesModels = TempData.GetPersonalDataList().Select(pd => TempData.GetPreferencesViewModel(pd.Id));
+
+      var bannedCategories = preferencesModels.SelectMany(p => p.MainCategoryPreferences).SelectMany(p => p.SubCategoryPreferences).Where(cp => cp.Value <= 0.5);
+
+      return bannedCategories.Select(cat => cat.SubCategory).Distinct().ToList();
     }
   }
 }

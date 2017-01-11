@@ -22,7 +22,7 @@
         {
           <Div class="sub_cat_input_container">
             <label for="@subCatPreference.SubCategory"> @subCatPreference.DisplayName</label>
-            <input onchange="DisplayIfMin('sub_@subCatPreference.SubCategory')" maintCatId="@mainCatPreference.MainCategory" class="sub_cat_input" id="sub_@subCatPreference.SubCategory" type="range" name=@subCatPreference.SubCategory value="@subCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
+            <input onchange="DisplayIfMin('sub_@subCatPreference.SubCategory')" maintCatId="main_@mainCatPreference.MainCategory" class="sub_cat_input" id="sub_@subCatPreference.SubCategory" type="range" name=@subCatPreference.SubCategory value="@subCatPreference.Value.ToString(CultureInfo.InvariantCulture)" step="0.1" min="0.5" max="1.5">
             <div style="display:none" id="warning_sub_@subCatPreference.SubCategory">Kategoria zostanie wykluczona z diety</div>
           </Div>
         }
@@ -109,7 +109,7 @@
         var mainCatId = $(obj).attr('id');
         var mainCatPreference =
         {
-          MainCategory: mainCatId,
+          MainCategory: mainCatId.replace("main_",""),
           Value: $(obj).val().toString().replace(".",","),
           SubCategoryPreferences: getSubCatPreferences(mainCatId)
         };
@@ -142,7 +142,7 @@
       .each(function(i, obj) {
         var subCatPreference =
         {
-          SubCategory: $(obj).attr('id'),
+          SubCategory: $(obj).attr('id').replace("sub_",""),
           Value: $(obj).val().toString().replace(".",",")
         };
         subCatPreferences.push(subCatPreference);

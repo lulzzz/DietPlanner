@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web.Mvc;
 using DietPlanning.Core.DomainObjects;
 using DietPlanning.Core.FoodPreferences;
@@ -232,7 +233,7 @@ namespace DietPlanning.Web.Helpers
         var mainCategoryPreference = new MainCategoryPreferenceViewModel
         {
           MainCategory = category,
-          DisplayName = category.ToString(),
+          DisplayName = Regex.Replace(category.ToString(), "(\\B[A-Z])", " $1"),
           Value = 1,
           SubCategoryPreferences = CreateSubCategoryPreferenceViewModels(category)
         };
@@ -250,7 +251,7 @@ namespace DietPlanning.Web.Helpers
       return subCategories.Select(subCategory => new SubCategoryPreferenceViewModel
       {
         Value = 1.0,
-        DisplayName = subCategory.ToString(),
+        DisplayName = Regex.Replace(subCategory.ToString(), "(\\B[A-Z])", " $1"),
         SubCategory = subCategory
       }).ToList();
     }
