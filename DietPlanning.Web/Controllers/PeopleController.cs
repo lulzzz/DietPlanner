@@ -42,6 +42,7 @@ namespace DietPlanning.Web.Controllers
       TempData.RemoveAhpModel(id);
       TempData.RemovePreferencePointModel(id);
       TempData.RemovePreferencesViewModel(id);
+      TempData.ClearGroupDietsResultViewModel();
 
       return RedirectToAction("People");
     }
@@ -59,6 +60,7 @@ namespace DietPlanning.Web.Controllers
       personalData.Id = people.Any() ? people.Select(p => p.Id).Max() + 1 : 0;
       people.Add(personalData);
       TempData.SavePersonalDataList(people);
+      TempData.ClearGroupDietsResultViewModel();
 
       return RedirectToAction("Preferences", new { id = personalData.Id});
     }

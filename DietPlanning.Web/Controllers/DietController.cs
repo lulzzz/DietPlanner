@@ -70,10 +70,10 @@ namespace DietPlanning.Web.Controllers
     {
       var dietsViewModel = TempData.GetGroupDietsResultViewModel();
 
-      if (dietsViewModel == null)
-      {
-        return RedirectToAction("GenerateSummary");
-      }
+      //if (dietsViewModel == null)
+      //{
+      //  return RedirectToAction("GenerateSummary");
+      //}
 
       return View(dietsViewModel);
     }

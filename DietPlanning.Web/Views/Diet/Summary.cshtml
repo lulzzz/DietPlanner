@@ -1,5 +1,5 @@
 ﻿
-  @using DietPlanning.NSGA
+@using DietPlanning.NSGA
 @model DietPlanning.Web.Models.GroupDietsResultViewModel
 @{
   ViewBag.Title = "Diet";
@@ -12,66 +12,69 @@
 <br />
 <a href="@Url.Action("GenerateSummary")" class="btn btn-info" role="button">Generuj</a>
 
-<h2>Wygenerowane diety</h2>
-<div><span>Założenia:</span></div>
-
-@foreach (var personaldata in Model.PersonalDatas)
+@if (Model != null)
 {
-  <span>@personaldata.Name</span>
-  <div><span>@((int)personaldata.Requirements.Calories) kcal</span></div>
-  <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) - @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Węglowodanów</span></div>
-  <div><span>@((int)personaldata.Requirements.FatRange.Lower) - @((int)personaldata.Requirements.FatRange.Upper) g Tłuszczy</span></div>
-  <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) - @((int)personaldata.Requirements.ProteinRange.Upper) g Białek</span></div>
-}
+  <h2>Wygenerowane diety</h2>
+  <div><span>Założenia:</span></div>
 
-<h2>Metoda A</h2>
-
-<div id="topsis">
-  @{ Html.RenderAction("TopsisDiets");}
-</div>
-
-<h2>Metoda B</h2>
-
-<div id="ahp">
-  @{ Html.RenderAction("AhpDiets");}
-</div>
-
-<h2>Metoda C</h2>
-
-<div id="point">
-  @{ Html.RenderAction("ReferencePointDiets");}
-</div>
-
-@*<div id="masonry">
-  @foreach (var diet in Model.GroupDiets)
+  foreach (var personaldata in Model.PersonalDatas)
   {
-    Html.RenderPartial("SingleDietPartial", diet);
+    <span>@personaldata.Name</span>
+    <div><span>@((int)personaldata.Requirements.Calories) kcal</span></div>
+    <div><span>@((int)personaldata.Requirements.CarbohydratesRange.Lower) - @((int)personaldata.Requirements.CarbohydratesRange.Upper) g Węglowodanów</span></div>
+    <div><span>@((int)personaldata.Requirements.FatRange.Lower) - @((int)personaldata.Requirements.FatRange.Upper) g Tłuszczy</span></div>
+    <div><span>@((int)personaldata.Requirements.ProteinRange.Lower) - @((int)personaldata.Requirements.ProteinRange.Upper) g Białek</span></div>
   }
-</div>*@
 
-<script>
-  var container = document.querySelector('#topsis');
-  var masonry = new Masonry(container, {
-    columnWidth: 40,
-    itemSelector: '.day'
-  });
+  <h2>Metoda A</h2>
 
-  var container = document.querySelector('#ahp');
-  var masonry = new Masonry(container, {
-    columnWidth: 40,
-    itemSelector: '.day'
-  });
+  <div id="topsis">
+    @{ Html.RenderAction("TopsisDiets");}
+  </div>
 
-  var container = document.querySelector('#point');
-  var masonry = new Masonry(container, {
-    columnWidth: 40,
-    itemSelector: '.day'
-  });
+  <h2>Metoda B</h2>
 
-  var container = document.querySelector('#masonry');
-  var masonry = new Masonry(container, {
-    columnWidth: 40,
-    itemSelector: '.day'
-  });
-</script>
+  <div id="ahp">
+    @{ Html.RenderAction("AhpDiets");}
+  </div>
 
+  <h2>Metoda C</h2>
+
+  <div id="point">
+    @{ Html.RenderAction("ReferencePointDiets");}
+  </div>
+
+  @*<div id="masonry">
+      @foreach (var diet in Model.GroupDiets)
+      {
+        Html.RenderPartial("SingleDietPartial", diet);
+      }
+    </div>*@
+
+      <script>
+        var container = document.querySelector('#topsis');
+        var masonry = new Masonry(container, {
+          columnWidth: 40,
+          itemSelector: '.day'
+        });
+
+        var container = document.querySelector('#ahp');
+        var masonry = new Masonry(container, {
+          columnWidth: 40,
+          itemSelector: '.day'
+        });
+
+        var container = document.querySelector('#point');
+        var masonry = new Masonry(container, {
+          columnWidth: 40,
+          itemSelector: '.day'
+        });
+
+        var container = document.querySelector('#masonry');
+        var masonry = new Masonry(container, {
+          columnWidth: 40,
+          itemSelector: '.day'
+        });
+      </script>
+
+ }

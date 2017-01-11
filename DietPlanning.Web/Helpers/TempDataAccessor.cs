@@ -108,6 +108,11 @@ namespace DietPlanning.Web.Helpers
       tempData[GroupDietsResultViewModeltKey] = nsgaResult;
     }
 
+    public static void ClearGroupDietsResultViewModel(this TempDataDictionary tempData)
+    {
+      tempData.Remove(GroupDietsResultViewModeltKey);
+    }
+
     public static NsgaResult GetNsgaResult(this TempDataDictionary tempData)
     {
       return tempData.ContainsKey(NsgaResultKey) ? tempData.Peek(NsgaResultKey) as NsgaResult : null;
